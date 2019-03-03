@@ -1,13 +1,14 @@
 .name{
   height: "15px";
   border: solid 2px rgb(185, 184, 184);
-  background: repeating-linear-gradient(90deg, #ffffff 0px, #ffffff 14.5px, rgb(97, 96, 96) 16.5px);
+  background: repeating-linear-gradient(90deg, #ffffff 0px, #ffffff 14.5px, rgb(97, 96, 96) 17.5px);
   color: dimgrey;
   font-family: monospace;
   /* letter-spacing: 1.09ch;  */
-  letter-spacing: 8.5px;
+  letter-spacing: 9.5px;
   /* padding-left: 1.6px; */
-  /* padding-left: 3.5px; */
+  /* padding-left: 1.5px; */
+  padding-left: 0.9px;
 
 }
 

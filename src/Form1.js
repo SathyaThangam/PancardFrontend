@@ -2701,9 +2701,9 @@ async validateResidencePincode(event) {
        this.state.isModalEnabled =  false;
    }
    else if (typeof  this.state.data.ResidencePincode !== "undefined") {
-       if (!this.state.data.ResidencePincode.match(/^[0-9 ]*$/)) {
+       if (!this.state.data.ResidencePincode.match(/^[1-9][0-9]*$/)) {
            let errors = Object.assign({}, this.state.errors);     
-           errors.ResidencePincode = "*Please enter numbers only.";                         
+           errors.ResidencePincode = "*Please enter valid pincode";                         
            this.setState({errors});
            this.state.isModalEnabled =  false;
        }
@@ -2735,9 +2735,9 @@ async validateOfficePincode(event) {
         }
     }
     else if (typeof  this.state.data.OfficePincode !== "undefined") {
-       if (!this.state.data.OfficePincode.match(/^[0-9 ]*$/)) {
+       if (!this.state.data.OfficePincode.match(/^[1-9][0-9]*$/)) {
            let errors = Object.assign({}, this.state.errors);     
-           errors.OfficePincode = "*Please enter numbers only.";                         
+           errors.OfficePincode = "*Please enter valid pincode";                         
            this.setState({errors});
            this.state.isModalEnabled =  false;
        }
@@ -2766,9 +2766,9 @@ async validateRAPincode(event) {
        this.state.isModalEnabled =  false;
    }
    else if (typeof  this.state.data.RAPincode !== "undefined") {
-       if (!this.state.data.RAPincode.match(/^[0-9 ]*$/)) {
+       if (!this.state.data.RAPincode.match(/^[1-9][0-9]*$/)) {
            let errors = Object.assign({}, this.state.errors);     
-           errors.RAPincode = "*Please enter numbers only.";                         
+           errors.RAPincode = "*Please enter valid pincode";                         
            this.setState({errors});
            this.state.isModalEnabled =  false;
        }
@@ -3693,7 +3693,7 @@ handleInput = (event) => {
                          <div> 
 
                          <input 
-                            style= {{width: "407px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="LastName" 
@@ -3707,12 +3707,12 @@ handleInput = (event) => {
                           </div>
                           <div>
                             <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="FirstName" 
                             name="FirstName" 
-                            maxLength="25" 
+s                            maxLength="25" 
                             value={this.state.data.FirstName}
                             onChange={event => this.validateFirstName(event)}
                           /> <br/>
@@ -3721,7 +3721,7 @@ handleInput = (event) => {
                           
                            <div>   
                             <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="MiddleName" 
@@ -3749,7 +3749,7 @@ handleInput = (event) => {
                    <div className = "box_left"> 
                        <div> 
                        <input 
-                            style= {{width: "610px"}}
+                            style= {{width: "647px"}}
                             className = "name"
                             type="text" 
                             id="AbbreviationOne" 
@@ -3763,7 +3763,7 @@ handleInput = (event) => {
                             
                         <div>
                          <input 
-                            style= {{width: "610px"}}
+                            style= {{width: "647px"}}
                             className = "name"
                             type="text" 
                             id="AbbreviationTwo" 
@@ -3861,7 +3861,7 @@ handleInput = (event) => {
                          <td className = "secondtd">
                           <div> 
                           <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="OtherLastName" 
@@ -3875,7 +3875,7 @@ handleInput = (event) => {
                            
                            <div> 
                            <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="OtherFirstName" 
@@ -3889,7 +3889,7 @@ handleInput = (event) => {
  
                           <div>
                           <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="OtherMiddleName" 
@@ -3974,7 +3974,7 @@ handleInput = (event) => {
                           <tr>
                             <td >
                             <input 
-                              style= {{width: "32px"}}
+                              style= {{width: "34px"}}
                               className = "name"
                               type="text" 
                               id="Day" 
@@ -3987,7 +3987,7 @@ handleInput = (event) => {
                            </td>  
                            <td >
                            <input 
-                              style= {{width: "32px"}}
+                              style= {{width: "34px"}}
                               className = "name"
                               type="text" 
                               id="Month" 
@@ -3999,7 +3999,7 @@ handleInput = (event) => {
                            </td>
                            <td className = "Year_td">
                            <input 
-                              style= {{width: "63px"}}
+                              style= {{width: "69px"}}
                               className = "name"
                               type="text" 
                               id="Year" 
@@ -4041,7 +4041,7 @@ handleInput = (event) => {
                          <td className = "secondtd">
                            <div> 
                            <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="FatherLastName" 
@@ -4055,7 +4055,7 @@ handleInput = (event) => {
                            
                            <div>
                            <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="FatherFirstName" 
@@ -4069,7 +4069,7 @@ handleInput = (event) => {
 
                            <div>
                            <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="FatherMiddleName" 
@@ -4099,7 +4099,7 @@ handleInput = (event) => {
                          <td className = "secondtd">
                          <div>
                           <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="MotherLastName" 
@@ -4115,7 +4115,7 @@ handleInput = (event) => {
 
                            <div>  
                            <input
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="MotherFirstName" 
@@ -4129,7 +4129,7 @@ handleInput = (event) => {
 
                            <div>    
                            <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="MotherMiddleName" 
@@ -4191,7 +4191,7 @@ handleInput = (event) => {
                          <td className = "secondtd">
                           <div> 
                           <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="ResidenceFlat" 
@@ -4205,7 +4205,7 @@ handleInput = (event) => {
                              
                            <div>
                            <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="ResidencePremises" 
@@ -4219,7 +4219,7 @@ handleInput = (event) => {
 
                            <div> 
                             <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="ResidenceRoad" 
@@ -4233,7 +4233,7 @@ handleInput = (event) => {
                             
                            <div>
                             <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="ResidenceArea" 
@@ -4247,7 +4247,7 @@ handleInput = (event) => {
 
                            <div>
                            <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="ResidenceTown" 
@@ -4294,7 +4294,7 @@ handleInput = (event) => {
                              <input 
                               style= {
                                  { 
-                                    width: "114px",
+                                    width: "121.5px",
                                     height: "15px"
                                  }
                               }
@@ -4355,7 +4355,7 @@ handleInput = (event) => {
                          <td className = "secondtd">
                           <div> 
                           <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="OfficeName" 
@@ -4369,7 +4369,7 @@ handleInput = (event) => {
                            
                            <div>
                             <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="OfficeFlat" 
@@ -4383,7 +4383,7 @@ handleInput = (event) => {
 
                            <div>
                            <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="OfficePremises" 
@@ -4397,7 +4397,7 @@ handleInput = (event) => {
                             
                            <div>
                            <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="OfficeRoad" 
@@ -4411,7 +4411,7 @@ handleInput = (event) => {
                             
                            <div>
                             <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="OfficeArea" 
@@ -4426,7 +4426,7 @@ handleInput = (event) => {
 
                            <div>    
                             <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="OfficeTown" 
@@ -4470,7 +4470,7 @@ handleInput = (event) => {
                           <input 
                               style= {
                                  { 
-                                    width: "114px",
+                                    width: "121.5px",
                                     height: "15px"
                                  }
                               }
@@ -4556,7 +4556,7 @@ handleInput = (event) => {
                                 <input 
                                    style= {
                                     { 
-                                       width: "49px",
+                                       width: "51px",
                                        height: "15px"
                                        }
                                      }
@@ -4574,7 +4574,7 @@ handleInput = (event) => {
                                 <input 
                                    style= {
                                     { 
-                                       width: "112px",
+                                       width: "121.6px",
                                        height: "15px"
                                      }
                                     }
@@ -4592,7 +4592,7 @@ handleInput = (event) => {
                                 <input 
                                    style= {
                                     { 
-                                       width: "212px",
+                                       width: "226px",
                                        height: "15px"
                                      }
                                     }
@@ -4709,11 +4709,11 @@ handleInput = (event) => {
                        id = "29"
                        name = "Status[7][]"
                        onClick={(e)=>this.handleStatusCheck(e,"Status")}/>    
-                    <label className = "Label_with_no_space"> Body of Individuals</label>&nbsp; 
+                    <label className = "Label_with_no_space"> Body of Individuals</label>&nbsp;&nbsp;&nbsp;&nbsp; 
 
                     <input 
                        type="checkbox" 
-                       className="Check IndividualCheck"
+                       className="Check "
                        value = "Local Authority"
                        id = "30"
                        name = "Status[7][]"
@@ -4727,7 +4727,7 @@ handleInput = (event) => {
                        id = "31"
                        name = "Status[7][]"
                        onClick={(e)=>this.handleStatusCheck(e,"Status")}/> 
-                    <label className = "Label_with_no_space"> Artificial Juridical Persons</label> 
+                    <label className = "Label_with_no_space">Artificial Juridical Persons</label> 
 
                     <input 
                        type="checkbox" 
@@ -4751,7 +4751,7 @@ handleInput = (event) => {
                              <input 
                                    style= {
                                     { 
-                                       width: "494px",
+                                       width: "524px",
                                        height: "15px"
                                      }
                                     }
@@ -4783,7 +4783,7 @@ handleInput = (event) => {
                               <input 
                                    style= {
                                     { 
-                                       width: "197px",
+                                       width: "209px",
                                        height: "15px"
                                      }
                                     }
@@ -4811,7 +4811,7 @@ handleInput = (event) => {
                             <input 
                                    style= {
                                     { 
-                                       width: "460px",
+                                       width: "489px",
                                        height: "15px"
                                      }
                                     }
@@ -4834,7 +4834,7 @@ handleInput = (event) => {
                     <div className = "Left_space2">
                           <div> 
                           <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "436px"}}
                             className = "name"
                             type="text" 
                             id="AadhaarLastName" 
@@ -4848,7 +4848,7 @@ handleInput = (event) => {
                          
                            <div>
                           <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "436px"}}
                             className = "name"
                             type="text" 
                             id="AadhaarFirstName" 
@@ -4862,7 +4862,7 @@ handleInput = (event) => {
  
                            <div>
                           <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "436px"}}
                             className = "name"
                             type="text" 
                             id="AadhaarMiddleName" 
@@ -5043,7 +5043,7 @@ handleInput = (event) => {
                            
                           <div> 
                           <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="RALastName" 
@@ -5057,7 +5057,7 @@ handleInput = (event) => {
 
                            <div>  
                            <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="RAFirstName" 
@@ -5071,7 +5071,7 @@ handleInput = (event) => {
 
                            <div>
                            <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="RAMiddleName" 
@@ -5107,7 +5107,7 @@ handleInput = (event) => {
                           
                           <div> 
                           <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="RAFlat" 
@@ -5121,7 +5121,7 @@ handleInput = (event) => {
 
                            <div>
                            <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="RAPremises" 
@@ -5135,7 +5135,7 @@ handleInput = (event) => {
                             
                            <div>
                            <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="RARoad" 
@@ -5149,7 +5149,7 @@ handleInput = (event) => {
 
                            <div>   
                           <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="RAArea" 
@@ -5163,7 +5163,7 @@ handleInput = (event) => {
 
                            <div>
                           <input 
-                            style= {{width: "410px"}}
+                            style= {{width: "437px"}}
                             className = "name"
                             type="text" 
                             id="RATown" 
@@ -5204,7 +5204,7 @@ handleInput = (event) => {
                           <input 
                               style= {
                                  { 
-                                    width: "114px",
+                                    width: "122px",
                                     height: "15px"
                                  }
                               }
