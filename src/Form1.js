@@ -925,40 +925,65 @@ class Form1 extends Component {
 
     if(e.target.id === "6")
     {
-        let data = Object.assign({}, this.state.data);     
-        data.NameTitleTwo = "";                         
-        this.setState({data});
+        this.setState(prevState => ({
+            data: {
+                ...prevState.data,
+                OtherLastName : ""
+            }
+        }))
  
-        let data1 = Object.assign({}, this.state.data);     
-        data1.OtherLastName = "";                         
-        this.setState({data1});
+        this.setState(prevState => ({
+            data: {
+                ...prevState.data,
+                OtherFirstName : ""
+            }
+        }))
 
-        let data2 = Object.assign({}, this.state.data);     
-        data2.OtherFirstName = "";                         
-        this.setState({data2});
+        this.setState(prevState => ({
+            data: {
+                ...prevState.data,
+                OtherMiddleName : ""
+            }
+        }))
 
-        let data3 = Object.assign({}, this.state.data);     
-        data3.OtherMiddleName = "";                         
-        this.setState({data3});
+        this.setState(prevState => ({
+            data: {
+                ...prevState.data,
+                NameTitleTwo : ""
+            }
+        }))
 
-        let errors = Object.assign({}, this.state.errors);     
-        errors.NameTitleTwo = "";                         
-        this.setState({errors});
- 
-        let errors1 = Object.assign({}, this.state.errors);     
-        errors1.OtherLastName = "";                         
-        this.setState({errors1});
+        this.setState(prevState => ({
+            errors: {
+                ...prevState.errors,
+                OtherLastName : ""
+            }
+        }))
 
-        let errors2 = Object.assign({}, this.state.errors);     
-        errors2.OtherFirstName = "";                         
-        this.setState({errors2});
+        this.setState(prevState => ({
+            errors: {
+                ...prevState.errors,
+                OtherFirstName : ""
+            }
+        }))
 
-        let errors3 = Object.assign({}, this.state.errors);     
-        errors3.OtherMiddleName = "";                         
-        this.setState({errors3});
-        errors.OtherName = "";
+        this.setState(prevState => ({
+            errors: {
+                ...prevState.errors,
+                OtherMiddleName : ""
+            }
+        }))
+
+        this.setState(prevState => ({
+            errors: {
+                ...prevState.errors,
+                NameTitleTwo : ""
+            }
+        }))
+
+        
     }
-    errors.OtherName = "";
+   
 
     localStorage.setItem('localdata', JSON.stringify(this.state.data));
     localStorage.setItem('localerror', JSON.stringify(this.state.errors));
