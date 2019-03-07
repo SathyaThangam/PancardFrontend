@@ -2246,48 +2246,236 @@ console.log("checkbox",document.getElementsByTagName("NoIncome").checked)
     
   }
 
-  handleName1 = (event) => {
-      
-      let temp = this.state.data;
-      let {name,value} =event.target;
-      temp[name] = value;
-      this.setState({temp});
+ handleLastName1 = (event) => {  
+    this.handleInput(event);
+    this.validateLastName(event);  
+    (event.target.value === "") ? $( "#LastName1" ).focus() : $( "#LastName2" ).focus();
+ }
 
-      console.log(this.state.data.name1)
-      this.handleName();
-      
-  }
-
-
-  handleName2 = (event) => {
-      
-    let temp = this.state.data;
-    let {name,value} =event.target;
-    temp[name] = value;
-    this.setState({temp});
-
-    console.log(this.state.data.name2)
-    this.handleName();
+handleLastName2 = (event) => {    
+    this.handleInput(event);
+    this.validateLastName(event);  
+    (event.target.value === "") ? $( "#LastName1" ).focus() : $( "#LastName3" ).focus();
+   
 }
 
-handleName = () => {
-
-    this.state.data.name = this.state.data.name1 + this.state.data.name2;
-    let val = this.state.data.name;
-    this.setState({val})
-    console.log(this.state.data.name)
+handleLastName3 = (event) => {    
+    this.handleInput(event);
+    this.validateLastName(event);  
+    (event.target.value === "") ? $( "#LastName2" ).focus() : $( "#LastName4" ).focus();
 }
 
+handleLastName4 = (event) => {    
+    this.handleInput(event);
+    this.validateLastName(event);  
+    (event.target.value === "") ? $( "#LastName3" ).focus() : $( "#LastName5" ).focus();
+}
 
+handleLastName5 = (event) => {    
+    this.handleInput(event);
+    this.validateLastName(event);  
+    (event.target.value === "") ? $( "#LastName4" ).focus() : $( "#LastName6" ).focus();
+}
 
-  
+handleLastName6 = (event) => {    
+    this.handleInput(event);
+    this.validateLastName(event);  
+    (event.target.value === "") ? $( "#LastName5" ).focus() : $( "#LastName7" ).focus();
+}
+
+handleLastName7 = (event) => {    
+    this.handleInput(event);
+    this.validateLastName(event); 
+    (event.target.value === "") ? $( "#LastName6" ).focus() : $( "#LastName8" ).focus(); 
+}
+
+handleLastName8 = (event) => {    
+    this.handleInput(event);
+    this.validateLastName(event);   
+    (event.target.value === "") ? $( "#LastName7" ).focus() : $( "#LastName9" ).focus();
+}
+
+handleLastName9 = (event) => {    
+    this.handleInput(event);
+    this.validateLastName(event);  
+    (event.target.value === "") ? $( "#LastName8" ).focus() : $( "#LastName10" ).focus();
+}
+
+handleLastName10 = (event) => {    
+    this.handleInput(event);
+    this.validateLastName(event);  
+    (event.target.value === "") ? $( "#LastName9" ).focus() : $( "#LastName11" ).focus();
+}
+
+handleLastName11 = (event) => {    
+    this.handleInput(event);
+    this.validateLastName(event);  
+    (event.target.value === "") ? $( "#LastName10" ).focus() : $( "#LastName12" ).focus();
+}
+
+handleLastName12 = (event) => {    
+    this.handleInput(event);
+    this.validateLastName(event);  
+    (event.target.value === "") ? $( "#LastName11" ).focus() : $( "#LastName13" ).focus();
+}
+
+handleLastName13 = (event) => {    
+    this.handleInput(event);
+    this.validateLastName(event); 
+    (event.target.value === "") ? $( "#LastName12" ).focus() : $( "#LastName14" ).focus(); 
+}
+
+handleLastName14 = (event) => {    
+    this.handleInput(event);
+    this.validateLastName(event);  
+    (event.target.value === "") ? $( "#LastName13" ).focus() : $( "#LastName15" ).focus();
+}
+
+handleLastName15 = (event) => {    
+    this.handleInput(event);
+    this.validateLastName(event);  
+    (event.target.value === "") ? $( "#LastName14" ).focus() : $( "#LastName16" ).focus();
+}
+
+handleLastName16 = (event) => {    
+    this.handleInput(event);
+    this.validateLastName(event);  
+    (event.target.value === "") ? $( "#LastName15" ).focus() : $( "#LastName17" ).focus();
+}
+
+handleLastName17 = (event) => {    
+    this.handleInput(event);
+    this.validateLastName(event);  
+    (event.target.value === "") ? $( "#LastName16" ).focus() : $( "#LastName18" ).focus();
+}
+
+handleLastName18 = (event) => {    
+    this.handleInput(event);
+    this.validateLastName(event);  
+    (event.target.value === "") ? $( "#LastName17" ).focus() : $( "#LastName19" ).focus();
+}
+
+handleLastName19 = (event) => {    
+    this.handleInput(event);
+    this.validateLastName(event);  
+    (event.target.value === "") ? $( "#LastName18" ).focus() : $( "#LastName20" ).focus();
+}
+
+handleLastName20 = (event) => {    
+    this.handleInput(event);
+    this.validateLastName(event);  
+    (event.target.value === "") ? $( "#LastName19" ).focus() : $( "#LastName21" ).focus();
+}
+
+handleLastName21 = (event) => {    
+    this.handleInput(event);
+    this.validateLastName(event);  
+    (event.target.value === "") ? $( "#LastName20" ).focus() : $( "#LastName22" ).focus();
+}
+
+handleLastName22 = (event) => {    
+    this.handleInput(event);
+    this.validateLastName(event);  
+    (event.target.value === "") ? $( "#LastName21" ).focus() : $( "#LastName23" ).focus();
+}
+
+handleLastName23 = (event) => {    
+    this.handleInput(event);
+    this.validateLastName(event);  
+    (event.target.value === "") ? $( "#LastName22" ).focus() : $( "#LastName24" ).focus();
+}
+
+handleLastName24 = (event) => {    
+    this.handleInput(event);
+    this.validateLastName(event);  
+    (event.target.value === "") ? $( "#LastName23" ).focus() : $( "#LastName25" ).focus();
+}
+
+handleLastName25 = (event) => {    
+    this.handleInput(event);
+    this.validateLastName(event);  
+    (event.target.value === "") ? $( "#LastName24" ).focus() : $( "#LastName25" ).focus();
+}
+
+ResetLastNameError = () => {
+    $('#LastName1').css({'border-top-color': '', 'border-bottom-color': '' , 'border-left-color': ''})
+    $('#LastName2').css({'border-top-color': '', 'border-bottom-color': ''})
+    $('#LastName3').css({'border-top-color': '', 'border-bottom-color': ''})
+    $('#LastName4').css({'border-top-color': '', 'border-bottom-color': ''})
+    $('#LastName5').css({'border-top-color': '', 'border-bottom-color': ''})
+    $('#LastName6').css({'border-top-color': '', 'border-bottom-color': ''})
+    $('#LastName7').css({'border-top-color': '', 'border-bottom-color': ''})
+    $('#LastName8').css({'border-top-color': '', 'border-bottom-color': ''})
+    $('#LastName9').css({'border-top-color': '', 'border-bottom-color': ''})
+    $('#LastName10').css({'border-top-color': '', 'border-bottom-color': ''})
+    $('#LastName11').css({'border-top-color': '', 'border-bottom-color': ''})
+    $('#LastName12').css({'border-top-color': '', 'border-bottom-color': ''})
+    $('#LastName13').css({'border-top-color': '', 'border-bottom-color': ''})
+    $('#LastName14').css({'border-top-color': '', 'border-bottom-color': ''})
+    $('#LastName15').css({'border-top-color': '', 'border-bottom-color': ''})
+    $('#LastName16').css({'border-top-color': '', 'border-bottom-color': ''})
+    $('#LastName17').css({'border-top-color': '', 'border-bottom-color': ''})
+    $('#LastName18').css({'border-top-color': '', 'border-bottom-color': ''})
+    $('#LastName19').css({'border-top-color': '', 'border-bottom-color': ''})
+    $('#LastName20').css({'border-top-color': '', 'border-bottom-color': ''})
+    $('#LastName21').css({'border-top-color': '', 'border-bottom-color': ''})
+    $('#LastName22').css({'border-top-color': '', 'border-bottom-color': ''})
+    $('#LastName23').css({'border-top-color': '', 'border-bottom-color': ''})
+    $('#LastName24').css({'border-top-color': '', 'border-bottom-color': ''})
+    $('#LastName25').css({'border-top-color': '', 'border-bottom-color': '', 'border-right-color': ''})
+    
+
+}
+
+HighlightLastNameError = () => {
+
+    $('#LastName1').css({'border-top-color': "red", 'border-bottom-color': "red" , 'border-left-color': "red"})
+    $('#LastName2').css({'border-top-color': "red", 'border-bottom-color': "red"})
+    $('#LastName3').css({'border-top-color': "red", 'border-bottom-color': "red"})
+    $('#LastName4').css({'border-top-color': "red", 'border-bottom-color': "red"})
+    $('#LastName5').css({'border-top-color': "red", 'border-bottom-color': "red"})
+    $('#LastName6').css({'border-top-color': "red", 'border-bottom-color': "red"})
+    $('#LastName7').css({'border-top-color': "red", 'border-bottom-color': "red"})
+    $('#LastName8').css({'border-top-color': "red", 'border-bottom-color': "red"})
+    $('#LastName9').css({'border-top-color': "red", 'border-bottom-color': "red"})
+    $('#LastName10').css({'border-top-color': "red", 'border-bottom-color': "red"})
+    $('#LastName11').css({'border-top-color': "red", 'border-bottom-color': "red"})
+    $('#LastName12').css({'border-top-color': "red", 'border-bottom-color': "red"})
+    $('#LastName13').css({'border-top-color': "red", 'border-bottom-color': "red"})
+    $('#LastName14').css({'border-top-color': "red", 'border-bottom-color': "red"})
+    $('#LastName15').css({'border-top-color': "red", 'border-bottom-color': "red"})
+    $('#LastName16').css({'border-top-color': "red", 'border-bottom-color': "red"})
+    $('#LastName17').css({'border-top-color': "red", 'border-bottom-color': "red"})
+    $('#LastName18').css({'border-top-color': "red", 'border-bottom-color': "red"})
+    $('#LastName19').css({'border-top-color': "red", 'border-bottom-color': "red"})
+    $('#LastName20').css({'border-top-color': "red", 'border-bottom-color': "red"})
+    $('#LastName21').css({'border-top-color': "red", 'border-bottom-color': "red"})
+    $('#LastName22').css({'border-top-color': "red", 'border-bottom-color': "red"})
+    $('#LastName23').css({'border-top-color': "red", 'border-bottom-color': "red"})
+    $('#LastName24').css({'border-top-color': "red", 'border-bottom-color': "red"})
+    $('#LastName25').css({'border-top-color': "red", 'border-bottom-color': "red", 'border-right-color': "red"})
+    
+    
+}
+
   async validateLastName(event) {
   
-    this.handleInput(event);
+    this.state.data.LastName = this.state.data.LastName1 + this.state.data.LastName2 +
+         this.state.data.LastName3 + this.state.data.LastName4 + this.state.data.LastName5 + 
+         this.state.data.LastName6 + this.state.data.LastName7 + this.state.data.LastName8 +
+         this.state.data.LastName9 + this.state.data.LastName10 + this.state.data.LastName11 + 
+         this.state.data.LastName12 + this.state.data.LastName13 + this.state.data.LastName14 + 
+         this.state.data.LastName15 + this.state.data.LastName16 + this.state.data.LastName17 + 
+         this.state.data.LastName18 + this.state.data.LastName19 + this.state.data.LastName20 +
+         this.state.data.LastName21 + this.state.data.LastName22 + this.state.data.LastName23 + 
+         this.state.data.LastName24 + this.state.data.LastName25 ;
+     
+    let val = this.state.data.LastName;
+    this.setState({val})
     let errors = Object.assign({}, this.state.errors);     
     errors.LastName = "";                         
     this.setState({errors});
-    $('#LastName').css('border-color', '')
+    this.ResetLastNameError();
     
   
     if(this.state.data.LastName === "" || (isNaN(this.state.data.LastName) === false))
@@ -2295,8 +2483,8 @@ handleName = () => {
         let errors = Object.assign({}, this.state.errors);     
         errors.LastName = "*Please enter your LastName";                         
         this.setState({errors});
-        this.state.isModalEnabled =  false;
-        $('#LastName').css('border-color', "red")
+        this.state.isModalEnabled =  false;  
+        this.HighlightLastNameError();      
     }
     else if (typeof  this.state.data.LastName !== "undefined") {
         if (!this.state.data.LastName.match(/^[a-zA-Z ]*$/)) {
@@ -2304,11 +2492,11 @@ handleName = () => {
             errors.LastName = "*Please enter alphabet characters only.";                         
             this.setState({errors});
             this.state.isModalEnabled =  false;
-            $('#LastName').css('border-color', "red")
+            this.HighlightLastNameError();
         }
     }
     
-     
+    console.log(this.state.data.LastName) 
     localStorage.setItem('localdata', JSON.stringify(this.state.data));
     localStorage.setItem('localerror', JSON.stringify(this.state.errors));
    }
@@ -4575,21 +4763,232 @@ handleInput = (event) => {
   
                             <input 
                                type="text" 
-                               aria-label="First name" 
                                class="form-control"
                                maxLength = "1"
-                               value = {this.state.data.name1}
-                               name = "name1"
-                               onChange = {this.handleName1}/>
+                               value = {this.state.data.LastName1}
+                               name = "LastName1"
+                               id = "LastName1"
+                               onChange = {this.handleLastName1}/>
 
                             <input 
                                type="text" 
-                               aria-label="Last name" 
                                class="form-control"
                                maxLength = "1"
-                               value = {this.state.data.name2}
-                               name = "name2"
-                               onChange = {this.handleName2}/>
+                               value = {this.state.data.LastName2}
+                               name = "LastName2"
+                               id = "LastName2"
+                               onChange = {this.handleLastName2}/>
+
+                            <input 
+                               type="text" 
+                               class="form-control"
+                               maxLength = "1"
+                               value = {this.state.data.LastName3}
+                               name = "LastName3"
+                               id = "LastName3"
+                               onChange = {this.handleLastName3}/>
+
+                            <input 
+                               type="text" 
+                               class="form-control"
+                               maxLength = "1"
+                               value = {this.state.data.LastName4}
+                               name = "LastName4"
+                               id = "LastName4"
+                               onChange = {this.handleLastName4}/>
+
+                            <input 
+                               type="text" 
+                               class="form-control"
+                               maxLength = "1"
+                               value = {this.state.data.LastName5}
+                               name = "LastName5"
+                               id = "LastName5"
+                               onChange = {this.handleLastName5}/> 
+
+                             <input 
+                               type="text" 
+                               class="form-control"
+                               maxLength = "1"
+                               value = {this.state.data.LastName6}
+                               name = "LastName6"
+                               id = "LastName6"
+                               onChange = {this.handleLastName6}/>
+
+                             <input 
+                               type="text" 
+                               class="form-control"
+                               maxLength = "1"
+                               value = {this.state.data.LastName7}
+                               name = "LastName7"
+                               id = "LastName7"
+                               onChange = {this.handleLastName7}/>
+
+                             <input 
+                               type="text" 
+                               class="form-control"
+                               maxLength = "1"
+                               value = {this.state.data.LastName8}
+                               name = "LastName8"
+                               id = "LastName8"
+                               onChange = {this.handleLastName8}/> 
+
+                             <input 
+                               type="text" 
+                               class="form-control"
+                               maxLength = "1"
+                               value = {this.state.data.LastName9}
+                               name = "LastName9"
+                               id = "LastName9"
+                               onChange = {this.handleLastName9}/>
+
+                             <input 
+                               type="text" 
+                               class="form-control"
+                               maxLength = "1"
+                               value = {this.state.data.LastName10}
+                               name = "LastName10"
+                               id = "LastName10"
+                               onChange = {this.handleLastName10}/>
+
+                            <input 
+                               type="text" 
+                               class="form-control"
+                               maxLength = "1"
+                               value = {this.state.data.LastName11}
+                               name = "LastName11"
+                               id = "LastName11"
+                               onChange = {this.handleLastName11}/>
+
+                             <input 
+                               type="text" 
+                               class="form-control"
+                               maxLength = "1"
+                               value = {this.state.data.LastName12}
+                               name = "LastName12"
+                               id = "LastName12"
+                               onChange = {this.handleLastName12}/> 
+
+                             <input 
+                               type="text" 
+                               class="form-control"
+                               maxLength = "1"
+                               value = {this.state.data.LastName13}
+                               name = "LastName13"
+                               id = "LastName13"
+                               onChange = {this.handleLastName13}/>
+
+                             <input 
+                               type="text" 
+                               class="form-control"
+                               maxLength = "1"
+                               value = {this.state.data.LastName14}
+                               name = "LastName14"
+                               id = "LastName14"
+                               onChange = {this.handleLastName14}/>
+
+                             <input 
+                               type="text" 
+                               class="form-control"
+                               maxLength = "1"
+                               value = {this.state.data.LastName15}
+                               name = "LastName15"
+                               id = "LastName15"
+                               onChange = {this.handleLastName15}/>
+
+                            <input 
+                               type="text" 
+                               class="form-control"
+                               maxLength = "1"
+                               value = {this.state.data.LastName16}
+                               name = "LastName16"
+                               id = "LastName16"
+                               onChange = {this.handleLastName16}/>
+
+                             <input 
+                               type="text" 
+                               class="form-control"
+                               maxLength = "1"
+                               value = {this.state.data.LastName17}
+                               name = "LastName17"
+                               id = "LastName17"
+                               onChange = {this.handleLastName17}/>
+
+                             <input 
+                               type="text" 
+                               class="form-control"
+                               maxLength = "1"
+                               value = {this.state.data.LastName18}
+                               name = "LastName18"
+                               id = "LastName18"
+                               onChange = {this.handleLastName18}/>
+
+                             <input 
+                               type="text" 
+                               class="form-control"
+                               maxLength = "1"
+                               value = {this.state.data.LastName19}
+                               name = "LastName19"
+                               id = "LastName19"
+                               onChange = {this.handleLastName19}/>
+
+                             <input 
+                               type="text" 
+                               class="form-control"
+                               maxLength = "1"
+                               value = {this.state.data.LastName20}
+                               name = "LastName20"
+                               id = "LastName20"
+                               onChange = {this.handleLastName20}/>
+
+                            <input 
+                               type="text" 
+                               class="form-control"
+                               maxLength = "1"
+                               value = {this.state.data.LastName21}
+                               name = "LastName21"
+                               id = "LastName21"
+                               onChange = {this.handleLastName21}/>
+
+                            <input 
+                               type="text" 
+                               class="form-control"
+                               maxLength = "1"
+                               value = {this.state.data.LastName22}
+                               name = "LastName22"
+                               id = "LastName22"
+                               onChange = {this.handleLastName22}/>
+
+                            <input 
+                               type="text" 
+                               class="form-control"
+                               maxLength = "1"
+                               value = {this.state.data.LastName23}
+                               name = "LastName23"
+                               id = "LastName23"
+                               onChange = {this.handleLastName23}/>
+
+                             <input 
+                               type="text" 
+                               class="form-control"
+                               maxLength = "1"
+                               value = {this.state.data.LastName24}
+                               name = "LastName24"
+                               id = "LastName24"
+                               onChange = {this.handleLastName24}/>
+
+                             <input 
+                               type="text" 
+                               class="form-control"
+                               maxLength = "1"
+                               value = {this.state.data.LastName25}
+                               name = "LastName25"
+                               id = "LastName25"
+                               onChange = {this.handleLastName25}/>
+
+
+
+
                          </div>
                          <div> 
 
