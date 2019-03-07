@@ -1,3 +1,5 @@
+ 
+
 .name{
   height: "15px";
   border: solid 2px rgb(185, 184, 184);
@@ -9,13 +11,87 @@
   /* padding-left: 1.6px; */
   /* padding-left: 1.5px; */
   padding-left: 0.9px;
+  
 
 }
 
+.LastNameDiv {
+  display: flex;
+  flex: 0 0 auto;
+}
 
+.form-control
+{
+   width: 2.8%;
+}
 
-input{
+.name1{
+  height: "15px";
+  border: solid 2px rgb(185, 184, 184);
+  background: repeating-linear-gradient(90deg, #ffffff 0px, #ffffff 3.2%, rgb(97, 96, 96) 4%);
+  color: dimgrey;
+  font-family: monospace;
+  /* letter-spacing: 1.09ch;  */
+  letter-spacing: 0.65vw;
+  /* padding-left: 1.6px; */
+  /* padding-left: 1.5px; */
+  padding-left: 0.6%;
+  font-size: 115.5%;
+  text-align-last: initial;
+  flex: 0 0 auto;
+}
+
+/*  */
+
+.ColouredLabelAlign {
+  vertical-align: middle;
+}
+
+.tooltip {
+  position: relative;
+ }
+ 
+ .tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+ 
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 105%;
+ }
+ 
+ .tooltip:hover .tooltiptext {
+  visibility: visible;
+ }
+
+ .tooltiptextLabel.tooltiptext{
+   background-color: black;
+ }
+
+/*  */
+
+input:not([name = 'Email'])
+{
   text-transform: uppercase;
+}
+
+input[name = 'Email']
+{
+   text-transform: lowercase;
+}
+
+input[type ='checkbox']{
+  vertical-align: middle;
 }
 
 /* images */
@@ -69,6 +145,7 @@ input[type="text"]{
    border  :  1px solid black;
    text-align: center;
    font-weight: bold;
+   border-top-style:none;
 }
 
 .tablebox11Label {
@@ -259,6 +336,7 @@ margin-left: 44%;
   font-size: 10px;
   font-family: 'arial';
   margin-left: 0.2%;
+  vertical-align: baseline;
 }
 
 .first_td {
@@ -292,7 +370,7 @@ margin-left: 44%;
 /* Third Component */
  
 .Label_with_no_space.Move_End {
-  margin-left: 23%;
+  margin-left: 14%;
 }
 
 .FirstLabel.small_font {
@@ -306,7 +384,7 @@ margin-left: 44%;
 /* Fourth Component */
 
 .Label_with_no_space.Move_End1 {
-  margin-left: 15%;
+  margin-left: 5%;
 }
 
 /* Fifth Component */
@@ -521,10 +599,23 @@ margin-left: 44%;
   font-size: 10px;
   font-family: 'arial';
   align-content: left;
+  width: 15%;
+   
+}
+
+.twelve {
+  width: 600px;
+}
+
+.twelve_td1 {
+
+  width: 20%;
 }
 
 .divtwelve {
   margin-left: 2%;
+  height: 50%;
+  
 }
 /* 
 .Left_space {
@@ -542,7 +633,7 @@ margin-left: 44%;
 /* Thirteeenth Component */
 
 .Move_End2 {
-  margin-left: 60%;
+  margin-left: 53%;
 }
 
 .CapitalCheck {
