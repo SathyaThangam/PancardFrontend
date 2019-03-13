@@ -224,7 +224,23 @@ class Form1 extends Component {
          RAMiddleName16 : "", RAMiddleName17: "", RAMiddleName18: "", RAMiddleName19: "", RAMiddleName20: "",
          RAMiddleName21 : "", RAMiddleName22: "", RAMiddleName23: "", RAMiddleName24: "", RAMiddleName25: "",
          RAMiddleName: "",
+         AbbreviationOne1 : "", AbbreviationOne2: "", AbbreviationOne3: "", AbbreviationOne4: "", AbbreviationOne5: "",
+         AbbreviationOne6 : "", AbbreviationOne7: "", AbbreviationOne8: "", AbbreviationOne9: "", AbbreviationOne10: "",
+         AbbreviationOne11 : "", AbbreviationOne12: "", AbbreviationOne13: "", AbbreviationOne14: "", AbbreviationOne15: "",
+         AbbreviationOne16 : "", AbbreviationOne17: "", AbbreviationOne18: "", AbbreviationOne19: "", AbbreviationOne20: "",
+         AbbreviationOne21 : "", AbbreviationOne22: "", AbbreviationOne23: "", AbbreviationOne24: "", AbbreviationOne25: "",
+         AbbreviationOne26 : "", AbbreviationOne27: "", AbbreviationOne28: "", AbbreviationOne29: "", AbbreviationOne30: "",
+         AbbreviationOne31 : "", AbbreviationOne32: "", AbbreviationOne33: "", AbbreviationOne34: "", AbbreviationOne35: "",
+         AbbreviationOne36 : "", AbbreviationOne37: "",
          AbbreviationOne: "",
+         AbbreviationTwo1 : "", AbbreviationTwo2: "", AbbreviationTwo3: "", AbbreviationTwo4: "", AbbreviationTwo5: "",
+         AbbreviationTwo6 : "", AbbreviationTwo7: "", AbbreviationTwo8: "", AbbreviationTwo9: "", AbbreviationTwo10: "",
+         AbbreviationTwo11 : "", AbbreviationTwo12: "", AbbreviationTwo13: "", AbbreviationTwo14: "", AbbreviationTwo15: "",
+         AbbreviationTwo16 : "", AbbreviationTwo17: "", AbbreviationTwo18: "", AbbreviationTwo19: "", AbbreviationTwo20: "",
+         AbbreviationTwo21 : "", AbbreviationTwo22: "", AbbreviationTwo23: "", AbbreviationTwo24: "", AbbreviationTwo25: "",
+         AbbreviationTwo26 : "", AbbreviationTwo27: "", AbbreviationTwo28: "", AbbreviationTwo29: "", AbbreviationTwo30: "",
+         AbbreviationTwo31 : "", AbbreviationTwo32: "", AbbreviationTwo33: "", AbbreviationTwo34: "", AbbreviationTwo35: "",
+         AbbreviationTwo36 : "", AbbreviationTwo37: "",
          AbbreviationTwo: "",
          ResidenceFlat1 : "", ResidenceFlat2: "", ResidenceFlat3: "", ResidenceFlat4: "", ResidenceFlat5: "",
          ResidenceFlat6 : "", ResidenceFlat7: "", ResidenceFlat8: "", ResidenceFlat9: "", ResidenceFlat10: "",
@@ -521,7 +537,7 @@ class Form1 extends Component {
        let errors = Object.assign({}, this.state.errors);     
        errors.LastName = '*Fields are required';                         
        this.setState({errors});
-       $( "#LastName" ).focus();
+       $( "#LastName1" ).focus();
        this.HighlightLastNameError();
     }
     else if( this.state.data.FirstName === "")
@@ -529,7 +545,7 @@ class Form1 extends Component {
        let errors = Object.assign({}, this.state.errors);     
        errors.FirstName = '*Fields are required';                         
        this.setState({errors});
-       $( "#FirstName" ).focus();
+       $( "#FirstName1" ).focus();
        this.HighlightFirstNameError();
     }
     else if(this.state.data.OtherName === "")
@@ -537,7 +553,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.OtherName = '*Please tick as applicable';                         
         this.setState({errors});
-        $( "#OtherName" ).focus();
+        $( "#OtherName1" ).focus();
         
     }
     else if(this.state.data.NameTitleTwo === "" && this.state.data.OtherName === "5")
@@ -552,7 +568,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.OtherLastName = '*Fields are required';                         
         this.setState({errors});
-        $( "#OtherLastName" ).focus();
+        $( "#OtherLastName1" ).focus();
         this.HighlightOtherLastNameError();
     }
     else if(this.state.data.OtherName === "5" && this.state.data.OtherFirstName === "" )
@@ -560,7 +576,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.OtherFirstName = '*Fields are required';                         
         this.setState({errors});
-        $( "#OtherFirstName" ).focus();
+        $( "#OtherFirstName1" ).focus();
         this.HighlightOtherFirstNameError();
     }
     else if(this.state.data.Gender === "")
@@ -575,7 +591,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.Day = '*Fields are required';                         
         this.setState({errors});
-        $( "#Day" ).focus();
+        $( "#Day1" ).focus();
         this.HighlightDayError();
     }
     else if(this.state.data.Month === "")
@@ -583,7 +599,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.Month = '*Fields are required';                         
         this.setState({errors});
-        $( "#Month" ).focus();
+        $( "#Month1" ).focus();
         this.HighlightMonthError();
     }
     else if(this.state.data.Year === "")
@@ -591,7 +607,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.Year = '*Fields are required';                         
         this.setState({errors});
-        $( "#Year" ).focus();
+        $( "#Year1" ).focus();
         this.HighlightYearError();
     }
     else if(this.state.data.FatherLastName === "")
@@ -599,7 +615,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.FatherLastName = '*Fields are required';                         
         this.setState({errors});
-        $( "#FatherLastName" ).focus();
+        $( "#FatherLastName1" ).focus();
         this.HighlightFatherLastNameError();
     }
     else if(this.state.data.FatherFirstName === "")
@@ -607,7 +623,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.FatherFirstName = '*Fields are required';                         
         this.setState({errors});
-        $( "#FatherFirstName" ).focus();
+        $( "#FatherFirstName1" ).focus();
         this.HighlightFatherFirstNameError();
     }
     else if(this.state.data.ParentName === "")
@@ -622,7 +638,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.MotherLastName = "*Please enter Mother's name";                         
         this.setState({errors});
-        $( "#MotherLastName" ).focus();
+        $( "#MotherLastName1" ).focus();
         this.HighlightMotherLastNameError();
     }
     else if(this.state.data.ParentName === "15 " && this.state.data.MotherFirstName === "")
@@ -630,7 +646,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.MotherFirstName = "*Please enter Mother's name";                         
         this.setState({errors});
-        $( "#MotherFirstName" ).focus();
+        $( "#MotherFirstName1" ).focus();
         this.HighlightMotherFirstNameError();
     }
     else if(this.state.data.ResidenceFlat === "")
@@ -638,7 +654,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.ResidenceFlat = "*Fields are required";                         
         this.setState({errors});
-        $( "#ResidenceFlat" ).focus();
+        $( "#ResidenceFlat1" ).focus();
         this.HighlightResidenceFlatError();
     }
     else if(this.state.data.ResidencePremises === "")
@@ -646,7 +662,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.ResidencePremises = "*Fields are required";                         
         this.setState({errors});
-        $( "#ResidencePremises" ).focus();
+        $( "#ResidencePremises1" ).focus();
         this.HighlightResidencePremisesError();
     }
     else if(this.state.data.ResidenceRoad === "")
@@ -654,7 +670,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.ResidenceRoad = "*Fields are required";                         
         this.setState({errors});
-        $( "#ResidenceRoad" ).focus();
+        $( "#ResidenceRoad1" ).focus();
         this.HighlightResidenceRoadError();
     }
     else if(this.state.data.ResidenceArea === "")
@@ -662,7 +678,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.ResidenceArea = "*Fields are required";                         
         this.setState({errors});
-        $( "#ResidenceArea" ).focus();
+        $( "#ResidenceArea1" ).focus();
         this.HighlightResidenceAreaError();
     }
     else if(this.state.data.ResidenceTown === "")
@@ -670,7 +686,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.ResidenceTown = "*Fields are required";                         
         this.setState({errors});
-        $( "#ResidenceTown" ).focus();
+        $( "#ResidenceTown1" ).focus();
         this.HighlightResidenceTownError();
     }
     else if(this.state.data.ResidenceState === "")
@@ -678,14 +694,14 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.ResidenceState = "*Fields are required";                         
         this.setState({errors});
-        $( "#ResidenceState" ).focus();
+        $( "#ResidenceState1" ).focus();
     }
     else if(this.state.data.ResidencePincode === "")
     {  
         let errors = Object.assign({}, this.state.errors);     
         errors.ResidencePincode = "*Fields are required";                         
         this.setState({errors});
-        $( "#ResidencePincode" ).focus();
+        $( "#ResidencePincode1" ).focus();
         this.HighlightResidencePincodeError();
     }
     else if(this.state.data.ResidenceCountry === "")
@@ -693,7 +709,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.ResidenceCountry = "*Fields are required";                         
         this.setState({errors});
-        $( "#ResidenceCountry" ).focus();
+        $( "#ResidenceCountry1" ).focus();
     }
     else if(this.state.data.Communication === "")
     {
@@ -707,7 +723,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.OfficeName = "*Fields are required";                         
         this.setState({errors});
-        $( "#OfficeName" ).focus();
+        $( "#OfficeName1" ).focus();
         this.HighlightOfficeNameError();
     }
     else if(this.state.data.OfficeFlat === "" && this.state.data.Communication === "Office")
@@ -715,7 +731,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.OfficeFlat = "*Fields are required";                         
         this.setState({errors});
-        $( "#OfficeFlat" ).focus();
+        $( "#OfficeFlat1" ).focus();
         this.HighlightOfficeFlatError();
     }
     else if(this.state.data.OfficePremises === "" && this.state.data.Communication === "Office")
@@ -723,7 +739,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.OfficePremises = "*Fields are required";                         
         this.setState({errors});
-        $( "#OfficePremises" ).focus();
+        $( "#OfficePremises1" ).focus();
         this.HighlightOfficePremisesError();
     }
     else if(this.state.data.OfficeRoad === "" && this.state.data.Communication === "Office")
@@ -731,7 +747,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.OfficeRoad = "*Fields are required";                         
         this.setState({errors});
-        $( "#OfficeRoad" ).focus();
+        $( "#OfficeRoad1" ).focus();
         this.HighlightOfficeRoadError();
     }
     else if(this.state.data.OfficeArea === "" && this.state.data.Communication === "Office")
@@ -739,7 +755,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.OfficeArea = "*Fields are required";                         
         this.setState({errors});
-        $( "#OfficeArea" ).focus();
+        $( "#OfficeArea1" ).focus();
         this.HighlightOfficeAreaError();
     }
     else if(this.state.data.OfficeTown === "" && this.state.data.Communication === "Office")
@@ -747,7 +763,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.OfficeTown = "*Fields are required";                         
         this.setState({errors});
-        $( "#OfficeTown" ).focus();
+        $( "#OfficeTown1" ).focus();
         this.HighlightOfficeTownError();
     }
     else if(this.state.data.OfficeState === "" && this.state.data.Communication === "Office")
@@ -755,14 +771,14 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.OfficeState = "*Fields are required";                         
         this.setState({errors});
-        $( "#OfficeState" ).focus();
+        $( "#OfficeState1" ).focus();
     }
     else if(this.state.data.OfficePincode === "" && this.state.data.Communication === "Office")
     {
         let errors = Object.assign({}, this.state.errors);     
         errors.OfficePincode = "*Fields are required";                         
         this.setState({errors});
-        $( "#OfficePincode" ).focus();
+        $( "#OfficePincode1" ).focus();
         this.HighlightOfficePincodeError();
     }
     else if(this.state.data.OfficeCountry === "" && this.state.data.Communication === "Office")
@@ -770,14 +786,14 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.OfficeCountry = "*Fields are required";                         
         this.setState({errors});
-        $( "#OfficeCountry" ).focus();
+        $( "#OfficeCountry1" ).focus();
     }
     else if(this.state.data.CountryCode === "" )
     {
         let errors = Object.assign({}, this.state.errors);     
         errors.CountryCode = "*Fields are required";                         
         this.setState({errors});
-        $( "#CountryCode" ).focus();
+        $( "#CountryCode1" ).focus();
         this.HighlightCountryCodeError();
     }
     else if(this.state.data.StdCode === "" )
@@ -785,7 +801,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.StdCode = "*Fields are required";                         
         this.setState({errors});
-        $( "#StdCode" ).focus();
+        $( "#StdCode1" ).focus();
         this.HighlightStdCodeError();
     }
     else if(this.state.data.PhoneNumber === "" )
@@ -793,7 +809,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.PhoneNumber = "*Fields are required";                         
         this.setState({errors});
-        $( "#PhoneNumber" ).focus();
+        $( "#PhoneNumber1" ).focus();
         this.HighlightPhoneNumberError();
     }
     else if(this.state.data.Email === "" )
@@ -801,7 +817,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.Email = "*Fields are required";                         
         this.setState({errors});
-        $( "#Email" ).focus();
+        $( "#Email1" ).focus();
     }
     else if(this.state.data.Status === "")
     {
@@ -815,7 +831,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.RegistrationNumber = "*Registration number is required for Company";                         
         this.setState({errors});
-        $( "#RegistrationNumber" ).focus();
+        $( "#RegistrationNumber1" ).focus();
         this.HighlightRegistrationNumberError();
     }
     else if(this.state.data.Status === "Limited Liability Partnership" && this.state.data.RegistrationNumber === "")
@@ -823,7 +839,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.RegistrationNumber = "*Registration number is required for Limited Liability Partnership";                         
         this.setState({errors});
-        $( "#RegistrationNumber" ).focus();
+        $( "#RegistrationNumber1" ).focus();
         this.HighlightRegistrationNumberError();
     }
     else if(this.state.data.AadhaarNumber === "" && this.state.data.EnrolmentId === "")
@@ -831,7 +847,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.AadhaarNumber = "*Either Aadhaar number or Enrolment Id is required";                         
         this.setState({errors});
-        $( "#AadhaarNumber" ).focus();
+        $( "#AadhaarNumber1" ).focus();
         this.HighlightAadhaarNumberError();
     }
     else if(this.state.data.AadhaarLastName === "" )
@@ -839,7 +855,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.AadhaarLastName = "*Fields are required";                         
         this.setState({errors});
-        $( "#AadhaarLastName" ).focus();
+        $( "#AadhaarLastName1" ).focus();
         this.HighlightAadhaarLastNameError();
     }
     else if(this.state.data.Salary === "" && this.state.data.CapitalGains === "" &&
@@ -872,7 +888,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.RALastName = "*Fields are required";                         
         this.setState({errors});
-        $( "#RALastName" ).focus();
+        $( "#RALastName1" ).focus();
         this.HighlightRALastNameError();
     }
     else if(this.state.data.RAFirstName === "")
@@ -880,7 +896,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.RAFirstName = "*Fields are required";                         
         this.setState({errors});
-        $( "#RAFirstName" ).focus();
+        $( "#RAFirstName1" ).focus();
         this.HighlightRAFirstNameError();
     }
     else if(this.state.data.RAFlat === "")
@@ -888,7 +904,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.RAFlat = "*Fields are required";                         
         this.setState({errors});
-        $( "#RAFlat" ).focus();
+        $( "#RAFlat1" ).focus();
         this.HighlightRAFlatError();
     }
     else if(this.state.data.RAPremises === "")
@@ -896,7 +912,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.RAPremises = "*Fields are required";                         
         this.setState({errors});
-        $( "#RAPremises" ).focus();
+        $( "#RAPremises1" ).focus();
         this.HighlightRAPremisesError();
     }
     else if(this.state.data.RARoad === "")
@@ -904,7 +920,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.RARoad = "*Fields are required";                         
         this.setState({errors});
-        $( "#RARoad" ).focus();
+        $( "#RARoad1" ).focus();
         this.HighlightRARoadError();
     } 
     else if(this.state.data.RAArea === "")
@@ -912,7 +928,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.RAArea = "*Fields are required";                         
         this.setState({errors});
-        $( "#RAArea" ).focus();
+        $( "#RAArea1" ).focus();
         this.HighlightRAAreaError();
     }
     else if(this.state.data.RATown === "")
@@ -920,7 +936,7 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.RATown = "*Fields are required";                         
         this.setState({errors});
-        $( "#RATown" ).focus();
+        $( "#RATown1" ).focus();
         this.HighlightRATownError();
     }
     else if(this.state.data.RAState === "")
@@ -928,14 +944,14 @@ class Form1 extends Component {
         let errors = Object.assign({}, this.state.errors);     
         errors.RAState = "*Fields are required";                         
         this.setState({errors});
-        $( "#RAState" ).focus();
+        $( "#RAState1" ).focus();
     }
     else if(this.state.data.RAPincode === "")
     {  
         let errors = Object.assign({}, this.state.errors);     
         errors.RAPincode = "*Fields are required";                         
         this.setState({errors});
-        $( "#RAPincode" ).focus();
+        $( "#RAPincode1" ).focus();
         this.HighlightRAPincodeError();
     }
     else if(this.state.data.POI === "")
@@ -1135,8 +1151,7 @@ if(this.state.errors.POA !== "")
 
  if(this.state.errors.RAPincode !== "")
      {
-        $('#RAPincode').css('border-color', "red")
-        $( "#RAPincode" ).focus();
+        $( "#RAPincode1" ).focus();
         this.HighlightRAPincodeError();
      }
      
@@ -1150,32 +1165,28 @@ if(this.state.errors.POA !== "")
      
 if(this.state.errors.RATown !== "")
 {
-   $('#RATown').css('border-color', "red")
-   $( "#RATown" ).focus();
+   $( "#RATown1" ).focus();
    this.HighlightRATownError();
 }
 
 
 if(this.state.errors.RAArea !== "")
 {
-   $('#RAArea').css('border-color', "red")
-   $( "#RAArea" ).focus();
+   $( "#RAArea1" ).focus();
    this.HighlightRAAreaError();
 }
  
 
 if(this.state.errors.RARoad !== "")
 {
-   $('#RARoad').css('border-color', "red")
-   $( "#RARoad" ).focus();
+   $( "#RARoad1" ).focus();
    this.HighlightRARoadError();
 }
 
 
 if(this.state.errors.RAPremises !== "")
 {
-   $('#RAPremises').css('border-color', "red")
-   $( "#RAPremises" ).focus();
+   $( "#RAPremises1" ).focus();
    this.HighlightRAPremisesError();
 }
 
@@ -1183,31 +1194,27 @@ if(this.state.errors.RAPremises !== "")
 
 if(this.state.errors.RAFlat !== "")
 {
-   $('#RAFlat').css('border-color', "red")
-   $( "#RAFlat" ).focus();
+   $( "#RAFlat1" ).focus();
    this.HighlightRAFlatError();
 }
 
  
 if(this.state.errors.RAMiddleName !== "")
 {
-   $('#RAMiddleName').css('border-color', "red")
-   $( "#RAMiddleName" ).focus();
+   $( "#RAMiddleName1" ).focus();
    this.HighlightRAMiddleNameError();
 }
 
  
 if(this.state.errors.RAFirstName !== "")
 {
-   $('#RAFirstName').css('border-color', "red")
-   $( "#RAFirstName" ).focus();
+   $( "#RAFirstName1" ).focus();
    this.HighlightRAFirstNameError();
 }
 
 if(this.state.errors.RALastName !== "")
 {
-   $('#RALastName').css('border-color', "red")
-   $( "#RALastName" ).focus();
+   $( "#RALastName1" ).focus();
    this.HighlightRALastNameError();
 }
 
@@ -1226,46 +1233,40 @@ if(this.state.errors.BusinessCode1 !== "")
 
 if(this.state.errors.AadhaarMiddleName !== "")
 {
-   $('#AadhaarMiddleName').css('border-color', "red")
-   $( "#AadhaarMiddleName" ).focus();
+   $( "#AadhaarMiddleName1" ).focus();
    this.HighlightAadhaarMiddleNameError();
 }
 
 
 if(this.state.errors.AadhaarFirstName !== "")
 {
-   $('#AadhaarFirstName').css('border-color', "red")
-   $( "#AadhaarFirstName" ).focus();
+   $( "#AadhaarFirstName1" ).focus();
    this.HighlightAadhaarFirstNameError();
 }
 
 if(this.state.errors.AadhaarLastName !== "")
 {
-   $('#AadhaarLastName').css('border-color', "red")
-   $( "#AadhaarLastName" ).focus();
+   $( "#AadhaarLastName1" ).focus();
    this.HighlightAadhaarLastNameError();
 }
 
 
 if(this.state.errors.EnrolmentId !== "")
 {
-   $('#EnrolmentId').css('border-color', "red")
-   $( "#EnrolmentId" ).focus();
+   $( "#EnrolmentId1" ).focus();
    this.HighlightEnrolmentIdError();
 }
 
 if(this.state.errors.AadhaarNumber !== "")
 {
-   $('#AadhaarNumber').css('border-color', "red")
-   $( "#AadhaarNumber" ).focus();
+   $( "#AadhaarNumber1" ).focus();
    this.HighlightAadhaarNumberError();
 }
 
 
 if(this.state.errors.RegistrationNumber !== "")
 {
-   $('#RegistrationNumber').css('border-color', "red")
-   $( "#RegistrationNumber" ).focus();
+   $( "#RegistrationNumber1" ).focus();
    this.HighlightRegistrationNumberError();
 }
 
@@ -1277,24 +1278,21 @@ if(this.state.errors.Email !== "")
 
 if(this.state.errors.PhoneNumber !== "")
 {
-   $('#PhoneNumber').css('border-color', "red")
-   $( "#PhoneNumber" ).focus();
+   $( "#PhoneNumber1" ).focus();
    this.HighlightPhoneNumberError();
 }
 
 
 if(this.state.errors.StdCode !== "")
 {
-   $('#StdCode').css('border-color', "red")
-   $( "#StdCode" ).focus();
+   $( "#StdCode1" ).focus();
    this.HighlightStdCodeError();
 }
  
 
 if(this.state.errors.CountryCode !== "")
 {
-   $('#CountryCode').css('border-color', "red")
-   $( "#CountryCode" ).focus();
+   $( "#CountryCode1" ).focus();
    this.HighlightCountryCodeError();
 }
 
@@ -1306,8 +1304,7 @@ if(this.state.errors.OfficeCountry !== "")
  
 if(this.state.errors.OfficePincode !== "")
 {
-   $('#OfficePincode').css('border-color', "red")
-   $( "#OfficePincode" ).focus();
+   $( "#OfficePincode1" ).focus();
    this.HighlightOfficePincodeError();
 }
 
@@ -1320,45 +1317,39 @@ if(this.state.errors.OfficeState !== "")
 
 if(this.state.errors.OfficeTown !== "")
 {
-   $('#OfficeTown').css('border-color', "red")
-   $( "#OfficeTown" ).focus();
+   $( "#OfficeTown1" ).focus();
    this.HighlightOfficeTownError();
 }
  
 if(this.state.errors.OfficeArea !== "")
 {
-   $('#OfficeArea').css('border-color', "red")
-   $( "#OfficeArea" ).focus();
+   $( "#OfficeArea1" ).focus();
    this.HighlightOfficeAreaError();
 }
 
 if(this.state.errors.OfficeRoad !== "")
 {
-   $('#OfficeRoad').css('border-color', "red")
-   $( "#OfficeRoad" ).focus();
+   $( "#OfficeRoad1" ).focus();
    this.HighlightOfficeRoadError();
 }
  
 if(this.state.errors.OfficePremises !== "")
 {
-   $('#OfficePremises').css('border-color', "red")
-   $( "#OfficePremises" ).focus();
+   $( "#OfficePremises1" ).focus();
    this.HighlightOfficePremisesError();
 }
 
 
 if(this.state.errors.OfficeFlat !== "")
 {
-   $('#OfficeFlat').css('border-color', "red")
-   $( "#OfficeFlat" ).focus();
+   $( "#OfficeFlat1" ).focus();
    this.HighlightOfficeFlatError();
 }
 
 
 if(this.state.errors.OfficeName !== "")
 {
-   $('#OfficeName').css('border-color', "red")
-   $( "#OfficeName" ).focus();
+   $( "#OfficeName1" ).focus();
    this.HighlightOfficeNameError();
 }
 
@@ -1370,8 +1361,7 @@ if(this.state.errors.ResidenceCountry !== "")
  
 if(this.state.errors.ResidencePincode !== "")
 {
-   $('#ResidencePincode').css('border-color', "red")
-   $( "#ResidencePincode" ).focus();
+   $( "#ResidencePincode1" ).focus();
    this.HighlightResidencePincodeError();
 }
 
@@ -1384,165 +1374,141 @@ if(this.state.errors.ResidenceState !== "")
 
 if(this.state.errors.ResidenceTown !== "")
 {
-   $('#ResidenceTown').css('border-color', "red")
-   $( "#ResidenceTown" ).focus();
+   $( "#ResidenceTown1" ).focus();
    this.HighlightResidenceTownError();
 }
  
 
 if(this.state.errors.ResidenceArea !== "")
 {
-   $('#ResidenceArea').css('border-color', "red")
-   $( "#ResidenceArea" ).focus();
+   $( "#ResidenceArea1" ).focus();
    this.HighlightResidenceAreaError();
 }
 
 if(this.state.errors.ResidenceRoad !== "")
 {
-   $('#ResidenceRoad').css('border-color', "red")
-   $( "#ResidenceRoad" ).focus();
+   $( "#ResidenceRoad1" ).focus();
    this.HighlightResidenceRoadError();
 }
 
 if(this.state.errors.ResidencePremises !== "")
 {
-   $('#ResidencePremises').css('border-color', "red")
-   $( "#ResidencePremises" ).focus();
+   $( "#ResidencePremises1" ).focus();
    this.HighlightResidencePremisesError();
 }
 
 if(this.state.errors.ResidenceFlat !== "")
 {
-   $('#ResidenceFlat').css('border-color', "red")
-   $( "#ResidenceFlat" ).focus();
+   $( "#ResidenceFlat1" ).focus();
    this.HighlightResidenceFlatError();
 }
 
 if(this.state.errors.MotherMiddleName !== "")
 {
-   $('#MotherMiddleName').css('border-color', "red")
-   $( "#MotherMiddleName" ).focus();
+   $( "#MotherMiddleName1" ).focus();
    this.HighlightMotherMiddleNameError();
 }
 
 if(this.state.errors.MotherFirstName !== "")
 {
-   $('#MotherFirstName').css('border-color', "red")
-   $( "#MotherFirstName" ).focus();
+   $( "#MotherFirstName1" ).focus();
    this.HighlightMotherFirstNameError();
 }
 
 if(this.state.errors.MotherLastName !== "")
 {
-   $('#MotherLastName').css('border-color', "red")
-   $( "#MotherLastName" ).focus();
+   $( "#MotherLastName1" ).focus();
    this.HighlightMotherLastNameError();
 }
 
 
 if(this.state.errors.FatherMiddleName !== "")
 {
-   $('#FatherMiddleName').css('border-color', "red")
-   $( "#FatherMiddleName" ).focus();
+   $( "#FatherMiddleName1" ).focus();
    this.HighlightFatherMiddleNameError();
 }
 
 if(this.state.errors.FatherFirstName !== "")
 {
-   $('#FatherFirstName').css('border-color', "red")
-   $( "#FatherFirstName" ).focus();
+   $( "#FatherFirstName1" ).focus();
    this.HighlightFatherFirstNameError();
 }
 
 if(this.state.errors.FatherLastName !== "")
 {
-   $('#FatherLastName').css('border-color', "red")
-   $( "#FatherLastName" ).focus();
+   $( "#FatherLastName1" ).focus();
    this.HighlightFatherLastNameError();
 }
 
 if(this.state.errors.Year !== "")
 {
-   $('#Year').css('border-color', "red")
-   $( "#Year" ).focus();
+   $( "#Year1" ).focus();
    this.HighlightYearError();
 }
 
 if(this.state.errors.Month !== "")
 {
-   $('#Month').css('border-color', "red")
-   $( "#Month" ).focus();
+   $( "#Month1" ).focus();
    this.HighlightMonthError();
 }
  
 
 if(this.state.errors.Day !== "")
 {
-   $('#Day').css('border-color', "red")
-   $( "#Day" ).focus();
+   $( "#Day1" ).focus();
    this.HighlightDayError();
 }
 
 if(this.state.errors.OtherMiddleName !== "")
 {
-   $('#OtherMiddleName').css('border-color', "red")
-   $( "#OtherMiddleName" ).focus();
+   $( "#OtherMiddleName1" ).focus();
    this.HighlightOtherMiddleNameError();
 }
 
 
 if(this.state.errors.OtherFirstName !== "")
 {
-   $('#OtherFirstName').css('border-color', "red")
-   $( "#OtherFirstName" ).focus();
+   $( "#OtherFirstName1" ).focus();
    this.HighlightOtherFirstNameError();
 }
 
 if(this.state.errors.OtherLastName !== "")
 {
-   $('#OtherLastName').css('border-color', "red")
-   $( "#OtherLastName" ).focus();
+   $( "#OtherLastName1" ).focus();
    this.HighlightOtherLastNameError();
 }
  
 
 if(this.state.errors.AbbreviationTwo !== "")
 {
-   $('#AbbreviationTwo').css('border-color', "red")
-   $( "#AbbreviationTwo" ).focus();
+   $( "#AbbreviationTwo1" ).focus();
    this.HighlightAbbreviationTwoError();
 }
 
 if(this.state.errors.AbbreviationOne !== "")
 {
-   $('#AbbreviationOne').css('border-color', "red")
-   $( "#AbbreviationOne" ).focus();
+   $( "#AbbreviationOne1" ).focus();
    this.HighlightAbbreviationOneError();
 }
 
 if(this.state.errors.MiddleName !== "")
 {
-   $('#MiddleName').css('border-color', "red")
-   $( "#MiddleName" ).focus();
+   $( "#MiddleName1" ).focus();
    this.HighlightMiddleNameError();
 }
 
 if(this.state.errors.FirstName !== "")
 {
-   $('#FirstName').css('border-color', "red")
-   $( "#FirstName" ).focus();
+   $( "#FirstName1" ).focus();
    this.HighlightFirstNameError();
 }
 
 if(this.state.errors.LastName !== "")
 { 
-   $('#LastName').css('border-color',  "red")
-   $( "#LastName" ).focus();
+   $( "#LastName1" ).focus();
    this.HighlightLastNameError();
 }
-
-      
-     
+ 
     
  }
 
@@ -2197,7 +2163,7 @@ if(this.state.errors.LastName !== "")
         {
             let errors = this.state.errors;
             let name= "Income";
-            this.setState(errors);
+            this.setState(errors); 
             errors[name] = "";
  
         }
@@ -2654,258 +2620,7 @@ if(this.state.errors.LastName !== "")
     }
  }
 
-
- handleLastName1Key = (event) => {
-    const key = event.key;  
-    if (key === "Backspace" || key === "Delete"){
-        $( "#LastName1" ).focus()
-    }
-    else {
-        $( "#LastName1" ).focus()
-    }
- }
-
-  
- handleLastName2Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.LastName2 === "")) {
-        $( "#LastName1" ).focus()
-    }
-    else {
-        $( "#LastName2" ).focus()
-    }
- }
-
- handleLastName3Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.LastName3 === "")) {
-        $( "#LastName2" ).focus()
-    }
-    else {
-        $( "#LastName3" ).focus()
-    }
- }
-
- handleLastName4Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.LastName4 === "") ) {
-        $( "#LastName3" ).focus()
-    }
-    else {
-        $( "#LastName4  " ).focus()
-    }
- }
-
- handleLastName5Key = (event)   => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.LastName5 === "")) {
-        $( "#LastName4" ).focus()
-    }
-    else {
-        $("LastName5").focus()
-    }
- }
-
- handleLastName6Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.LastName6 === "")) {
-        $( "#LastName5" ).focus()
-    }
-    else {
-        $( "#LastName6" ).focus()
-    }
- }
-
- handleLastName7Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.LastName7 === "")) {
-        $( "#LastName6" ).focus()
-    }
-    else {
-        $( "#LastName7" ).focus()
-    }
- }
-
- handleLastName8Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.LastName8 === "")) {
-        $( "#LastName7" ).focus()
-    }
-    else {
-        $( "#LastName8" ).focus()
-    }
- }
-
- handleLastName9Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.LastName9 === "")) {
-        $( "#LastName8" ).focus()
-    }
-    else {
-        $( "#LastName9" ).focus()
-    }
- }
-
- handleLastName10Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.LastName10 === "")) {
-        $( "#LastName9" ).focus()
-    }
-    else {
-        $( "#LastName10" ).focus()
-    }
- }
-
- handleLastName11Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.LastName11 === "")) {
-        $( "#LastName10" ).focus()
-    }
-    else {
-        $( "#LastName11" ).focus()
-    }
- }
-
- handleLastName12Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.LastName12 === "")) {
-        $( "#LastName11" ).focus()
-    }
-    else {
-        $( "#LastName12" ).focus()
-    }
- }
-
- handleLastName13Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.LastName13 === "")) {
-        $( "#LastName12" ).focus()
-    }
-    else {
-        $( "#LastName13" ).focus()
-    }
- }
-
- handleLastName14Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.LastName14 === "")) {
-        $( "#LastName13" ).focus()
-    }
-    else {
-        $( "#LastName14" ).focus()
-    }
- }
-
- handleLastName15Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.LastName15 === "")) {
-        $( "#LastName14" ).focus()
-    }
-    else {
-        $( "#LastName15" ).focus()
-    }
- }
-
- handleLastName16Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.LastName16 === "")) {
-        $( "#LastName15" ).focus()
-    }
-    else {
-        $( "#LastName16" ).focus()
-    }
- }
-
- handleLastName17Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.LastName17 === "")) {
-        $( "#LastName16" ).focus()
-    }
-    else {
-        $( "#LastName17" ).focus()
-    }
- }
-
- handleLastName18Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.LastName18 === "")) {
-        $( "#LastName17" ).focus()
-    }
-    else {
-        $( "#LastName18" ).focus()
-    }
- }
-
- handleLastName19Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.LastName19 === "")) {
-        $( "#LastName18" ).focus()
-    }
-    else {
-        $( "#LastName19" ).focus()
-    }
- }
-
- handleLastName20Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.LastName20 === "")) {
-        $( "#LastName19" ).focus()
-    }
-    else {
-        $( "#LastName20" ).focus()
-    }
- }
-
- handleLastName21Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.LastName21 === "")) {
-        $( "#LastName20" ).focus()
-    }
-    else {
-        $( "#LastName21" ).focus()
-    }
- }
-
- handleLastName22Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.LastName22 === "")) {
-        $( "#LastName21" ).focus()
-    }
-    else {
-        $( "#LastName22" ).focus()
-    }
- }
-
- handleLastName23Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.LastName23 === "")) {
-        $( "#LastName22" ).focus()
-    }
-    else {
-        $( "#LastName23" ).focus()
-    }
- }
-
- handleLastName24Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.LastName24 === "")) {
-        $( "#LastName23" ).focus()
-    }
-    else {
-        $( "#LastName24" ).focus()
-    }
- }
-
- handleLastName25Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.LastName25 === "")) {
-        $( "#LastName24" ).focus()
-    }
-    else {
-        $( "#LastName25" ).focus()
-    }
- }
-
+ 
 
 handleLastName1 = (event) => {  
     
@@ -3121,258 +2836,7 @@ HighlightLastNameError = () => {
     
 }
 
-
-handleFirstName1Key = (event) => {
-    const key = event.key;  
-    if (key === "Backspace" || key === "Delete"){
-        $( "#FirstName1" ).focus()
-    }
-    else {
-        $( "#FirstName1" ).focus()
-    }
- }
-
-  
- handleFirstName2Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FirstName2 === "")) {
-        $( "#FirstName1" ).focus()
-    }
-    else {
-        $( "#FirstName2" ).focus()
-    }
- }
-
- handleFirstName3Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FirstName3 === "")) {
-        $( "#FirstName2" ).focus()
-    }
-    else {
-        $( "#FirstName3" ).focus()
-    }
- }
-
- handleFirstName4Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FirstName4 === "") ) {
-        $( "#FirstName3" ).focus()
-    }
-    else {
-        $( "#FirstName4  " ).focus()
-    }
- }
-
- handleFirstName5Key = (event)   => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FirstName5 === "")) {
-        $( "#FirstName4" ).focus()
-    }
-    else {
-        $("FirstName5").focus()
-    }
- }
-
- handleFirstName6Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FirstName6 === "")) {
-        $( "#FirstName5" ).focus()
-    }
-    else {
-        $( "#FirstName6" ).focus()
-    }
- }
-
- handleFirstName7Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FirstName7 === "")) {
-        $( "#FirstName6" ).focus()
-    }
-    else {
-        $( "#FirstName7" ).focus()
-    }
- }
-
- handleFirstName8Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FirstName8 === "")) {
-        $( "#FirstName7" ).focus()
-    }
-    else {
-        $( "#FirstName8" ).focus()
-    }
- }
-
- handleFirstName9Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FirstName9 === "")) {
-        $( "#FirstName8" ).focus()
-    }
-    else {
-        $( "#FirstName9" ).focus()
-    }
- }
-
- handleFirstName10Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FirstName10 === "")) {
-        $( "#FirstName9" ).focus()
-    }
-    else {
-        $( "#FirstName10" ).focus()
-    }
- }
-
- handleFirstName11Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FirstName11 === "")) {
-        $( "#FirstName10" ).focus()
-    }
-    else {
-        $( "#FirstName11" ).focus()
-    }
- }
-
- handleFirstName12Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FirstName12 === "")) {
-        $( "#FirstName11" ).focus()
-    }
-    else {
-        $( "#FirstName12" ).focus()
-    }
- }
-
- handleFirstName13Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FirstName13 === "")) {
-        $( "#FirstName12" ).focus()
-    }
-    else {
-        $( "#FirstName13" ).focus()
-    }
- }
-
- handleFirstName14Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FirstName14 === "")) {
-        $( "#FirstName13" ).focus()
-    }
-    else {
-        $( "#FirstName14" ).focus()
-    }
- }
-
- handleFirstName15Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FirstName15 === "")) {
-        $( "#FirstName14" ).focus()
-    }
-    else {
-        $( "#FirstName15" ).focus()
-    }
- }
-
- handleFirstName16Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FirstName16 === "")) {
-        $( "#FirstName15" ).focus()
-    }
-    else {
-        $( "#FirstName16" ).focus()
-    }
- }
-
- handleFirstName17Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FirstName17 === "")) {
-        $( "#FirstName16" ).focus()
-    }
-    else {
-        $( "#FirstName17" ).focus()
-    }
- }
-
- handleFirstName18Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FirstName18 === "")) {
-        $( "#FirstName17" ).focus()
-    }
-    else {
-        $( "#FirstName18" ).focus()
-    }
- }
-
- handleFirstName19Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FirstName19 === "")) {
-        $( "#FirstName18" ).focus()
-    }
-    else {
-        $( "#FirstName19" ).focus()
-    }
- }
-
- handleFirstName20Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FirstName20 === "")) {
-        $( "#FirstName19" ).focus()
-    }
-    else {
-        $( "#FirstName20" ).focus()
-    }
- }
-
- handleFirstName21Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FirstName21 === "")) {
-        $( "#FirstName20" ).focus()
-    }
-    else {
-        $( "#FirstName21" ).focus()
-    }
- }
-
- handleFirstName22Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FirstName22 === "")) {
-        $( "#FirstName21" ).focus()
-    }
-    else {
-        $( "#FirstName22" ).focus()
-    }
- }
-
- handleFirstName23Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FirstName23 === "")) {
-        $( "#FirstName22" ).focus()
-    }
-    else {
-        $( "#FirstName23" ).focus()
-    }
- }
-
- handleFirstName24Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FirstName24 === "")) {
-        $( "#FirstName23" ).focus()
-    }
-    else {
-        $( "#FirstName24" ).focus()
-    }
- }
-
- handleFirstName25Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FirstName25 === "")) {
-        $( "#FirstName24" ).focus()
-    }
-    else {
-        $( "#FirstName25" ).focus()
-    }
- }
-
+ 
 
 handleFirstName1 = (event) => {  
     this.handleInput(event);
@@ -3585,258 +3049,7 @@ HighlightFirstNameError = () => {
     
     
 }
-
-handleMiddleName1Key = (event) => {
-    const key = event.key;  
-    if (key === "Backspace" || key === "Delete"){
-        $( "#MiddleName1" ).focus()
-    }
-    else {
-        $( "#MiddleName1" ).focus()
-    }
- }
-
-  
- handleMiddleName2Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MiddleName2 === "")) {
-        $( "#MiddleName1" ).focus()
-    }
-    else {
-        $( "#MiddleName2" ).focus()
-    }
- }
-
- handleMiddleName3Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MiddleName3 === "")) {
-        $( "#MiddleName2" ).focus()
-    }
-    else {
-        $( "#MiddleName3" ).focus()
-    }
- }
-
- handleMiddleName4Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MiddleName4 === "") ) {
-        $( "#MiddleName3" ).focus()
-    }
-    else {
-        $( "#MiddleName4  " ).focus()
-    }
- }
-
- handleMiddleName5Key = (event)   => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MiddleName5 === "")) {
-        $( "#MiddleName4" ).focus()
-    }
-    else {
-        $("MiddleName5").focus()
-    }
- }
-
- handleMiddleName6Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MiddleName6 === "")) {
-        $( "#MiddleName5" ).focus()
-    }
-    else {
-        $( "#MiddleName6" ).focus()
-    }
- }
-
- handleMiddleName7Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MiddleName7 === "")) {
-        $( "#MiddleName6" ).focus()
-    }
-    else {
-        $( "#MiddleName7" ).focus()
-    }
- }
-
- handleMiddleName8Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MiddleName8 === "")) {
-        $( "#MiddleName7" ).focus()
-    }
-    else {
-        $( "#MiddleName8" ).focus()
-    }
- }
-
- handleMiddleName9Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MiddleName9 === "")) {
-        $( "#MiddleName8" ).focus()
-    }
-    else {
-        $( "#MiddleName9" ).focus()
-    }
- }
-
- handleMiddleName10Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MiddleName10 === "")) {
-        $( "#MiddleName9" ).focus()
-    }
-    else {
-        $( "#MiddleName10" ).focus()
-    }
- }
-
- handleMiddleName11Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MiddleName11 === "")) {
-        $( "#MiddleName10" ).focus()
-    }
-    else {
-        $( "#MiddleName11" ).focus()
-    }
- }
-
- handleMiddleName12Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MiddleName12 === "")) {
-        $( "#MiddleName11" ).focus()
-    }
-    else {
-        $( "#MiddleName12" ).focus()
-    }
- }
-
- handleMiddleName13Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MiddleName13 === "")) {
-        $( "#MiddleName12" ).focus()
-    }
-    else {
-        $( "#MiddleName13" ).focus()
-    }
- }
-
- handleMiddleName14Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MiddleName14 === "")) {
-        $( "#MiddleName13" ).focus()
-    }
-    else {
-        $( "#MiddleName14" ).focus()
-    }
- }
-
- handleMiddleName15Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MiddleName15 === "")) {
-        $( "#MiddleName14" ).focus()
-    }
-    else {
-        $( "#MiddleName15" ).focus()
-    }
- }
-
- handleMiddleName16Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MiddleName16 === "")) {
-        $( "#MiddleName15" ).focus()
-    }
-    else {
-        $( "#MiddleName16" ).focus()
-    }
- }
-
- handleMiddleName17Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MiddleName17 === "")) {
-        $( "#MiddleName16" ).focus()
-    }
-    else {
-        $( "#MiddleName17" ).focus()
-    }
- }
-
- handleMiddleName18Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MiddleName18 === "")) {
-        $( "#MiddleName17" ).focus()
-    }
-    else {
-        $( "#MiddleName18" ).focus()
-    }
- }
-
- handleMiddleName19Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MiddleName19 === "")) {
-        $( "#MiddleName18" ).focus()
-    }
-    else {
-        $( "#MiddleName19" ).focus()
-    }
- }
-
- handleMiddleName20Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MiddleName20 === "")) {
-        $( "#MiddleName19" ).focus()
-    }
-    else {
-        $( "#MiddleName20" ).focus()
-    }
- }
-
- handleMiddleName21Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MiddleName21 === "")) {
-        $( "#MiddleName20" ).focus()
-    }
-    else {
-        $( "#MiddleName21" ).focus()
-    }
- }
-
- handleMiddleName22Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MiddleName22 === "")) {
-        $( "#MiddleName21" ).focus()
-    }
-    else {
-        $( "#MiddleName22" ).focus()
-    }
- }
-
- handleMiddleName23Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MiddleName23 === "")) {
-        $( "#MiddleName22" ).focus()
-    }
-    else {
-        $( "#MiddleName23" ).focus()
-    }
- }
-
- handleMiddleName24Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MiddleName24 === "")) {
-        $( "#MiddleName23" ).focus()
-    }
-    else {
-        $( "#MiddleName24" ).focus()
-    }
- }
-
- handleMiddleName25Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MiddleName25 === "")) {
-        $( "#MiddleName24" ).focus()
-    }
-    else {
-        $( "#MiddleName25" ).focus()
-    }
- }
-
+ 
 handleMiddleName1 = (event) => {  
     this.handleInput(event);
     this.validateMiddleName(event); 
@@ -4049,377 +3262,7 @@ HighlightMiddleNameError = () => {
     
 }
 
-handleAbbreviationOne1Key = (event) => {
-    const key = event.key;  
-    if (key === "Backspace" || key === "Delete"){
-        $( "#AbbreviationOne1" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne1" ).focus()
-    }
- }
-
-  
- handleAbbreviationOne2Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne2 === "")) {
-        $( "#AbbreviationOne1" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne2" ).focus()
-    }
- }
-
- handleAbbreviationOne3Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne3 === "")) {
-        $( "#AbbreviationOne2" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne3" ).focus()
-    }
- }
-
- handleAbbreviationOne4Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne4 === "") ) {
-        $( "#AbbreviationOne3" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne4  " ).focus()
-    }
- }
-
- handleAbbreviationOne5Key = (event)   => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne5 === "")) {
-        $( "#AbbreviationOne4" ).focus()
-    }
-    else {
-        $("AbbreviationOne5").focus()
-    }
- }
-
- handleAbbreviationOne6Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne6 === "")) {
-        $( "#AbbreviationOne5" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne6" ).focus()
-    }
- }
-
- handleAbbreviationOne7Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne7 === "")) {
-        $( "#AbbreviationOne6" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne7" ).focus()
-    }
- }
-
- handleAbbreviationOne8Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne8 === "")) {
-        $( "#AbbreviationOne7" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne8" ).focus()
-    }
- }
-
- handleAbbreviationOne9Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne9 === "")) {
-        $( "#AbbreviationOne8" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne9" ).focus()
-    }
- }
-
- handleAbbreviationOne10Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne10 === "")) {
-        $( "#AbbreviationOne9" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne10" ).focus()
-    }
- }
-
- handleAbbreviationOne11Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne11 === "")) {
-        $( "#AbbreviationOne10" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne11" ).focus()
-    }
- }
-
- handleAbbreviationOne12Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne12 === "")) {
-        $( "#AbbreviationOne11" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne12" ).focus()
-    }
- }
-
- handleAbbreviationOne13Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne13 === "")) {
-        $( "#AbbreviationOne12" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne13" ).focus()
-    }
- }
-
- handleAbbreviationOne14Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne14 === "")) {
-        $( "#AbbreviationOne13" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne14" ).focus()
-    }
- }
-
- handleAbbreviationOne15Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne15 === "")) {
-        $( "#AbbreviationOne14" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne15" ).focus()
-    }
- }
-
- handleAbbreviationOne16Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne16 === "")) {
-        $( "#AbbreviationOne15" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne16" ).focus()
-    }
- }
-
- handleAbbreviationOne17Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne17 === "")) {
-        $( "#AbbreviationOne16" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne17" ).focus()
-    }
- }
-
- handleAbbreviationOne18Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne18 === "")) {
-        $( "#AbbreviationOne17" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne18" ).focus()
-    }
- }
-
- handleAbbreviationOne19Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne19 === "")) {
-        $( "#AbbreviationOne18" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne19" ).focus()
-    }
- }
-
- handleAbbreviationOne20Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne20 === "")) {
-        $( "#AbbreviationOne19" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne20" ).focus()
-    }
- }
-
- handleAbbreviationOne21Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne21 === "")) {
-        $( "#AbbreviationOne20" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne21" ).focus()
-    }
- }
-
- handleAbbreviationOne22Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne22 === "")) {
-        $( "#AbbreviationOne21" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne22" ).focus()
-    }
- }
-
- handleAbbreviationOne23Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne23 === "")) {
-        $( "#AbbreviationOne22" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne23" ).focus()
-    }
- }
-
- handleAbbreviationOne24Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne24 === "")) {
-        $( "#AbbreviationOne23" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne24" ).focus()
-    }
- }
-
- handleAbbreviationOne25Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne25 === "")) {
-        $( "#AbbreviationOne24" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne25" ).focus()
-    }
- }
-
- handleAbbreviationOne26Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne26 === "")) {
-        $( "#AbbreviationOne25" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne26" ).focus()
-    }
- }
-
- handleAbbreviationOne27Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne27 === "")) {
-        $( "#AbbreviationOne26" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne27" ).focus()
-    }
- }
-
- handleAbbreviationOne28Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne28 === "")) {
-        $( "#AbbreviationOne27" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne28" ).focus()
-    }
- }
-
- handleAbbreviationOne29Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne29 === "")) {
-        $( "#AbbreviationOne28" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne29" ).focus()
-    }
- }
-
- handleAbbreviationOne30Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne30 === "")) {
-        $( "#AbbreviationOne29" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne30" ).focus()
-    }
- }
-
- handleAbbreviationOne31Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne31 === "")) {
-        $( "#AbbreviationOne30" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne31" ).focus()
-    }
- }
-
- handleAbbreviationOne32Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne32 === "")) {
-        $( "#AbbreviationOne31" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne32" ).focus()
-    }
- }
-
- handleAbbreviationOne33Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne33 === "")) {
-        $( "#AbbreviationOne32" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne33" ).focus()
-    }
- }
-
- handleAbbreviationOne34Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne34 === "")) {
-        $( "#AbbreviationOne33" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne34" ).focus()
-    }
- }
-
- handleAbbreviationOne35Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne35 === "")) {
-        $( "#AbbreviationOne34" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne35" ).focus()
-    }
- }
-
- handleAbbreviationOne36Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne36 === "")) {
-        $( "#AbbreviationOne35" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne36" ).focus()
-    }
- }
-
- handleAbbreviationOne37Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationOne37 === "")) {
-        $( "#AbbreviationOne36" ).focus()
-    }
-    else {
-        $( "#AbbreviationOne37" ).focus()
-    }
- }
-
+ 
 handleAbbreviationOne1 = (event) => {  
     this.handleInput(event);
     this.validateAbbreviationOne(event);  
@@ -4727,379 +3570,7 @@ HighlightAbbreviationOneError = () => {
     
 }
 
-
-handleAbbreviationTwo1Key = (event) => {
-    const key = event.key;  
-    if (key === "Backspace" || key === "Delete"){
-        $( "#AbbreviationTwo1" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo1" ).focus()
-    }
- }
-
-  
- handleAbbreviationTwo2Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo2 === "")) {
-        $( "#AbbreviationTwo1" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo2" ).focus()
-    }
- }
-
- handleAbbreviationTwo3Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo3 === "")) {
-        $( "#AbbreviationTwo2" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo3" ).focus()
-    }
- }
-
- handleAbbreviationTwo4Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo4 === "") ) {
-        $( "#AbbreviationTwo3" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo4  " ).focus()
-    }
- }
-
- handleAbbreviationTwo5Key = (event)   => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo5 === "")) {
-        $( "#AbbreviationTwo4" ).focus()
-    }
-    else {
-        $("AbbreviationTwo5").focus()
-    }
- }
-
- handleAbbreviationTwo6Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo6 === "")) {
-        $( "#AbbreviationTwo5" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo6" ).focus()
-    }
- }
-
- handleAbbreviationTwo7Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo7 === "")) {
-        $( "#AbbreviationTwo6" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo7" ).focus()
-    }
- }
-
- handleAbbreviationTwo8Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo8 === "")) {
-        $( "#AbbreviationTwo7" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo8" ).focus()
-    }
- }
-
- handleAbbreviationTwo9Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo9 === "")) {
-        $( "#AbbreviationTwo8" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo9" ).focus()
-    }
- }
-
- handleAbbreviationTwo10Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo10 === "")) {
-        $( "#AbbreviationTwo9" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo10" ).focus()
-    }
- }
-
- handleAbbreviationTwo11Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo11 === "")) {
-        $( "#AbbreviationTwo10" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo11" ).focus()
-    }
- }
-
- handleAbbreviationTwo12Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo12 === "")) {
-        $( "#AbbreviationTwo11" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo12" ).focus()
-    }
- }
-
- handleAbbreviationTwo13Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo13 === "")) {
-        $( "#AbbreviationTwo12" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo13" ).focus()
-    }
- }
-
- handleAbbreviationTwo14Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo14 === "")) {
-        $( "#AbbreviationTwo13" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo14" ).focus()
-    }
- }
-
- handleAbbreviationTwo15Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo15 === "")) {
-        $( "#AbbreviationTwo14" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo15" ).focus()
-    }
- }
-
- handleAbbreviationTwo16Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo16 === "")) {
-        $( "#AbbreviationTwo15" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo16" ).focus()
-    }
- }
-
- handleAbbreviationTwo17Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo17 === "")) {
-        $( "#AbbreviationTwo16" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo17" ).focus()
-    }
- }
-
- handleAbbreviationTwo18Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo18 === "")) {
-        $( "#AbbreviationTwo17" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo18" ).focus()
-    }
- }
-
- handleAbbreviationTwo19Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo19 === "")) {
-        $( "#AbbreviationTwo18" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo19" ).focus()
-    }
- }
-
- handleAbbreviationTwo20Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo20 === "")) {
-        $( "#AbbreviationTwo19" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo20" ).focus()
-    }
- }
-
- handleAbbreviationTwo21Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo21 === "")) {
-        $( "#AbbreviationTwo20" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo21" ).focus()
-    }
- }
-
- handleAbbreviationTwo22Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo22 === "")) {
-        $( "#AbbreviationTwo21" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo22" ).focus()
-    }
- }
-
- handleAbbreviationTwo23Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo23 === "")) {
-        $( "#AbbreviationTwo22" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo23" ).focus()
-    }
- }
-
- handleAbbreviationTwo24Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo24 === "")) {
-        $( "#AbbreviationTwo23" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo24" ).focus()
-    }
- }
-
- handleAbbreviationTwo25Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo25 === "")) {
-        $( "#AbbreviationTwo24" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo25" ).focus()
-    }
- }
-
- handleAbbreviationTwo26Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo26 === "")) {
-        $( "#AbbreviationTwo25" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo26" ).focus()
-    }
- }
-
- handleAbbreviationTwo27Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo27 === "")) {
-        $( "#AbbreviationTwo26" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo27" ).focus()
-    }
- }
-
- handleAbbreviationTwo28Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo28 === "")) {
-        $( "#AbbreviationTwo27" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo28" ).focus()
-    }
- }
-
- handleAbbreviationTwo29Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo29 === "")) {
-        $( "#AbbreviationTwo28" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo29" ).focus()
-    }
- }
-
- handleAbbreviationTwo30Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo30 === "")) {
-        $( "#AbbreviationTwo29" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo30" ).focus()
-    }
- }
-
- handleAbbreviationTwo31Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo31 === "")) {
-        $( "#AbbreviationTwo30" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo31" ).focus()
-    }
- }
-
- handleAbbreviationTwo32Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo32 === "")) {
-        $( "#AbbreviationTwo31" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo32" ).focus()
-    }
- }
-
- handleAbbreviationTwo33Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo33 === "")) {
-        $( "#AbbreviationTwo32" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo33" ).focus()
-    }
- }
-
- handleAbbreviationTwo34Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo34 === "")) {
-        $( "#AbbreviationTwo33" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo34" ).focus()
-    }
- }
-
- handleAbbreviationTwo35Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo35 === "")) {
-        $( "#AbbreviationTwo34" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo35" ).focus()
-    }
- }
-
- handleAbbreviationTwo36Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo36 === "")) {
-        $( "#AbbreviationTwo35" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo36" ).focus()
-    }
- }
-
- handleAbbreviationTwo37Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AbbreviationTwo37 === "")) {
-        $( "#AbbreviationTwo36" ).focus()
-    }
-    else {
-        $( "#AbbreviationTwo37" ).focus()
-    }
- }
-
-
+ 
 handleAbbreviationTwo1 = (event) => {  
     this.handleInput(event);
     this.validateAbbreviationTwo(event);  
@@ -5408,259 +3879,7 @@ HighlightAbbreviationTwoError = () => {
     
 }
 
-
-handleOtherLastName1Key = (event) => {
-    const key = event.key;  
-    if (key === "Backspace" || key === "Delete"){
-        $( "#OtherLastName1" ).focus()
-    }
-    else {
-        $( "#OtherLastName1" ).focus()
-    }
- }
-
-  
- handleOtherLastName2Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherLastName2 === "")) {
-        $( "#OtherLastName1" ).focus()
-    }
-    else {
-        $( "#OtherLastName2" ).focus()
-    }
- }
-
- handleOtherLastName3Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherLastName3 === "")) {
-        $( "#OtherLastName2" ).focus()
-    }
-    else {
-        $( "#OtherLastName3" ).focus()
-    }
- }
-
- handleOtherLastName4Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherLastName4 === "") ) {
-        $( "#OtherLastName3" ).focus()
-    }
-    else {
-        $( "#OtherLastName4  " ).focus()
-    }
- }
-
- handleOtherLastName5Key = (event)   => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherLastName5 === "")) {
-        $( "#OtherLastName4" ).focus()
-    }
-    else {
-        $("OtherLastName5").focus()
-    }
- }
-
- handleOtherLastName6Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherLastName6 === "")) {
-        $( "#OtherLastName5" ).focus()
-    }
-    else {
-        $( "#OtherLastName6" ).focus()
-    }
- }
-
- handleOtherLastName7Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherLastName7 === "")) {
-        $( "#OtherLastName6" ).focus()
-    }
-    else {
-        $( "#OtherLastName7" ).focus()
-    }
- }
-
- handleOtherLastName8Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherLastName8 === "")) {
-        $( "#OtherLastName7" ).focus()
-    }
-    else {
-        $( "#OtherLastName8" ).focus()
-    }
- }
-
- handleOtherLastName9Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherLastName9 === "")) {
-        $( "#OtherLastName8" ).focus()
-    }
-    else {
-        $( "#OtherLastName9" ).focus()
-    }
- }
-
- handleOtherLastName10Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherLastName10 === "")) {
-        $( "#OtherLastName9" ).focus()
-    }
-    else {
-        $( "#OtherLastName10" ).focus()
-    }
- }
-
- handleOtherLastName11Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherLastName11 === "")) {
-        $( "#OtherLastName10" ).focus()
-    }
-    else {
-        $( "#OtherLastName11" ).focus()
-    }
- }
-
- handleOtherLastName12Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherLastName12 === "")) {
-        $( "#OtherLastName11" ).focus()
-    }
-    else {
-        $( "#OtherLastName12" ).focus()
-    }
- }
-
- handleOtherLastName13Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherLastName13 === "")) {
-        $( "#OtherLastName12" ).focus()
-    }
-    else {
-        $( "#OtherLastName13" ).focus()
-    }
- }
-
- handleOtherLastName14Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherLastName14 === "")) {
-        $( "#OtherLastName13" ).focus()
-    }
-    else {
-        $( "#OtherLastName14" ).focus()
-    }
- }
-
- handleOtherLastName15Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherLastName15 === "")) {
-        $( "#OtherLastName14" ).focus()
-    }
-    else {
-        $( "#OtherLastName15" ).focus()
-    }
- }
-
- handleOtherLastName16Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherLastName16 === "")) {
-        $( "#OtherLastName15" ).focus()
-    }
-    else {
-        $( "#OtherLastName16" ).focus()
-    }
- }
-
- handleOtherLastName17Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherLastName17 === "")) {
-        $( "#OtherLastName16" ).focus()
-    }
-    else {
-        $( "#OtherLastName17" ).focus()
-    }
- }
-
- handleOtherLastName18Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherLastName18 === "")) {
-        $( "#OtherLastName17" ).focus()
-    }
-    else {
-        $( "#OtherLastName18" ).focus()
-    }
- }
-
- handleOtherLastName19Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherLastName19 === "")) {
-        $( "#OtherLastName18" ).focus()
-    }
-    else {
-        $( "#OtherLastName19" ).focus()
-    }
- }
-
- handleOtherLastName20Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherLastName20 === "")) {
-        $( "#OtherLastName19" ).focus()
-    }
-    else {
-        $( "#OtherLastName20" ).focus()
-    }
- }
-
- handleOtherLastName21Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherLastName21 === "")) {
-        $( "#OtherLastName20" ).focus()
-    }
-    else {
-        $( "#OtherLastName21" ).focus()
-    }
- }
-
- handleOtherLastName22Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherLastName22 === "")) {
-        $( "#OtherLastName21" ).focus()
-    }
-    else {
-        $( "#OtherLastName22" ).focus()
-    }
- }
-
- handleOtherLastName23Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherLastName23 === "")) {
-        $( "#OtherLastName22" ).focus()
-    }
-    else {
-        $( "#OtherLastName23" ).focus()
-    }
- }
-
- handleOtherLastName24Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherLastName24 === "")) {
-        $( "#OtherLastName23" ).focus()
-    }
-    else {
-        $( "#OtherLastName24" ).focus()
-    }
- }
-
- handleOtherLastName25Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherLastName25 === "")) {
-        $( "#OtherLastName24" ).focus()
-    }
-    else {
-        $( "#OtherLastName25" ).focus()
-    }
- }
-
-
+ 
 
 handleOtherLastName1 = (event) => {  
     this.handleInput(event);
@@ -5874,259 +4093,7 @@ HighlightOtherLastNameError = () => {
     
 }
 
-
-handleOtherFirstName1Key = (event) => {
-    const key = event.key;  
-    if (key === "Backspace" || key === "Delete"){
-        $( "#OtherFirstName1" ).focus()
-    }
-    else {
-        $( "#OtherFirstName1" ).focus()
-    }
- }
-
-  
- handleOtherFirstName2Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherFirstName2 === "")) {
-        $( "#OtherFirstName1" ).focus()
-    }
-    else {
-        $( "#OtherFirstName2" ).focus()
-    }
- }
-
- handleOtherFirstName3Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherFirstName3 === "")) {
-        $( "#OtherFirstName2" ).focus()
-    }
-    else {
-        $( "#OtherFirstName3" ).focus()
-    }
- }
-
- handleOtherFirstName4Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherFirstName4 === "") ) {
-        $( "#OtherFirstName3" ).focus()
-    }
-    else {
-        $( "#OtherFirstName4  " ).focus()
-    }
- }
-
- handleOtherFirstName5Key = (event)   => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherFirstName5 === "")) {
-        $( "#OtherFirstName4" ).focus()
-    }
-    else {
-        $("OtherFirstName5").focus()
-    }
- }
-
- handleOtherFirstName6Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherFirstName6 === "")) {
-        $( "#OtherFirstName5" ).focus()
-    }
-    else {
-        $( "#OtherFirstName6" ).focus()
-    }
- }
-
- handleOtherFirstName7Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherFirstName7 === "")) {
-        $( "#OtherFirstName6" ).focus()
-    }
-    else {
-        $( "#OtherFirstName7" ).focus()
-    }
- }
-
- handleOtherFirstName8Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherFirstName8 === "")) {
-        $( "#OtherFirstName7" ).focus()
-    }
-    else {
-        $( "#OtherFirstName8" ).focus()
-    }
- }
-
- handleOtherFirstName9Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherFirstName9 === "")) {
-        $( "#OtherFirstName8" ).focus()
-    }
-    else {
-        $( "#OtherFirstName9" ).focus()
-    }
- }
-
- handleOtherFirstName10Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherFirstName10 === "")) {
-        $( "#OtherFirstName9" ).focus()
-    }
-    else {
-        $( "#OtherFirstName10" ).focus()
-    }
- }
-
- handleOtherFirstName11Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherFirstName11 === "")) {
-        $( "#OtherFirstName10" ).focus()
-    }
-    else {
-        $( "#OtherFirstName11" ).focus()
-    }
- }
-
- handleOtherFirstName12Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherFirstName12 === "")) {
-        $( "#OtherFirstName11" ).focus()
-    }
-    else {
-        $( "#OtherFirstName12" ).focus()
-    }
- }
-
- handleOtherFirstName13Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherFirstName13 === "")) {
-        $( "#OtherFirstName12" ).focus()
-    }
-    else {
-        $( "#OtherFirstName13" ).focus()
-    }
- }
-
- handleOtherFirstName14Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherFirstName14 === "")) {
-        $( "#OtherFirstName13" ).focus()
-    }
-    else {
-        $( "#OtherFirstName14" ).focus()
-    }
- }
-
- handleOtherFirstName15Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherFirstName15 === "")) {
-        $( "#OtherFirstName14" ).focus()
-    }
-    else {
-        $( "#OtherFirstName15" ).focus()
-    }
- }
-
- handleOtherFirstName16Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherFirstName16 === "")) {
-        $( "#OtherFirstName15" ).focus()
-    }
-    else {
-        $( "#OtherFirstName16" ).focus()
-    }
- }
-
- handleOtherFirstName17Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherFirstName17 === "")) {
-        $( "#OtherFirstName16" ).focus()
-    }
-    else {
-        $( "#OtherFirstName17" ).focus()
-    }
- }
-
- handleOtherFirstName18Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherFirstName18 === "")) {
-        $( "#OtherFirstName17" ).focus()
-    }
-    else {
-        $( "#OtherFirstName18" ).focus()
-    }
- }
-
- handleOtherFirstName19Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherFirstName19 === "")) {
-        $( "#OtherFirstName18" ).focus()
-    }
-    else {
-        $( "#OtherFirstName19" ).focus()
-    }
- }
-
- handleOtherFirstName20Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherFirstName20 === "")) {
-        $( "#OtherFirstName19" ).focus()
-    }
-    else {
-        $( "#OtherFirstName20" ).focus()
-    }
- }
-
- handleOtherFirstName21Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherFirstName21 === "")) {
-        $( "#OtherFirstName20" ).focus()
-    }
-    else {
-        $( "#OtherFirstName21" ).focus()
-    }
- }
-
- handleOtherFirstName22Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherFirstName22 === "")) {
-        $( "#OtherFirstName21" ).focus()
-    }
-    else {
-        $( "#OtherFirstName22" ).focus()
-    }
- }
-
- handleOtherFirstName23Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherFirstName23 === "")) {
-        $( "#OtherFirstName22" ).focus()
-    }
-    else {
-        $( "#OtherFirstName23" ).focus()
-    }
- }
-
- handleOtherFirstName24Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherFirstName24 === "")) {
-        $( "#OtherFirstName23" ).focus()
-    }
-    else {
-        $( "#OtherFirstName24" ).focus()
-    }
- }
-
- handleOtherFirstName25Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherFirstName25 === "")) {
-        $( "#OtherFirstName24" ).focus()
-    }
-    else {
-        $( "#OtherFirstName25" ).focus()
-    }
- }
-
-
+ 
 
 handleOtherFirstName1 = (event) => {  
     this.handleInput(event);
@@ -6339,258 +4306,7 @@ HighlightOtherFirstNameError = () => {
     
     
 }
-
-handleOtherMiddleName1Key = (event) => {
-    const key = event.key;  
-    if (key === "Backspace" || key === "Delete"){
-        $( "#OtherMiddleName1" ).focus()
-    }
-    else {
-        $( "#OtherMiddleName1" ).focus()
-    }
- }
-
-  
- handleOtherMiddleName2Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherMiddleName2 === "")) {
-        $( "#OtherMiddleName1" ).focus()
-    }
-    else {
-        $( "#OtherMiddleName2" ).focus()
-    }
- }
-
- handleOtherMiddleName3Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherMiddleName3 === "")) {
-        $( "#OtherMiddleName2" ).focus()
-    }
-    else {
-        $( "#OtherMiddleName3" ).focus()
-    }
- }
-
- handleOtherMiddleName4Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherMiddleName4 === "") ) {
-        $( "#OtherMiddleName3" ).focus()
-    }
-    else {
-        $( "#OtherMiddleName4  " ).focus()
-    }
- }
-
- handleOtherMiddleName5Key = (event)   => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherMiddleName5 === "")) {
-        $( "#OtherMiddleName4" ).focus()
-    }
-    else {
-        $("OtherMiddleName5").focus()
-    }
- }
-
- handleOtherMiddleName6Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherMiddleName6 === "")) {
-        $( "#OtherMiddleName5" ).focus()
-    }
-    else {
-        $( "#OtherMiddleName6" ).focus()
-    }
- }
-
- handleOtherMiddleName7Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherMiddleName7 === "")) {
-        $( "#OtherMiddleName6" ).focus()
-    }
-    else {
-        $( "#OtherMiddleName7" ).focus()
-    }
- }
-
- handleOtherMiddleName8Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherMiddleName8 === "")) {
-        $( "#OtherMiddleName7" ).focus()
-    }
-    else {
-        $( "#OtherMiddleName8" ).focus()
-    }
- }
-
- handleOtherMiddleName9Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherMiddleName9 === "")) {
-        $( "#OtherMiddleName8" ).focus()
-    }
-    else {
-        $( "#OtherMiddleName9" ).focus()
-    }
- }
-
- handleOtherMiddleName10Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherMiddleName10 === "")) {
-        $( "#OtherMiddleName9" ).focus()
-    }
-    else {
-        $( "#OtherMiddleName10" ).focus()
-    }
- }
-
- handleOtherMiddleName11Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherMiddleName11 === "")) {
-        $( "#OtherMiddleName10" ).focus()
-    }
-    else {
-        $( "#OtherMiddleName11" ).focus()
-    }
- }
-
- handleOtherMiddleName12Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherMiddleName12 === "")) {
-        $( "#OtherMiddleName11" ).focus()
-    }
-    else {
-        $( "#OtherMiddleName12" ).focus()
-    }
- }
-
- handleOtherMiddleName13Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherMiddleName13 === "")) {
-        $( "#OtherMiddleName12" ).focus()
-    }
-    else {
-        $( "#OtherMiddleName13" ).focus()
-    }
- }
-
- handleOtherMiddleName14Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherMiddleName14 === "")) {
-        $( "#OtherMiddleName13" ).focus()
-    }
-    else {
-        $( "#OtherMiddleName14" ).focus()
-    }
- }
-
- handleOtherMiddleName15Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherMiddleName15 === "")) {
-        $( "#OtherMiddleName14" ).focus()
-    }
-    else {
-        $( "#OtherMiddleName15" ).focus()
-    }
- }
-
- handleOtherMiddleName16Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherMiddleName16 === "")) {
-        $( "#OtherMiddleName15" ).focus()
-    }
-    else {
-        $( "#OtherMiddleName16" ).focus()
-    }
- }
-
- handleOtherMiddleName17Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherMiddleName17 === "")) {
-        $( "#OtherMiddleName16" ).focus()
-    }
-    else {
-        $( "#OtherMiddleName17" ).focus()
-    }
- }
-
- handleOtherMiddleName18Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherMiddleName18 === "")) {
-        $( "#OtherMiddleName17" ).focus()
-    }
-    else {
-        $( "#OtherMiddleName18" ).focus()
-    }
- }
-
- handleOtherMiddleName19Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherMiddleName19 === "")) {
-        $( "#OtherMiddleName18" ).focus()
-    }
-    else {
-        $( "#OtherMiddleName19" ).focus()
-    }
- }
-
- handleOtherMiddleName20Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherMiddleName20 === "")) {
-        $( "#OtherMiddleName19" ).focus()
-    }
-    else {
-        $( "#OtherMiddleName20" ).focus()
-    }
- }
-
- handleOtherMiddleName21Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherMiddleName21 === "")) {
-        $( "#OtherMiddleName20" ).focus()
-    }
-    else {
-        $( "#OtherMiddleName21" ).focus()
-    }
- }
-
- handleOtherMiddleName22Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherMiddleName22 === "")) {
-        $( "#OtherMiddleName21" ).focus()
-    }
-    else {
-        $( "#OtherMiddleName22" ).focus()
-    }
- }
-
- handleOtherMiddleName23Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherMiddleName23 === "")) {
-        $( "#OtherMiddleName22" ).focus()
-    }
-    else {
-        $( "#OtherMiddleName23" ).focus()
-    }
- }
-
- handleOtherMiddleName24Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherMiddleName24 === "")) {
-        $( "#OtherMiddleName23" ).focus()
-    }
-    else {
-        $( "#OtherMiddleName24" ).focus()
-    }
- }
-
- handleOtherMiddleName25Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.OtherMiddleName25 === "")) {
-        $( "#OtherMiddleName24" ).focus()
-    }
-    else {
-        $( "#OtherMiddleName25" ).focus()
-    }
- }
-
+ 
 handleOtherMiddleName1 = (event) => {  
     this.handleInput(event);
     this.validateOtherMiddleName(event);  
@@ -6802,257 +4518,7 @@ HighlightOtherMiddleNameError = () => {
     
     
 }
-
-handleFatherLastName1Key = (event) => {
-    const key = event.key;  
-    if (key === "Backspace" || key === "Delete"){
-        $( "#FatherLastName1" ).focus()
-    }
-    else {
-        $( "#FatherLastName1" ).focus()
-    }
- }
-
-  
- handleFatherLastName2Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherLastName2 === "")) {
-        $( "#FatherLastName1" ).focus()
-    }
-    else {
-        $( "#FatherLastName2" ).focus()
-    }
- }
-
- handleFatherLastName3Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherLastName3 === "")) {
-        $( "#FatherLastName2" ).focus()
-    }
-    else {
-        $( "#FatherLastName3" ).focus()
-    }
- }
-
- handleFatherLastName4Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherLastName4 === "") ) {
-        $( "#FatherLastName3" ).focus()
-    }
-    else {
-        $( "#FatherLastName4  " ).focus()
-    }
- }
-
- handleFatherLastName5Key = (event)   => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherLastName5 === "")) {
-        $( "#FatherLastName4" ).focus()
-    }
-    else {
-        $("FatherLastName5").focus()
-    }
- }
-
- handleFatherLastName6Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherLastName6 === "")) {
-        $( "#FatherLastName5" ).focus()
-    }
-    else {
-        $( "#FatherLastName6" ).focus()
-    }
- }
-
- handleFatherLastName7Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherLastName7 === "")) {
-        $( "#FatherLastName6" ).focus()
-    }
-    else {
-        $( "#FatherLastName7" ).focus()
-    }
- }
-
- handleFatherLastName8Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherLastName8 === "")) {
-        $( "#FatherLastName7" ).focus()
-    }
-    else {
-        $( "#FatherLastName8" ).focus()
-    }
- }
-
- handleFatherLastName9Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherLastName9 === "")) {
-        $( "#FatherLastName8" ).focus()
-    }
-    else {
-        $( "#FatherLastName9" ).focus()
-    }
- }
-
- handleFatherLastName10Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherLastName10 === "")) {
-        $( "#FatherLastName9" ).focus()
-    }
-    else {
-        $( "#FatherLastName10" ).focus()
-    }
- }
-
- handleFatherLastName11Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherLastName11 === "")) {
-        $( "#FatherLastName10" ).focus()
-    }
-    else {
-        $( "#FatherLastName11" ).focus()
-    }
- }
-
- handleFatherLastName12Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherLastName12 === "")) {
-        $( "#FatherLastName11" ).focus()
-    }
-    else {
-        $( "#FatherLastName12" ).focus()
-    }
- }
-
- handleFatherLastName13Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherLastName13 === "")) {
-        $( "#FatherLastName12" ).focus()
-    }
-    else {
-        $( "#FatherLastName13" ).focus()
-    }
- }
-
- handleFatherLastName14Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherLastName14 === "")) {
-        $( "#FatherLastName13" ).focus()
-    }
-    else {
-        $( "#FatherLastName14" ).focus()
-    }
- }
-
- handleFatherLastName15Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherLastName15 === "")) {
-        $( "#FatherLastName14" ).focus()
-    }
-    else {
-        $( "#FatherLastName15" ).focus()
-    }
- }
-
- handleFatherLastName16Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherLastName16 === "")) {
-        $( "#FatherLastName15" ).focus()
-    }
-    else {
-        $( "#FatherLastName16" ).focus()
-    }
- }
-
- handleFatherLastName17Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherLastName17 === "")) {
-        $( "#FatherLastName16" ).focus()
-    }
-    else {
-        $( "#FatherLastName17" ).focus()
-    }
- }
-
- handleFatherLastName18Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherLastName18 === "")) {
-        $( "#FatherLastName17" ).focus()
-    }
-    else {
-        $( "#FatherLastName18" ).focus()
-    }
- }
-
- handleFatherLastName19Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherLastName19 === "")) {
-        $( "#FatherLastName18" ).focus()
-    }
-    else {
-        $( "#FatherLastName19" ).focus()
-    }
- }
-
- handleFatherLastName20Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherLastName20 === "")) {
-        $( "#FatherLastName19" ).focus()
-    }
-    else {
-        $( "#FatherLastName20" ).focus()
-    }
- }
-
- handleFatherLastName21Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherLastName21 === "")) {
-        $( "#FatherLastName20" ).focus()
-    }
-    else {
-        $( "#FatherLastName21" ).focus()
-    }
- }
-
- handleFatherLastName22Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherLastName22 === "")) {
-        $( "#FatherLastName21" ).focus()
-    }
-    else {
-        $( "#FatherLastName22" ).focus()
-    }
- }
-
- handleFatherLastName23Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherLastName23 === "")) {
-        $( "#FatherLastName22" ).focus()
-    }
-    else {
-        $( "#FatherLastName23" ).focus()
-    }
- }
-
- handleFatherLastName24Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherLastName24 === "")) {
-        $( "#FatherLastName23" ).focus()
-    }
-    else {
-        $( "#FatherLastName24" ).focus()
-    }
- }
-
- handleFatherLastName25Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherLastName25 === "")) {
-        $( "#FatherLastName24" ).focus()
-    }
-    else {
-        $( "#FatherLastName25" ).focus()
-    }
- }
+ 
 
 handleFatherLastName1 = (event) => {  
     this.handleInput(event);
@@ -7265,257 +4731,7 @@ HighlightFatherLastNameError = () => {
     
     
 }
-
-handleFatherFirstName1Key = (event) => {
-    const key = event.key;  
-    if (key === "Backspace" || key === "Delete"){
-        $( "#FatherFirstName1" ).focus()
-    }
-    else {
-        $( "#FatherFirstName1" ).focus()
-    }
- }
-
-  
- handleFatherFirstName2Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherFirstName2 === "")) {
-        $( "#FatherFirstName1" ).focus()
-    }
-    else {
-        $( "#FatherFirstName2" ).focus()
-    }
- }
-
- handleFatherFirstName3Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherFirstName3 === "")) {
-        $( "#FatherFirstName2" ).focus()
-    }
-    else {
-        $( "#FatherFirstName3" ).focus()
-    }
- }
-
- handleFatherFirstName4Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherFirstName4 === "") ) {
-        $( "#FatherFirstName3" ).focus()
-    }
-    else {
-        $( "#FatherFirstName4  " ).focus()
-    }
- }
-
- handleFatherFirstName5Key = (event)   => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherFirstName5 === "")) {
-        $( "#FatherFirstName4" ).focus()
-    }
-    else {
-        $("FatherFirstName5").focus()
-    }
- }
-
- handleFatherFirstName6Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherFirstName6 === "")) {
-        $( "#FatherFirstName5" ).focus()
-    }
-    else {
-        $( "#FatherFirstName6" ).focus()
-    }
- }
-
- handleFatherFirstName7Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherFirstName7 === "")) {
-        $( "#FatherFirstName6" ).focus()
-    }
-    else {
-        $( "#FatherFirstName7" ).focus()
-    }
- }
-
- handleFatherFirstName8Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherFirstName8 === "")) {
-        $( "#FatherFirstName7" ).focus()
-    }
-    else {
-        $( "#FatherFirstName8" ).focus()
-    }
- }
-
- handleFatherFirstName9Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherFirstName9 === "")) {
-        $( "#FatherFirstName8" ).focus()
-    }
-    else {
-        $( "#FatherFirstName9" ).focus()
-    }
- }
-
- handleFatherFirstName10Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherFirstName10 === "")) {
-        $( "#FatherFirstName9" ).focus()
-    }
-    else {
-        $( "#FatherFirstName10" ).focus()
-    }
- }
-
- handleFatherFirstName11Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherFirstName11 === "")) {
-        $( "#FatherFirstName10" ).focus()
-    }
-    else {
-        $( "#FatherFirstName11" ).focus()
-    }
- }
-
- handleFatherFirstName12Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherFirstName12 === "")) {
-        $( "#FatherFirstName11" ).focus()
-    }
-    else {
-        $( "#FatherFirstName12" ).focus()
-    }
- }
-
- handleFatherFirstName13Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherFirstName13 === "")) {
-        $( "#FatherFirstName12" ).focus()
-    }
-    else {
-        $( "#FatherFirstName13" ).focus()
-    }
- }
-
- handleFatherFirstName14Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherFirstName14 === "")) {
-        $( "#FatherFirstName13" ).focus()
-    }
-    else {
-        $( "#FatherFirstName14" ).focus()
-    }
- }
-
- handleFatherFirstName15Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherFirstName15 === "")) {
-        $( "#FatherFirstName14" ).focus()
-    }
-    else {
-        $( "#FatherFirstName15" ).focus()
-    }
- }
-
- handleFatherFirstName16Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherFirstName16 === "")) {
-        $( "#FatherFirstName15" ).focus()
-    }
-    else {
-        $( "#FatherFirstName16" ).focus()
-    }
- }
-
- handleFatherFirstName17Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherFirstName17 === "")) {
-        $( "#FatherFirstName16" ).focus()
-    }
-    else {
-        $( "#FatherFirstName17" ).focus()
-    }
- }
-
- handleFatherFirstName18Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherFirstName18 === "")) {
-        $( "#FatherFirstName17" ).focus()
-    }
-    else {
-        $( "#FatherFirstName18" ).focus()
-    }
- }
-
- handleFatherFirstName19Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherFirstName19 === "")) {
-        $( "#FatherFirstName18" ).focus()
-    }
-    else {
-        $( "#FatherFirstName19" ).focus()
-    }
- }
-
- handleFatherFirstName20Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherFirstName20 === "")) {
-        $( "#FatherFirstName19" ).focus()
-    }
-    else {
-        $( "#FatherFirstName20" ).focus()
-    }
- }
-
- handleFatherFirstName21Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherFirstName21 === "")) {
-        $( "#FatherFirstName20" ).focus()
-    }
-    else {
-        $( "#FatherFirstName21" ).focus()
-    }
- }
-
- handleFatherFirstName22Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherFirstName22 === "")) {
-        $( "#FatherFirstName21" ).focus()
-    }
-    else {
-        $( "#FatherFirstName22" ).focus()
-    }
- }
-
- handleFatherFirstName23Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherFirstName23 === "")) {
-        $( "#FatherFirstName22" ).focus()
-    }
-    else {
-        $( "#FatherFirstName23" ).focus()
-    }
- }
-
- handleFatherFirstName24Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherFirstName24 === "")) {
-        $( "#FatherFirstName23" ).focus()
-    }
-    else {
-        $( "#FatherFirstName24" ).focus()
-    }
- }
-
- handleFatherFirstName25Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherFirstName25 === "")) {
-        $( "#FatherFirstName24" ).focus()
-    }
-    else {
-        $( "#FatherFirstName25" ).focus()
-    }
- }
+ 
 
 handleFatherFirstName1 = (event) => {  
     this.handleInput(event);
@@ -7728,259 +4944,7 @@ HighlightFatherFirstNameError = () => {
     
     
 }
-
-handleFatherMiddleName1Key = (event) => {
-    const key = event.key;  
-    if (key === "Backspace" || key === "Delete"){
-        $( "#FatherMiddleName1" ).focus()
-    }
-    else {
-        $( "#FatherMiddleName1" ).focus()
-    }
- }
-
-  
- handleFatherMiddleName2Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherMiddleName2 === "")) {
-        $( "#FatherMiddleName1" ).focus()
-    }
-    else {
-        $( "#FatherMiddleName2" ).focus()
-    }
- }
-
- handleFatherMiddleName3Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherMiddleName3 === "")) {
-        $( "#FatherMiddleName2" ).focus()
-    }
-    else {
-        $( "#FatherMiddleName3" ).focus()
-    }
- }
-
- handleFatherMiddleName4Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherMiddleName4 === "") ) {
-        $( "#FatherMiddleName3" ).focus()
-    }
-    else {
-        $( "#FatherMiddleName4  " ).focus()
-    }
- }
-
- handleFatherMiddleName5Key = (event)   => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherMiddleName5 === "")) {
-        $( "#FatherMiddleName4" ).focus()
-    }
-    else {
-        $("FatherMiddleName5").focus()
-    }
- }
-
- handleFatherMiddleName6Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherMiddleName6 === "")) {
-        $( "#FatherMiddleName5" ).focus()
-    }
-    else {
-        $( "#FatherMiddleName6" ).focus()
-    }
- }
-
- handleFatherMiddleName7Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherMiddleName7 === "")) {
-        $( "#FatherMiddleName6" ).focus()
-    }
-    else {
-        $( "#FatherMiddleName7" ).focus()
-    }
- }
-
- handleFatherMiddleName8Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherMiddleName8 === "")) {
-        $( "#FatherMiddleName7" ).focus()
-    }
-    else {
-        $( "#FatherMiddleName8" ).focus()
-    }
- }
-
- handleFatherMiddleName9Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherMiddleName9 === "")) {
-        $( "#FatherMiddleName8" ).focus()
-    }
-    else {
-        $( "#FatherMiddleName9" ).focus()
-    }
- }
-
- handleFatherMiddleName10Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherMiddleName10 === "")) {
-        $( "#FatherMiddleName9" ).focus()
-    }
-    else {
-        $( "#FatherMiddleName10" ).focus()
-    }
- }
-
- handleFatherMiddleName11Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherMiddleName11 === "")) {
-        $( "#FatherMiddleName10" ).focus()
-    }
-    else {
-        $( "#FatherMiddleName11" ).focus()
-    }
- }
-
- handleFatherMiddleName12Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherMiddleName12 === "")) {
-        $( "#FatherMiddleName11" ).focus()
-    }
-    else {
-        $( "#FatherMiddleName12" ).focus()
-    }
- }
-
- handleFatherMiddleName13Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherMiddleName13 === "")) {
-        $( "#FatherMiddleName12" ).focus()
-    }
-    else {
-        $( "#FatherMiddleName13" ).focus()
-    }
- }
-
- handleFatherMiddleName14Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherMiddleName14 === "")) {
-        $( "#FatherMiddleName13" ).focus()
-    }
-    else {
-        $( "#FatherMiddleName14" ).focus()
-    }
- }
-
- handleFatherMiddleName15Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherMiddleName15 === "")) {
-        $( "#FatherMiddleName14" ).focus()
-    }
-    else {
-        $( "#FatherMiddleName15" ).focus()
-    }
- }
-
- handleFatherMiddleName16Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherMiddleName16 === "")) {
-        $( "#FatherMiddleName15" ).focus()
-    }
-    else {
-        $( "#FatherMiddleName16" ).focus()
-    }
- }
-
- handleFatherMiddleName17Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherMiddleName17 === "")) {
-        $( "#FatherMiddleName16" ).focus()
-    }
-    else {
-        $( "#FatherMiddleName17" ).focus()
-    }
- }
-
- handleFatherMiddleName18Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherMiddleName18 === "")) {
-        $( "#FatherMiddleName17" ).focus()
-    }
-    else {
-        $( "#FatherMiddleName18" ).focus()
-    }
- }
-
- handleFatherMiddleName19Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherMiddleName19 === "")) {
-        $( "#FatherMiddleName18" ).focus()
-    }
-    else {
-        $( "#FatherMiddleName19" ).focus()
-    }
- }
-
- handleFatherMiddleName20Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherMiddleName20 === "")) {
-        $( "#FatherMiddleName19" ).focus()
-    }
-    else {
-        $( "#FatherMiddleName20" ).focus()
-    }
- }
-
- handleFatherMiddleName21Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherMiddleName21 === "")) {
-        $( "#FatherMiddleName20" ).focus()
-    }
-    else {
-        $( "#FatherMiddleName21" ).focus()
-    }
- }
-
- handleFatherMiddleName22Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherMiddleName22 === "")) {
-        $( "#FatherMiddleName21" ).focus()
-    }
-    else {
-        $( "#FatherMiddleName22" ).focus()
-    }
- }
-
- handleFatherMiddleName23Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherMiddleName23 === "")) {
-        $( "#FatherMiddleName22" ).focus()
-    }
-    else {
-        $( "#FatherMiddleName23" ).focus()
-    }
- }
-
- handleFatherMiddleName24Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherMiddleName24 === "")) {
-        $( "#FatherMiddleName23" ).focus()
-    }
-    else {
-        $( "#FatherMiddleName24" ).focus()
-    }
- }
-
- handleFatherMiddleName25Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.FatherMiddleName25 === "")) {
-        $( "#FatherMiddleName24" ).focus()
-    }
-    else {
-        $( "#FatherMiddleName25" ).focus()
-    }
- }
-
-
+ 
 handleFatherMiddleName1 = (event) => {  
     this.handleInput(event);
     this.validateFatherMiddleName(event);  
@@ -8193,256 +5157,7 @@ HighlightFatherMiddleNameError = () => {
     
 }
 
-handleMotherLastName1Key = (event) => {
-    const key = event.key;  
-    if (key === "Backspace" || key === "Delete"){
-        $( "#MotherLastName1" ).focus()
-    }
-    else {
-        $( "#MotherLastName1" ).focus()
-    }
- }
-
-  
- handleMotherLastName2Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherLastName2 === "")) {
-        $( "#MotherLastName1" ).focus()
-    }
-    else {
-        $( "#MotherLastName2" ).focus()
-    }
- }
-
- handleMotherLastName3Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherLastName3 === "")) {
-        $( "#MotherLastName2" ).focus()
-    }
-    else {
-        $( "#MotherLastName3" ).focus()
-    }
- }
-
- handleMotherLastName4Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherLastName4 === "") ) {
-        $( "#MotherLastName3" ).focus()
-    }
-    else {
-        $( "#MotherLastName4  " ).focus()
-    }
- }
-
- handleMotherLastName5Key = (event)   => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherLastName5 === "")) {
-        $( "#MotherLastName4" ).focus()
-    }
-    else {
-        $("MotherLastName5").focus()
-    }
- }
-
- handleMotherLastName6Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherLastName6 === "")) {
-        $( "#MotherLastName5" ).focus()
-    }
-    else {
-        $( "#MotherLastName6" ).focus()
-    }
- }
-
- handleMotherLastName7Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherLastName7 === "")) {
-        $( "#MotherLastName6" ).focus()
-    }
-    else {
-        $( "#MotherLastName7" ).focus()
-    }
- }
-
- handleMotherLastName8Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherLastName8 === "")) {
-        $( "#MotherLastName7" ).focus()
-    }
-    else {
-        $( "#MotherLastName8" ).focus()
-    }
- }
-
- handleMotherLastName9Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherLastName9 === "")) {
-        $( "#MotherLastName8" ).focus()
-    }
-    else {
-        $( "#MotherLastName9" ).focus()
-    }
- }
-
- handleMotherLastName10Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherLastName10 === "")) {
-        $( "#MotherLastName9" ).focus()
-    }
-    else {
-        $( "#MotherLastName10" ).focus()
-    }
- }
-
- handleMotherLastName11Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherLastName11 === "")) {
-        $( "#MotherLastName10" ).focus()
-    }
-    else {
-        $( "#MotherLastName11" ).focus()
-    }
- }
-
- handleMotherLastName12Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherLastName12 === "")) {
-        $( "#MotherLastName11" ).focus()
-    }
-    else {
-        $( "#MotherLastName12" ).focus()
-    }
- }
-
- handleMotherLastName13Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherLastName13 === "")) {
-        $( "#MotherLastName12" ).focus()
-    }
-    else {
-        $( "#MotherLastName13" ).focus()
-    }
- }
-
- handleMotherLastName14Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherLastName14 === "")) {
-        $( "#MotherLastName13" ).focus()
-    }
-    else {
-        $( "#MotherLastName14" ).focus()
-    }
- }
-
- handleMotherLastName15Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherLastName15 === "")) {
-        $( "#MotherLastName14" ).focus()
-    }
-    else {
-        $( "#MotherLastName15" ).focus()
-    }
- }
-
- handleMotherLastName16Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherLastName16 === "")) {
-        $( "#MotherLastName15" ).focus()
-    }
-    else {
-        $( "#MotherLastName16" ).focus()
-    }
- }
-
- handleMotherLastName17Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherLastName17 === "")) {
-        $( "#MotherLastName16" ).focus()
-    }
-    else {
-        $( "#MotherLastName17" ).focus()
-    }
- }
-
- handleMotherLastName18Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherLastName18 === "")) {
-        $( "#MotherLastName17" ).focus()
-    }
-    else {
-        $( "#MotherLastName18" ).focus()
-    }
- }
-
- handleMotherLastName19Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherLastName19 === "")) {
-        $( "#MotherLastName18" ).focus()
-    }
-    else {
-        $( "#MotherLastName19" ).focus()
-    }
- }
-
- handleMotherLastName20Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherLastName20 === "")) {
-        $( "#MotherLastName19" ).focus()
-    }
-    else {
-        $( "#MotherLastName20" ).focus()
-    }
- }
-
- handleMotherLastName21Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherLastName21 === "")) {
-        $( "#MotherLastName20" ).focus()
-    }
-    else {
-        $( "#MotherLastName21" ).focus()
-    }
- }
-
- handleMotherLastName22Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherLastName22 === "")) {
-        $( "#MotherLastName21" ).focus()
-    }
-    else {
-        $( "#MotherLastName22" ).focus()
-    }
- }
-
- handleMotherLastName23Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherLastName23 === "")) {
-        $( "#MotherLastName22" ).focus()
-    }
-    else {
-        $( "#MotherLastName23" ).focus()
-    }
- }
-
- handleMotherLastName24Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherLastName24 === "")) {
-        $( "#MotherLastName23" ).focus()
-    }
-    else {
-        $( "#MotherLastName24" ).focus()
-    }
- }
-
- handleMotherLastName25Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherLastName25 === "")) {
-        $( "#MotherLastName24" ).focus()
-    }
-    else {
-        $( "#MotherLastName25" ).focus()
-    }
- }
+ 
 
 handleMotherLastName1 = (event) => {  
     this.handleInput(event);
@@ -8655,258 +5370,7 @@ HighlightMotherLastNameError = () => {
     
     
 }
-
-handleMotherFirstName1Key = (event) => {
-    const key = event.key;  
-    if (key === "Backspace" || key === "Delete"){
-        $( "#MotherFirstName1" ).focus()
-    }
-    else {
-        $( "#MotherFirstName1" ).focus()
-    }
- }
-
-  
- handleMotherFirstName2Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherFirstName2 === "")) {
-        $( "#MotherFirstName1" ).focus()
-    }
-    else {
-        $( "#MotherFirstName2" ).focus()
-    }
- }
-
- handleMotherFirstName3Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherFirstName3 === "")) {
-        $( "#MotherFirstName2" ).focus()
-    }
-    else {
-        $( "#MotherFirstName3" ).focus()
-    }
- }
-
- handleMotherFirstName4Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherFirstName4 === "") ) {
-        $( "#MotherFirstName3" ).focus()
-    }
-    else {
-        $( "#MotherFirstName4  " ).focus()
-    }
- }
-
- handleMotherFirstName5Key = (event)   => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherFirstName5 === "")) {
-        $( "#MotherFirstName4" ).focus()
-    }
-    else {
-        $("MotherFirstName5").focus()
-    }
- }
-
- handleMotherFirstName6Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherFirstName6 === "")) {
-        $( "#MotherFirstName5" ).focus()
-    }
-    else {
-        $( "#MotherFirstName6" ).focus()
-    }
- }
-
- handleMotherFirstName7Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherFirstName7 === "")) {
-        $( "#MotherFirstName6" ).focus()
-    }
-    else {
-        $( "#MotherFirstName7" ).focus()
-    }
- }
-
- handleMotherFirstName8Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherFirstName8 === "")) {
-        $( "#MotherFirstName7" ).focus()
-    }
-    else {
-        $( "#MotherFirstName8" ).focus()
-    }
- }
-
- handleMotherFirstName9Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherFirstName9 === "")) {
-        $( "#MotherFirstName8" ).focus()
-    }
-    else {
-        $( "#MotherFirstName9" ).focus()
-    }
- }
-
- handleMotherFirstName10Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherFirstName10 === "")) {
-        $( "#MotherFirstName9" ).focus()
-    }
-    else {
-        $( "#MotherFirstName10" ).focus()
-    }
- }
-
- handleMotherFirstName11Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherFirstName11 === "")) {
-        $( "#MotherFirstName10" ).focus()
-    }
-    else {
-        $( "#MotherFirstName11" ).focus()
-    }
- }
-
- handleMotherFirstName12Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherFirstName12 === "")) {
-        $( "#MotherFirstName11" ).focus()
-    }
-    else {
-        $( "#MotherFirstName12" ).focus()
-    }
- }
-
- handleMotherFirstName13Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherFirstName13 === "")) {
-        $( "#MotherFirstName12" ).focus()
-    }
-    else {
-        $( "#MotherFirstName13" ).focus()
-    }
- }
-
- handleMotherFirstName14Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherFirstName14 === "")) {
-        $( "#MotherFirstName13" ).focus()
-    }
-    else {
-        $( "#MotherFirstName14" ).focus()
-    }
- }
-
- handleMotherFirstName15Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherFirstName15 === "")) {
-        $( "#MotherFirstName14" ).focus()
-    }
-    else {
-        $( "#MotherFirstName15" ).focus()
-    }
- }
-
- handleMotherFirstName16Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherFirstName16 === "")) {
-        $( "#MotherFirstName15" ).focus()
-    }
-    else {
-        $( "#MotherFirstName16" ).focus()
-    }
- }
-
- handleMotherFirstName17Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherFirstName17 === "")) {
-        $( "#MotherFirstName16" ).focus()
-    }
-    else {
-        $( "#MotherFirstName17" ).focus()
-    }
- }
-
- handleMotherFirstName18Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherFirstName18 === "")) {
-        $( "#MotherFirstName17" ).focus()
-    }
-    else {
-        $( "#MotherFirstName18" ).focus()
-    }
- }
-
- handleMotherFirstName19Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherFirstName19 === "")) {
-        $( "#MotherFirstName18" ).focus()
-    }
-    else {
-        $( "#MotherFirstName19" ).focus()
-    }
- }
-
- handleMotherFirstName20Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherFirstName20 === "")) {
-        $( "#MotherFirstName19" ).focus()
-    }
-    else {
-        $( "#MotherFirstName20" ).focus()
-    }
- }
-
- handleMotherFirstName21Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherFirstName21 === "")) {
-        $( "#MotherFirstName20" ).focus()
-    }
-    else {
-        $( "#MotherFirstName21" ).focus()
-    }
- }
-
- handleMotherFirstName22Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherFirstName22 === "")) {
-        $( "#MotherFirstName21" ).focus()
-    }
-    else {
-        $( "#MotherFirstName22" ).focus()
-    }
- }
-
- handleMotherFirstName23Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherFirstName23 === "")) {
-        $( "#MotherFirstName22" ).focus()
-    }
-    else {
-        $( "#MotherFirstName23" ).focus()
-    }
- }
-
- handleMotherFirstName24Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherFirstName24 === "")) {
-        $( "#MotherFirstName23" ).focus()
-    }
-    else {
-        $( "#MotherFirstName24" ).focus()
-    }
- }
-
- handleMotherFirstName25Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherFirstName25 === "")) {
-        $( "#MotherFirstName24" ).focus()
-    }
-    else {
-        $( "#MotherFirstName25" ).focus()
-    }
- }
-
+ 
 handleMotherFirstName1 = (event) => {  
     this.handleInput(event);
     this.validateMotherFirstName(event);  
@@ -9118,258 +5582,7 @@ HighlightMotherFirstNameError = () => {
     
     
 }
-
-handleMotherMiddleName1Key = (event) => {
-    const key = event.key;  
-    if (key === "Backspace" || key === "Delete"){
-        $( "#MotherMiddleName1" ).focus()
-    }
-    else {
-        $( "#MotherMiddleName1" ).focus()
-    }
- }
-
-  
- handleMotherMiddleName2Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherMiddleName2 === "")) {
-        $( "#MotherMiddleName1" ).focus()
-    }
-    else {
-        $( "#MotherMiddleName2" ).focus()
-    }
- }
-
- handleMotherMiddleName3Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherMiddleName3 === "")) {
-        $( "#MotherMiddleName2" ).focus()
-    }
-    else {
-        $( "#MotherMiddleName3" ).focus()
-    }
- }
-
- handleMotherMiddleName4Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherMiddleName4 === "") ) {
-        $( "#MotherMiddleName3" ).focus()
-    }
-    else {
-        $( "#MotherMiddleName4  " ).focus()
-    }
- }
-
- handleMotherMiddleName5Key = (event)   => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherMiddleName5 === "")) {
-        $( "#MotherMiddleName4" ).focus()
-    }
-    else {
-        $("MotherMiddleName5").focus()
-    }
- }
-
- handleMotherMiddleName6Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherMiddleName6 === "")) {
-        $( "#MotherMiddleName5" ).focus()
-    }
-    else {
-        $( "#MotherMiddleName6" ).focus()
-    }
- }
-
- handleMotherMiddleName7Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherMiddleName7 === "")) {
-        $( "#MotherMiddleName6" ).focus()
-    }
-    else {
-        $( "#MotherMiddleName7" ).focus()
-    }
- }
-
- handleMotherMiddleName8Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherMiddleName8 === "")) {
-        $( "#MotherMiddleName7" ).focus()
-    }
-    else {
-        $( "#MotherMiddleName8" ).focus()
-    }
- }
-
- handleMotherMiddleName9Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherMiddleName9 === "")) {
-        $( "#MotherMiddleName8" ).focus()
-    }
-    else {
-        $( "#MotherMiddleName9" ).focus()
-    }
- }
-
- handleMotherMiddleName10Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherMiddleName10 === "")) {
-        $( "#MotherMiddleName9" ).focus()
-    }
-    else {
-        $( "#MotherMiddleName10" ).focus()
-    }
- }
-
- handleMotherMiddleName11Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherMiddleName11 === "")) {
-        $( "#MotherMiddleName10" ).focus()
-    }
-    else {
-        $( "#MotherMiddleName11" ).focus()
-    }
- }
-
- handleMotherMiddleName12Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherMiddleName12 === "")) {
-        $( "#MotherMiddleName11" ).focus()
-    }
-    else {
-        $( "#MotherMiddleName12" ).focus()
-    }
- }
-
- handleMotherMiddleName13Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherMiddleName13 === "")) {
-        $( "#MotherMiddleName12" ).focus()
-    }
-    else {
-        $( "#MotherMiddleName13" ).focus()
-    }
- }
-
- handleMotherMiddleName14Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherMiddleName14 === "")) {
-        $( "#MotherMiddleName13" ).focus()
-    }
-    else {
-        $( "#MotherMiddleName14" ).focus()
-    }
- }
-
- handleMotherMiddleName15Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherMiddleName15 === "")) {
-        $( "#MotherMiddleName14" ).focus()
-    }
-    else {
-        $( "#MotherMiddleName15" ).focus()
-    }
- }
-
- handleMotherMiddleName16Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherMiddleName16 === "")) {
-        $( "#MotherMiddleName15" ).focus()
-    }
-    else {
-        $( "#MotherMiddleName16" ).focus()
-    }
- }
-
- handleMotherMiddleName17Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherMiddleName17 === "")) {
-        $( "#MotherMiddleName16" ).focus()
-    }
-    else {
-        $( "#MotherMiddleName17" ).focus()
-    }
- }
-
- handleMotherMiddleName18Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherMiddleName18 === "")) {
-        $( "#MotherMiddleName17" ).focus()
-    }
-    else {
-        $( "#MotherMiddleName18" ).focus()
-    }
- }
-
- handleMotherMiddleName19Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherMiddleName19 === "")) {
-        $( "#MotherMiddleName18" ).focus()
-    }
-    else {
-        $( "#MotherMiddleName19" ).focus()
-    }
- }
-
- handleMotherMiddleName20Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherMiddleName20 === "")) {
-        $( "#MotherMiddleName19" ).focus()
-    }
-    else {
-        $( "#MotherMiddleName20" ).focus()
-    }
- }
-
- handleMotherMiddleName21Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherMiddleName21 === "")) {
-        $( "#MotherMiddleName20" ).focus()
-    }
-    else {
-        $( "#MotherMiddleName21" ).focus()
-    }
- }
-
- handleMotherMiddleName22Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherMiddleName22 === "")) {
-        $( "#MotherMiddleName21" ).focus()
-    }
-    else {
-        $( "#MotherMiddleName22" ).focus()
-    }
- }
-
- handleMotherMiddleName23Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherMiddleName23 === "")) {
-        $( "#MotherMiddleName22" ).focus()
-    }
-    else {
-        $( "#MotherMiddleName23" ).focus()
-    }
- }
-
- handleMotherMiddleName24Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherMiddleName24 === "")) {
-        $( "#MotherMiddleName23" ).focus()
-    }
-    else {
-        $( "#MotherMiddleName24" ).focus()
-    }
- }
-
- handleMotherMiddleName25Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.MotherMiddleName25 === "")) {
-        $( "#MotherMiddleName24" ).focus()
-    }
-    else {
-        $( "#MotherMiddleName25" ).focus()
-    }
- }
-
+ 
 handleMotherMiddleName1 = (event) => {  
     this.handleInput(event);
     this.validateMotherMiddleName(event);  
@@ -9581,257 +5794,7 @@ HighlightMotherMiddleNameError = () => {
     
     
 }
-
-handleAadhaarLastName1Key = (event) => {
-    const key = event.key;  
-    if (key === "Backspace" || key === "Delete"){
-        $( "#AadhaarLastName1" ).focus()
-    }
-    else {
-        $( "#AadhaarLastName1" ).focus()
-    }
- }
-
-  
- handleAadhaarLastName2Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarLastName2 === "")) {
-        $( "#AadhaarLastName1" ).focus()
-    }
-    else {
-        $( "#AadhaarLastName2" ).focus()
-    }
- }
-
- handleAadhaarLastName3Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarLastName3 === "")) {
-        $( "#AadhaarLastName2" ).focus()
-    }
-    else {
-        $( "#AadhaarLastName3" ).focus()
-    }
- }
-
- handleAadhaarLastName4Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarLastName4 === "") ) {
-        $( "#AadhaarLastName3" ).focus()
-    }
-    else {
-        $( "#AadhaarLastName4  " ).focus()
-    }
- }
-
- handleAadhaarLastName5Key = (event)   => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarLastName5 === "")) {
-        $( "#AadhaarLastName4" ).focus()
-    }
-    else {
-        $("AadhaarLastName5").focus()
-    }
- }
-
- handleAadhaarLastName6Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarLastName6 === "")) {
-        $( "#AadhaarLastName5" ).focus()
-    }
-    else {
-        $( "#AadhaarLastName6" ).focus()
-    }
- }
-
- handleAadhaarLastName7Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarLastName7 === "")) {
-        $( "#AadhaarLastName6" ).focus()
-    }
-    else {
-        $( "#AadhaarLastName7" ).focus()
-    }
- }
-
- handleAadhaarLastName8Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarLastName8 === "")) {
-        $( "#AadhaarLastName7" ).focus()
-    }
-    else {
-        $( "#AadhaarLastName8" ).focus()
-    }
- }
-
- handleAadhaarLastName9Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarLastName9 === "")) {
-        $( "#AadhaarLastName8" ).focus()
-    }
-    else {
-        $( "#AadhaarLastName9" ).focus()
-    }
- }
-
- handleAadhaarLastName10Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarLastName10 === "")) {
-        $( "#AadhaarLastName9" ).focus()
-    }
-    else {
-        $( "#AadhaarLastName10" ).focus()
-    }
- }
-
- handleAadhaarLastName11Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarLastName11 === "")) {
-        $( "#AadhaarLastName10" ).focus()
-    }
-    else {
-        $( "#AadhaarLastName11" ).focus()
-    }
- }
-
- handleAadhaarLastName12Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarLastName12 === "")) {
-        $( "#AadhaarLastName11" ).focus()
-    }
-    else {
-        $( "#AadhaarLastName12" ).focus()
-    }
- }
-
- handleAadhaarLastName13Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarLastName13 === "")) {
-        $( "#AadhaarLastName12" ).focus()
-    }
-    else {
-        $( "#AadhaarLastName13" ).focus()
-    }
- }
-
- handleAadhaarLastName14Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarLastName14 === "")) {
-        $( "#AadhaarLastName13" ).focus()
-    }
-    else {
-        $( "#AadhaarLastName14" ).focus()
-    }
- }
-
- handleAadhaarLastName15Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarLastName15 === "")) {
-        $( "#AadhaarLastName14" ).focus()
-    }
-    else {
-        $( "#AadhaarLastName15" ).focus()
-    }
- }
-
- handleAadhaarLastName16Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarLastName16 === "")) {
-        $( "#AadhaarLastName15" ).focus()
-    }
-    else {
-        $( "#AadhaarLastName16" ).focus()
-    }
- }
-
- handleAadhaarLastName17Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarLastName17 === "")) {
-        $( "#AadhaarLastName16" ).focus()
-    }
-    else {
-        $( "#AadhaarLastName17" ).focus()
-    }
- }
-
- handleAadhaarLastName18Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarLastName18 === "")) {
-        $( "#AadhaarLastName17" ).focus()
-    }
-    else {
-        $( "#AadhaarLastName18" ).focus()
-    }
- }
-
- handleAadhaarLastName19Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarLastName19 === "")) {
-        $( "#AadhaarLastName18" ).focus()
-    }
-    else {
-        $( "#AadhaarLastName19" ).focus()
-    }
- }
-
- handleAadhaarLastName20Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarLastName20 === "")) {
-        $( "#AadhaarLastName19" ).focus()
-    }
-    else {
-        $( "#AadhaarLastName20" ).focus()
-    }
- }
-
- handleAadhaarLastName21Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarLastName21 === "")) {
-        $( "#AadhaarLastName20" ).focus()
-    }
-    else {
-        $( "#AadhaarLastName21" ).focus()
-    }
- }
-
- handleAadhaarLastName22Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarLastName22 === "")) {
-        $( "#AadhaarLastName21" ).focus()
-    }
-    else {
-        $( "#AadhaarLastName22" ).focus()
-    }
- }
-
- handleAadhaarLastName23Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarLastName23 === "")) {
-        $( "#AadhaarLastName22" ).focus()
-    }
-    else {
-        $( "#AadhaarLastName23" ).focus()
-    }
- }
-
- handleAadhaarLastName24Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarLastName24 === "")) {
-        $( "#AadhaarLastName23" ).focus()
-    }
-    else {
-        $( "#AadhaarLastName24" ).focus()
-    }
- }
-
- handleAadhaarLastName25Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarLastName25 === "")) {
-        $( "#AadhaarLastName24" ).focus()
-    }
-    else {
-        $( "#AadhaarLastName25" ).focus()
-    }
- }
+ 
 
 handleAadhaarLastName1 = (event) => {  
     this.handleInput(event);
@@ -10045,257 +6008,7 @@ HighlightAadhaarLastNameError = () => {
     
 }
 
-
-handleAadhaarFirstName1Key = (event) => {
-    const key = event.key;  
-    if (key === "Backspace" || key === "Delete"){
-        $( "#AadhaarFirstName1" ).focus()
-    }
-    else {
-        $( "#AadhaarFirstName1" ).focus()
-    }
- }
-
-  
- handleAadhaarFirstName2Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarFirstName2 === "")) {
-        $( "#AadhaarFirstName1" ).focus()
-    }
-    else {
-        $( "#AadhaarFirstName2" ).focus()
-    }
- }
-
- handleAadhaarFirstName3Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarFirstName3 === "")) {
-        $( "#AadhaarFirstName2" ).focus()
-    }
-    else {
-        $( "#AadhaarFirstName3" ).focus()
-    }
- }
-
- handleAadhaarFirstName4Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarFirstName4 === "") ) {
-        $( "#AadhaarFirstName3" ).focus()
-    }
-    else {
-        $( "#AadhaarFirstName4  " ).focus()
-    }
- }
-
- handleAadhaarFirstName5Key = (event)   => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarFirstName5 === "")) {
-        $( "#AadhaarFirstName4" ).focus()
-    }
-    else {
-        $("AadhaarFirstName5").focus()
-    }
- }
-
- handleAadhaarFirstName6Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarFirstName6 === "")) {
-        $( "#AadhaarFirstName5" ).focus()
-    }
-    else {
-        $( "#AadhaarFirstName6" ).focus()
-    }
- }
-
- handleAadhaarFirstName7Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarFirstName7 === "")) {
-        $( "#AadhaarFirstName6" ).focus()
-    }
-    else {
-        $( "#AadhaarFirstName7" ).focus()
-    }
- }
-
- handleAadhaarFirstName8Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarFirstName8 === "")) {
-        $( "#AadhaarFirstName7" ).focus()
-    }
-    else {
-        $( "#AadhaarFirstName8" ).focus()
-    }
- }
-
- handleAadhaarFirstName9Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarFirstName9 === "")) {
-        $( "#AadhaarFirstName8" ).focus()
-    }
-    else {
-        $( "#AadhaarFirstName9" ).focus()
-    }
- }
-
- handleAadhaarFirstName10Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarFirstName10 === "")) {
-        $( "#AadhaarFirstName9" ).focus()
-    }
-    else {
-        $( "#AadhaarFirstName10" ).focus()
-    }
- }
-
- handleAadhaarFirstName11Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarFirstName11 === "")) {
-        $( "#AadhaarFirstName10" ).focus()
-    }
-    else {
-        $( "#AadhaarFirstName11" ).focus()
-    }
- }
-
- handleAadhaarFirstName12Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarFirstName12 === "")) {
-        $( "#AadhaarFirstName11" ).focus()
-    }
-    else {
-        $( "#AadhaarFirstName12" ).focus()
-    }
- }
-
- handleAadhaarFirstName13Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarFirstName13 === "")) {
-        $( "#AadhaarFirstName12" ).focus()
-    }
-    else {
-        $( "#AadhaarFirstName13" ).focus()
-    }
- }
-
- handleAadhaarFirstName14Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarFirstName14 === "")) {
-        $( "#AadhaarFirstName13" ).focus()
-    }
-    else {
-        $( "#AadhaarFirstName14" ).focus()
-    }
- }
-
- handleAadhaarFirstName15Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarFirstName15 === "")) {
-        $( "#AadhaarFirstName14" ).focus()
-    }
-    else {
-        $( "#AadhaarFirstName15" ).focus()
-    }
- }
-
- handleAadhaarFirstName16Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarFirstName16 === "")) {
-        $( "#AadhaarFirstName15" ).focus()
-    }
-    else {
-        $( "#AadhaarFirstName16" ).focus()
-    }
- }
-
- handleAadhaarFirstName17Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarFirstName17 === "")) {
-        $( "#AadhaarFirstName16" ).focus()
-    }
-    else {
-        $( "#AadhaarFirstName17" ).focus()
-    }
- }
-
- handleAadhaarFirstName18Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarFirstName18 === "")) {
-        $( "#AadhaarFirstName17" ).focus()
-    }
-    else {
-        $( "#AadhaarFirstName18" ).focus()
-    }
- }
-
- handleAadhaarFirstName19Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarFirstName19 === "")) {
-        $( "#AadhaarFirstName18" ).focus()
-    }
-    else {
-        $( "#AadhaarFirstName19" ).focus()
-    }
- }
-
- handleAadhaarFirstName20Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarFirstName20 === "")) {
-        $( "#AadhaarFirstName19" ).focus()
-    }
-    else {
-        $( "#AadhaarFirstName20" ).focus()
-    }
- }
-
- handleAadhaarFirstName21Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarFirstName21 === "")) {
-        $( "#AadhaarFirstName20" ).focus()
-    }
-    else {
-        $( "#AadhaarFirstName21" ).focus()
-    }
- }
-
- handleAadhaarFirstName22Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarFirstName22 === "")) {
-        $( "#AadhaarFirstName21" ).focus()
-    }
-    else {
-        $( "#AadhaarFirstName22" ).focus()
-    }
- }
-
- handleAadhaarFirstName23Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarFirstName23 === "")) {
-        $( "#AadhaarFirstName22" ).focus()
-    }
-    else {
-        $( "#AadhaarFirstName23" ).focus()
-    }
- }
-
- handleAadhaarFirstName24Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarFirstName24 === "")) {
-        $( "#AadhaarFirstName23" ).focus()
-    }
-    else {
-        $( "#AadhaarFirstName24" ).focus()
-    }
- }
-
- handleAadhaarFirstName25Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarFirstName25 === "")) {
-        $( "#AadhaarFirstName24" ).focus()
-    }
-    else {
-        $( "#AadhaarFirstName25" ).focus()
-    }
- }
+ 
 
 
 handleAadhaarFirstName1 = (event) => {  
@@ -10510,257 +6223,7 @@ HighlightAadhaarFirstNameError = () => {
     
 }
 
-
-handleAadhaarMiddleName1Key = (event) => {
-    const key = event.key;  
-    if (key === "Backspace" || key === "Delete"){
-        $( "#AadhaarMiddleName1" ).focus()
-    }
-    else {
-        $( "#AadhaarMiddleName1" ).focus()
-    }
- }
-
-  
- handleAadhaarMiddleName2Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarMiddleName2 === "")) {
-        $( "#AadhaarMiddleName1" ).focus()
-    }
-    else {
-        $( "#AadhaarMiddleName2" ).focus()
-    }
- }
-
- handleAadhaarMiddleName3Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarMiddleName3 === "")) {
-        $( "#AadhaarMiddleName2" ).focus()
-    }
-    else {
-        $( "#AadhaarMiddleName3" ).focus()
-    }
- }
-
- handleAadhaarMiddleName4Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarMiddleName4 === "") ) {
-        $( "#AadhaarMiddleName3" ).focus()
-    }
-    else {
-        $( "#AadhaarMiddleName4  " ).focus()
-    }
- }
-
- handleAadhaarMiddleName5Key = (event)   => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarMiddleName5 === "")) {
-        $( "#AadhaarMiddleName4" ).focus()
-    }
-    else {
-        $("AadhaarMiddleName5").focus()
-    }
- }
-
- handleAadhaarMiddleName6Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarMiddleName6 === "")) {
-        $( "#AadhaarMiddleName5" ).focus()
-    }
-    else {
-        $( "#AadhaarMiddleName6" ).focus()
-    }
- }
-
- handleAadhaarMiddleName7Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarMiddleName7 === "")) {
-        $( "#AadhaarMiddleName6" ).focus()
-    }
-    else {
-        $( "#AadhaarMiddleName7" ).focus()
-    }
- }
-
- handleAadhaarMiddleName8Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarMiddleName8 === "")) {
-        $( "#AadhaarMiddleName7" ).focus()
-    }
-    else {
-        $( "#AadhaarMiddleName8" ).focus()
-    }
- }
-
- handleAadhaarMiddleName9Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarMiddleName9 === "")) {
-        $( "#AadhaarMiddleName8" ).focus()
-    }
-    else {
-        $( "#AadhaarMiddleName9" ).focus()
-    }
- }
-
- handleAadhaarMiddleName10Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarMiddleName10 === "")) {
-        $( "#AadhaarMiddleName9" ).focus()
-    }
-    else {
-        $( "#AadhaarMiddleName10" ).focus()
-    }
- }
-
- handleAadhaarMiddleName11Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarMiddleName11 === "")) {
-        $( "#AadhaarMiddleName10" ).focus()
-    }
-    else {
-        $( "#AadhaarMiddleName11" ).focus()
-    }
- }
-
- handleAadhaarMiddleName12Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarMiddleName12 === "")) {
-        $( "#AadhaarMiddleName11" ).focus()
-    }
-    else {
-        $( "#AadhaarMiddleName12" ).focus()
-    }
- }
-
- handleAadhaarMiddleName13Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarMiddleName13 === "")) {
-        $( "#AadhaarMiddleName12" ).focus()
-    }
-    else {
-        $( "#AadhaarMiddleName13" ).focus()
-    }
- }
-
- handleAadhaarMiddleName14Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarMiddleName14 === "")) {
-        $( "#AadhaarMiddleName13" ).focus()
-    }
-    else {
-        $( "#AadhaarMiddleName14" ).focus()
-    }
- }
-
- handleAadhaarMiddleName15Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarMiddleName15 === "")) {
-        $( "#AadhaarMiddleName14" ).focus()
-    }
-    else {
-        $( "#AadhaarMiddleName15" ).focus()
-    }
- }
-
- handleAadhaarMiddleName16Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarMiddleName16 === "")) {
-        $( "#AadhaarMiddleName15" ).focus()
-    }
-    else {
-        $( "#AadhaarMiddleName16" ).focus()
-    }
- }
-
- handleAadhaarMiddleName17Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarMiddleName17 === "")) {
-        $( "#AadhaarMiddleName16" ).focus()
-    }
-    else {
-        $( "#AadhaarMiddleName17" ).focus()
-    }
- }
-
- handleAadhaarMiddleName18Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarMiddleName18 === "")) {
-        $( "#AadhaarMiddleName17" ).focus()
-    }
-    else {
-        $( "#AadhaarMiddleName18" ).focus()
-    }
- }
-
- handleAadhaarMiddleName19Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarMiddleName19 === "")) {
-        $( "#AadhaarMiddleName18" ).focus()
-    }
-    else {
-        $( "#AadhaarMiddleName19" ).focus()
-    }
- }
-
- handleAadhaarMiddleName20Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarMiddleName20 === "")) {
-        $( "#AadhaarMiddleName19" ).focus()
-    }
-    else {
-        $( "#AadhaarMiddleName20" ).focus()
-    }
- }
-
- handleAadhaarMiddleName21Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarMiddleName21 === "")) {
-        $( "#AadhaarMiddleName20" ).focus()
-    }
-    else {
-        $( "#AadhaarMiddleName21" ).focus()
-    }
- }
-
- handleAadhaarMiddleName22Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarMiddleName22 === "")) {
-        $( "#AadhaarMiddleName21" ).focus()
-    }
-    else {
-        $( "#AadhaarMiddleName22" ).focus()
-    }
- }
-
- handleAadhaarMiddleName23Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarMiddleName23 === "")) {
-        $( "#AadhaarMiddleName22" ).focus()
-    }
-    else {
-        $( "#AadhaarMiddleName23" ).focus()
-    }
- }
-
- handleAadhaarMiddleName24Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarMiddleName24 === "")) {
-        $( "#AadhaarMiddleName23" ).focus()
-    }
-    else {
-        $( "#AadhaarMiddleName24" ).focus()
-    }
- }
-
- handleAadhaarMiddleName25Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.AadhaarMiddleName25 === "")) {
-        $( "#AadhaarMiddleName24" ).focus()
-    }
-    else {
-        $( "#AadhaarMiddleName25" ).focus()
-    }
- }
+ 
 
 handleAadhaarMiddleName1 = (event) => {  
     this.handleInput(event);
@@ -10974,257 +6437,7 @@ HighlightAadhaarMiddleNameError = () => {
     
 }
 
-
-handleRALastName1Key = (event) => {
-    const key = event.key;  
-    if (key === "Backspace" || key === "Delete"){
-        $( "#RALastName1" ).focus()
-    }
-    else {
-        $( "#RALastName1" ).focus()
-    }
- }
-
-  
- handleRALastName2Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RALastName2 === "")) {
-        $( "#RALastName1" ).focus()
-    }
-    else {
-        $( "#RALastName2" ).focus()
-    }
- }
-
- handleRALastName3Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RALastName3 === "")) {
-        $( "#RALastName2" ).focus()
-    }
-    else {
-        $( "#RALastName3" ).focus()
-    }
- }
-
- handleRALastName4Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RALastName4 === "") ) {
-        $( "#RALastName3" ).focus()
-    }
-    else {
-        $( "#RALastName4  " ).focus()
-    }
- }
-
- handleRALastName5Key = (event)   => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RALastName5 === "")) {
-        $( "#RALastName4" ).focus()
-    }
-    else {
-        $("RALastName5").focus()
-    }
- }
-
- handleRALastName6Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RALastName6 === "")) {
-        $( "#RALastName5" ).focus()
-    }
-    else {
-        $( "#RALastName6" ).focus()
-    }
- }
-
- handleRALastName7Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RALastName7 === "")) {
-        $( "#RALastName6" ).focus()
-    }
-    else {
-        $( "#RALastName7" ).focus()
-    }
- }
-
- handleRALastName8Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RALastName8 === "")) {
-        $( "#RALastName7" ).focus()
-    }
-    else {
-        $( "#RALastName8" ).focus()
-    }
- }
-
- handleRALastName9Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RALastName9 === "")) {
-        $( "#RALastName8" ).focus()
-    }
-    else {
-        $( "#RALastName9" ).focus()
-    }
- }
-
- handleRALastName10Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RALastName10 === "")) {
-        $( "#RALastName9" ).focus()
-    }
-    else {
-        $( "#RALastName10" ).focus()
-    }
- }
-
- handleRALastName11Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RALastName11 === "")) {
-        $( "#RALastName10" ).focus()
-    }
-    else {
-        $( "#RALastName11" ).focus()
-    }
- }
-
- handleRALastName12Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RALastName12 === "")) {
-        $( "#RALastName11" ).focus()
-    }
-    else {
-        $( "#RALastName12" ).focus()
-    }
- }
-
- handleRALastName13Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RALastName13 === "")) {
-        $( "#RALastName12" ).focus()
-    }
-    else {
-        $( "#RALastName13" ).focus()
-    }
- }
-
- handleRALastName14Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RALastName14 === "")) {
-        $( "#RALastName13" ).focus()
-    }
-    else {
-        $( "#RALastName14" ).focus()
-    }
- }
-
- handleRALastName15Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RALastName15 === "")) {
-        $( "#RALastName14" ).focus()
-    }
-    else {
-        $( "#RALastName15" ).focus()
-    }
- }
-
- handleRALastName16Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RALastName16 === "")) {
-        $( "#RALastName15" ).focus()
-    }
-    else {
-        $( "#RALastName16" ).focus()
-    }
- }
-
- handleRALastName17Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RALastName17 === "")) {
-        $( "#RALastName16" ).focus()
-    }
-    else {
-        $( "#RALastName17" ).focus()
-    }
- }
-
- handleRALastName18Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RALastName18 === "")) {
-        $( "#RALastName17" ).focus()
-    }
-    else {
-        $( "#RALastName18" ).focus()
-    }
- }
-
- handleRALastName19Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RALastName19 === "")) {
-        $( "#RALastName18" ).focus()
-    }
-    else {
-        $( "#RALastName19" ).focus()
-    }
- }
-
- handleRALastName20Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RALastName20 === "")) {
-        $( "#RALastName19" ).focus()
-    }
-    else {
-        $( "#RALastName20" ).focus()
-    }
- }
-
- handleRALastName21Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RALastName21 === "")) {
-        $( "#RALastName20" ).focus()
-    }
-    else {
-        $( "#RALastName21" ).focus()
-    }
- }
-
- handleRALastName22Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RALastName22 === "")) {
-        $( "#RALastName21" ).focus()
-    }
-    else {
-        $( "#RALastName22" ).focus()
-    }
- }
-
- handleRALastName23Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RALastName23 === "")) {
-        $( "#RALastName22" ).focus()
-    }
-    else {
-        $( "#RALastName23" ).focus()
-    }
- }
-
- handleRALastName24Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RALastName24 === "")) {
-        $( "#RALastName23" ).focus()
-    }
-    else {
-        $( "#RALastName24" ).focus()
-    }
- }
-
- handleRALastName25Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RALastName25 === "")) {
-        $( "#RALastName24" ).focus()
-    }
-    else {
-        $( "#RALastName25" ).focus()
-    }
- }
+ 
 
 
 handleRALastName1 = (event) => {  
@@ -11439,257 +6652,7 @@ HighlightRALastNameError = () => {
     
 }
 
-
-handleRAFirstName1Key = (event) => {
-    const key = event.key;  
-    if (key === "Backspace" || key === "Delete"){
-        $( "#RAFirstName1" ).focus()
-    }
-    else {
-        $( "#RAFirstName1" ).focus()
-    }
- }
-
-  
- handleRAFirstName2Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAFirstName2 === "")) {
-        $( "#RAFirstName1" ).focus()
-    }
-    else {
-        $( "#RAFirstName2" ).focus()
-    }
- }
-
- handleRAFirstName3Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAFirstName3 === "")) {
-        $( "#RAFirstName2" ).focus()
-    }
-    else {
-        $( "#RAFirstName3" ).focus()
-    }
- }
-
- handleRAFirstName4Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAFirstName4 === "") ) {
-        $( "#RAFirstName3" ).focus()
-    }
-    else {
-        $( "#RAFirstName4  " ).focus()
-    }
- }
-
- handleRAFirstName5Key = (event)   => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAFirstName5 === "")) {
-        $( "#RAFirstName4" ).focus()
-    }
-    else {
-        $("RAFirstName5").focus()
-    }
- }
-
- handleRAFirstName6Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAFirstName6 === "")) {
-        $( "#RAFirstName5" ).focus()
-    }
-    else {
-        $( "#RAFirstName6" ).focus()
-    }
- }
-
- handleRAFirstName7Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAFirstName7 === "")) {
-        $( "#RAFirstName6" ).focus()
-    }
-    else {
-        $( "#RAFirstName7" ).focus()
-    }
- }
-
- handleRAFirstName8Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAFirstName8 === "")) {
-        $( "#RAFirstName7" ).focus()
-    }
-    else {
-        $( "#RAFirstName8" ).focus()
-    }
- }
-
- handleRAFirstName9Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAFirstName9 === "")) {
-        $( "#RAFirstName8" ).focus()
-    }
-    else {
-        $( "#RAFirstName9" ).focus()
-    }
- }
-
- handleRAFirstName10Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAFirstName10 === "")) {
-        $( "#RAFirstName9" ).focus()
-    }
-    else {
-        $( "#RAFirstName10" ).focus()
-    }
- }
-
- handleRAFirstName11Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAFirstName11 === "")) {
-        $( "#RAFirstName10" ).focus()
-    }
-    else {
-        $( "#RAFirstName11" ).focus()
-    }
- }
-
- handleRAFirstName12Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAFirstName12 === "")) {
-        $( "#RAFirstName11" ).focus()
-    }
-    else {
-        $( "#RAFirstName12" ).focus()
-    }
- }
-
- handleRAFirstName13Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAFirstName13 === "")) {
-        $( "#RAFirstName12" ).focus()
-    }
-    else {
-        $( "#RAFirstName13" ).focus()
-    }
- }
-
- handleRAFirstName14Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAFirstName14 === "")) {
-        $( "#RAFirstName13" ).focus()
-    }
-    else {
-        $( "#RAFirstName14" ).focus()
-    }
- }
-
- handleRAFirstName15Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAFirstName15 === "")) {
-        $( "#RAFirstName14" ).focus()
-    }
-    else {
-        $( "#RAFirstName15" ).focus()
-    }
- }
-
- handleRAFirstName16Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAFirstName16 === "")) {
-        $( "#RAFirstName15" ).focus()
-    }
-    else {
-        $( "#RAFirstName16" ).focus()
-    }
- }
-
- handleRAFirstName17Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAFirstName17 === "")) {
-        $( "#RAFirstName16" ).focus()
-    }
-    else {
-        $( "#RAFirstName17" ).focus()
-    }
- }
-
- handleRAFirstName18Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAFirstName18 === "")) {
-        $( "#RAFirstName17" ).focus()
-    }
-    else {
-        $( "#RAFirstName18" ).focus()
-    }
- }
-
- handleRAFirstName19Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAFirstName19 === "")) {
-        $( "#RAFirstName18" ).focus()
-    }
-    else {
-        $( "#RAFirstName19" ).focus()
-    }
- }
-
- handleRAFirstName20Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAFirstName20 === "")) {
-        $( "#RAFirstName19" ).focus()
-    }
-    else {
-        $( "#RAFirstName20" ).focus()
-    }
- }
-
- handleRAFirstName21Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAFirstName21 === "")) {
-        $( "#RAFirstName20" ).focus()
-    }
-    else {
-        $( "#RAFirstName21" ).focus()
-    }
- }
-
- handleRAFirstName22Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAFirstName22 === "")) {
-        $( "#RAFirstName21" ).focus()
-    }
-    else {
-        $( "#RAFirstName22" ).focus()
-    }
- }
-
- handleRAFirstName23Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAFirstName23 === "")) {
-        $( "#RAFirstName22" ).focus()
-    }
-    else {
-        $( "#RAFirstName23" ).focus()
-    }
- }
-
- handleRAFirstName24Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAFirstName24 === "")) {
-        $( "#RAFirstName23" ).focus()
-    }
-    else {
-        $( "#RAFirstName24" ).focus()
-    }
- }
-
- handleRAFirstName25Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAFirstName25 === "")) {
-        $( "#RAFirstName24" ).focus()
-    }
-    else {
-        $( "#RAFirstName25" ).focus()
-    }
- }
+ 
 
 
 handleRAFirstName1 = (event) => {  
@@ -11904,258 +6867,7 @@ HighlightRAFirstNameError = () => {
     
 }
 
-
-handleRAMiddleName1Key = (event) => {
-    const key = event.key;  
-    if (key === "Backspace" || key === "Delete"){
-        $( "#RAMiddleName1" ).focus()
-    }
-    else {
-        $( "#RAMiddleName1" ).focus()
-    }
- }
-
-  
- handleRAMiddleName2Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAMiddleName2 === "")) {
-        $( "#RAMiddleName1" ).focus()
-    }
-    else {
-        $( "#RAMiddleName2" ).focus()
-    }
- }
-
- handleRAMiddleName3Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAMiddleName3 === "")) {
-        $( "#RAMiddleName2" ).focus()
-    }
-    else {
-        $( "#RAMiddleName3" ).focus()
-    }
- }
-
- handleRAMiddleName4Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAMiddleName4 === "") ) {
-        $( "#RAMiddleName3" ).focus()
-    }
-    else {
-        $( "#RAMiddleName4  " ).focus()
-    }
- }
-
- handleRAMiddleName5Key = (event)   => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAMiddleName5 === "")) {
-        $( "#RAMiddleName4" ).focus()
-    }
-    else {
-        $("RAMiddleName5").focus()
-    }
- }
-
- handleRAMiddleName6Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAMiddleName6 === "")) {
-        $( "#RAMiddleName5" ).focus()
-    }
-    else {
-        $( "#RAMiddleName6" ).focus()
-    }
- }
-
- handleRAMiddleName7Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAMiddleName7 === "")) {
-        $( "#RAMiddleName6" ).focus()
-    }
-    else {
-        $( "#RAMiddleName7" ).focus()
-    }
- }
-
- handleRAMiddleName8Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAMiddleName8 === "")) {
-        $( "#RAMiddleName7" ).focus()
-    }
-    else {
-        $( "#RAMiddleName8" ).focus()
-    }
- }
-
- handleRAMiddleName9Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAMiddleName9 === "")) {
-        $( "#RAMiddleName8" ).focus()
-    }
-    else {
-        $( "#RAMiddleName9" ).focus()
-    }
- }
-
- handleRAMiddleName10Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAMiddleName10 === "")) {
-        $( "#RAMiddleName9" ).focus()
-    }
-    else {
-        $( "#RAMiddleName10" ).focus()
-    }
- }
-
- handleRAMiddleName11Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAMiddleName11 === "")) {
-        $( "#RAMiddleName10" ).focus()
-    }
-    else {
-        $( "#RAMiddleName11" ).focus()
-    }
- }
-
- handleRAMiddleName12Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAMiddleName12 === "")) {
-        $( "#RAMiddleName11" ).focus()
-    }
-    else {
-        $( "#RAMiddleName12" ).focus()
-    }
- }
-
- handleRAMiddleName13Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAMiddleName13 === "")) {
-        $( "#RAMiddleName12" ).focus()
-    }
-    else {
-        $( "#RAMiddleName13" ).focus()
-    }
- }
-
- handleRAMiddleName14Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAMiddleName14 === "")) {
-        $( "#RAMiddleName13" ).focus()
-    }
-    else {
-        $( "#RAMiddleName14" ).focus()
-    }
- }
-
- handleRAMiddleName15Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAMiddleName15 === "")) {
-        $( "#RAMiddleName14" ).focus()
-    }
-    else {
-        $( "#RAMiddleName15" ).focus()
-    }
- }
-
- handleRAMiddleName16Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAMiddleName16 === "")) {
-        $( "#RAMiddleName15" ).focus()
-    }
-    else {
-        $( "#RAMiddleName16" ).focus()
-    }
- }
-
- handleRAMiddleName17Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAMiddleName17 === "")) {
-        $( "#RAMiddleName16" ).focus()
-    }
-    else {
-        $( "#RAMiddleName17" ).focus()
-    }
- }
-
- handleRAMiddleName18Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAMiddleName18 === "")) {
-        $( "#RAMiddleName17" ).focus()
-    }
-    else {
-        $( "#RAMiddleName18" ).focus()
-    }
- }
-
- handleRAMiddleName19Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAMiddleName19 === "")) {
-        $( "#RAMiddleName18" ).focus()
-    }
-    else {
-        $( "#RAMiddleName19" ).focus()
-    }
- }
-
- handleRAMiddleName20Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAMiddleName20 === "")) {
-        $( "#RAMiddleName19" ).focus()
-    }
-    else {
-        $( "#RAMiddleName20" ).focus()
-    }
- }
-
- handleRAMiddleName21Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAMiddleName21 === "")) {
-        $( "#RAMiddleName20" ).focus()
-    }
-    else {
-        $( "#RAMiddleName21" ).focus()
-    }
- }
-
- handleRAMiddleName22Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAMiddleName22 === "")) {
-        $( "#RAMiddleName21" ).focus()
-    }
-    else {
-        $( "#RAMiddleName22" ).focus()
-    }
- }
-
- handleRAMiddleName23Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAMiddleName23 === "")) {
-        $( "#RAMiddleName22" ).focus()
-    }
-    else {
-        $( "#RAMiddleName23" ).focus()
-    }
- }
-
- handleRAMiddleName24Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAMiddleName24 === "")) {
-        $( "#RAMiddleName23" ).focus()
-    }
-    else {
-        $( "#RAMiddleName24" ).focus()
-    }
- }
-
- handleRAMiddleName25Key = (event) => {
-    const key = event.key;  
-    if ((key === "Backspace" || key === "Delete") && (this.state.data.RAMiddleName25 === "")) {
-        $( "#RAMiddleName24" ).focus()
-    }
-    else {
-        $( "#RAMiddleName25" ).focus()
-    }
- }
-
+ 
 
 handleRAMiddleName1 = (event) => {  
     this.handleInput(event);
@@ -22475,22 +17187,10 @@ handleInput = (event) => {
                    </div>
 
                    <div className= "divfive">
-                       <table>
-                       <tbody>
-                          <tr>
-                            <td  className ="Day_td">
-                              <label  className ="Day" >Day </label>
-                            </td>
-                            <td className="Month_td" >
-                               <label className = "Month">Month</label>
-                            </td>
-                            <td className = "Year_td">
-                               <label className = "Year">Year</label>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td >
+                      
+                            <label  className ="Day" >Day </label>
+                            <label className = "Month">Month</label>
+                            <label className = "Year">Year</label> <br/>
                             <input 
                                type="text" 
                                className="Day-control"
@@ -22510,10 +17210,7 @@ handleInput = (event) => {
                                id = "Day2"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#Day1", "#Day2")}
                                onChange = {this.handleDay2}/>
-
-                            
-                           </td>  
-                           <td >
+ 
                            <input 
                                type="text" 
                                className="Month-control"
@@ -22521,6 +17218,7 @@ handleInput = (event) => {
                                value = {this.state.data.Month1}
                                name = "Month1"
                                id = "Month1"
+                               style = {{marginLeft : "2%"}}
                                onKeyDown = {event => this.handleBackspaceKey(event, "#Month1", "#Month1")}
                                onChange = {this.handleMonth1}/>
 
@@ -22533,14 +17231,13 @@ handleInput = (event) => {
                                id = "Month2"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#Month1", "#Month2")}
                                onChange = {this.handleMonth2}/>
-
-                           </td>
-                           <td className = "Year_td">
+ 
                            <input 
                                type="text" 
                                className="Year-control"
                                maxLength = "1"
                                value = {this.state.data.Year1}
+                               style = {{marginLeft : "2%"}}
                                name = "Year1"
                                id = "Year1"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#Year1", "#Year1")}
@@ -22576,7 +17273,7 @@ handleInput = (event) => {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#Year3", "#Year4")}
                                onChange = {this.handleYear4}/>
 
-                           </td>
+                           
 
                            {this.state.isIndicatorEnabled === false ? 
                            <span className="tooltip" style={{marginLeft:"89%"}}>
@@ -22584,10 +17281,7 @@ handleInput = (event) => {
                             <img src={datefield} className="tooltiptext" style={{width:"600px",height:"200px"}}  />
                          </span>
                          : ""}
-                          </tr>
-                       </tbody>
-                       </table>
-
+                        
             
                     </div>
 
@@ -25545,24 +20239,14 @@ handleInput = (event) => {
                       </tr>
                     </tbody>
                     </table>
-
-                    <table cellPadding = "0" cellSpacing = "0"  className = "divState">
-                    <tbody>
-                        <tr>
-                           <td >
-                     
+ 
                              <label className = "StateId"> State / Union Territory </label>
-                          </td>
-                          <td >
+                         
                              <label className = "PincodeId"> Pincode / Zip code </label>
-                          </td>
-                          <td >
+                          
                              <label className = "CountryId"> Country Name </label>
-                          </td>
-                       </tr>
-                       <tr>
-                          <td >
-                             
+                             <br/>
+                       
                              <input 
                                 className = "StateValue"
                                 name="ResidenceState"
@@ -25570,8 +20254,7 @@ handleInput = (event) => {
                                 value={this.state.data.ResidenceState}
                                 onChange={event => this.handleResidenceState(event)}/>
                              
-                          </td>
-                          <td> 
+                          
                           <input 
                                type="text" 
                                className="Pincode-control"
@@ -25643,9 +20326,6 @@ handleInput = (event) => {
                                onChange = {this.handleResidencePincode7}/>
 
 
-
-                           </td>
-                           <td cellPadding = "0" cellSpacing = "0">
                              <input 
                                 className = "CountryValue"
                                 name="ResidenceCountry"
@@ -25655,20 +20335,13 @@ handleInput = (event) => {
 
 
                               {this.state.isIndicatorEnabled === false ? 
-                              <span className="tooltip" style={{marginLeft:"20.3%"}}>
-                           <img src={indicator} style={{width:"7.7%",height:"3%" ,marginLeft: "30%"}} />
+                              <span className="tooltip"style = {{marginLeft: "11%"}} >
+                           <img src={indicator} style={{width:"2.3%",height:"2.3%"}} />
                             <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}}>Please enter as applicable</label>
                          </span>
                          : ""}
-                           </td>
-                          
-                       </tr>
-                       
-                       
-                    </tbody>
-                    </table>
-                    
-
+                           
+                     
 
                     </div>
                     <br /><br />
@@ -27264,21 +21937,13 @@ handleInput = (event) => {
                     </tbody>
                     </table>
                      
-                    <table cellPadding = "0" cellSpacing = "0"  className = "divState">
-                    <tbody>
-                        <tr>
-                           <td >
+                   
                              <label className = "StateId"> State / Union Territory </label>
-                          </td>
-                          <td >
+                           
                              <label className = "PincodeId"> Pincode / Zip code </label>
-                          </td>
-                          <td >
-                             <label className = "CountryId"> Country Name </label>
-                          </td>
-                       </tr>
-                       <tr>
-                          <td >
+                         
+                             <label className = "CountryId"> Country Name </label> <br/>
+                          
                              <input 
                                  className = "StateValue"
                                  name="OfficeState"
@@ -27286,8 +21951,7 @@ handleInput = (event) => {
                                  value={this.state.data.OfficeState}
                                  onChange={event => this.handleOfficeState(event)}/>
                                 
-                          </td>
-                          <td> 
+                          
                           <input 
                                type="text" 
                                className="Pincode-control"
@@ -27358,9 +22022,7 @@ handleInput = (event) => {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePincode6", "#OfficePincode7")}
                                onChange = {this.handleOfficePincode7}/>
 
-
-                           </td>
-                           <td cellPadding = "0" cellSpacing = "0">
+ 
                              <input 
                                 className = "CountryValue"
                                 name="OfficeCountry"
@@ -27368,19 +22030,12 @@ handleInput = (event) => {
                                 value={this.state.data.OfficeCountry}
                                 onChange={event => this.handleOfficeCountry(event)}/>
                         {this.state.isIndicatorEnabled === false ? 
-                        <span className="tooltip" style={{marginLeft:"21%"}}>
-                          <img src={indicator} style={{    width: "7.5%",height: "3.2% ", marginLeft: "30%"}} />
+                        <span className="tooltip" style = {{marginLeft: "11%"}}>
+                          <img src={indicator} style={{ width: "2.3%",height: "2.3% "}} />
                             <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}} >Please enter as applicable</label>
                          </span>
                          : ""}
-                           </td>
-                           
-                       </tr>
-                        
-                    </tbody>
-                    </table>
-                    
-
+                     
                     
 
                     {/* Eight Component */}
@@ -27424,27 +22079,18 @@ handleInput = (event) => {
                      </div>
 
                      <div className= "divnine">
-                         <table>
-                         <tbody>
-                            <tr>
-                                <td  className ="Country_td">
-                                   <label  className ="Country" >Country code </label>
-                                </td>
-                                <td className="Std_td" >
-                                   <label className = "Std">Area/ STD Code</label>
-                                </td>
-                                <td className = "Telephone_td">
-                                   <label className = "Telephone">Telephone / Mobile number</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td >
+                        
+                                <label  className ="Country" >Country code </label>
+                                <label className = "Std">Area/ STD Code</label>
+                                <label className = "Telephone">Telephone / Mobile number</label> <br/>
+                                
                 
                                 <input 
                                type="text" 
                                className="CountryCode-control"
                                maxLength = "1"
                                value = {this.state.data.CountryCode1}
+                               style = {{marginLeft: "0.5%"}}
                                name = "CountryCode1"
                                id = "CountryCode1"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#CountryCode1", "#CountryCode1")}
@@ -27471,12 +22117,11 @@ handleInput = (event) => {
                                onChange = {this.handleCountryCode3}/>
  
 
-                                  
-                                </td>  
-                                <td >
+                                
                                 <input 
                                type="text" 
                                className="StdCode-control"
+                               style = {{marginLeft : "2%"}}
                                maxLength = "1"
                                value = {this.state.data.StdCode1}
                                name = "StdCode1"
@@ -27544,12 +22189,12 @@ handleInput = (event) => {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#StdCode6", "#StdCode7")}
                                onChange = {this.handleStdCode7}/>
 
-                                </td>
-                                <td className = "Telephone_td">
+                                 
                                 <input 
                                type="text" 
                                className="PhoneNumber-control"
                                maxLength = "1"
+                               style = {{marginLeft : "2%"}}
                                value = {this.state.data.PhoneNumber1}
                                name = "PhoneNumber1"
                                id = "PhoneNumber1"
@@ -27676,18 +22321,13 @@ handleInput = (event) => {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#PhoneNumber12", "#PhoneNumber13")}
                                onChange = {this.handlePhoneNumber13}/>
                             {this.state.isIndicatorEnabled === false ? 
-                            <span className="tooltip" style={{marginLeft:"22.2%"}}>
-                            <img src={indicator} style={{width:"3.75%",height:"3.45%" , marginLeft: "-2%"}} />
+                            <span className="tooltip" style={{marginLeft:"27.2%"}}>
+                            <img src={indicator} style={{width:"2.3%",height:"2.3%"}} />
                                 <img src={phonenumberfield} className="tooltiptext" style={{width:"600px",height:"250px"}}  />
                             </span>       
                             : ""}  
 
-                                </td>
-                              
-                            </tr>
-                             
-                         </tbody>
-                         </table>
+                          
             
                      </div>
 
@@ -27776,6 +22416,7 @@ handleInput = (event) => {
                        type="checkbox" 
                        className="Check IndividualCheck"
                        value = " Associations of Persons"
+                       style = {{marginLeft : "4.4%"}}
                        id = "27"
                        name = "Status[7][]"
                        onClick={(e)=>this.handleStatusCheck(e,"Status")}/>  
@@ -27813,6 +22454,7 @@ handleInput = (event) => {
                        className="Check "
                        value = "Artificial Juridical Persons"
                        id = "31"
+                       style = {{marginLeft : "2.5%"}}
                        name = "Status[7][]"
                        onClick={(e)=>this.handleStatusCheck(e,"Status")}/> 
                     <label className = "Label_with_no_space">Artificial Juridical Persons</label> 
@@ -27821,6 +22463,7 @@ handleInput = (event) => {
                        type="checkbox" 
                        className="Check "
                        value = "Limited Liability Partnership"
+                       style = {{marginLeft : "3.3%"}}
                        id = "32"
                        name = "Status[7][]"
                        onClick={(e)=>this.handleStatusCheck(e,"Status")}/> 
@@ -28277,10 +22920,10 @@ handleInput = (event) => {
                                onChange = {this.handleAadhaarNumber12}/> 
 
                                  {this.state.isIndicatorEnabled === false ? 
-                                 <span className="tooltip" style={{marginLeft:"26%"}}>
-                            <img src={indicator} style={{width:"2.4%",height:"2.4%", marginLeft: "5.2%"}} />
+                                 <span className="tooltip" style={{marginLeft:"31%"}}>
+                            <img src={indicator} style={{width:"2.4%",height:"2.4%" }} />
                                 <img src={aadhaarnumber} className="tooltiptext" style={{width:"600px",height:"70px"}}  />
-                            </span>  
+                            </span>     
                             : ""}
                              <br/>
 
@@ -28292,11 +22935,12 @@ handleInput = (event) => {
 
                     <div className= "Left_space_input">   
                             
-                    <input 
+                             <input 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
                                value = {this.state.data.EnrolmentId1}
+                               style = {{marginLeft : "-2.5% "}}
                                name = "EnrolmentId1"
                                id = "EnrolmentId1"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId1", "#EnrolmentId1")}
@@ -28575,7 +23219,7 @@ handleInput = (event) => {
                             
                                    {this.state.isIndicatorEnabled === false ? 
                                  <span className="tooltip" style={{marginLeft:"3.65%"}}>
-                            <img src={indicator} style={{width:"3%",height:"2.2%" , marginLeft: "-1.6%"}} />
+                            <img src={indicator} style={{width:"3%",height:"2.2%" }} />
                                 <img src={enrolmentid} className="tooltiptext" style={{width:"600px",height:"180px"}}  />
                             </span>  
                             : ""}
@@ -28588,7 +23232,7 @@ handleInput = (event) => {
                     <label className="FirstLabel"> Name as per AADHAAR letter or card or as per the Enrolment ID of Aadhaar application form</label>
                     {this.state.isIndicatorEnabled === false ? 
                     <span className="tooltip" style={{marginLeft:"28.55%"}}>
-                            <img src={indicator} style={{width:"2.4%",height:"2.4%", marginLeft: "4.8%"}} />
+                            <img src={indicator} style={{width:"2.4%",height:"2.4%", marginLeft: "4.3%"}} />
                                 <img src={aadhaarnamefield} className="tooltiptext" style={{width:"600px",height:"120px"}}  />
                             </span> 
                     : ""}  <br/>
@@ -31659,19 +26303,11 @@ handleInput = (event) => {
                       </tr>
                     </tbody>
                     </table>
-
-                    <table cellPadding = "0" cellSpacing = "0"  className = "divState">
-                    <tbody>
-                        <tr>
-                           <td >
+ 
                              <label className = "StateId"> State / Union Territory </label>
-                          </td>
-                          <td >
-                             <label className = "PincodeId"> Pincode / Zip code </label>
-                          </td>
-                       </tr>
-                       <tr>
-                          <td >
+                         
+                             <label className = "PincodeId"> Pincode / Zip code </label> <br/>
+                          
                              <input 
                                  className = "StateValue"
                                  name="RAState"
@@ -31679,8 +26315,7 @@ handleInput = (event) => {
                                  value={this.state.data.RAState}
                                  onChange={event => this.handleRAState(event)}/>
                               
-                          </td>
-                          <td> 
+                         
                           <input 
                                type="text" 
                                className="Name-control"
@@ -31752,17 +26387,12 @@ handleInput = (event) => {
                                onChange = {this.handleRAPincode7}/>
 
                              {this.state.isIndicatorEnabled === false ?
-                               <span className="tooltip" style={{marginLeft:"61.5%"}}>
-                            <img src={indicator} style={{width:"3.4%",height:"3.4%"}} />
+                               <span className="tooltip" style={{marginLeft:"38%"}}>
+                            <img src={indicator} style={{width:"2.3%",height:"2.3%"}} />
                                 <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}}>Please enter as applicable</label>
                             </span>
                             : ""}
-                           </td>
-                       </tr>
-                        
-                       
-                    </tbody>
-                    </table>
+                           
                  
                  {/* Fifteenth Component */}
                    
