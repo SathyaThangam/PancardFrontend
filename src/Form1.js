@@ -6,12 +6,6 @@ import $ from 'jquery';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas'
 import Modal from "react-responsive-modal";
-import page3 from "./panpage3.jpg"
-import page4 from "./panpage4.jpg"
-import page5 from "./panpage5.jpg"
-import page6 from "./panpage6.jpg"
-import page7 from "./panpage7.jpg"
-import page8 from "./panpage8.jpg"
 import indicator from "./instuction.png"
 import namefield from "./namefield.jpeg"
 import datefield from "./datefield.jpeg"
@@ -70,12 +64,11 @@ class Form1 extends Component {
         MotherMiddleName: "",
         MotherLastName: "",
         OtherFirstName: "",
-        FatherLastName: "",
+        OtherLastName: "",
         OtherMiddleName: "",
         RAFirstName: "",
         RALastName: "",
         RAMiddleName: "",
-        RegistrationNumber: "",
         AbbreviationOne: "",
         AbbreviationTwo: "",
         ResidenceFlat: "",
@@ -132,11 +125,6 @@ class Form1 extends Component {
         errorid: "1"
       },
       data : {
-         LastName1: "",LastName2: "",LastName3: "",LastName4: "",LastName5: "",
-         LastName6: "",LastName7: "",LastName8: "",LastName9: "",LastName10: "",
-         LastName11: "",LastName12: "",LastName13: "",LastName14: "",LastName15: "",
-         LastName16: "",LastName17: "",LastName18: "",LastName19: "",LastName20: "",
-         LastName21: "",LastName22: "",LastName23: "",LastName24: "",LastName25: "",
          NameTitleOne : "",
          OtherName : "",
          NameTitleTwo : "",
@@ -146,58 +134,258 @@ class Form1 extends Component {
          Status : "",
          Income : "",
          NameTitleThree : "",
+         FirstName1 : "", FirstName2: "", FirstName3: "", FirstName4: "", FirstName5: "",
+         FirstName6 : "", FirstName7: "", FirstName8: "", FirstName9: "", FirstName10: "",
+         FirstName11 : "", FirstName12: "", FirstName13: "", FirstName14: "", FirstName15: "",
+         FirstName16 : "", FirstName17: "", FirstName18: "", FirstName19: "", FirstName20: "",
+         FirstName21 : "", FirstName22: "", FirstName23: "", FirstName24: "", FirstName25: "",
          FirstName: "",
+         LastName1 : "", LastName2: "", LastName3: "", LastName4: "", LastName5: "",
+         LastName6 : "", LastName7: "", LastName8: "", LastName9: "", LastName10: "",
+         LastName11 : "", LastName12: "", LastName13: "", LastName14: "", LastName15: "",
+         LastName16 : "", LastName17: "", LastName18: "", LastName19: "", LastName20: "",
+         LastName21 : "", LastName22: "", LastName23: "", LastName24: "", LastName25: "",
          LastName : "",
+         MiddleName1 : "", MiddleName2: "", MiddleName3: "", MiddleName4: "", MiddleName5: "",
+         MiddleName6 : "", MiddleName7: "", MiddleName8: "", MiddleName9: "", MiddleName10: "",
+         MiddleName11 : "", MiddleName12: "", MiddleName13: "", MiddleName14: "", MiddleName15: "",
+         MiddleName16 : "", MiddleName17: "", MiddleName18: "", MiddleName19: "", MiddleName20: "",
+         MiddleName21 : "", MiddleName22: "", MiddleName23: "", MiddleName24: "", MiddleName25: "",
          MiddleName : "",
+         FatherFirstName1 : "", FatherFirstName2: "", FatherFirstName3: "", FatherFirstName4: "", FatherFirstName5: "",
+         FatherFirstName6 : "", FatherFirstName7: "", FatherFirstName8: "", FatherFirstName9: "", FatherFirstName10: "",
+         FatherFirstName11 : "", FatherFirstName12: "", FatherFirstName13: "", FatherFirstName14: "", FatherFirstName15: "",
+         FatherFirstName16 : "", FatherFirstName17: "", FatherFirstName18: "", FatherFirstName19: "", FatherFirstName20: "",
+         FatherFirstName21 : "", FatherFirstName22: "", FatherFirstName23: "", FatherFirstName24: "", FatherFirstName25: "",
          FatherFirstName : "",
+         FatherMiddleName1 : "", FatherMiddleName2: "", FatherMiddleName3: "", FatherMiddleName4: "", FatherMiddleName5: "",
+         FatherMiddleName6 : "", FatherMiddleName7: "", FatherMiddleName8: "", FatherMiddleName9: "", FatherMiddleName10: "",
+         FatherMiddleName11 : "", FatherMiddleName12: "", FatherMiddleName13: "", FatherMiddleName14: "", FatherMiddleName15: "",
+         FatherMiddleName16 : "", FatherMiddleName17: "", FatherMiddleName18: "", FatherMiddleName19: "", FatherMiddleName20: "",
+         FatherMiddleName21 : "", FatherMiddleName22: "", FatherMiddleName23: "", FatherMiddleName24: "", FatherMiddleName25: "",
          FatherMiddleName: "",
+         FatherLastName1 : "", FatherLastName2: "", FatherLastName3: "", FatherLastName4: "", FatherLastName5: "",
+         FatherLastName6 : "", FatherLastName7: "", FatherLastName8: "", FatherLastName9: "", FatherLastName10: "",
+         FatherLastName11 : "", FatherLastName12: "", FatherLastName13: "", FatherLastName14: "", FatherLastName15: "",
+         FatherLastName16 : "", FatherLastName17: "", FatherLastName18: "", FatherLastName19: "", FatherLastName20: "",
+         FatherLastName21 : "", FatherLastName22: "", FatherLastName23: "", FatherLastName24: "", FatherLastName25: "",
          FatherLastName: "",
+         MotherFirstName1 : "", MotherFirstName2: "", MotherFirstName3: "", MotherFirstName4: "", MotherFirstName5: "",
+         MotherFirstName6 : "", MotherFirstName7: "", MotherFirstName8: "", MotherFirstName9: "", MotherFirstName10: "",
+         MotherFirstName11 : "", MotherFirstName12: "", MotherFirstName13: "", MotherFirstName14: "", MotherFirstName15: "",
+         MotherFirstName16 : "", MotherFirstName17: "", MotherFirstName18: "", MotherFirstName19: "", MotherFirstName20: "",
+         MotherFirstName21 : "", MotherFirstName22: "", MotherFirstName23: "", MotherFirstName24: "", MotherFirstName25: "",
          MotherFirstName: "",
+         MotherMiddleName1 : "", MotherMiddleName2: "", MotherMiddleName3: "", MotherMiddleName4: "", MotherMiddleName5: "",
+         MotherMiddleName6 : "", MotherMiddleName7: "", MotherMiddleName8: "", MotherMiddleName9: "", MotherMiddleName10: "",
+         MotherMiddleName11 : "", MotherMiddleName12: "", MotherMiddleName13: "", MotherMiddleName14: "", MotherMiddleName15: "",
+         MotherMiddleName16 : "", MotherMiddleName17: "", MotherMiddleName18: "", MotherMiddleName19: "", MotherMiddleName20: "",
+         MotherMiddleName21 : "", MotherMiddleName22: "", MotherMiddleName23: "", MotherMiddleName24: "", MotherMiddleName25: "",
          MotherMiddleName: "",
+         MotherLastName1 : "", MotherLastName2: "", MotherLastName3: "", MotherLastName4: "", MotherLastName5: "",
+         MotherLastName6 : "", MotherLastName7: "", MotherLastName8: "", MotherLastName9: "", MotherLastName10: "",
+         MotherLastName11 : "", MotherLastName12: "", MotherLastName13: "", MotherLastName14: "", MotherLastName15: "",
+         MotherLastName16 : "", MotherLastName17: "", MotherLastName18: "", MotherLastName19: "", MotherLastName20: "",
+         MotherLastName21 : "", MotherLastName22: "", MotherLastName23: "", MotherLastName24: "", MotherLastName25: "",
          MotherLastName: "",
+         OtherFirstName1 : "", OtherFirstName2: "", OtherFirstName3: "", OtherFirstName4: "", OtherFirstName5: "",
+         OtherFirstName6 : "", OtherFirstName7: "", OtherFirstName8: "", OtherFirstName9: "", OtherFirstName10: "",
+         OtherFirstName11 : "", OtherFirstName12: "", OtherFirstName13: "", OtherFirstName14: "", OtherFirstName15: "",
+         OtherFirstName16 : "", OtherFirstName17: "", OtherFirstName18: "", OtherFirstName19: "", OtherFirstName20: "",
+         OtherFirstName21 : "", OtherFirstName22: "", OtherFirstName23: "", OtherFirstName24: "", OtherFirstName25: "",
          OtherFirstName: "",
+         OtherLastName1 : "", OtherLastName2: "", OtherLastName3: "", OtherLastName4: "", OtherLastName5: "",
+         OtherLastName6 : "", OtherLastName7: "", OtherLastName8: "", OtherLastName9: "", OtherLastName10: "",
+         OtherLastName11 : "", OtherLastName12: "", OtherLastName13: "", OtherLastName14: "", OtherLastName15: "",
+         OtherLastName16 : "", OtherLastName17: "", OtherLastName18: "", OtherLastName19: "", OtherLastName20: "",
+         OtherLastName21 : "", OtherLastName22: "", OtherLastName23: "", OtherLastName24: "", OtherLastName25: "",
          OtherLastName: "",
+         OtherMiddleName1 : "", OtherMiddleName2: "", OtherMiddleName3: "", OtherMiddleName4: "", OtherMiddleName5: "",
+         OtherMiddleName6 : "", OtherMiddleName7: "", OtherMiddleName8: "", OtherMiddleName9: "", OtherMiddleName10: "",
+         OtherMiddleName11 : "", OtherMiddleName12: "", OtherMiddleName13: "", OtherMiddleName14: "", OtherMiddleName15: "",
+         OtherMiddleName16 : "", OtherMiddleName17: "", OtherMiddleName18: "", OtherMiddleName19: "", OtherMiddleName20: "",
+         OtherMiddleName21 : "", OtherMiddleName22: "", OtherMiddleName23: "", OtherMiddleName24: "", OtherMiddleName25: "",
          OtherMiddleName: "",
+         RAFirstName1 : "", RAFirstName2: "", RAFirstName3: "", RAFirstName4: "", RAFirstName5: "",
+         RAFirstName6 : "", RAFirstName7: "", RAFirstName8: "", RAFirstName9: "", RAFirstName10: "",
+         RAFirstName11 : "", RAFirstName12: "", RAFirstName13: "", RAFirstName14: "", RAFirstName15: "",
+         RAFirstName16 : "", RAFirstName17: "", RAFirstName18: "", RAFirstName19: "", RAFirstName20: "",
+         RAFirstName21 : "", RAFirstName22: "", RAFirstName23: "", RAFirstName24: "", RAFirstName25: "",
          RAFirstName: "",
+         RALastName1 : "", RALastName2: "", RALastName3: "", RALastName4: "", RALastName5: "",
+         RALastName6 : "", RALastName7: "", RALastName8: "", RALastName9: "", RALastName10: "",
+         RALastName11 : "", RALastName12: "", RALastName13: "", RALastName14: "", RALastName15: "",
+         RALastName16 : "", RALastName17: "", RALastName18: "", RALastName19: "", RALastName20: "",
+         RALastName21 : "", RALastName22: "", RALastName23: "", RALastName24: "", RALastName25: "",
          RALastName: "",
+         RAMiddleName1 : "", RAMiddleName2: "", RAMiddleName3: "", RAMiddleName4: "", RAMiddleName5: "",
+         RAMiddleName6 : "", RAMiddleName7: "", RAMiddleName8: "", RAMiddleName9: "", RAMiddleName10: "",
+         RAMiddleName11 : "", RAMiddleName12: "", RAMiddleName13: "", RAMiddleName14: "", RAMiddleName15: "",
+         RAMiddleName16 : "", RAMiddleName17: "", RAMiddleName18: "", RAMiddleName19: "", RAMiddleName20: "",
+         RAMiddleName21 : "", RAMiddleName22: "", RAMiddleName23: "", RAMiddleName24: "", RAMiddleName25: "",
          RAMiddleName: "",
          AbbreviationOne: "",
          AbbreviationTwo: "",
+         ResidenceFlat1 : "", ResidenceFlat2: "", ResidenceFlat3: "", ResidenceFlat4: "", ResidenceFlat5: "",
+         ResidenceFlat6 : "", ResidenceFlat7: "", ResidenceFlat8: "", ResidenceFlat9: "", ResidenceFlat10: "",
+         ResidenceFlat11 : "", ResidenceFlat12: "", ResidenceFlat13: "", ResidenceFlat14: "", ResidenceFlat15: "",
+         ResidenceFlat16 : "", ResidenceFlat17: "", ResidenceFlat18: "", ResidenceFlat19: "", ResidenceFlat20: "",
+         ResidenceFlat21 : "", ResidenceFlat22: "", ResidenceFlat23: "", ResidenceFlat24: "", ResidenceFlat25: "",
          ResidenceFlat: "",
+         ResidencePremises1 : "", ResidencePremises2: "", ResidencePremises3: "", ResidencePremises4: "", ResidencePremises5: "",
+         ResidencePremises6 : "", ResidencePremises7: "", ResidencePremises8: "", ResidencePremises9: "", ResidencePremises10: "",
+         ResidencePremises11 : "", ResidencePremises12: "", ResidencePremises13: "", ResidencePremises14: "", ResidencePremises15: "",
+         ResidencePremises16 : "", ResidencePremises17: "", ResidencePremises18: "", ResidencePremises19: "", ResidencePremises20: "",
+         ResidencePremises21 : "", ResidencePremises22: "", ResidencePremises23: "", ResidencePremises24: "", ResidencePremises25: "",
          ResidencePremises: "",
+         ResidenceRoad1 : "", ResidenceRoad2: "", ResidenceRoad3: "", ResidenceRoad4: "", ResidenceRoad5: "",
+         ResidenceRoad6 : "", ResidenceRoad7: "", ResidenceRoad8: "", ResidenceRoad9: "", ResidenceRoad10: "",
+         ResidenceRoad11 : "", ResidenceRoad12: "", ResidenceRoad13: "", ResidenceRoad14: "", ResidenceRoad15: "",
+         ResidenceRoad16 : "", ResidenceRoad17: "", ResidenceRoad18: "", ResidenceRoad19: "", ResidenceRoad20: "",
+         ResidenceRoad21 : "", ResidenceRoad22: "", ResidenceRoad23: "", ResidenceRoad24: "", ResidenceRoad25: "",
          ResidenceRoad: "",
+         ResidenceArea1 : "", ResidenceArea2: "", ResidenceArea3: "", ResidenceArea4: "", ResidenceArea5: "",
+         ResidenceArea6 : "", ResidenceArea7: "", ResidenceArea8: "", ResidenceArea9: "", ResidenceArea10: "",
+         ResidenceArea11 : "", ResidenceArea12: "", ResidenceArea13: "", ResidenceArea14: "", ResidenceArea15: "",
+         ResidenceArea16 : "", ResidenceArea17: "", ResidenceArea18: "", ResidenceArea19: "", ResidenceArea20: "",
+         ResidenceArea21 : "", ResidenceArea22: "", ResidenceArea23: "", ResidenceArea24: "", ResidenceArea25: "",
          ResidenceArea: "",
+         ResidenceTown1 : "", ResidenceTown2: "", ResidenceTown3: "", ResidenceTown4: "", ResidenceTown5: "",
+         ResidenceTown6 : "", ResidenceTown7: "", ResidenceTown8: "", ResidenceTown9: "", ResidenceTown10: "",
+         ResidenceTown11 : "", ResidenceTown12: "", ResidenceTown13: "", ResidenceTown14: "", ResidenceTown15: "",
+         ResidenceTown16 : "", ResidenceTown17: "", ResidenceTown18: "", ResidenceTown19: "", ResidenceTown20: "",
+         ResidenceTown21 : "", ResidenceTown22: "", ResidenceTown23: "", ResidenceTown24: "", ResidenceTown25: "",
          ResidenceTown: "",
+         OfficeName1 : "", OfficeName2: "", OfficeName3: "", OfficeName4: "", OfficeName5: "",
+         OfficeName6 : "", OfficeName7: "", OfficeName8: "", OfficeName9: "", OfficeName10: "",
+         OfficeName11 : "", OfficeName12: "", OfficeName13: "", OfficeName14: "", OfficeName15: "",
+         OfficeName16 : "", OfficeName17: "", OfficeName18: "", OfficeName19: "", OfficeName20: "",
+         OfficeName21 : "", OfficeName22: "", OfficeName23: "", OfficeName24: "", OfficeName25: "",
          OfficeName: "",
+         OfficeFlat1 : "", OfficeFlat2: "", OfficeFlat3: "", OfficeFlat4: "", OfficeFlat5: "",
+         OfficeFlat6 : "", OfficeFlat7: "", OfficeFlat8: "", OfficeFlat9: "", OfficeFlat10: "",
+         OfficeFlat11 : "", OfficeFlat12: "", OfficeFlat13: "", OfficeFlat14: "", OfficeFlat15: "",
+         OfficeFlat16 : "", OfficeFlat17: "", OfficeFlat18: "", OfficeFlat19: "", OfficeFlat20: "",
+         OfficeFlat21 : "", OfficeFlat22: "", OfficeFlat23: "", OfficeFlat24: "", OfficeFlat25: "",
          OfficeFlat: "",
+         OfficePremises1 : "", OfficePremises2: "", OfficePremises3: "", OfficePremises4: "", OfficePremises5: "",
+         OfficePremises6 : "", OfficePremises7: "", OfficePremises8: "", OfficePremises9: "", OfficePremises10: "",
+         OfficePremises11 : "", OfficePremises12: "", OfficePremises13: "", OfficePremises14: "", OfficePremises15: "",
+         OfficePremises16 : "", OfficePremises17: "", OfficePremises18: "", OfficePremises19: "", OfficePremises20: "",
+         OfficePremises21 : "", OfficePremises22: "", OfficePremises23: "", OfficePremises24: "", OfficePremises25: "",
          OfficePremises: "",
+         OfficeRoad1 : "", OfficeRoad2: "", OfficeRoad3: "", OfficeRoad4: "", OfficeRoad5: "",
+         OfficeRoad6 : "", OfficeRoad7: "", OfficeRoad8: "", OfficeRoad9: "", OfficeRoad10: "",
+         OfficeRoad11 : "", OfficeRoad12: "", OfficeRoad13: "", OfficeRoad14: "", OfficeRoad15: "",
+         OfficeRoad16 : "", OfficeRoad17: "", OfficeRoad18: "", OfficeRoad19: "", OfficeRoad20: "",
+         OfficeRoad21 : "", OfficeRoad22: "", OfficeRoad23: "", OfficeRoad24: "", OfficeRoad25: "",
          OfficeRoad: "",
+         OfficeArea1 : "", OfficeArea2: "", OfficeArea3: "", OfficeArea4: "", OfficeArea5: "",
+         OfficeArea6 : "", OfficeArea7: "", OfficeArea8: "", OfficeArea9: "", OfficeArea10: "",
+         OfficeArea11 : "", OfficeArea12: "", OfficeArea13: "", OfficeArea14: "", OfficeArea15: "",
+         OfficeArea16 : "", OfficeArea17: "", OfficeArea18: "", OfficeArea19: "", OfficeArea20: "",
+         OfficeArea21 : "", OfficeArea22: "", OfficeArea23: "", OfficeArea24: "", OfficeArea25: "",
          OfficeArea: "",
+         OfficeTown1 : "", OfficeTown2: "", OfficeTown3: "", OfficeTown4: "", OfficeTown5: "",
+         OfficeTown6 : "", OfficeTown7: "", OfficeTown8: "", OfficeTown9: "", OfficeTown10: "",
+         OfficeTown11 : "", OfficeTown12: "", OfficeTown13: "", OfficeTown14: "", OfficeTown15: "",
+         OfficeTown16 : "", OfficeTown17: "", OfficeTown18: "", OfficeTown19: "", OfficeTown20: "",
+         OfficeTown21 : "", OfficeTown22: "", OfficeTown23: "", OfficeTown24: "", OfficeTown25: "",
          OfficeTown: "",
+         RAFlat1 : "", RAFlat2: "", RAFlat3: "", RAFlat4: "", RAFlat5: "",
+         RAFlat6 : "", RAFlat7: "", RAFlat8: "", RAFlat9: "", RAFlat10: "",
+         RAFlat11 : "", RAFlat12: "", RAFlat13: "", RAFlat14: "", RAFlat15: "",
+         RAFlat16 : "", RAFlat17: "", RAFlat18: "", RAFlat19: "", RAFlat20: "",
+         RAFlat21 : "", RAFlat22: "", RAFlat23: "", RAFlat24: "", RAFlat25: "",
          RAFlat: "",
+         RAPremises1 : "", RAPremises2: "", RAPremises3: "", RAPremises4: "", RAPremises5: "",
+         RAPremises6 : "", RAPremises7: "", RAPremises8: "", RAPremises9: "", RAPremises10: "",
+         RAPremises11 : "", RAPremises12: "", RAPremises13: "", RAPremises14: "", RAPremises15: "",
+         RAPremises16 : "", RAPremises17: "", RAPremises18: "", RAPremises19: "", RAPremises20: "",
+         RAPremises21 : "", RAPremises22: "", RAPremises23: "", RAPremises24: "", RAPremises25: "",
          RAPremises: "",
+         RARoad1 : "", RARoad2: "", RARoad3: "", RARoad4: "", RARoad5: "",
+         RARoad6 : "", RARoad7: "", RARoad8: "", RARoad9: "", RARoad10: "",
+         RARoad11 : "", RARoad12: "", RARoad13: "", RARoad14: "", RARoad15: "",
+         RARoad16 : "", RARoad17: "", RARoad18: "", RARoad19: "", RARoad20: "",
+         RARoad21 : "", RARoad22: "", RARoad23: "", RARoad24: "", RARoad25: "",
          RARoad: "",
+         RAArea1 : "", RAArea2: "", RAArea3: "", RAArea4: "", RAArea5: "",
+         RAArea6 : "", RAArea7: "", RAArea8: "", RAArea9: "", RAArea10: "",
+         RAArea11 : "", RAArea12: "", RAArea13: "", RAArea14: "", RAArea15: "",
+         RAArea16 : "", RAArea17: "", RAArea18: "", RAArea19: "", RAArea20: "",
+         RAArea21 : "", RAArea22: "", RAArea23: "", RAArea24: "", RAArea25: "",
          RAArea: "",
+         RATown1 : "", RATown2: "", RATown3: "", RATown4: "", RATown5: "",
+         RATown6 : "", RATown7: "", RATown8: "", RATown9: "", RATown10: "",
+         RATown11 : "", RATown12: "", RATown13: "", RATown14: "", RATown15: "",
+         RATown16 : "", RATown17: "", RATown18: "", RATown19: "", RATown20: "",
+         RATown21 : "", RATown22: "", RATown23: "", RATown24: "", RATown25: "",
          RATown: "",
+         AadhaarFirstName1 : "", AadhaarFirstName2: "", AadhaarFirstName3: "", AadhaarFirstName4: "", AadhaarFirstName5: "",
+         AadhaarFirstName6 : "", AadhaarFirstName7: "", AadhaarFirstName8: "", AadhaarFirstName9: "", AadhaarFirstName10: "",
+         AadhaarFirstName11 : "", AadhaarFirstName12: "", AadhaarFirstName13: "", AadhaarFirstName14: "", AadhaarFirstName15: "",
+         AadhaarFirstName16 : "", AadhaarFirstName17: "", AadhaarFirstName18: "", AadhaarFirstName19: "", AadhaarFirstName20: "",
+         AadhaarFirstName21 : "", AadhaarFirstName22: "", AadhaarFirstName23: "", AadhaarFirstName24: "", AadhaarFirstName25: "",
          AadhaarFirstName: "",
+         AadhaarLastName1 : "", AadhaarLastName2: "", AadhaarLastName3: "", AadhaarLastName4: "", AadhaarLastName5: "",
+         AadhaarLastName6 : "", AadhaarLastName7: "", AadhaarLastName8: "", AadhaarLastName9: "", AadhaarLastName10: "",
+         AadhaarLastName11 : "", AadhaarLastName12: "", AadhaarLastName13: "", AadhaarLastName14: "", AadhaarLastName15: "",
+         AadhaarLastName16 : "", AadhaarLastName17: "", AadhaarLastName18: "", AadhaarLastName19: "", AadhaarLastName20: "",
+         AadhaarLastName21 : "", AadhaarLastName22: "", AadhaarLastName23: "", AadhaarLastName24: "", AadhaarLastName25: "",
          AadhaarLastName: "",
+         AadhaarMiddleName1 : "", AadhaarMiddleName2: "", AadhaarMiddleName3: "", AadhaarMiddleName4: "", AadhaarMiddleName5: "",
+         AadhaarMiddleName6 : "", AadhaarMiddleName7: "", AadhaarMiddleName8: "", AadhaarMiddleName9: "", AadhaarMiddleName10: "",
+         AadhaarMiddleName11 : "", AadhaarMiddleName12: "", AadhaarMiddleName13: "", AadhaarMiddleName14: "", AadhaarMiddleName15: "",
+         AadhaarMiddleName16 : "", AadhaarMiddleName17: "", AadhaarMiddleName18: "", AadhaarMiddleName19: "", AadhaarMiddleName20: "",
+         AadhaarMiddleName21 : "", AadhaarMiddleName22: "", AadhaarMiddleName23: "", AadhaarMiddleName24: "", AadhaarMiddleName25: "",
          AadhaarMiddleName: "",
+         AadhaarNumber1 : "", AadhaarNumber2: "", AadhaarNumber3: "", AadhaarNumber4: "", AadhaarNumber5: "",
+         AadhaarNumber6 : "", AadhaarNumber7: "", AadhaarNumber8: "", AadhaarNumber9: "", AadhaarNumber10: "",
+         AadhaarNumber11 : "", AadhaarNumber12: "",
          AadhaarNumber: "",
+         EnrolmentId1 : "", EnrolmentId2: "", EnrolmentId3: "", EnrolmentId4: "", EnrolmentId5: "",
+         EnrolmentId6 : "", EnrolmentId7: "", EnrolmentId8: "", EnrolmentId9: "", EnrolmentId10: "",
+         EnrolmentId11 : "", EnrolmentId12: "", EnrolmentId13: "", EnrolmentId14: "", EnrolmentId15: "",
+         EnrolmentId16 : "", EnrolmentId17: "", EnrolmentId18: "", EnrolmentId19: "", EnrolmentId20: "",
+         EnrolmentId21 : "", EnrolmentId22: "", EnrolmentId23: "", EnrolmentId24: "", EnrolmentId25: "",
+         EnrolmentId26 : "", EnrolmentId27: "", EnrolmentId28: "",
          EnrolmentId : "",
-         RegistrationNumber: "",
+         RegistrationNumber1 : "", RegistrationNumber2: "", RegistrationNumber3: "", RegistrationNumber4: "", RegistrationNumber5: "",
+         RegistrationNumber6 : "", RegistrationNumber7: "", RegistrationNumber8: "", RegistrationNumber9: "", RegistrationNumber10: "",
+         RegistrationNumber11 : "", RegistrationNumber12: "", RegistrationNumber13: "", RegistrationNumber14: "", RegistrationNumber15: "",
+         RegistrationNumber16 : "", RegistrationNumber17: "", RegistrationNumber18: "", RegistrationNumber19: "", RegistrationNumber20: "",
+         RegistrationNumber21 : "", RegistrationNumber22: "", RegistrationNumber23: "", RegistrationNumber24: "", RegistrationNumber25: "",
+         RegistrationNumber26 : "", RegistrationNumber27: "", RegistrationNumber28: "", RegistrationNumber29: "", RegistrationNumber30: "",
+         RegistrationNumber: "", 
          ResidenceState: "",
+         ResidencePincode1 : "", ResidencePincode2: "", ResidencePincode3: "", ResidencePincode4: "", ResidencePincode5: "",
+         ResidencePincode6 : "", ResidencePincode7: "",
          ResidencePincode: "",
          ResidenceCountry: "",
          OfficeState: "",
+         OfficePincode1 : "", OfficePincode2: "", OfficePincode3: "", OfficePincode4: "", OfficePincode5: "",
+         OfficePincode6 : "", OfficePincode7: "",
          OfficePincode: "",
          OfficeCountry: "",
          RAState: "",
+         RAPincode1 : "", RAPincode2: "", RAPincode3: "", RAPincode4: "", RAPincode5: "",
+         RAPincode6 : "", RAPincode7: "",
          RAPincode: "",
+         CountryCode1 : "", CountryCode2: "", CountryCode3: "",
          CountryCode: "",
+         StdCode1 : "", StdCode2: "", StdCode3: "", StdCode4: "", StdCode5: "",
+         StdCode6 : "", StdCode7: "",
          StdCode: "",
+         PhoneNumber1 : "", PhoneNumber2: "", PhoneNumber3: "", PhoneNumber4: "", PhoneNumber5: "",
+         PhoneNumber6 : "", PhoneNumber7: "", PhoneNumber8: "", PhoneNumber9: "", PhoneNumber10: "",
+         PhoneNumber11 : "", PhoneNumber12: "", PhoneNumber13: "",
          PhoneNumber: "",
+         Day1 : "", Day2: "",
          Day: "",
+         Month1 : "", Month2: "",
          Month: "",
+         Year1 : "", Year2: "", Year3: "", Year4: "",
          Year: "",
          POI: "",
          POA: "",
@@ -268,20 +456,7 @@ class Form1 extends Component {
      }
 
      
-
-    //  $("#1").prop('checked', true);
-
-    //  if(alldata != null){
-    //     for(let i=0; i<=14 ;i++){
-    //         let valdata = this.state.checkarray[i];
-    //         console.log("valdata",valdata)
-    //        let value = alldata[`${valdata}`];
-    //        console.log("value",value)
-    //        if(value != ""){
-    //            $(`#${value}`).prop('checked', true);
-    //        }
-    //     }
-    //   }
+ 
      
   }
   
@@ -298,10 +473,7 @@ class Form1 extends Component {
    }
  
    handleInputdata = (otp, name, id) => {
-    //  if(name == "phonenumber")
-    //  {
-    //      this.validatephonenumber();
-    //  }
+   
      if (id == "1") {
        let textPattern = /[!@#$%^&*(),.?":{}|<>]/
        let checkdata = textPattern.test(otp);
@@ -2002,26 +2174,84 @@ if(this.state.errors.LastName !== "")
 
   handleIncomeBusinessCheck = (e,name) =>  {
 
-    if(document.getElementsByTagName("IncomeBusiness").checked === false)
+
+    if(isNaN( document.getElementsByTagName("IncomeBusiness").checked))
+    {
+        document.getElementsByTagName("IncomeBusiness").checked = true;
+        
+    }
+    if ( (document.getElementsByTagName("NoIncome").checked === true &&
+    document.getElementsByTagName("IncomeBusiness").checked === false))
     { 
-        this.setState({isEnabled : false})
-       // console.log(this.state.isEnabled)
+        console.log("condition 4")
+        this.setState({isEnabled : true})
+        
+        document.getElementsByTagName("IncomeBusiness").checked = true;
+        const check = this.state.data;
+        check[name] = e.target.id;
+        this.setState({ check });
 
-        document.getElementsByTagName("IncomeBusiness").checked = true; 
-        let data = Object.assign({}, this.state.data);     
-        data.IncomeBusiness = "";                         
-        this.setState({data});
-
+        if(!(this.state.data.Salary === "" && this.state.data.CapitalGains === "" &&
+        this.state.data.IncomeBusiness === "" && this.state.data.IncomeOtherSource === "" &&
+        this.state.data.IncomeFromHouse === "" && this.state.data.NoIncome === ""))
+        {
+            let errors = this.state.errors;
+            let name= "Income";
+            this.setState(errors);
+            errors[name] = "";
  
+        }
+    }
+    else if ( (document.getElementsByTagName("NoIncome").checked === true &&
+    document.getElementsByTagName("IncomeBusiness").checked === true))
+    {
+        console.log("condition 2")
+        this.setState({isEnabled : false})
+        document.getElementsByTagName("IncomeBusiness").checked = false; 
+        
+
+        let data1 = this.state.data;
+        let name1= "IncomeBusiness";
+        this.setState(data1);
+        data1[name1] = "";
+ 
+        let data2 = this.state.data;
+        let name2= "BusinessCode1";
+        this.setState(data2);
+        data2[name2] = "";
+
+        let data3 = this.state.data;
+        let name3= "BusinessCode2";
+        this.setState(data3);
+        data3[name3] = "";
+
+        let errors1 = this.state.errors;
+        let name4= "BusinessCode1";
+        this.setState(errors1);
+        errors1[name4] = "";
+
+        let errors2 = this.state.errors;
+        let name5= "BusinessCode2";
+        this.setState(errors2);
+        errors2[name5] = "";
 
     }
-    else 
-    {
-        console.log("true")
-        
-        this.setState({isEnabled : true})
-        console.log(this.state.isEnabled)
+    // else if ( (document.getElementsByTagName("NoIncome").checked === false &&
+    // document.getElementsByTagName("IncomeBusiness").checked === true))
+    // {
+    //      console.log("condition 3")
 
+    // }
+    // else if ( (document.getElementsByTagName("NoIncome").checked === false &&
+    // document.getElementsByTagName("IncomeBusiness").checked === false))
+    // {
+    //      console.log("condition 4")
+    // }
+    else if (document.getElementsByTagName("IncomeBusiness").checked === true)
+    {
+        console.log("condition 3")
+        this.setState({isEnabled : true})
+        
         document.getElementsByTagName("IncomeBusiness").checked = false;
         const check = this.state.data;
         check[name] = e.target.id;
@@ -2031,46 +2261,54 @@ if(this.state.errors.LastName !== "")
         this.state.data.IncomeBusiness === "" && this.state.data.IncomeOtherSource === "" &&
         this.state.data.IncomeFromHouse === "" && this.state.data.NoIncome === ""))
         {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.Income = "";                         
-           this.setState({errors});
+            let errors = this.state.errors;
+            let name= "Income";
+            this.setState(errors);
+            errors[name] = "";
+ 
         }
-
-        this.setState(prevState => ({
-            data: {
-                ...prevState.data,
-                IncomeBusiness: ""
-            }
-        }))
-
-        this.setState(prevState => ({
-            data: {
-                ...prevState.data,
-                BusinessCode1: ""
-            }
-        }))
-
-        this.setState(prevState => ({
-            data: {
-                ...prevState.data,
-                BusinessCode2: ""
-            }
-        }))
-
-        this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                BusinessCode1: ""
-            }
-        }))
-
-        this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                BusinessCode2: ""
-            }
-        }))
+ 
     }
+    else if(document.getElementsByTagName("IncomeBusiness").checked === false )
+    {  
+        console.log("condition 4")
+        this.setState({isEnabled : false})
+    
+        document.getElementsByTagName("IncomeBusiness").checked = true; 
+        
+
+        let data1 = this.state.data;
+        let name1= "IncomeBusiness";
+        this.setState(data1);
+        data1[name1] = "";
+ 
+        let data2 = this.state.data;
+        let name2= "BusinessCode1";
+        this.setState(data2);
+        data2[name2] = "";
+ 
+
+        let data3 = this.state.data;
+        let name3= "BusinessCode2";
+        this.setState(data3);
+        data3[name3] = "";
+ 
+        let errors1 = this.state.errors;
+        let name4= "BusinessCode1";
+        this.setState(errors1);
+        errors1[name4] = "";
+ 
+        let errors2 = this.state.errors;
+        let name5= "BusinessCode2";
+        this.setState(errors2);
+        errors2[name5] = "";
+ 
+    }
+    
+    console.log("isenabled", this.state.isEnabled);
+    console.log("isenabledcheck", this.state.isEnabledCheck)
+    
+    
 
     localStorage.setItem('localdata', JSON.stringify(this.state.data));
     localStorage.setItem('localerror', JSON.stringify(this.state.errors));
@@ -2209,20 +2447,27 @@ if(this.state.errors.LastName !== "")
 
   handleNoIncomeCheck = (e,name) =>  {
 
-console.log("checkbox",document.getElementsByTagName("NoIncome").checked)
+   // console.log("checkbox",document.getElementsByTagName("NoIncome").checked)
 
     if(isNaN( document.getElementsByTagName("NoIncome").checked))
     {
         document.getElementsByTagName("NoIncome").checked = true;
-        console.log("dfghjkl;")
+        console.log("true -no income")
+        
     }
-    if(document.getElementsByTagName("NoIncome").checked === false)
+    if(document.getElementsByTagName("NoIncome").checked === true)
     {
-        console.log("false")
-        document.getElementsByTagName("NoIncome").checked = true; 
-        let data = Object.assign({}, this.state.data);     
-        data.NoIncome = "";                         
-        this.setState({data});
+        console.log("false -no income")
+        document.getElementsByTagName("NoIncome").checked = false; 
+
+        let data = this.state.data;
+        let name= "NoIncome";
+        this.setState(data);
+        data[name] = "";
+
+        // let data = Object.assign({}, this.state.data);     
+        // data.NoIncome = "";                         
+        // this.setState({data});
 
         let val = false;
         this.setState({isEnabledCheck : false});
@@ -2236,82 +2481,132 @@ console.log("checkbox",document.getElementsByTagName("NoIncome").checked)
            document.getElementById(i).checked = false;
         }
 
-        this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                IncomeBusiness: ""
-            }
-           }))
+        let errors = this.state.errors;
+        let name1= "IncomeBusiness";
+        this.setState(errors);
+        errors[name1] = "";
+
+        // this.setState(prevState => ({
+        //     errors: {
+        //         ...prevState.errors,
+        //         IncomeBusiness: ""
+        //     }
+        //    }))
+
+           let errors1 = this.state.errors;
+           let name2= "BusinessCode1";
+           this.setState(errors1);
+           errors1[name2] = "";
     
-           this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                BusinessCode1: ""
-            }
-           }))
+        //    this.setState(prevState => ({
+        //     errors: {
+        //         ...prevState.errors,
+        //         BusinessCode1: ""
+        //     }
+        //    }))
+
+           let errors2 = this.state.errors;
+           let name3= "BusinessCode2";
+           this.setState(errors2);
+           errors2[name3] = "";
     
-           this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                BusinessCode2: ""
-            }
-           }))
+        //    this.setState(prevState => ({
+        //     errors: {
+        //         ...prevState.errors,
+        //         BusinessCode2: ""
+        //     }
+        //    }))
+
+           let data2 = this.state.data;
+           let name4= "IncomeBusiness";
+           this.setState(data2);
+           data2[name4] = "";
     
-           this.setState(prevState => ({
-            data: {
-                ...prevState.data,
-                IncomeBusiness: ""
-            }
-           }))
+        //    this.setState(prevState => ({
+        //     data: {
+        //         ...prevState.data,
+        //         IncomeBusiness: ""
+        //     }
+        //    }))
+
+           let data3 = this.state.data;
+           let name5= "BusinessCode1";
+           this.setState(data3);
+           data3[name5] = "";
     
-           this.setState(prevState => ({
-            data: {
-                ...prevState.data,
-                BusinessCode1: ""
-            }
-           }))
+        //    this.setState(prevState => ({
+        //     data: {
+        //         ...prevState.data,
+        //         BusinessCode1: ""
+        //     }
+        //    }))
     
-           this.setState(prevState => ({
-            data: {
-                ...prevState.data,
-                BusinessCode2: ""
-            }
-           }))
+           let data4 = this.state.data;
+           let name6= "BusinessCode2";
+           this.setState(data4);
+           data4[name6] = "";
+
+        //    this.setState(prevState => ({
+        //     data: {
+        //         ...prevState.data,
+        //         BusinessCode2: ""
+        //     }
+        //    }))
+
+           let data5 = this.state.data;
+           let name7= "Salary";
+           this.setState(data5);
+           data5[name7] = "";
     
-           this.setState(prevState => ({
-            data: {
-                ...prevState.data,
-                Salary: ""
-            }
-           }))
+        //    this.setState(prevState => ({
+        //     data: {
+        //         ...prevState.data,
+        //         Salary: ""
+        //     }
+        //    }))
+
+           let data6 = this.state.data;
+           let name8= "CapitalGains";
+           this.setState(data6);
+           data6[name8] = "";
     
-           this.setState(prevState => ({
-            data: {
-                ...prevState.data,
-                CapitalGains: ""
-            }
-           }))
+        //    this.setState(prevState => ({
+        //     data: {
+        //         ...prevState.data,
+        //         CapitalGains: ""
+        //     }
+        //    }))
     
-           this.setState(prevState => ({
-            data: {
-                ...prevState.data,
-                IncomeOtherSource: ""
-            }
-           }))
+           let data7 = this.state.data;
+           let name9= "IncomeOtherSource";
+           this.setState(data7);
+           data7[name9] = "";
+
+        //    this.setState(prevState => ({
+        //     data: {
+        //         ...prevState.data,
+        //         IncomeOtherSource: ""
+        //     }
+        //    }))
+
+           let data8 = this.state.data;
+           let name10= "IncomeFromHouse";
+           this.setState(data8);
+           data8[name10] = "";
     
-           this.setState(prevState => ({
-            data: {
-                ...prevState.data,
-                IncomeFromHouse: ""
-            }
-           }))
+        //    this.setState(prevState => ({
+        //     data: {
+        //         ...prevState.data,
+        //         IncomeFromHouse: ""
+        //     }
+        //    }))
 
 
     }
-    if(document.getElementsByTagName("NoIncome").checked === true)
+    else if(document.getElementsByTagName("NoIncome").checked === false)
     {
-        console.log("true")
-        document.getElementsByTagName("NoIncome").checked = false;
+        console.log("false -no income")
+        document.getElementsByTagName("NoIncome").checked = true;
         const check = this.state.data;
         check[name] = e.target.id;
         this.setState({ check });
@@ -2320,9 +2615,14 @@ console.log("checkbox",document.getElementsByTagName("NoIncome").checked)
         this.state.data.IncomeBusiness === "" && this.state.data.IncomeOtherSource === "" &&
         this.state.data.IncomeFromHouse === "" && this.state.data.NoIncome === ""))
         {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.Income = "";                         
-           this.setState({errors});
+        //    let errors = Object.assign({}, this.state.errors);     
+        //    errors.Income = "";                         
+        //    this.setState({errors});
+
+           let errors3 = this.state.errors;
+           let name3= "Income";
+           this.setState(errors3);
+           errors3[name3] = "";
         }
  
 
@@ -2333,7 +2633,9 @@ console.log("checkbox",document.getElementsByTagName("NoIncome").checked)
        this.setState({isEnabled : false});
 
     }
-
+   
+    console.log("isenabled", this.state.isEnabled);
+    console.log("isenabledcheck", this.state.isEnabledCheck)
     
     localStorage.setItem('localdata', JSON.stringify(this.state.data));
     localStorage.setItem('localerror', JSON.stringify(this.state.errors));
@@ -16503,20 +16805,20 @@ HighlightPhoneNumberError = () => {
 handleStdCode1 = (event) => {  
     this.handleInput(event);
     this.validateStdCode(event);  
-    (this.state.data.StdCode1 === "") ? $( "#StdCode1" ).focus() : $( "#StdCode2" ).focus();
+    (event.target.value === "") ? $( "#StdCode1" ).focus() : $( "#StdCode2" ).focus();
  }
 
 handleStdCode2 = (event) => {    
     this.handleInput(event);
     this.validateStdCode(event);  
-    (this.state.data.StdCode2 === "") ? $( "#StdCode2" ).focus() : $( "#StdCode3" ).focus();
+    (event.target.value === "") ? $( "#StdCode2" ).focus() : $( "#StdCode3" ).focus();
    
 }
 
 handleStdCode3 = (event) => {    
     this.handleInput(event);
     this.validateStdCode(event);  
-    (this.state.data.StdCode3 === "") ? $( "#StdCode3" ).focus() : $( "#StdCode4" ).focus();
+    (event.target.value === "") ? $( "#StdCode3" ).focus() : $( "#StdCode4" ).focus();
 }
 
 handleStdCode4 = (event) => {    
@@ -16624,25 +16926,34 @@ HighlightCountryCodeError = () => {
      
     let val = this.state.data.LastName;
     this.setState({val})
-    let errors = Object.assign({}, this.state.errors);     
-    errors.LastName = "";                         
-    this.setState({errors});
+
+    let errors = this.state.errors;
+    let name = "LastName";
+    this.setState(errors);
+    errors[name] = "";
+ 
     this.ResetLastNameError();
     
   
     if(this.state.data.LastName === "" || (isNaN(this.state.data.LastName) === false))
     { 
-        let errors = Object.assign({}, this.state.errors);     
-        errors.LastName = "*Please enter your LastName";                         
-        this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "LastName";
+        this.setState(errors);
+        errors[name] = "*Please enter your LastName"; 
+
         this.state.isModalEnabled =  false;  
         this.HighlightLastNameError();      
     }
     else if (typeof  this.state.data.LastName !== "undefined") {
         if (!this.state.data.LastName.match(/^[a-zA-Z ]*$/)) {
-            let errors = Object.assign({}, this.state.errors);     
-            errors.LastName = "*Please enter alphabet characters only.";                         
-            this.setState({errors});
+
+            let errors = this.state.errors;
+            let name = "LastName";
+            this.setState(errors);
+            errors[name] = "*Please enter alphabet characters only."; 
+     
             this.state.isModalEnabled =  false;
             this.HighlightLastNameError();
         }
@@ -16664,25 +16975,31 @@ HighlightCountryCodeError = () => {
          this.state.data.FirstName18 + this.state.data.FirstName19 + this.state.data.FirstName20 +
          this.state.data.FirstName21 + this.state.data.FirstName22 + this.state.data.FirstName23 + 
          this.state.data.FirstName24 + this.state.data.FirstName25 ;
-    let errors = Object.assign({}, this.state.errors);     
-
-    errors.FirstName = "";                         
-    this.setState({errors});
+      
+      
+         let errors = this.state.errors;
+         let name = "FirstName";
+         this.setState(errors);
+         errors[name] = "";
     this.ResetFirstNameError();
   
     if(this.state.data.FirstName === "" || (isNaN(this.state.data.FirstName) === false))
-    { 
-        let errors = Object.assign({}, this.state.errors);     
-        errors.FirstName = "*Please enter your Firstname";                         
-        this.setState({errors});
+    {  
+        let errors = this.state.errors;
+        let name = "FirstName";
+        this.setState(errors);
+        errors[name] = "*Please enter your Firstname";
         this.state.isModalEnabled =  false;
         this.HighlightFirstNameError();
     }
     else if (typeof  this.state.data.FirstName !== "undefined") {
         if (!this.state.data.FirstName.match(/^[a-zA-Z ]*$/)) {
-            let errors = Object.assign({}, this.state.errors);     
-            errors.FirstName = "*Please enter alphabet characters only.";                         
-            this.setState({errors});
+
+
+            let errors = this.state.errors;
+            let name = "FirstName";
+            this.setState(errors);
+            errors[name] = "*Please enter alphabet characters only.";
             this.state.isModalEnabled =  false;
             this.HighlightFirstNameError();
         }
@@ -16708,16 +17025,20 @@ HighlightCountryCodeError = () => {
          this.state.data.MiddleName24 + this.state.data.MiddleName25 ;
           
 
-    let errors = Object.assign({}, this.state.errors);     
-    errors.MiddleName = "";                         
-    this.setState({errors});
-    this.ResetMiddleNameError();
+         let errors = this.state.errors;
+         let name = "MiddleName";
+         this.setState(errors);
+         errors[name] = "";
+        this.ResetMiddleNameError();
     
     if (typeof  this.state.data.MiddleName !== "undefined") {
         if (!this.state.data.MiddleName.match(/^[a-zA-Z ]*$/)) {
-            let errors = Object.assign({}, this.state.errors);     
-            errors.MiddleName = "*Please enter alphabet characters only.";                         
-            this.setState({errors});
+
+            let errors = this.state.errors;
+            let name = "MiddleName";
+            this.setState(errors);
+            errors[name] = "*Please enter alphabet characters only.";
+             
             this.state.isModalEnabled =  false;
             this.HighlightMiddleNameError();
         }
@@ -16743,16 +17064,22 @@ HighlightCountryCodeError = () => {
          this.state.data.AbbreviationOne30 + this.state.data.AbbreviationOne31 + this.state.data.AbbreviationOne32 + 
          this.state.data.AbbreviationOne33 + this.state.data.AbbreviationOne34 + this.state.data.AbbreviationOne35 + 
          this.state.data.AbbreviationOne36 + this.state.data.AbbreviationOne37;
-    let errors = Object.assign({}, this.state.errors);     
-    errors.AbbreviationOne = "";                         
-    this.setState({errors});
+
+         let errors = this.state.errors;
+         let name = "AbbreviationOne";
+         this.setState(errors);
+         errors[name] = "";
+    
     this.ResetAbbreviationOneError();    
    
     if (typeof  this.state.data.AbbreviationOne !== "undefined") {
         if (!this.state.data.AbbreviationOne.match(/^[a-zA-Z ]*$/)) {
-            let errors = Object.assign({}, this.state.errors);     
-            errors.AbbreviationOne = "*Please enter alphabet characters only.";                         
-            this.setState({errors});
+
+            let errors = this.state.errors;
+            let name = "AbbreviationOne";
+            this.setState(errors);
+            errors[name] = "*Please enter alphabet characters only.";
+ 
             this.state.isModalEnabled =  false;
             this.HighlightAbbreviationOneError();
         }
@@ -16781,16 +17108,24 @@ HighlightCountryCodeError = () => {
          this.state.data.AbbreviationTwo30 + this.state.data.AbbreviationTwo31 + this.state.data.AbbreviationTwo32 + 
          this.state.data.AbbreviationTwo33 + this.state.data.AbbreviationTwo34 + this.state.data.AbbreviationTwo35 + 
          this.state.data.AbbreviationTwo36 + this.state.data.AbbreviationTwo37;
-    let errors = Object.assign({}, this.state.errors);     
-    errors.AbbreviationTwo = "";                         
-    this.setState({errors});
+
+         let errors = this.state.errors;
+         let name = "AbbreviationTwo";
+         this.setState(errors);
+         errors[name] = "";
+    
     this.ResetAbbreviationTwoError();
     
     if (typeof  this.state.data.AbbreviationTwo !== "undefined") {
         if (!this.state.data.AbbreviationTwo.match(/^[a-zA-Z ]*$/)) {
-            let errors = Object.assign({}, this.state.errors);     
-            errors.AbbreviationTwo = "*Please enter alphabet characters only.";                         
-            this.setState({errors});
+
+
+         let errors = this.state.errors;
+         let name = "AbbreviationTwo";
+         this.setState(errors);
+         errors[name] = "*Please enter alphabet characters only.";
+    
+ 
             this.state.isModalEnabled =  false;
             this.HighlightAbbreviationTwoError();
         }
@@ -16811,25 +17146,34 @@ HighlightCountryCodeError = () => {
          this.state.data.OtherLastName15 + this.state.data.OtherLastName16 + this.state.data.OtherLastName17 + 
          this.state.data.OtherLastName18 + this.state.data.OtherLastName19 + this.state.data.OtherLastName20 +
          this.state.data.OtherLastName21 + this.state.data.OtherLastName22 + this.state.data.OtherLastName23 + 
-         this.state.data.OtherLastName24 + this.state.data.OtherLastName25 ;   
-    let errors = Object.assign({}, this.state.errors);     
-    errors.OtherLastName = "";                         
-    this.setState({errors});
+         this.state.data.OtherLastName24 + this.state.data.OtherLastName25 ; 
+         
+         
+         let errors = this.state.errors;
+         let name = "OtherLastName";
+         this.setState(errors);
+         errors[name] = "";
+ 
     this.ResetOtherLastNameError();
     
     if(this.state.data.OtherLastName === "" || (isNaN(this.state.data.OtherLastName) === false))
     {  
-        let errors = Object.assign({}, this.state.errors);     
-        errors.OtherLastName = "*Please enter your Other LastName";                         
-        this.setState({errors});
+        let errors = this.state.errors;
+        let name = "OtherLastName";
+        this.setState(errors);
+        errors[name] = "*Please enter your Other LastName";
+
         this.state.isModalEnabled =  false;
         this.HighlightOtherLastNameError();
     }
     else if (typeof  this.state.data.OtherLastName !== "undefined") {
         if (!this.state.data.OtherLastName.match(/^[a-zA-Z ]*$/)) {
-            let errors = Object.assign({}, this.state.errors);     
-            errors.OtherLastName = "*Please enter alphabet characters only.";                         
-            this.setState({errors});
+
+            let errors = this.state.errors;
+            let name = "OtherLastName";
+            this.setState(errors);
+            errors[name] = "*Please enter alphabet characters only.";
+ 
             this.state.isModalEnabled =  false;
             this.HighlightOtherLastNameError();
         }
@@ -16851,24 +17195,31 @@ HighlightCountryCodeError = () => {
          this.state.data.OtherFirstName18 + this.state.data.OtherFirstName19 + this.state.data.OtherFirstName20 +
          this.state.data.OtherFirstName21 + this.state.data.OtherFirstName22 + this.state.data.OtherFirstName23 + 
          this.state.data.OtherFirstName24 + this.state.data.OtherFirstName25 ;
-    let errors = Object.assign({}, this.state.errors);     
-    errors.OtherFirstName = "";                         
-    this.setState({errors});
+
+         let errors = this.state.errors;
+         let name = "OtherFirstName";
+         this.setState(errors);
+         errors[name] = "";
     this.ResetOtherFirstNameError();    
   
     if(this.state.data.OtherFirstName === "" || (isNaN(this.state.data.OtherFirstName) === false))
     { 
-        let errors = Object.assign({}, this.state.errors);     
-        errors.OtherFirstName = "*Please enter your Other FirstName";                         
-        this.setState({errors});
+        let errors = this.state.errors;
+        let name = "OtherFirstName";
+        this.setState(errors);
+        errors[name] = "*Please enter your Other FirstName";
+ 
         this.state.isModalEnabled =  false;
         this.HighlightOtherFirstNameError();
     }
     else if (typeof  this.state.data.OtherFirstName !== "undefined") {
         if (!this.state.data.OtherFirstName.match(/^[a-zA-Z ]*$/)) {
-            let errors = Object.assign({}, this.state.errors);     
-            errors.OtherFirstName = "*Please enter alphabet characters only.";                         
-            this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "OtherFirstName";
+        this.setState(errors);
+        errors[name] = "*Please enter alphabet characters only.";
+          
             this.state.isModalEnabled =  false;
             this.HighlightOtherFirstNameError();
         }
@@ -16890,17 +17241,23 @@ HighlightCountryCodeError = () => {
          this.state.data.OtherMiddleName18 + this.state.data.OtherMiddleName19 + this.state.data.OtherMiddleName20 +
          this.state.data.OtherMiddleName21 + this.state.data.OtherMiddleName22 + this.state.data.OtherMiddleName23 + 
          this.state.data.OtherMiddleName24 + this.state.data.OtherMiddleName25 ;
-    let errors = Object.assign({}, this.state.errors);     
-    errors.OtherMiddleName = "";                         
-    this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "OtherMiddleName";
+        this.setState(errors);
+        errors[name] = "";
+    
     this.ResetOtherMiddleNameError();
     
 
     if (typeof  this.state.data.OtherMiddleName !== "undefined") {
         if (!this.state.data.OtherMiddleName.match(/^[a-zA-Z ]*$/)) {
-            let errors = Object.assign({}, this.state.errors);     
-            errors.OtherMiddleName = "*Please enter alphabet characters only.";                         
-            this.setState({errors});
+
+            let errors = this.state.errors;
+            let name = "OtherMiddleName";
+            this.setState(errors);
+            errors[name] = "*Please enter alphabet characters only.";
+            
             this.state.isModalEnabled =  false;
             this.HighlightOtherMiddleNameError();
         }
@@ -16924,25 +17281,31 @@ async validateFatherFirstName(event) {
          this.state.data.FatherFirstName18 + this.state.data.FatherFirstName19 + this.state.data.FatherFirstName20 +
          this.state.data.FatherFirstName21 + this.state.data.FatherFirstName22 + this.state.data.FatherFirstName23 + 
          this.state.data.FatherFirstName24 + this.state.data.FatherFirstName25 ;
-   let errors = Object.assign({}, this.state.errors);     
-   errors.FatherFirstName = "";                         
-   this.setState({errors});
+
+         let errors = this.state.errors;
+         let name = "FatherFirstName";
+         this.setState(errors);
+         errors[name] = "";
    this.ResetFatherFirstNameError();
 
    if(this.state.data.FatherFirstName === "" || (isNaN(this.state.data.FatherFirstName) === false))
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.FatherFirstName = "*Please enter your Father's FirstName";                         
-       this.setState({errors});
+    let errors = this.state.errors;
+    let name = "FatherFirstName";
+    this.setState(errors);
+    errors[name] = "*Please enter your Father's FirstName";
+ 
        this.state.isModalEnabled =  false;
        this.HighlightFatherFirstNameError();
    }
    else if (typeof  this.state.data.FatherFirstName !== "undefined") {
        if (!this.state.data.FatherFirstName.match(/^[a-zA-Z ]*$/)) {
-            
-           let errors = Object.assign({}, this.state.errors);     
-           errors.FatherFirstName = "*Please enter alphabet characters only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "FatherFirstName";
+        this.setState(errors);
+        errors[name] = "*Please enter alphabet characters only.";
+        
            this.state.isModalEnabled =  false;
            this.HighlightFatherFirstNameError();
        }
@@ -16965,24 +17328,33 @@ async validateFatherLastName(event) {
          this.state.data.FatherLastName18 + this.state.data.FatherLastName19 + this.state.data.FatherLastName20 +
          this.state.data.FatherLastName21 + this.state.data.FatherLastName22 + this.state.data.FatherLastName23 + 
          this.state.data.FatherLastName24 + this.state.data.FatherLastName25 ;
-   let errors = Object.assign({}, this.state.errors);     
-   errors.FatherLastName = "";                         
-   this.setState({errors});
+
+         let errors = this.state.errors;
+         let name = "FatherLastName";
+         this.setState(errors);
+         errors[name] = "";
+ 
    this.ResetFatherLastNameError();
 
    if(this.state.data.FatherLastName === "" || (isNaN(this.state.data.FatherLastName) === false))
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.FatherLastName = "*Please enter your Father's LastName";                         
-       this.setState({errors});
+    let errors = this.state.errors;
+    let name = "FatherLastName";
+    this.setState(errors);
+    errors[name] = "*Please enter your Father's LastName";
+ 
        this.state.isModalEnabled =  false;
        this.HighlightFatherLastNameError();
    }
    else if (typeof  this.state.data.FatherLastName !== "undefined") {
        if (!this.state.data.FatherLastName.match(/^[a-zA-Z ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.FatherLastName = "*Please enter alphabet characters only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "FatherLastName";
+        this.setState(errors);
+        errors[name] = "*Please enter alphabet characters only.";
+
+         
            this.state.isModalEnabled =  false;
            this.HighlightFatherLastNameError();
        }
@@ -17005,16 +17377,22 @@ async validateFatherMiddleName(event) {
          this.state.data.FatherMiddleName18 + this.state.data.FatherMiddleName19 + this.state.data.FatherMiddleName20 +
          this.state.data.FatherMiddleName21 + this.state.data.FatherMiddleName22 + this.state.data.FatherMiddleName23 + 
          this.state.data.FatherMiddleName24 + this.state.data.FatherMiddleName25 ;
-   let errors = Object.assign({}, this.state.errors);     
-   errors.FatherMiddleName = "";                         
-   this.setState({errors});
+
+         let errors = this.state.errors;
+         let name = "FatherMiddleName";
+         this.setState(errors);
+         errors[name] = "";
+ 
    this.ResetFatherMiddleNameError();
 
    if (typeof  this.state.data.FatherMiddleName !== "undefined") {
        if (!this.state.data.FatherMiddleName.match(/^[a-zA-Z ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.FatherMiddleName = "*Please enter alphabet characters only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "FatherMiddleName";
+        this.setState(errors);
+        errors[name] = "*Please enter alphabet characters only.";
+         
            this.state.isModalEnabled =  false;
            this.HighlightFatherMiddleNameError();
        }
@@ -17037,16 +17415,23 @@ async validateMotherFirstName(event) {
          this.state.data.MotherFirstName18 + this.state.data.MotherFirstName19 + this.state.data.MotherFirstName20 +
          this.state.data.MotherFirstName21 + this.state.data.MotherFirstName22 + this.state.data.MotherFirstName23 + 
          this.state.data.MotherFirstName24 + this.state.data.MotherFirstName25 ;
-   let errors = Object.assign({}, this.state.errors);     
-   errors.MotherFirstName = "";                         
-   this.setState({errors});
+
+         let errors = this.state.errors;
+         let name = "MotherFirstName";
+         this.setState(errors);
+         errors[name] = "";
+
+  
    this.ResetMotherFirstNameError();
  
    if (typeof  this.state.data.MotherFirstName !== "undefined") {
        if (!this.state.data.MotherFirstName.match(/^[a-zA-Z ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.MotherFirstName = "*Please enter alphabet characters only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "MotherFirstName";
+        this.setState(errors);
+        errors[name] = "*Please enter alphabet characters only.";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightMotherFirstNameError();
        }
@@ -17069,16 +17454,24 @@ async validateMotherLastName(event) {
          this.state.data.MotherLastName18 + this.state.data.MotherLastName19 + this.state.data.MotherLastName20 +
          this.state.data.MotherLastName21 + this.state.data.MotherLastName22 + this.state.data.MotherLastName23 + 
          this.state.data.MotherLastName24 + this.state.data.MotherLastName25 ;
-   let errors = Object.assign({}, this.state.errors);     
-   errors.MotherLastName = "";                         
-   this.setState({errors});
+
+
+         let errors = this.state.errors;
+         let name = "MotherLastName";
+         this.setState(errors);
+         errors[name] = "";
+ 
    this.ResetMotherLastNameError();
   
    if (typeof  this.state.data.MotherLastName !== "undefined") {
        if (!this.state.data.MotherLastName.match(/^[a-zA-Z ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.MotherLastName = "*Please enter alphabet characters only.";                         
-           this.setState({errors});
+
+
+        let errors = this.state.errors;
+        let name = "MotherLastName";
+        this.setState(errors);
+        errors[name] = "*Please enter alphabet characters only.";
+          
            this.state.isModalEnabled =  false;
            this.HighlightMotherLastNameError();
        }
@@ -17100,16 +17493,22 @@ async validateMotherMiddleName(event) {
          this.state.data.MotherMiddleName18 + this.state.data.MotherMiddleName19 + this.state.data.MotherMiddleName20 +
          this.state.data.MotherMiddleName21 + this.state.data.MotherMiddleName22 + this.state.data.MotherMiddleName23 + 
          this.state.data.MotherMiddleName24 + this.state.data.MotherMiddleName25 ;
-   let errors = Object.assign({}, this.state.errors);     
-   errors.MotherMiddleName = "";                         
-   this.setState({errors});
+
+         let errors = this.state.errors;
+         let name = "MotherMiddleName";
+         this.setState(errors);
+         errors[name] = "";
+   
    this.ResetMotherMiddleNameError();
  
    if (typeof  this.state.data.MotherMiddleName !== "undefined") {
        if (!this.state.data.MotherMiddleName.match(/^[a-zA-Z ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.MotherMiddleName = "*Please enter alphabet characters only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "MotherMiddleName";
+        this.setState(errors);
+        errors[name] = "*Please enter alphabet characters only.";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightMotherMiddleNameError();
        }
@@ -17132,24 +17531,33 @@ async validateRALastName(event) {
          this.state.data.RALastName18 + this.state.data.RALastName19 + this.state.data.RALastName20 +
          this.state.data.RALastName21 + this.state.data.RALastName22 + this.state.data.RALastName23 + 
          this.state.data.RALastName24 + this.state.data.RALastName25 ;
-   let errors = Object.assign({}, this.state.errors);     
-   errors.RALastName = "";                         
-   this.setState({errors});
+
+         let errors = this.state.errors;
+         let name = "RALastName";
+         this.setState(errors);
+         errors[name] = "";
+ 
    this.ResetRALastNameError();
  
    if(this.state.data.RALastName === "" || isNaN(this.state.data.RALastName) === false)
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.RALastName = "*Please enter your Representative Aseessee's LastName";                         
-       this.setState({errors});
+
+    let errors = this.state.errors;
+    let name = "RALastName";
+    this.setState(errors);
+    errors[name] = "*Please enter your Representative Aseessee's LastName";
+ 
        this.state.isModalEnabled =  false;
        this.HighlightRALastNameError();
    }
    else if (typeof  this.state.data.RALastName !== "undefined") {
        if (!this.state.data.RALastName.match(/^[a-zA-Z ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.RALastName = "*Please enter alphabet characters only.";                         
-           this.setState({errors});
+        let errors = this.state.errors;
+        let name = "RALastName";
+        this.setState(errors);
+        errors[name] = "*Please enter alphabet characters only.";
+
+         
            this.state.isModalEnabled =  false;
            this.HighlightRALastNameError();
        }
@@ -17172,24 +17580,35 @@ async validateRAFirstName(event) {
          this.state.data.RAFirstName18 + this.state.data.RAFirstName19 + this.state.data.RAFirstName20 +
          this.state.data.RAFirstName21 + this.state.data.RAFirstName22 + this.state.data.RAFirstName23 + 
          this.state.data.RAFirstName24 + this.state.data.RAFirstName25 ;
-   let errors = Object.assign({}, this.state.errors);     
-   errors.RAFirstName = "";                         
-   this.setState({errors});
+
+
+         let errors = this.state.errors;
+         let name = "RAFirstName";
+         this.setState(errors);
+         errors[name] = "";
+ 
    this.ResetRAFirstNameError();
  
    if(this.state.data.RAFirstName === "" || (isNaN(this.state.data.RAFirstName) === false))
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.RAFirstName = "*Please enter your Representative Aseessee's FirstName";                         
-       this.setState({errors});
+
+    let errors = this.state.errors;
+    let name = "RAFirstName";
+    this.setState(errors);
+    errors[name] = "*Please enter your Representative Aseessee's FirstName";
+ 
        this.state.isModalEnabled =  false;
        this.HighlightRAFirstNameError();
    }
    else if (typeof  this.state.data.RAFirstName !== "undefined") {
        if (!this.state.data.RAFirstName.match(/^[a-zA-Z ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.RAFirstName = "*Please enter alphabet characters only.";                         
-           this.setState({errors});
+
+
+        let errors = this.state.errors;
+        let name = "RAFirstName";
+        this.setState(errors);
+        errors[name] = "*Please enter alphabet characters only.";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightRAFirstNameError();
        }
@@ -17212,17 +17631,23 @@ async validateRAMiddleName(event) {
          this.state.data.RAMiddleName18 + this.state.data.RAMiddleName19 + this.state.data.RAMiddleName20 +
          this.state.data.RAMiddleName21 + this.state.data.RAMiddleName22 + this.state.data.RAMiddleName23 + 
          this.state.data.RAMiddleName24 + this.state.data.RAMiddleName25 ;
-   let errors = Object.assign({}, this.state.errors);     
-   errors.RAMiddleName = "";                         
-   this.setState({errors});
+
+         let errors = this.state.errors;
+         let name = "RAMiddleName";
+         this.setState(errors);
+         errors[name] = "";
+ 
    this.ResetRAMiddleNameError();
 
  
    if (typeof  this.state.data.RAMiddleName !== "undefined") {
        if (!this.state.data.RAMiddleName.match(/^[a-zA-Z ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.RAMiddleName = "*Please enter alphabet characters only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "RAMiddleName";
+        this.setState(errors);
+        errors[name] = "*Please enter alphabet characters only.";
+           
            this.state.isModalEnabled =  false;
            this.HighlightRAMiddleNameError();
 
@@ -17246,25 +17671,33 @@ async validateResidenceFlat(event) {
     this.state.data.ResidenceFlat18 + this.state.data.ResidenceFlat19 + this.state.data.ResidenceFlat20 +
     this.state.data.ResidenceFlat21 + this.state.data.ResidenceFlat22 + this.state.data.ResidenceFlat23 + 
     this.state.data.ResidenceFlat24 + this.state.data.ResidenceFlat25 ;
-   let errors = Object.assign({}, this.state.errors);     
-   errors.ResidenceFlat = "";                         
-   this.setState({errors});
+
+    let errors = this.state.errors;
+    let name = "ResidenceFlat";
+    this.setState(errors);
+    errors[name] = "";
+ 
    this.ResetResidenceFlatError();
  
    if(this.state.data.ResidenceFlat === "" || ((isNaN(this.state.data.ResidenceFlat) === false) 
    && (this.state.data.ResidenceFlat.match(/^[ ]*$/))))
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.ResidenceFlat = "*Please enter your Residence Flat / Room / Door / Block No.";                         
-       this.setState({errors});
+    let errors = this.state.errors;
+    let name = "ResidenceFlat";
+    this.setState(errors);
+    errors[name] = "*Please enter your Residence Flat / Room / Door / Block No.";
+
        this.state.isModalEnabled =  false;
        this.HighlightResidenceFlatError();
    }
    else if (typeof  this.state.data.ResidenceFlat !== "undefined") {
        if (!this.state.data.ResidenceFlat.match(/^[a-zA-Z0-9'-/ ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.ResidenceFlat = "*Please enter alphanumeric characters only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "ResidenceFlat";
+        this.setState(errors);
+        errors[name] = "*Please enter alphanumeric characters only.";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightResidenceFlatError();
        }
@@ -17286,25 +17719,35 @@ async validateResidencePremises(event) {
     this.state.data.ResidencePremises18 + this.state.data.ResidencePremises19 + this.state.data.ResidencePremises20 +
     this.state.data.ResidencePremises21 + this.state.data.ResidencePremises22 + this.state.data.ResidencePremises23 + 
     this.state.data.ResidencePremises24 + this.state.data.ResidencePremises25 ;
-   let errors = Object.assign({}, this.state.errors);     
-   errors.ResidencePremises = "";                         
-   this.setState({errors});
+
+
+    let errors = this.state.errors;
+    let name = "ResidencePremises";
+    this.setState(errors);
+    errors[name] = "";
+
    this.ResetResidencePremisesError();
  
    if(this.state.data.ResidencePremises === "" || ((isNaN(this.state.data.ResidencePremises) === false) 
    && (this.state.data.ResidencePremises.match(/^[ ]*$/))))
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.ResidencePremises = "*Please enter your Residence Premises / Building / Village";                         
-       this.setState({errors});
+
+    let errors = this.state.errors;
+    let name = "ResidencePremises";
+    this.setState(errors);
+    errors[name] = "*Please enter your Residence Premises / Building / Village";
+ 
        this.state.isModalEnabled =  false;
        this.HighlightResidencePremisesError();
     }
    else if (typeof  this.state.data.ResidencePremises !== "undefined") {
        if (!this.state.data.ResidencePremises.match(/^[a-zA-Z0-9 ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.ResidencePremises = "*Please enter alphanumeric characters only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "ResidencePremises";
+        this.setState(errors);
+        errors[name] = "*Please enter alphanumeric characters only.";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightResidencePremisesError();
        }
@@ -17326,25 +17769,33 @@ async validateResidenceRoad(event) {
     this.state.data.ResidenceRoad18 + this.state.data.ResidenceRoad19 + this.state.data.ResidenceRoad20 +
     this.state.data.ResidenceRoad21 + this.state.data.ResidenceRoad22 + this.state.data.ResidenceRoad23 + 
     this.state.data.ResidenceRoad24 + this.state.data.ResidenceRoad25 ;
-   let errors = Object.assign({}, this.state.errors);     
-   errors.ResidenceRoad = "";                         
-   this.setState({errors});
+
+    let errors = this.state.errors;
+    let name = "ResidenceRoad";
+    this.setState(errors);
+    errors[name] = "";
+ 
    this.ResetResidenceRoadError();
 
    if(this.state.data.ResidenceRoad === "" || ((isNaN(this.state.data.ResidenceRoad) === false) 
    && (this.state.data.ResidenceRoad.match(/^[ ]*$/))))
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.ResidenceRoad = "*Please enter your Residence Road / Street / Lane / Post Office";                         
-       this.setState({errors});
+    let errors = this.state.errors;
+    let name = "ResidenceRoad";
+    this.setState(errors);
+    errors[name] = "*Please enter your Residence Road / Street / Lane / Post Office";
+
        this.state.isModalEnabled =  false;
        this.HighlightResidenceRoadError();
     }
    else if (typeof  this.state.data.ResidenceRoad !== "undefined") {
        if (!this.state.data.ResidenceRoad.match(/^[a-zA-Z0-9 ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.ResidenceRoad = "*Please enter alphanumeric characters only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "ResidenceRoad";
+        this.setState(errors);
+        errors[name] = "*Please enter alphanumeric characters only.";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightResidenceRoadError();
        }
@@ -17367,24 +17818,36 @@ async validateResidenceArea(event) {
     this.state.data.ResidenceArea18 + this.state.data.ResidenceArea19 + this.state.data.ResidenceArea20 +
     this.state.data.ResidenceArea21 + this.state.data.ResidenceArea22 + this.state.data.ResidenceArea23 + 
     this.state.data.ResidenceArea24 + this.state.data.ResidenceArea25 ;
-   let errors = Object.assign({}, this.state.errors);     
-   errors.ResidenceArea = "";                         
-   this.setState({errors});
+
+
+    let errors = this.state.errors;
+    let name = "ResidenceArea";
+    this.setState(errors);
+    errors[name] = "";
+
    this.ResetResidenceAreaError();
    
    if(this.state.data.ResidenceArea === "" || (isNaN(this.state.data.ResidenceArea) === false))
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.ResidenceArea = "*Please enter your Residence Area / Locality / Taluka / Sub-division";                         
-       this.setState({errors});
+
+    let errors = this.state.errors;
+    let name = "ResidenceArea";
+    this.setState(errors);
+    errors[name] = "*Please enter your Residence Area / Locality / Taluka / Sub-division";
+
+      
        this.state.isModalEnabled =  false;
        this.HighlightResidenceAreaError();
     }
    else if (typeof  this.state.data.ResidenceArea !== "undefined") {
        if (!this.state.data.ResidenceArea.match(/^[a-zA-Z ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.ResidenceArea = "*Please enter alphabet characters only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "ResidenceArea";
+        this.setState(errors);
+        errors[name] = "*Please enter alphabet characters only.";
+
+      
            this.state.isModalEnabled =  false;
            this.HighlightResidenceAreaError();
        }
@@ -17406,24 +17869,33 @@ this.state.data.ResidenceTown = this.state.data.ResidenceTown1 + this.state.data
     this.state.data.ResidenceTown18 + this.state.data.ResidenceTown19 + this.state.data.ResidenceTown20 +
     this.state.data.ResidenceTown21 + this.state.data.ResidenceTown22 + this.state.data.ResidenceTown23 + 
     this.state.data.ResidenceTown24 + this.state.data.ResidenceTown25 ;
-   let errors = Object.assign({}, this.state.errors);     
-   errors.ResidenceTown = "";                         
-   this.setState({errors});
+
+    let errors = this.state.errors;
+    let name = "ResidenceTown";
+    this.setState(errors);
+    errors[name] = "";
+
    this.ResetResidenceTownError();
 
    if(this.state.data.ResidenceTown === "" || (isNaN(this.state.data.ResidenceTown) === false))
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.ResidenceTown = "*Please enter your Residence Town / City / District";                         
-       this.setState({errors});
+
+    let errors = this.state.errors;
+    let name = "ResidenceTown";
+    this.setState(errors);
+    errors[name] = "*Please enter your Residence Town / City / District";
+
        this.state.isModalEnabled =  false;
        this.HighlightResidenceTownError();
    }
    else if (typeof  this.state.data.ResidenceTown !== "undefined") {
        if (!this.state.data.ResidenceTown.match(/^[a-zA-Z ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.ResidenceTown = "*Please enter alphabet characters only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "ResidenceTown";
+        this.setState(errors);
+        errors[name] = "*Please enter alphabet characters only.";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightResidenceTownError();
        }
@@ -17447,9 +17919,12 @@ async validateOfficeName(event) {
     this.state.data.OfficeName18 + this.state.data.OfficeName19 + this.state.data.OfficeName20 +
     this.state.data.OfficeName21 + this.state.data.OfficeName22 + this.state.data.OfficeName23 + 
     this.state.data.OfficeName24 + this.state.data.OfficeName25 ;
-   let errors = Object.assign({}, this.state.errors);     
-   errors.OfficeName = "";                         
-   this.setState({errors});
+
+    let errors = this.state.errors;
+    let name = "OfficeName";
+    this.setState(errors);
+    errors[name] = "";
+ 
    this.ResetOfficeNameError();
         
     if(this.state.officeEnabled)
@@ -17457,9 +17932,11 @@ async validateOfficeName(event) {
         if(this.state.data.OfficeName === "" || ((isNaN(this.state.data.OfficeName) === false) 
         && (this.state.data.OfficeName.match(/^[ ]*$/))))
         { 
-             let errors = Object.assign({}, this.state.errors);     
-             errors.OfficeName = "*Please enter your Office's Name";                         
-             this.setState({errors});
+            let errors = this.state.errors;
+            let name = "OfficeName";
+            this.setState(errors);
+            errors[name] = "*Please enter your Office's Name";
+
              this.state.isModalEnabled =  false;
              this.HighlightOfficeNameError();
         }
@@ -17467,9 +17944,12 @@ async validateOfficeName(event) {
     }
     else if (typeof  this.state.data.OfficeName !== "undefined") {
        if (!this.state.data.OfficeName.match(/^[a-zA-Z0-9 ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.OfficeName = "*Please enter alphanumeric characters only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "OfficeName";
+        this.setState(errors);
+        errors[name] = "*Please enter alphabet characters only.";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightOfficeNameError();
        }
@@ -17491,9 +17971,10 @@ this.state.data.OfficeFlat = this.state.data.OfficeFlat1 + this.state.data.Offic
     this.state.data.OfficeFlat21 + this.state.data.OfficeFlat22 + this.state.data.OfficeFlat23 + 
     this.state.data.OfficeFlat24 + this.state.data.OfficeFlat25 ;
 
-   let errors = Object.assign({}, this.state.errors);     
-   errors.OfficeFlat = "";                         
-   this.setState({errors});
+    let errors = this.state.errors;
+    let name = "OfficeFlat";
+    this.setState(errors);
+    errors[name] = "";
    this.ResetOfficeFlatError();
  
     if(this.state.officeEnabled)
@@ -17501,18 +17982,22 @@ this.state.data.OfficeFlat = this.state.data.OfficeFlat1 + this.state.data.Offic
         if(this.state.data.OfficeFlat === "" || ((isNaN(this.state.data.OfficeFlat) === false) 
         && (this.state.data.OfficeFlat.match(/^[ ]*$/))))
         { 
-            let errors = Object.assign({}, this.state.errors);     
-            errors.OfficeFlat = "*Please enter your Office Flat / Room / Door / Block No.";                         
-            this.setState({errors});
+            let errors = this.state.errors;
+            let name = "OfficeFlat";
+            this.setState(errors);
+            errors[name] = "*Please enter your Office Flat / Room / Door / Block No.";
+
             this.state.isModalEnabled =  false;
             this.HighlightOfficeFlatError();
         }
     }
     else if (typeof  this.state.data.OfficeFlat !== "undefined") {
        if (!this.state.data.OfficeFlat.match(/^[a-zA-Z0-9'-/ ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.OfficeFlat = "*Please enter alphanumeric characters only.";                         
-           this.setState({errors});
+        let errors = this.state.errors;
+        let name = "OfficeFlat";
+        this.setState(errors);
+        errors[name] = "*Please enter alphanumeric characters only.";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightOfficeFlatError();
        }
@@ -17534,10 +18019,13 @@ this.state.data.OfficePremises = this.state.data.OfficePremises1 + this.state.da
     this.state.data.OfficePremises15 + this.state.data.OfficePremises16 + this.state.data.OfficePremises17 + 
     this.state.data.OfficePremises18 + this.state.data.OfficePremises19 + this.state.data.OfficePremises20 +
     this.state.data.OfficePremises21 + this.state.data.OfficePremises22 + this.state.data.OfficePremises23 + 
-    this.state.data.OfficePremises24 + this.state.data.OfficePremises25 ;     
-   let errors = Object.assign({}, this.state.errors);     
-   errors.OfficePremises = "";                         
-   this.setState({errors});
+    this.state.data.OfficePremises24 + this.state.data.OfficePremises25 ;  
+    
+    let errors = this.state.errors;
+    let name = "OfficePremises";
+    this.setState(errors);
+    errors[name] = "";
+ 
    this.ResetOfficePremisesError();
  
    if(this.state.officeEnabled)
@@ -17545,18 +18033,24 @@ this.state.data.OfficePremises = this.state.data.OfficePremises1 + this.state.da
     if(this.state.data.OfficePremises === "" || ((isNaN(this.state.data.OfficePremises) === false) 
     && (this.state.data.OfficePremises.match(/^[ ]*$/))))
     { 
-        let errors = Object.assign({}, this.state.errors);     
-        errors.OfficePremises = "*Please enter your Office Premises / Building / Village";                         
-        this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "OfficePremises";
+        this.setState(errors);
+        errors[name] = "*Please enter your Office Premises / Building / Village";
+  
         this.state.isModalEnabled =  false;
         this.HighlightOfficePremisesError();
     }
    }
    else if (typeof  this.state.data.OfficePremises !== "undefined") {
        if (!this.state.data.OfficePremises.match(/^[a-zA-Z0-9 ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.OfficePremises = "*Please enter alphanumeric characters only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "OfficePremises";
+        this.setState(errors);
+        errors[name] = "*Please enter alphanumeric characters only.";
+  
            this.state.isModalEnabled =  false;
            this.HighlightOfficePremisesError();
        }
@@ -17578,10 +18072,12 @@ this.state.data.OfficeRoad = this.state.data.OfficeRoad1 + this.state.data.Offic
     this.state.data.OfficeRoad18 + this.state.data.OfficeRoad19 + this.state.data.OfficeRoad20 +
     this.state.data.OfficeRoad21 + this.state.data.OfficeRoad22 + this.state.data.OfficeRoad23 + 
     this.state.data.OfficeRoad24 + this.state.data.OfficeRoad25 ;   
-   
-   let errors = Object.assign({}, this.state.errors);     
-   errors.OfficeRoad = "";                         
-   this.setState({errors});
+
+    let errors = this.state.errors;
+    let name = "OfficeRoad";
+    this.setState(errors);
+    errors[name] = "";
+ 
    this.ResetOfficeRoadError();
    
    if(this.state.officeEnabled)
@@ -17589,9 +18085,11 @@ this.state.data.OfficeRoad = this.state.data.OfficeRoad1 + this.state.data.Offic
     if(this.state.data.OfficeRoad === "" || ((isNaN(this.state.data.OfficeRoad) === false) 
     && (this.state.data.OfficeRoad.match(/^[ ]*$/))))
     { 
-        let errors = Object.assign({}, this.state.errors);     
-        errors.OfficeRoad = "*Please enter your Office Road / Street / Lane / Post Office";                         
-        this.setState({errors});
+        let errors = this.state.errors;
+        let name = "OfficeRoad";
+        this.setState(errors);
+        errors[name] = "*Please enter your Office Road / Street / Lane / Post Office";
+  
         this.state.isModalEnabled =  false;
         this.HighlightOfficeRoadError();
     }
@@ -17599,9 +18097,12 @@ this.state.data.OfficeRoad = this.state.data.OfficeRoad1 + this.state.data.Offic
    }
    else if (typeof  this.state.data.OfficeRoad !== "undefined") {
        if (!this.state.data.OfficeRoad.match(/^[a-zA-Z0-9 ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.OfficeRoad = "*Please enter alphanumeric characters only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "OfficeRoad";
+        this.setState(errors);
+        errors[name] = "*Please enter alphanumeric characters only.";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightOfficeRoadError();
        }
@@ -17623,19 +18124,25 @@ this.state.data.OfficeArea = this.state.data.OfficeArea1 + this.state.data.Offic
     this.state.data.OfficeArea15 + this.state.data.OfficeArea16 + this.state.data.OfficeArea17 + 
     this.state.data.OfficeArea18 + this.state.data.OfficeArea19 + this.state.data.OfficeArea20 +
     this.state.data.OfficeArea21 + this.state.data.OfficeArea22 + this.state.data.OfficeArea23 + 
-    this.state.data.OfficeArea24 + this.state.data.OfficeArea25 ;   
-   let errors = Object.assign({}, this.state.errors);     
-   errors.OfficeArea = "";                         
-   this.setState({errors});
+    this.state.data.OfficeArea24 + this.state.data.OfficeArea25 ; 
+    
+    let errors = this.state.errors;
+    let name = "OfficeArea";
+    this.setState(errors);
+    errors[name] = "";
+  
    this.ResetOfficeAreaError();
 
    if(this.state.officeEnabled)
    {
     if(this.state.data.OfficeArea === "" || (isNaN(this.state.data.OfficeArea) === false))
     { 
-        let errors = Object.assign({}, this.state.errors);     
-        errors.OfficeArea = "*Please enter your Office Area / Locality / Taluka / Sub-division";                         
-        this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "OfficeArea";
+        this.setState(errors);
+        errors[name] = "*Please enter your Office Area / Locality / Taluka / Sub-division";
+      
         this.state.isModalEnabled =  false;
         this.HighlightOfficeAreaError();
     }
@@ -17643,9 +18150,13 @@ this.state.data.OfficeArea = this.state.data.OfficeArea1 + this.state.data.Offic
    }
    else if (typeof  this.state.data.OfficeArea !== "undefined") {
        if (!this.state.data.OfficeArea.match(/^[a-zA-Z ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.OfficeArea = "*Please enter alphabet characters only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "OfficeArea";
+        this.setState(errors);
+        errors[name] = "*Please enter alphabet characters only.";
+     
+       
            this.state.isModalEnabled =  false;
            this.HighlightOfficeAreaError();
        }
@@ -17667,28 +18178,36 @@ async validateOfficeTown(event) {
     this.state.data.OfficeTown15 + this.state.data.OfficeTown16 + this.state.data.OfficeTown17 + 
     this.state.data.OfficeTown18 + this.state.data.OfficeTown19 + this.state.data.OfficeTown20 +
     this.state.data.OfficeTown21 + this.state.data.OfficeTown22 + this.state.data.OfficeTown23 + 
-    this.state.data.OfficeTown24 + this.state.data.OfficeTown25 ;   
-   let errors = Object.assign({}, this.state.errors);     
-   errors.OfficeTown = "";                         
-   this.setState({errors});
+    this.state.data.OfficeTown24 + this.state.data.OfficeTown25 ; 
+    
+    let errors = this.state.errors;
+    let name = "OfficeTown";
+    this.setState(errors);
+    errors[name] = "";
+  
    this.ResetOfficeTownError();
  
    if(this.state.officeEnabled)
    {
     if(this.state.data.OfficeTown === "" || (isNaN(this.state.data.OfficeTown) === false))
     { 
-        let errors = Object.assign({}, this.state.errors);     
-        errors.OfficeTown = "*Please enter your Office Town / City / District";                         
-        this.setState({errors});
+        let errors = this.state.errors;
+        let name = "OfficeTown";
+        this.setState(errors);
+        errors[name] = "*Please enter your Office Town / City / District";
+      
         this.state.isModalEnabled =  false;
         this.HighlightOfficeTownError();
     }
    }
    else if (typeof  this.state.data.OfficeTown !== "undefined") {
        if (!this.state.data.OfficeTown.match(/^[a-zA-Z ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.OfficeTown = "*Please enter alphabet characters only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "OfficeTown";
+        this.setState(errors);
+        errors[name] = "*Please enter alphabet characters only.";
+     
            this.state.isModalEnabled =  false;
            this.HighlightOfficeTownError();
        }
@@ -17711,25 +18230,32 @@ async validateRAFlat(event) {
     this.state.data.RAFlat18 + this.state.data.RAFlat19 + this.state.data.RAFlat20 +
     this.state.data.RAFlat21 + this.state.data.RAFlat22 + this.state.data.RAFlat23 + 
     this.state.data.RAFlat24 + this.state.data.RAFlat25 ;   
-   let errors = Object.assign({}, this.state.errors);     
-   errors.RAFlat = "";                         
-   this.setState({errors});
+
+    let errors = this.state.errors;
+    let name = "RAFlat";
+    this.setState(errors);
+    errors[name] = "";
    this.ResetRAFlatError();
  
    if(this.state.data.RAFlat === "" || ((isNaN(this.state.data.RAFlat) === false) 
    && (this.state.data.RAFlat.match(/^[ ]*$/))))
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.RAFlat = "*Please enter your Representative assesssee Flat / Room / Door / Block No.";                         
-       this.setState({errors});
+    let errors = this.state.errors;
+    let name = "RAFlat";
+    this.setState(errors);
+    errors[name] = "*Please enter your Representative assesssee Flat / Room / Door / Block No.";
+
        this.state.isModalEnabled =  false;
        this.HighlightRAFlatError();
     }
    else if (typeof  this.state.data.RAFlat !== "undefined") {
        if (!this.state.data.RAFlat.match(/^[a-zA-Z0-9'-/ ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.RAFlat = "*Please enter alphanumeric characters only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "RAFlat";
+        this.setState(errors);
+        errors[name] = "*Please enter alphabet characters only.";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightRAFlatError();
        }
@@ -17752,25 +18278,32 @@ async validateRAPremises(event) {
     this.state.data.RAPremises18 + this.state.data.RAPremises19 + this.state.data.RAPremises20 +
     this.state.data.RAPremises21 + this.state.data.RAPremises22 + this.state.data.RAPremises23 + 
     this.state.data.RAPremises24 + this.state.data.RAPremises25 ;   
-   let errors = Object.assign({}, this.state.errors);     
-   errors.RAPremises = "";                         
-   this.setState({errors});
+
+    let errors = this.state.errors;
+    let name = "RAPremises";
+    this.setState(errors);
+    errors[name] = "";
+ 
    this.ResetRAPremisesError();
  
    if(this.state.data.RAPremises === ""  || ((isNaN(this.state.data.RAPremises) === false) 
    && (this.state.data.RAPremises.match(/^[ ]*$/))))
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.RAPremises = "*Please enter your Representative assesssee Premises / Building / Village";                         
-       this.setState({errors});
+    let errors = this.state.errors;
+    let name = "RAPremises";
+    this.setState(errors);
+    errors[name] = "*Please enter your Representative assesssee Premises / Building / Village";
+ 
        this.state.isModalEnabled =  false;
        this.HighlightRAPremisesError();
     }
    else if (typeof  this.state.data.RAPremises !== "undefined") {
        if (!this.state.data.RAPremises.match(/^[a-zA-Z0-9 ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.RAPremises = "*Please enter alphanumeric characters only.";                         
-           this.setState({errors});
+        let errors = this.state.errors;
+        let name = "RAPremises";
+        this.setState(errors);
+        errors[name] = "*Please enter alphabet characters only.";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightRAPremisesError();
        }
@@ -17792,26 +18325,33 @@ this.state.data.RARoad = this.state.data.RARoad1 + this.state.data.RARoad2 +
     this.state.data.RARoad15 + this.state.data.RARoad16 + this.state.data.RARoad17 + 
     this.state.data.RARoad18 + this.state.data.RARoad19 + this.state.data.RARoad20 +
     this.state.data.RARoad21 + this.state.data.RARoad22 + this.state.data.RARoad23 + 
-    this.state.data.RARoad24 + this.state.data.RARoad25 ;   
-   let errors = Object.assign({}, this.state.errors);     
-   errors.RARoad = "";                         
-   this.setState({errors});
+    this.state.data.RARoad24 + this.state.data.RARoad25 ;  
+    let errors = this.state.errors;
+    let name = "RARoad";
+    this.setState(errors);
+    errors[name] = "";
+ 
    this.ResetRARoadError();
  
    if(this.state.data.RARoad === ""  || ((isNaN(this.state.data.RARoad) === false) 
    && (this.state.data.RARoad.match(/^[ ]*$/))))
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.RARoad = "*Please enter your Representative assesssee Road / Street / Lane / Post Office";                         
-       this.setState({errors});
+    let errors = this.state.errors;
+    let name = "RARoad";
+    this.setState(errors);
+    errors[name] = "*Please enter your Representative assesssee Road / Street / Lane / Post Office";
+ 
        this.state.isModalEnabled =  false;
        this.HighlightRARoadError();
     }
    else if (typeof  this.state.data.RARoad !== "undefined") {
        if (!this.state.data.RARoad.match(/^[a-zA-Z0-9 ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.RARoad = "*Please enter alphanumeric characters only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "RARoad";
+        this.setState(errors);
+        errors[name] = "*Please enter alphanumeric characters only.";
+
            this.state.isModalEnabled =  false;
            this.HighlightRARoadError();
        }
@@ -17834,24 +18374,33 @@ async validateRAArea(event) {
     this.state.data.RAArea18 + this.state.data.RAArea19 + this.state.data.RAArea20 +
     this.state.data.RAArea21 + this.state.data.RAArea22 + this.state.data.RAArea23 + 
     this.state.data.RAArea24 + this.state.data.RAArea25 ;   
-   let errors = Object.assign({}, this.state.errors);     
-   errors.RAArea = "";                         
-   this.setState({errors});
+
+    let errors = this.state.errors;
+    let name = "RAArea";
+    this.setState(errors);
+    errors[name] = "";
+ 
    this.ResetRAAreaError();
  
    if(this.state.data.RAArea === "" || (isNaN(this.state.data.RAArea) === false))
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.RAArea = "*Please enter your Representative assesssee Area / Locality / Taluka / Sub-division";                         
-       this.setState({errors});
+
+    let errors = this.state.errors;
+    let name = "RAArea";
+    this.setState(errors);
+    errors[name] = "*Please enter your Representative assesssee Area / Locality / Taluka / Sub-division";
+ 
        this.state.isModalEnabled =  false;
        this.HighlightRAAreaError();
     }
    else if (typeof  this.state.data.RAArea !== "undefined") {
        if (!this.state.data.RAArea.match(/^[a-zA-Z ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.RAArea = "*Please enter alphabet characters only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "RAArea";
+        this.setState(errors);
+        errors[name] = "*Please enter alphanumeric characters only.";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightRAAreaError();
        }
@@ -17873,24 +18422,32 @@ this.state.data.RATown = this.state.data.RATown1 + this.state.data.RATown2 +
     this.state.data.RATown18 + this.state.data.RATown19 + this.state.data.RATown20 +
     this.state.data.RATown21 + this.state.data.RATown22 + this.state.data.RATown23 + 
     this.state.data.RATown24 + this.state.data.RATown25 ;   
-   let errors = Object.assign({}, this.state.errors);     
-   errors.RATown = "";                         
-   this.setState({errors});
+
+    let errors = this.state.errors;
+    let name = "RATown";
+    this.setState(errors);
+    errors[name] = "";
+ 
    this.ResetRATownError();
  
    if(this.state.data.RATown === "" || (isNaN(this.state.data.RATown) === false))
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.RATown = "*Please enter your Representative assesssee Town / City / District";                         
-       this.setState({errors});
+    let errors = this.state.errors;
+    let name = "RATown";
+    this.setState(errors);
+    errors[name] = "*Please enter your Representative assesssee Town / City / District";
+ 
        this.state.isModalEnabled =  false;
        this.HighlightRATownError();
   }
    else if (typeof  this.state.data.RATown !== "undefined") {
        if (!this.state.data.RATown.match(/^[a-zA-Z ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.RATown = "*Please enter alphabet characters only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "RATown";
+        this.setState(errors);
+        errors[name] = "*Please enter alphabet characters only.";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightRATownError();
 
@@ -17916,16 +18473,22 @@ async validateAadhaarFirstName(event) {
          this.state.data.AadhaarFirstName18 + this.state.data.AadhaarFirstName19 + this.state.data.AadhaarFirstName20 +
          this.state.data.AadhaarFirstName21 + this.state.data.AadhaarFirstName22 + this.state.data.AadhaarFirstName23 + 
          this.state.data.AadhaarFirstName24 + this.state.data.AadhaarFirstName25 ;
-   let errors = Object.assign({}, this.state.errors);     
-   errors.AadhaarFirstName = "";                         
-   this.setState({errors});
+
+         let errors = this.state.errors;
+         let name = "AadhaarFirstName";
+         this.setState(errors);
+         errors[name] = "";
+  
    this.ResetAadhaarFirstNameError();
 
   if (typeof  this.state.data.AadhaarFirstName !== "undefined") {
        if (!this.state.data.AadhaarFirstName.match(/^[a-zA-Z ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.AadhaarFirstName = "*Please enter alphabet characters only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "AadhaarFirstName";
+        this.setState(errors);
+        errors[name] = "*Please enter alphabet characters only.";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightAadhaarFirstNameError();
        }
@@ -17949,25 +18512,34 @@ async validateAadhaarLastName(event) {
          this.state.data.AadhaarLastName18 + this.state.data.AadhaarLastName19 + this.state.data.AadhaarLastName20 +
          this.state.data.AadhaarLastName21 + this.state.data.AadhaarLastName22 + this.state.data.AadhaarLastName23 + 
          this.state.data.AadhaarLastName24 + this.state.data.AadhaarLastName25 ;
-   let errors = Object.assign({}, this.state.errors);     
-   errors.AadhaarLastName = "";                         
-   this.setState({errors});
+
+         let errors = this.state.errors;
+         let name = "AadhaarLastName";
+         this.setState(errors);
+         errors[name] = "";
+   
    this.ResetAadhaarLastNameError();
    
 
    if(this.state.data.AadhaarLastName === "" || (isNaN(this.state.data.AadhaarLastName) === false))
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.AadhaarLastName ="*Please enter your Name as in Aadhaar Card or Enrolment Id";                         
-       this.setState({errors});
+
+    let errors = this.state.errors;
+    let name = "AadhaarLastName";
+    this.setState(errors);
+    errors[name] = "*Please enter your Name as in Aadhaar Card or Enrolment Id";
+ 
        this.state.isModalEnabled =  false;
        this.HighlightAadhaarLastNameError();
     }
    else if (typeof  this.state.data.AadhaarLastName !== "undefined") {
        if (!this.state.data.AadhaarLastName.match(/^[a-zA-Z ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.AadhaarLastName = "*Please enter alphabet characters only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "AadhaarLastName";
+        this.setState(errors);
+        errors[name] = "*Please enter alphabet characters only.";
+  
            this.state.isModalEnabled =  false;
            this.HighlightAadhaarLastNameError();
         }
@@ -17989,16 +18561,22 @@ async validateAadhaarMiddleName(event) {
          this.state.data.AadhaarMiddleName18 + this.state.data.AadhaarMiddleName19 + this.state.data.AadhaarMiddleName20 +
          this.state.data.AadhaarMiddleName21 + this.state.data.AadhaarMiddleName22 + this.state.data.AadhaarMiddleName23 + 
          this.state.data.AadhaarMiddleName24 + this.state.data.AadhaarMiddleName25 ;
-   let errors = Object.assign({}, this.state.errors);     
-   errors.AadhaarMiddleName = "";                         
-   this.setState({errors});
+
+         let errors = this.state.errors;
+         let name = "AadhaarMiddleName";
+         this.setState(errors);
+         errors[name] = "";
+ 
    this.ResetAadhaarMiddleNameError();
    
    if (typeof  this.state.data.AadhaarMiddleName !== "undefined") {
        if (!this.state.data.AadhaarMiddleName.match(/^[a-zA-Z ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.AadhaarMiddleName = "*Please enter alphabet characters only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "AadhaarMiddleName";
+        this.setState(errors);
+        errors[name] = "*Please enter alphabet characters only.";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightAadhaarMiddleNameError();
        }
@@ -18018,32 +18596,41 @@ async validateAadhaarNumber(event) {
     this.state.data.AadhaarNumber9 + this.state.data.AadhaarNumber10 + this.state.data.AadhaarNumber11 + 
     this.state.data.AadhaarNumber12;
 
-   let errors = Object.assign({}, this.state.errors);     
-   errors.AadhaarNumber = "";                         
-   this.setState({errors});
+    let errors = this.state.errors;
+    let name = "AadhaarNumber";
+    this.setState(errors);
+    errors[name] = "";
+ 
    this.ResetAadhaarNumberError();
     
    if(this.state.errors.AadhaarNumber === "*Please enter your Aadhaar Number or Enrolment Id")
    {
-       let errors = Object.assign({}, this.state.errors);     
-       errors.AadhaarNumber = "";                         
-       this.setState({errors});
+    let errors = this.state.errors;
+    let name = "AadhaarNumber";
+    this.setState(errors);
+    errors[name] = "";
+ 
    }
    
    if(this.state.data.AadhaarNumber === "" || ((isNaN(this.state.data.AadhaarNumber) === false) 
    && (this.state.data.AadhaarNumber.match(/^[ ]*$/))))  
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.AadhaarNumber = "*Please enter your Aadhaar Number or Enrolment Id";                         
-       this.setState({errors});
+    let errors = this.state.errors;
+    let name = "AadhaarNumber";
+    this.setState(errors);
+    errors[name] = "*Please enter your Aadhaar Number or Enrolment Id";
+ 
        this.state.isModalEnabled =  false;
        this.HighlightAadhaarNumberError();
    } 
    else if (typeof  this.state.data.AadhaarNumber !== "undefined") {
        if (!this.state.data.AadhaarNumber.match(/^[0-9 ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.AadhaarNumber = "*Please enter numeric characters only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "AadhaarNumber";
+        this.setState(errors);
+        errors[name] = "*Please enter numeric characters only.";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightAadhaarNumberError();
        }
@@ -18067,32 +18654,42 @@ async validateEnrolmentId(event) {
     this.state.data.EnrolmentId21 + this.state.data.EnrolmentId22 + this.state.data.EnrolmentId23 + 
     this.state.data.EnrolmentId24 + this.state.data.EnrolmentId25 + this.state.data.EnrolmentId26 + 
     this.state.data.EnrolmentId27 + this.state.data.EnrolmentId28;
-   let errors = Object.assign({}, this.state.errors);     
-   errors.EnrolmentId = "";                         
-   this.setState({errors});
+
+    let errors = this.state.errors;
+    let name = "EnrolmentId";
+    this.setState(errors);
+    errors[name] = "";
+ 
    this.ResetEnrolmentIdError();
 
    if(this.state.errors.AadhaarNumber === "*Please enter your Aadhaar Number or Enrolment Id")
    {
-       let errors = Object.assign({}, this.state.errors);     
-       errors.AadhaarNumber = "";                         
-       this.setState({errors});
+    let errors = this.state.errors;
+    let name = "AadhaarNumber";
+    this.setState(errors);
+    errors[name] = "";
+ 
    }
    
    if((this.state.data.EnrolmentId === "") || ((isNaN(this.state.data.EnrolmentId) === false) 
    && (this.state.data.EnrolmentId.match(/^[ ]*$/))))  
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.EnrolmentId = "*Please enter your Aadhaar Number or Enrolment Id";                         
-       this.setState({errors});
+    let errors = this.state.errors;
+    let name = "EnrolmentId";
+    this.setState(errors);
+    errors[name] = "*Please enter your Aadhaar Number or Enrolment Id";
+ 
        this.state.isModalEnabled =  false;
        this.HighlightEnrolmentIdError();
    }
    else if (typeof  this.state.data.EnrolmentId !== "undefined") {
        if (!this.state.data.EnrolmentId.match(/^[0-9 ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.EnrolmentId = "*Please enter numeric characters only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "EnrolmentId";
+        this.setState(errors);
+        errors[name] = "*Please enter numeric characters only.";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightEnrolmentIdError();
        }
@@ -18119,20 +18716,38 @@ async validateRegistrationNumber(event) {
          this.state.data.RegistrationNumber24 + this.state.data.RegistrationNumber25 + this.state.data.RegistrationNumber26 + 
          this.state.data.RegistrationNumber27 + this.state.data.RegistrationNumber28 + this.state.data.RegistrationNumber29 + 
          this.state.data.RegistrationNumber30 
-   let errors = Object.assign({}, this.state.errors);     
-   errors.RegistrationNumber = "";                         
-   this.setState({errors});
-   this.ResetRegistrationNumberError();
+
+         let errors = this.state.errors;
+         let name = "RegistrationNumber";
+         this.setState(errors);
+         errors[name] = "";
  
-   if (typeof  this.state.data.RegistrationNumber !== "undefined") {
-       if (!this.state.data.RegistrationNumber.match(/^[0-9 ]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.RegistrationNumber = "*Please enter numeric characters only.";                         
-           this.setState({errors});
+   this.ResetRegistrationNumberError();
+
+   if(this.state.data.RegistrationNumber === "" )
+   { 
+    let errors = this.state.errors;
+    let name = "RegistrationNumber";
+    this.setState(errors);
+    errors[name] = "*Please enter your Residence Pincode";
+ 
+       this.state.isModalEnabled =  false;
+       this.HighlightRegistrationNumberError();
+
+   }
+   else if (typeof  this.state.data.RegistrationNumber !== "undefined") {
+       if (!this.state.data.RegistrationNumber.match(/^[1-9][0-9]*$/)) {
+
+        let errors = this.state.errors;
+        let name = "RegistrationNumber";
+        this.setState(errors);
+        errors[name] = "*Please enter valid RegistrationNumber";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightRegistrationNumberError();
        }
    }
+   
     
    localStorage.setItem('localdata', JSON.stringify(this.state.data));
    localStorage.setItem('localerror', JSON.stringify(this.state.errors));
@@ -18144,27 +18759,36 @@ async validateResidencePincode(event) {
          
 this.state.data.ResidencePincode = this.state.data.ResidencePincode1 + this.state.data.ResidencePincode2 +
     this.state.data.ResidencePincode3 + this.state.data.ResidencePincode4 + this.state.data.ResidencePincode5 + 
-    this.state.data.ResidencePincode6 + this.state.data.ResidencePincode7 
-   let errors = Object.assign({}, this.state.errors);     
-   errors.ResidencePincode = "";                         
-   this.setState({errors});
+    this.state.data.ResidencePincode6 + this.state.data.ResidencePincode7;
+
+    let errors = this.state.errors;
+    let name = "ResidencePincode";
+    this.setState(errors);
+    errors[name] = "";
+ 
    this.ResetResidencePincodeError();
  
    if(this.state.data.ResidencePincode === "" )
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.ResidencePincode = "*Please enter your Residence Pincode";                         
-       this.setState({errors});
+    let errors = this.state.errors;
+    let name = "ResidencePincode";
+    this.setState(errors);
+    errors[name] = "*Please enter your Residence Pincode";
+
        this.state.isModalEnabled =  false;
        this.HighlightResidencePincodeError();
 
    }
    else if (typeof  this.state.data.ResidencePincode !== "undefined") {
        if (!this.state.data.ResidencePincode.match(/^[1-9][0-9]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.ResidencePincode = "*Please enter valid pincode";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "ResidencePincode";
+        this.setState(errors);
+        errors[name] = "*Please enter valid pincode";
+ 
            this.state.isModalEnabled =  false;
+           console.log(this.state.data.ResidencePincode)
            this.HighlightResidencePincodeError();
        }
    }
@@ -18182,27 +18806,34 @@ async validateOfficePincode(event) {
  this.state.data.OfficePincode = this.state.data.OfficePincode1 + this.state.data.OfficePincode2 +
     this.state.data.OfficePincode3 + this.state.data.OfficePincode4 + this.state.data.OfficePincode5 + 
     this.state.data.OfficePincode6 + this.state.data.OfficePincode7 
-   let errors = Object.assign({}, this.state.errors);     
-   errors.OfficePincode = "";                         
-   this.setState({errors});
+
+    let errors = this.state.errors;
+    let name = "OfficePincode";
+    this.setState(errors);
+    errors[name] = "";
+ 
    this.ResetOfficePincodeError();
    
     if(this.state.officeEnabled)
     {
         if(this.state.data.OfficePincode === "" || (this.state.data.OfficePincode.match(/^[ ]*$/)))
         { 
-            let errors = Object.assign({}, this.state.errors);     
-            errors.OfficePincode = "*Please enter your Office Pincode";                         
-            this.setState({errors});
+            let errors = this.state.errors;
+            let name = "OfficePincode";
+            this.setState(errors);
+            errors[name] = "*Please enter your Office Pincode";
+ 
             this.state.isModalEnabled =  false;
             this.HighlightOfficePincodeError();
         }
     }
     else if (typeof  this.state.data.OfficePincode !== "undefined") {
        if (!this.state.data.OfficePincode.match(/^[1-9][0-9]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.OfficePincode = "*Please enter valid pincode";                         
-           this.setState({errors});
+        let errors = this.state.errors;
+        let name = "OfficePincode";
+        this.setState(errors);
+        errors[name] = "*Please enter valid pincode";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightOfficePincodeError();
        }
@@ -18221,24 +18852,32 @@ async validateRAPincode(event) {
  this.state.data.RAPincode = this.state.data.RAPincode1 + this.state.data.RAPincode2 +
     this.state.data.RAPincode3 + this.state.data.RAPincode4 + this.state.data.RAPincode5 + 
     this.state.data.RAPincode6 + this.state.data.RAPincode7 
-   let errors = Object.assign({}, this.state.errors);     
-   errors.RAPincode = "";                         
-   this.setState({errors});
+
+    let errors = this.state.errors;
+    let name = "RAPincode";
+    this.setState(errors);
+    errors[name] = "";
+ 
    this.ResetRAPincodeError();
    
    if(this.state.data.RAPincode === "")
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.RAPincode = "*Please enter your Representative Assessee's Pincode";                         
-       this.setState({errors});
+    let errors = this.state.errors;
+    let name = "RAPincode";
+    this.setState(errors);
+    errors[name] = "*Please enter your Representative Assessee's Pincode";
+ 
        this.state.isModalEnabled =  false;
        this.HighlightRAPincodeError();
    }
    else if (typeof  this.state.data.RAPincode !== "undefined") {
        if (!this.state.data.RAPincode.match(/^[1-9][0-9]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.RAPincode = "*Please enter valid pincode";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "RAPincode";
+        this.setState(errors);
+        errors[name] = "*Please enter valid pincode";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightRAPincodeError();
        }
@@ -18252,24 +18891,32 @@ async validateCountryCode(event) {
          
   this.state.data.CountryCode = this.state.data.CountryCode1 + this.state.data.CountryCode2 +
     this.state.data.CountryCode3;
-   let errors = Object.assign({}, this.state.errors);     
-   errors.CountryCode = "";                         
-   this.setState({errors});
+
+    let errors = this.state.errors;
+    let name = "CountryCode";
+    this.setState(errors);
+    errors[name] = "";
+ 
    this.ResetCountryCodeError();
  
    if(this.state.data.CountryCode === "")
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.CountryCode = "*Please enter your Country Code";                         
-       this.setState({errors});
+    let errors = this.state.errors;
+    let name = "CountryCode";
+    this.setState(errors);
+    errors[name] = "*Please enter your Country Code";
+ 
        this.state.isModalEnabled =  false;
        this.HighlightCountryCodeError();
    }
    else if (typeof  this.state.data.CountryCode !== "undefined") {
        if (!this.state.data.CountryCode.match(/^[0-9]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.CountryCode = "*Please enter numbers only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "CountryCode";
+        this.setState(errors);
+        errors[name] = "*Please enter numbers only.";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightCountryCodeError();
        }
@@ -18287,24 +18934,32 @@ async validateStdCode(event) {
 this.state.data.StdCode = this.state.data.StdCode1 + this.state.data.StdCode2 +
     this.state.data.StdCode3 + this.state.data.StdCode4 + this.state.data.StdCode5 + 
     this.state.data.StdCode6 + this.state.data.StdCode7 ;
-   let errors = Object.assign({}, this.state.errors);     
-   errors.StdCode = "";                         
-   this.setState({errors});
+
+    let errors = this.state.errors;
+    let name = "StdCode";
+    this.setState(errors);
+    errors[name] = "";
+ 
    this.ResetStdCodeError();
  
    if(this.state.data.StdCode === "")
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.StdCode = "*Please enter your Std Code";                         
-       this.setState({errors});
+    let errors = this.state.errors;
+    let name = "StdCode";
+    this.setState(errors);
+    errors[name] = "*Please enter your Std Code";
+ 
        this.state.isModalEnabled =  false;
        this.HighlightStdCodeError();
    }
    else if (typeof  this.state.data.StdCode !== "undefined") {
        if (!this.state.data.StdCode.match(/^[0-9]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.StdCode = "*Please enter numbers only.";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "StdCode";
+        this.setState(errors);
+        errors[name] = "*Please enter numbers only.";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightStdCodeError();
        }
@@ -18324,25 +18979,32 @@ async validatePhoneNumber(event) {
     this.state.data.PhoneNumber6 + this.state.data.PhoneNumber7 + this.state.data.PhoneNumber8 +
     this.state.data.PhoneNumber9 + this.state.data.PhoneNumber10 + this.state.data.PhoneNumber11 + 
     this.state.data.PhoneNumber12 + this.state.data.PhoneNumber13 
-   let errors = Object.assign({}, this.state.errors);     
-   errors.PhoneNumber = "";                         
-   this.setState({errors});
+
+    let errors = this.state.errors;
+    let name = "PhoneNumber";
+    this.setState(errors);
+    errors[name] = "";
+ 
    this.ResetPhoneNumberError()
   
  
    if(this.state.data.PhoneNumber === "")
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.PhoneNumber = "*Please enter your Phone Number";                         
-       this.setState({errors});
+    let errors = this.state.errors;
+    let name = "PhoneNumber";
+    this.setState(errors);
+    errors[name] = "*Please enter your Phone Number";
+ 
        this.state.isModalEnabled =  false;
        this.HighlightPhoneNumberError();
    }
    else if (typeof  this.state.data.PhoneNumber !== "undefined") {
        if (!this.state.data.PhoneNumber.match(/^[0-9+]*$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.PhoneNumber = "*Please enter numbers only.";                         
-           this.setState({errors});
+        let errors = this.state.errors;
+        let name = "PhoneNumber";
+        this.setState(errors);
+        errors[name] = "*Please enter numbers only.";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightPhoneNumberError();
        }
@@ -18357,24 +19019,32 @@ async validatePhoneNumber(event) {
 async validateDay(event) {
          
    this.state.data.Day = this.state.data.Day1 + this.state.data.Day2 ;
-   let errors = Object.assign({}, this.state.errors);     
-   errors.Day = "";                         
-   this.setState({errors});
+
+   let errors = this.state.errors;
+   let name = "Day";
+   this.setState(errors);
+   errors[name] = "";
+ 
    this.ResetDayError();
    
    if(this.state.data.Day === "")
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.Day = "*Please enter your Birth Day";                         
-       this.setState({errors});
+    let errors = this.state.errors;
+    let name = "Day";
+    this.setState(errors);
+    errors[name] = "*Please enter your Birth Day";
+ 
        this.state.isModalEnabled =  false;
        this.HighlightDayError();
    }
    else if (typeof  this.state.data.Day !== "undefined") {
        if (!this.state.data.Day.match(/^(0?[1-9]|[12][0-9]|3[01])$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.Day = "*Please enter valid Day";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "Day";
+        this.setState(errors);
+        errors[name] = "*Please enter valid Day";
+       
            this.state.isModalEnabled =  false;
            this.HighlightDayError();
        }
@@ -18389,25 +19059,33 @@ async validateDay(event) {
 async validateMonth(event) {
          
    this.state.data.Month = this.state.data.Month1 + this.state.data.Month2 ;
-   let errors = Object.assign({}, this.state.errors);     
-   errors.Month = "";                         
-   this.setState({errors});
+
+   let errors = this.state.errors;
+   let name = "Month";
+   this.setState(errors);
+   errors[name] = "";
+ 
    this.ResetMonthError();
    
    
    if(this.state.data.Month === "")
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.Month = "*Please enter your Birth Month";                         
-       this.setState({errors});
+    let errors = this.state.errors;
+    let name = "Month";
+    this.setState(errors);
+    errors[name] = "*Please enter your Birth Month";
+ 
        this.state.isModalEnabled =  false;
        this.HighlightMonthError();
    }
    else if (typeof  this.state.data.Month !== "undefined") {
        if (!this.state.data.Month.match(/^(0[1-9]|1[0-2])$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.Month = "*Please enter valid month";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "Month";
+        this.setState(errors);
+        errors[name] = "*Please enter valid month";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightMonthError();
        }
@@ -18422,24 +19100,32 @@ async validateYear(event) {
          
     this.state.data.Year = this.state.data.Year1 + this.state.data.Year2 +
          this.state.data.Year3 + this.state.data.Year4;
-   let errors = Object.assign({}, this.state.errors);     
-   errors.Year = "";                         
-   this.setState({errors});
+
+         let errors = this.state.errors;
+         let name = "Year";
+         this.setState(errors);
+         errors[name] = "";
+ 
    this.ResetYearError();
    
    if(this.state.data.Year === "")
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.Year = "*Please enter your Birth Year";                         
-       this.setState({errors});
+    let errors = this.state.errors;
+    let name = "Year";
+    this.setState(errors);
+    errors[name] = "*Please enter your Birth Year";
+ 
        this.state.isModalEnabled =  false;
        this.HighlightYearError();
    }
    else if (typeof  this.state.data.Year !== "undefined") {
        if (!this.state.data.Year.match(/^(19|20)\d{2}$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.Year = "*Please enter valid Year";                         
-           this.setState({errors});
+
+        let errors = this.state.errors;
+        let name = "Year";
+        this.setState(errors);
+        errors[name] = "*Please enter valid Year";
+ 
            this.state.isModalEnabled =  false;
            this.HighlightYearError();
        }
@@ -18454,23 +19140,30 @@ async validateYear(event) {
 async validatephonenumber(event) {
          
    this.handleInput(event);
-   let errors = Object.assign({}, this.state.errors);     
-   errors.phonenumber = "";                         
-   this.setState({errors});
+
+   let errors = this.state.errors;
+   let name = "phonenumber";
+   this.setState(errors);
+   errors[name] = "";
+ 
    $('#phonenumber').css('border-color', '')
  
    if(this.state.data.phonenumber === "" )
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.phonenumber = "*Please enter your phonenumber";                         
-       this.setState({errors});
+    let errors = this.state.errors;
+    let name = "phonenumber";
+    this.setState(errors);
+    errors[name] = "*Please enter your phonenumber";
+ 
        $('#phonenumber').css('border-color', "red")
    }
    else if (typeof  this.state.data.phonenumber !== "undefined") {
        if (!this.state.data.phonenumber.match(/^\d{4}$/)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.phonenumber = "*Please enter valid phonenumber";                         
-           this.setState({errors});
+        let errors = this.state.errors;
+        let name = "phonenumber";
+        this.setState(errors);
+        errors[name] = "*Please enter valid phonenumber";
+ 
            $('#phonenumber').css('border-color', "red")
        }
    }
@@ -18505,18 +19198,22 @@ handleInput = (event) => {
     localStorage.setItem('localdata', JSON.stringify(this.state.data));
     localStorage.setItem('localerror', JSON.stringify(this.state.errors));
 
-    let errors = Object.assign({}, this.state.errors);     
-    errors.ResidenceState = "";                         
-    this.setState({errors});
+    let errors = this.state.errors;
+    let name1 = "ResidenceState";
+    this.setState(errors);
+    errors[name1] = "";
+ 
     let textPattern = /^[a-zA-Z ]*$/ 
     $('#ResidenceState').css('border-color', '')
    
 
     if(this.state.data.ResidenceState === "" || (isNaN(this.state.data.ResidenceState) === false))
     { 
-        let errors = Object.assign({}, this.state.errors);     
-        errors.ResidenceState = "*Please enter your Residence State";                         
-        this.setState({errors});
+        let errors = this.state.errors;
+        let name1 = "ResidenceState";
+        this.setState(errors);
+        errors[name1] = "*Please enter your Residence State";
+ 
      
         let isModalEnabled = this.state.isModalEnabled;
         isModalEnabled = false;
@@ -18526,9 +19223,10 @@ handleInput = (event) => {
     }
     else if (typeof  this.state.data.ResidenceState !== "undefined") {
         if (!textPattern.test(this.state.data.ResidenceState)) {
-            let errors = Object.assign({}, this.state.errors);     
-            errors.ResidenceState  = "*Please enter alphabet characters only";                         
-            this.setState({errors});
+            let errors = this.state.errors;
+            let name1 = "ResidenceState";
+            this.setState(errors);
+            errors[name1] = "*Please enter alphabet characters only.";
      
             let isModalEnabled = this.state.isModalEnabled;
             isModalEnabled = false;
@@ -18551,19 +19249,23 @@ handleInput = (event) => {
    localStorage.setItem('localdata', JSON.stringify(this.state.data));
    localStorage.setItem('localerror', JSON.stringify(this.state.errors));
     
-   let errors = Object.assign({}, this.state.errors);     
-   errors.ResidenceCountry = "";                         
-   this.setState({errors});
+   let errors = this.state.errors;
+   let name1 = "ResidenceCountry";
+   this.setState(errors);
+   errors[name1] = "";
+ 
    let textPattern = /^[a-zA-Z ]*$/ 
    $('#ResidenceCountry').css('border-color', '')
   
 
    if(this.state.data.ResidenceCountry === "" || (isNaN(this.state.data.ResidenceCountry) === false))
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.ResidenceCountry = "*Please enter your Residence Country";                         
-       this.setState({errors});
-   
+    let errors = this.state.errors;
+    let name1 = "ResidenceCountry";
+    this.setState(errors);
+    errors[name1] = "*Please enter your Residence Country";
+
+    
        let val = this.state.isModalEnabled;
        val = false;
        this.setState({val});
@@ -18571,10 +19273,11 @@ handleInput = (event) => {
    }
    else if (typeof  this.state.data.ResidenceCountry !== "undefined") {
        if (!textPattern.test(this.state.data.ResidenceCountry)) {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.ResidenceCountry = "*Please enter alphabet characters only.";                         
-           this.setState({errors});
-          
+        let errors = this.state.errors;
+        let name1 = "ResidenceCountry";
+        this.setState(errors);
+        errors[name1] = "*Please enter alphabet characters only.";
+ 
            let val = this.state.isModalEnabled;
            val = false;
            this.setState({val});
@@ -18595,9 +19298,11 @@ handleInput = (event) => {
    localStorage.setItem('localdata', JSON.stringify(this.state.data));
    localStorage.setItem('localerror', JSON.stringify(this.state.errors));
 
-   let errors = Object.assign({}, this.state.errors);     
-   errors.OfficeState = "";                         
-   this.setState({errors});
+   let errors = this.state.errors;
+   let name1 = "OfficeState";
+   this.setState(errors);
+   errors[name1] = "";
+ 
    let textPattern = /^[a-zA-Z ]*$/ 
    $('#OfficeState').css('border-color', '')
   
@@ -18606,10 +19311,11 @@ handleInput = (event) => {
    {
     if(this.state.data.OfficeState === "" || (isNaN(this.state.data.OfficeState) === false))
     { 
-        let errors = Object.assign({}, this.state.errors);     
-        errors.OfficeState = "*Please enter your Office State";                         
-        this.setState({errors});
-       
+        let errors = this.state.errors;
+        let name1 = "OfficeState";
+        this.setState(errors);
+        errors[name1] = "*Please enter your Office State";
+ 
         let val = this.state.isModalEnabled;
         val = false;
         this.setState({val});
@@ -18619,9 +19325,10 @@ handleInput = (event) => {
    else if (typeof  this.state.data.OfficeState !== "undefined") {
        if (!textPattern.test(this.state.data.OfficeState)) {
 
-           let errors = Object.assign({}, this.state.errors);     
-           errors.OfficeState  = "*Please enter alphabet characters only.";                         
-           this.setState({errors});
+        let errors = this.state.errors;
+        let name1 = "OfficeState";
+        this.setState(errors);
+        errors[name1] = "*Please enter alphabet characters only.";
           
            let val = this.state.isModalEnabled;
            val = false;
@@ -18643,9 +19350,11 @@ handleInput = (event) => {
    localStorage.setItem('localdata', JSON.stringify(this.state.data));
    localStorage.setItem('localerror', JSON.stringify(this.state.errors));
 
-   let errors = Object.assign({}, this.state.errors);     
-   errors.OfficeCountry = "";                         
-   this.setState({errors});
+   let errors = this.state.errors;
+   let name1= "OfficeCountry";
+   this.setState(errors);
+   errors[name1] = "";
+ 
    let textPattern = /^[a-zA-Z ]*$/ 
    $('#OfficeCountry').css('border-color', '')
   
@@ -18653,9 +19362,11 @@ handleInput = (event) => {
    {
     if(this.state.data.OfficeCountry === "" || (isNaN(this.state.data.OfficeCountry) === false))
     { 
-        let errors = Object.assign({}, this.state.errors);     
-        errors.OfficeCountry = "*Please enter your OfficeCountry";                         
-        this.setState({errors});
+        let errors = this.state.errors;
+        let name1= "OfficeCountry";
+        this.setState(errors);
+        errors[name1] = "*Please enter your OfficeCountry";
+
         this.state.isModalEnabled =  false;
         $('#OfficeCountry').css('border-color', "red")
     }
@@ -18664,10 +19375,11 @@ handleInput = (event) => {
    else if (typeof  this.state.data.OfficeCountry !== "undefined") {
        if (!textPattern.test(this.state.data.OfficeCountry)) {
 
-           let errors = Object.assign({}, this.state.errors);     
-           errors.OfficeCountry = "*Please enter alphabet characters only.";                         
-           this.setState({errors});
-      
+        let errors = this.state.errors;
+        let name1= "OfficeCountry";
+        this.setState(errors);
+        errors[name1] = "*Please enter alphabet characters only.";
+ 
            let val = this.state.isModalEnabled;
            val = false;
            this.setState({val});
@@ -18686,19 +19398,22 @@ handleInput = (event) => {
    localStorage.setItem('localdata', JSON.stringify(this.state.data));
    localStorage.setItem('localerror', JSON.stringify(this.state.errors));
 
-   let errors = Object.assign({}, this.state.errors);     
-   errors.RAState = "";                         
-   this.setState({errors});
+   let errors = this.state.errors;
+   let name1= "RAState";
+   this.setState(errors);
+   errors[name1] = "";
+ 
    let textPattern = /^[a-zA-Z ]*$/ 
    $('#RAState').css('border-color', '')
   
    
    if(this.state.data.RAState === "" || (isNaN(this.state.data.RAState) === false))
    {
-       let errors = Object.assign({}, this.state.errors);     
-       errors.RAState  = "*Please enter your Representative Assessee's State";                         
-       this.setState({errors});
-
+    let errors = this.state.errors;
+    let name1= "RAState";
+    this.setState(errors);
+    errors[name1] = "*Please enter your Representative Assessee's State";
+ 
        let val = this.state.isModalEnabled;
        val = false;
        this.setState({val});
@@ -18707,10 +19422,11 @@ handleInput = (event) => {
    else if (typeof  this.state.data.RAState !== "undefined") {
        if (!textPattern.test(this.state.data.RAState)) {
 
-           let errors = Object.assign({}, this.state.errors);     
-           errors.RAState  = "*Please enter alphabet characters only.";                         
-           this.setState({errors});
-
+        let errors = this.state.errors;
+        let name1= "RAState";
+        this.setState(errors);
+        errors[name1] = "*Please enter alphabet characters only.";
+ 
            let val = this.state.isModalEnabled;
            val = false;
            this.setState({val});
@@ -18731,18 +19447,21 @@ handleInput = (event) => {
    localStorage.setItem('localdata', JSON.stringify(this.state.data));
    localStorage.setItem('localerror', JSON.stringify(this.state.errors));
 
-   let errors = Object.assign({}, this.state.errors);     
-   errors.POI = "";                         
-   this.setState({errors});
+   let errors = this.state.errors;
+   let name1= "POI";
+   this.setState(errors);
+   errors[name1] = "";
+ 
    let textPattern = /^[a-zA-Z ]*$/ 
    $('#POI').css('border-color', '')
   
    
    if(this.state.data.POI === "" || (isNaN(this.state.data.POI) === false))
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.POI = "*Please enter your Proof Of Identity";                         
-       this.setState({errors});
+    let errors = this.state.errors;
+    let name1= "POI";
+    this.setState(errors);
+    errors[name1] = "*Please enter your Proof Of Identity";
  
        let val = this.state.isModalEnabled;
        val = false;
@@ -18751,10 +19470,10 @@ handleInput = (event) => {
    }
    else if (typeof  this.state.data.POI !== "undefined") {
        if (!textPattern.test(this.state.data.POI)) {
-           
-           let errors = Object.assign({}, this.state.errors);     
-           errors.POI = "*Please enter alphabet characters only.";                         
-           this.setState({errors});
+        let errors = this.state.errors;
+        let name1= "POI";
+        this.setState(errors);
+        errors[name1] = "*Please enter alphabet characters only.";
 
            let val = this.state.isModalEnabled;
            val = false;
@@ -18776,18 +19495,21 @@ handleInput = (event) => {
    localStorage.setItem('localdata', JSON.stringify(this.state.data));
    localStorage.setItem('localerror', JSON.stringify(this.state.errors));
 
-   let errors = Object.assign({}, this.state.errors);     
-   errors.POA = "";                         
-   this.setState({errors});
+   let errors = this.state.errors;
+   let name1= "POA";
+   this.setState(errors);
+   errors[name1] = "";
+ 
    let textPattern = /^[a-zA-Z ]*$/ 
    $('#POA').css('border-color', '')
   
    
    if(this.state.data.POA === "" || (isNaN(this.state.data.POA) === false))
    { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.POA = "*Please enter your Proof Of Address";                         
-       this.setState({errors});
+    let errors = this.state.errors;
+    let name1= "POA";
+    this.setState(errors);
+    errors[name1] = "*Please enter your Proof Of Address";
 
        let val = this.state.isModalEnabled;
        val = false;
@@ -18796,10 +19518,11 @@ handleInput = (event) => {
    }
    else if (typeof  this.state.data.POA !== "undefined") {
        if (!textPattern.test(this.state.data.POA)) {
-           
-           let errors = Object.assign({}, this.state.errors);     
-           errors.POA = "*Please enter alphabet characters only.";                         
-           this.setState({errors});
+        let errors = this.state.errors;
+        let name1= "POA";
+        this.setState(errors);
+        errors[name1] = "*Please enter alphabet characters only.";
+ 
 
            let val = this.state.isModalEnabled;
            val = false;
@@ -18821,18 +19544,21 @@ handleInput = (event) => {
    localStorage.setItem('localdata', JSON.stringify(this.state.data));
    localStorage.setItem('localerror', JSON.stringify(this.state.errors));
 
-   let errors = Object.assign({}, this.state.errors);     
-   errors.POB = "";                         
-   this.setState({errors});
+   let errors = this.state.errors;
+   let name1= "POB";
+   this.setState(errors);
+   errors[name1] = "";
+ 
    let textPattern = /^[a-zA-Z ]*$/ 
    $('#POB').css('border-color', '')
   
    
    if(this.state.data.POB === "" || (isNaN(this.state.data.POB) === false))
    {  
-       let errors = Object.assign({}, this.state.errors);     
-       errors.POB = "*Please enter your Proof Of Birth";                         
-       this.setState({errors});
+    let errors = this.state.errors;
+    let name1= "POB";
+    this.setState(errors);
+    errors[name1] = "*Please enter your Proof Of Birth";
 
        let val = this.state.isModalEnabled;
        val = false;
@@ -18841,11 +19567,11 @@ handleInput = (event) => {
    }
    else if (typeof  this.state.data.POB !== "undefined") {
        if (!textPattern.test(this.state.data.POB)) {
-
-           let errors = Object.assign({}, this.state.errors);     
-           errors.POB = "*Please enter alphabet characters only.";                         
-           this.setState({errors});
-
+        let errors = this.state.errors;
+        let name1= "POB";
+        this.setState(errors);
+        errors[name1] = "*Please enter alphabet characters only.";
+ 
            let val = this.state.isModalEnabled;
            val = false;
            this.setState({val});
@@ -18866,15 +19592,22 @@ handleInput = (event) => {
    localStorage.setItem('localdata', JSON.stringify(this.state.data));
    localStorage.setItem('localerror', JSON.stringify(this.state.errors));
 
-
-   this.state.errors.Applicant = "";
+   let errors = this.state.errors;
+   let name1= "Applicant";
+   this.setState(errors);
+   errors[name1] = "";
+ 
    let textPattern = /^[a-zA-Z ]*$/ 
    $('#Applicant').css('border-color', '')
   
    
    if(this.state.data.Applicant === "" || (isNaN(this.state.data.Applicant) === false))
    { 
-       this.state.errors.Applicant = "*Please enter your Applicant's name";
+    let errors = this.state.errors;
+    let name1= "Applicant";
+    this.setState(errors);
+    errors[name1] = "*Please enter your Applicant's name";
+
        let val = this.state.isModalEnabled;
        val = false;
        this.setState({val});
@@ -18883,16 +19616,18 @@ handleInput = (event) => {
    else if (typeof  this.state.data.Applicant !== "undefined") {
        if (!textPattern.test(this.state.data.Applicant)) {
 
-           this.state.errors.Applicant = "*Please enter alphabet characters only.";
+        let errors = this.state.errors;
+        let name1= "Applicant";
+        this.setState(errors);
+        errors[name1] = "*Please enter alphabet characters only.";
+ 
            let val = this.state.isModalEnabled;
            val = false;
            this.setState({val});
            $('#Applicant').css('border-color', "red")
        }
    }
-
-   let error = this.state.errors.Applicant;
-   this.setState({error});
+ 
  }
 
  handleCapacity = (event) => {
@@ -18905,16 +19640,27 @@ handleInput = (event) => {
    localStorage.setItem('localdata', JSON.stringify(this.state.data));
    localStorage.setItem('localerror', JSON.stringify(this.state.errors));
 
-
-   this.state.errors.Capacity = "";
+//    let errors = this.state.errors;
+//    let name1= "Capacity";
+//    this.setState(errors);
+//    errors[name1] = "";
+   this.state.errors.Capacity =  "";
+ 
    let textPattern = /^[a-zA-Z ]*$/ 
    $('#Capacity').css('border-color', '')
   
    
-   if(this.state.data.Capacity === "")
+   if(this.state.data.Capacity === "" || this.state.data.Capacity === " " || ( (isNaN(this.state.data.Capacity ) === false) 
+    && (this.state.data.Capacity.match(/^[ ]*$/))))
    { 
-       this.state.errors.Capacity = "*Please enter your Capacity";
- 
+    
+    // let errors = this.state.errors;
+    // let name1= "Capacity";
+    // this.setState(errors);
+    // errors[name1] = "*Please enter your Capacity";
+    console.log("works")
+    this.state.errors.Capacity =  "*Please enter your Capacity";
+   
        let val = this.state.isModalEnabled;
        val = false;
        this.setState({val});
@@ -18923,7 +19669,11 @@ handleInput = (event) => {
    else if (typeof  this.state.data.Capacity !== "undefined") {
        if (!textPattern.test(this.state.data.Capacity)) {
 
-           this.state.errors.Capacity = "*Please enter alphabetic characters only.";
+        // let errors = this.state.errors;
+        // let name1= "Capacity";
+        // this.setState(errors);
+        // errors[name1] = "*Please enter alphabet characters only.";
+        this.state.errors.Capacity = "*Please enter alphabet characters only.";
 
            let val = this.state.isModalEnabled;
            val = false;
@@ -18947,27 +19697,37 @@ handleInput = (event) => {
   localStorage.setItem('localdata', JSON.stringify(this.state.data));
   localStorage.setItem('localerror', JSON.stringify(this.state.errors));
  
-  this.state.errors.Email = "";
+  let errors = this.state.errors;
+  let name1= "Email";
+  this.setState(errors);
+  errors[name1] = "";
+
   let textPattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-z\-0-9]+\.)+[a-z]{2,}))$/
   $('#Email').css('border-color', '')
 
   if(this.state.data.Email === "" || (isNaN(this.state.data.Email) === false))
   {
-      this.state.errors.Email = "*Please enter your Email";
+    let errors = this.state.errors;
+    let name1= "Email";
+    this.setState(errors);
+    errors[name1] = "*Please enter your Email";
+
       this.state.isModalEnabled =  false;
       $('#Email').css('border-color', "red")
   }
   else if (typeof  this.state.data.Email !== "undefined") {
       if (!textPattern.test(this.state.data.Email)) {
-          this.state.errors.Email = "*Please enter valid Email-id";
+        let errors = this.state.errors;
+        let name1= "Email";
+        this.setState(errors);
+        errors[name1] = "*Please enter valid Email-id";
+
           this.state.isModalEnabled =  false;
           $('#Email').css('border-color', "red")
       }
   }
 
-
-  let error = this.state.errors.Email;
-  this.setState({error});
+ 
  }
 
  handleBusinessCode1 = (event) => {
@@ -18977,13 +19737,20 @@ handleInput = (event) => {
    this.setState(BusinessCode1);
    BusinessCode1[name] = value;  
    
-   this.state.errors.BusinessCode1 = "";
+   let errors = this.state.errors;
+   let name1= "BusinessCode1";
+   this.setState(errors);
+   errors[name1] = "";
+ 
    let textPattern = /^[0-9]*$/ 
    $('#BusinessCodeDiv').css('border-color', '')
    
    if(this.state.data.BusinessCode1 === "")
    { 
-       this.state.errors.BusinessCode1 = "*Please enter your Business code";
+    let errors = this.state.errors;
+    let name1= "BusinessCode1";
+    this.setState(errors);
+    errors[name1] = "*Please enter your Business code";
  
        let val = this.state.isModalEnabled;
        val = false;
@@ -18993,16 +19760,18 @@ handleInput = (event) => {
    else if (typeof  this.state.data.BusinessCode1 !== "undefined") {
        if (!textPattern.test(this.state.data.BusinessCode1)) {
           
-           this.state.errors.BusinessCode1 = "*Please enter valid Business Code";
+        let errors = this.state.errors;
+        let name1= "BusinessCode1";
+        this.setState(errors);
+        errors[name1] = "*Please enter valid Business Code";
+
            let val = this.state.isModalEnabled;
            val = false;
            this.setState({val});
            $('#BusinessCodeDiv').css('border-color', "red")
        }
    }
-   let error = this.state.errors.BusinessCode1;
-   this.setState({error});
-
+    
     
    localStorage.setItem('localdata', JSON.stringify(this.state.data));
    localStorage.setItem('localerror', JSON.stringify(this.state.errors));
@@ -19017,24 +19786,29 @@ handleInput = (event) => {
    this.setState(BusinessCode2);
    BusinessCode2[name] = value;  
  
-   this.state.errors.BusinessCode2 = "";
+   let errors = this.state.errors;
+   let name1= "BusinessCode2";
+   this.setState(errors);
+   errors[name1] = "";
+ 
    let textPattern = /^[0-9]*$/ 
    $('#BusinessCodeDiv1').css('border-color', '')
    
    if (typeof  this.state.data.BusinessCode2 !== "undefined") {
        if (!textPattern.test(this.state.data.BusinessCode2)) {
 
-           this.state.errors.BusinessCode2 = "*Please enter valid Business Code";
-
+        let errors = this.state.errors;
+        let name1= "BusinessCode2";
+        this.setState(errors);
+        errors[name1] = "*Please enter valid Business Code";
+ 
            let val = this.state.isModalEnabled;
            val = false;
            this.setState({val});
            $('#BusinessCodeDiv1').css('border-color', "red")
        }
    }
-   let error = this.state.errors.BusinessCode2;
-   this.setState({error});
-   
+  
    let BusinessCode = this.state.data.BusinessCode;
    BusinessCode = this.state.data.BusinessCode1 + this.state.data.BusinessCode2;
    this.setState({BusinessCode})
@@ -19172,43 +19946,43 @@ handleInput = (event) => {
                     
                    <input 
                        type="checkbox" 
-                       className="Check" 
+                       className="Check Check_align" 
                        id="1" 
                        name="NameTitleOne[1][]" 
                        value= "Shri" 
                        onClick={(e)=>this.handleNameTitleOneCheck(e,"NameTitleOne")}/>
 
-                   <label className="Label_with_no_space"> Shri</label>
+                   <label className="Label_with_no_space Check_align"> Shri</label>
 
                    <input 
                       type="checkbox" 
-                      className="Check"
+                      className="Check Check_align"
                       id = "2"
                       name = "NameTitleOne[1][]"
                       value = "Smt."
                       onClick={(e)=>this.handleNameTitleOneCheck(e,"NameTitleOne")}/>
 
-                   <label className="Label_with_no_space"> Smt.</label>
+                   <label className="Label_with_no_space Check_align"> Smt.</label>
 
                    <input 
                       type="checkbox" 
-                      className="Check"
+                      className="Check Check_align"
                       id = "3"
                       name = "NameTitleOne[1][]"
                       value = "Kumari"
                       onClick={(e)=>this.handleNameTitleOneCheck(e,"NameTitleOne")}/>
 
-                   <label className="Label_with_no_space"> Kumari</label>
+                   <label className="Label_with_no_space Check_align"> Kumari</label>
 
                    <input 
                       type="checkbox" 
-                      className="Check"
+                      className="Check Check_align"
                       id = "4"
                       name = "NameTitleOne[1][]"
                       value = "M/s"
                       onClick={(e)=>this.handleNameTitleOneCheck(e,"NameTitleOne")}/>
 
-                   <label className="Label_with_no_space"> M/s</label> <br /> 
+                   <label className="Label_with_no_space Check_align"> M/s</label> <br /> 
                     
                 
                   
@@ -19474,8 +20248,8 @@ handleInput = (event) => {
                                id = "LastName25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName24", "#LastName25")}
                                onChange = {this.handleLastName25}/>
-                          {this.state.isIndicatorEnabled === false ? 
-                            <span  className="tooltip" style={{marginLeft:"3%"}}>
+                           {this.state.isIndicatorEnabled === false ? 
+                            <span  className="tooltip" style={{marginLeft: "20px"}}>
                             <img disabled = {!this.state.isIndicatorEnabled} src={indicator} style={{width:"3%",height:"3%"}} />
                               <img src={namefield} className="tooltiptext" style={{width:"600px",height:"150px"}}  />
                            </span>
@@ -19736,7 +20510,7 @@ handleInput = (event) => {
                                onChange = {this.handleFirstName25}/>
 
                         {this.state.isIndicatorEnabled === false ? 
-                        <span className="tooltip" style={{marginLeft:"3%"}}>
+                        <span className="tooltip" style={{marginLeft:"20px"}}>
                           <img src={indicator} style={{width:"3%",height:"3%"}} />
                             <img src={namefield} className="tooltiptext" style={{width:"600px",height:"150px"}}  />
                          </span>
@@ -19996,7 +20770,7 @@ handleInput = (event) => {
                                onChange = {this.handleMiddleName25}/>
 
                          {this.state.isIndicatorEnabled === false ? 
-                          <span className="tooltip" style={{marginLeft:"3%"}}>
+                          <span className="tooltip" style={{marginLeft:"20px"}}>
                           <img src={indicator} style={{width:"3%",height:"3%"}} />
                             <img src={namefield} className="tooltiptext" style={{width:"600px",height:"150px"}}  />
                          </span>
@@ -20015,9 +20789,9 @@ handleInput = (event) => {
                    <div className = "ColouredLabel">
                       <label  className = "ColouredLabelAlign"> &nbsp; &nbsp;2 &nbsp; Abbreviations of the above name, as you would like it, to be printed on the PAN card</label>
                       {this.state.isIndicatorEnabled === false ? 
-                      <span className="tooltip" style={{marginLeft:"30.2%"}}>
+                      <span className="tooltip" style = {{marginLeft : "32.4%"}}>
                           <img src={indicator} style={{width:"2%",height:"2%"}} />
-                          <img src={namefield} className="tooltiptext" style={{width:"600px",height:"150px"}}  />
+                          <img src={namefield} className="tooltiptext" style={{width:"600px",height:"150px", textAlign: "right"}}  />
                          </span>
                       : ""}
                    </div>
@@ -20803,7 +21577,7 @@ handleInput = (event) => {
 
                         {this.state.isIndicatorEnabled === false ? 
                         <span className="tooltip" style={{marginLeft:"5%"}}>
-                          <img src={indicator} style={{width:"2%",height:"2%"}} />
+                          <img src={indicator} style={{width:"2%",height:"2%" , marginLeft: "4.2%"}} />
                             <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px" , fontSize: "17px", fontWeight: "inherit"}} >Please tick as applicable</label>
                          </span>
                          : ""}
@@ -21685,7 +22459,7 @@ handleInput = (event) => {
                          <label className="Label_with_no_space Move_End1"> (please tick as applicable)</label> 
                          {this.state.isIndicatorEnabled === false ? 
                          <span className="tooltip" style={{marginLeft:"5.2%"}}>
-                          <img src={indicator} style={{width:"2%",height:"2%"}} />
+                          <img src={indicator} style={{width:"2%",height:"2%", marginLeft: "4.5%"}} />
                             <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px", fontSize : "17px", fontWeight: "inherit"}}>This field is mandatory for Individuals.</label>
                          </span>
                          : ""}
@@ -23438,7 +24212,7 @@ handleInput = (event) => {
                     
                     {this.state.isIndicatorEnabled === false ? 
                     <span className="tooltip" style={{marginLeft:"2.4%"}}>
-                          <img src={indicator} style={{width:"2%",height:"2%"}} />
+                          <img src={indicator} style={{width:"2%",height:"2%", marginLeft: "1.4%"}} />
                           <img src={parentname} className="tooltiptext" style={{width:"600px",height:"150px"}}  />
                          </span>
                      : ""}
@@ -24882,7 +25656,7 @@ handleInput = (event) => {
 
                               {this.state.isIndicatorEnabled === false ? 
                               <span className="tooltip" style={{marginLeft:"20.3%"}}>
-                           <img src={indicator} style={{width:"7.7%",height:"3%" ,marginLeft: "18%"}} />
+                           <img src={indicator} style={{width:"7.7%",height:"3%" ,marginLeft: "30%"}} />
                             <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}}>Please enter as applicable</label>
                          </span>
                          : ""}
@@ -24929,7 +25703,7 @@ handleInput = (event) => {
                           <div> 
                           <input 
                                type="text" 
-                               className="Pincode-control"
+                               className="Name-control"
                                maxLength = "1"
                                value = {this.state.data.OfficeName1}
                                name = "OfficeName1"
@@ -26595,7 +27369,7 @@ handleInput = (event) => {
                                 onChange={event => this.handleOfficeCountry(event)}/>
                         {this.state.isIndicatorEnabled === false ? 
                         <span className="tooltip" style={{marginLeft:"21%"}}>
-                          <img src={indicator} style={{    width: "7.5%",height: "3.2% ", marginLeft: "18%"}} />
+                          <img src={indicator} style={{    width: "7.5%",height: "3.2% ", marginLeft: "30%"}} />
                             <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}} >Please enter as applicable</label>
                          </span>
                          : ""}
@@ -26636,7 +27410,7 @@ handleInput = (event) => {
                         <label className="Label_with_no_space Move_End1"> (please tick as applicable)</label>
                         {this.state.isIndicatorEnabled === false ? 
                         <span className="tooltip" style={{marginLeft:"9.7%"}}>
-                          <img src={indicator} style={{width:"2.2%",height:"2.2%"}} />
+                          <img src={indicator} style={{width:"2.2%",height:"2.2%", marginLeft: "3.2%"}} />
                             <img src={communicationcheckfield} className="tooltiptext" style={{width:"600px",height:"50px"}}  />
                          </span> 
                          : ""}
@@ -26704,71 +27478,71 @@ handleInput = (event) => {
                                type="text" 
                                className="StdCode-control"
                                maxLength = "1"
-                               value = {this.state.data.StcCode1}
-                               name = "StcCode1"
-                               id = "StcCode1"
-                               onKeyDown = {event => this.handleBackspaceKey(event, "#StcCode1", "#StcCode1")}
-                               onChange = {this.handleStcCode1}/>
+                               value = {this.state.data.StdCode1}
+                               name = "StdCode1"
+                               id = "StdCode1"
+                               onKeyDown = {event => this.handleBackspaceKey(event, "#StdCode1", "#StdCode1")}
+                               onChange = {this.handleStdCode1}/>
 
                             <input 
                                type="text" 
                                className="StdCode-control"
                                maxLength = "1"
-                               value = {this.state.data.StcCode2}
-                               name = "StcCode2"
-                               id = "StcCode2"
-                               onKeyDown = {event => this.handleBackspaceKey(event, "#StcCode1", "#StcCode2")}
-                               onChange = {this.handleStcCode2}/>
+                               value = {this.state.data.StdCode2}
+                               name = "StdCode2"
+                               id = "StdCode2"
+                               onKeyDown = {event => this.handleBackspaceKey(event, "#StdCode1", "#StdCode2")}
+                               onChange = {this.handleStdCode2}/>
 
                             <input 
                                type="text" 
                                className="StdCode-control"
                                maxLength = "1"
-                               value = {this.state.data.StcCode3}
-                               name = "StcCode3"
-                               id = "StcCode3"
-                               onKeyDown = {event => this.handleBackspaceKey(event, "#StcCode2", "#StcCode3")}
-                               onChange = {this.handleStcCode3}/>
+                               value = {this.state.data.StdCode3}
+                               name = "StdCode3"
+                               id = "StdCode3"
+                               onKeyDown = {event => this.handleBackspaceKey(event, "#StdCode2", "#StdCode3")}
+                               onChange = {this.handleStdCode3}/>
 
                             <input 
                                type="text" 
                                className="StdCode-control"
                                maxLength = "1"
-                               value = {this.state.data.StcCode4}
-                               name = "StcCode4"
-                               id = "StcCode4"
-                               onKeyDown = {event => this.handleBackspaceKey(event, "#StcCode3", "#StcCode4")}
-                               onChange = {this.handleStcCode4}/>
+                               value = {this.state.data.StdCode4}
+                               name = "StdCode4"
+                               id = "StdCode4"
+                               onKeyDown = {event => this.handleBackspaceKey(event, "#StdCode3", "#StdCode4")}
+                               onChange = {this.handleStdCode4}/>
 
                             <input 
                                type="text" 
                                className="StdCode-control"
                                maxLength = "1"
-                               value = {this.state.data.StcCode5}
-                               name = "StcCode5"
-                               id = "StcCode5"
-                               onKeyDown = {event => this.handleBackspaceKey(event, "#StcCode4", "#StcCode5")}
-                               onChange = {this.handleStcCode5}/> 
+                               value = {this.state.data.StdCode5}
+                               name = "StdCode5"
+                               id = "StdCode5"
+                               onKeyDown = {event => this.handleBackspaceKey(event, "#StdCode4", "#StdCode5")}
+                               onChange = {this.handleStdCode5}/> 
 
                              <input 
                                type="text" 
                                className="StdCode-control"
                                maxLength = "1"
-                               value = {this.state.data.StcCode6}
-                               name = "StcCode6"
-                               id = "StcCode6"
-                               onKeyDown = {event => this.handleBackspaceKey(event, "#StcCode5", "#StcCode6")}
-                               onChange = {this.handleStcCode6}/>
+                               value = {this.state.data.StdCode6}
+                               name = "StdCode6"
+                               id = "StdCode6"
+                               onKeyDown = {event => this.handleBackspaceKey(event, "#StdCode5", "#StdCode6")}
+                               onChange = {this.handleStdCode6}/>
 
                              <input 
                                type="text" 
                                className="StdCode-control"
                                maxLength = "1"
-                               value = {this.state.data.StcCode7}
-                               name = "StcCode7"
-                               id = "StcCode7"
-                               onKeyDown = {event => this.handleBackspaceKey(event, "#StcCode6", "#StcCode7")}
-                               onChange = {this.handleStcCode7}/>
+                               value = {this.state.data.StdCode7}
+                               name = "StdCode7"
+                               id = "StdCode7"
+                               onKeyDown = {event => this.handleBackspaceKey(event, "#StdCode6", "#StdCode7")}
+                               onChange = {this.handleStdCode7}/>
 
                                 </td>
                                 <td className = "Telephone_td">
@@ -26903,7 +27677,7 @@ handleInput = (event) => {
                                onChange = {this.handlePhoneNumber13}/>
                             {this.state.isIndicatorEnabled === false ? 
                             <span className="tooltip" style={{marginLeft:"22.2%"}}>
-                            <img src={indicator} style={{width:"3.75%",height:"3.45%"}} />
+                            <img src={indicator} style={{width:"3.75%",height:"3.45%" , marginLeft: "-2%"}} />
                                 <img src={phonenumberfield} className="tooltiptext" style={{width:"600px",height:"250px"}}  />
                             </span>       
                             : ""}  
@@ -26928,7 +27702,7 @@ handleInput = (event) => {
                         onChange={event => this.handleEmail(event)}/> 
                           {this.state.isIndicatorEnabled === false ? 
                         <span className="tooltip" style={{marginLeft:"20.1%"}}>
-                            <img src={indicator} style={{width:"2.3%",height:"2.3%"}} />
+                            <img src={indicator} style={{width:"2.3%",height:"2.3%", marginLeft: "4%"}} />
                                 <label className="tooltiptext tooltiptextLabel" style={{width:"600px",height:"40px"}}> Please enter combinations of alphabet, numbers, and special characters. <br/>Must include @, .</label>
                             </span>   
                         : ""} 
@@ -26940,7 +27714,7 @@ handleInput = (event) => {
                        <label >&nbsp;&nbsp; 10 &nbsp; Status of applicant</label>
                        {this.state.isIndicatorEnabled === false ? 
                        <span className="tooltip" style={{marginLeft:"75.2%"}}>
-                            <img src={indicator} style={{width:"2.3%",height:"2.3%"}} />
+                            <img src={indicator} style={{width:"2.3%",height:"2.3%", marginLeft: "-0.5%"}} />
                                 <img src={statusfield} className="tooltiptext" style={{width:"600px",height:"70px"}}  />
                             </span>    
                         :""}
@@ -26954,6 +27728,7 @@ handleInput = (event) => {
                     <input 
                        type="checkbox" 
                        className="Check GovernmentCheck"
+                       style = {{marginLeft : "42%"}}
                        value = "Government"
                        id = "22"
                        name = "Status[7][]"
@@ -27059,7 +27834,7 @@ handleInput = (event) => {
                         <label>&nbsp;&nbsp; 11 &nbsp; Registration Number (for company, firms, LLPs etc.)</label>
                         {this.state.isIndicatorEnabled === false ? 
                         <span className="tooltip" style={{marginLeft:"52%"}}>
-                            <img src={indicator} style={{width:"2.3%",height:"2.3%"}} />
+                            <img src={indicator} style={{width:"2.3%",height:"2.3%", marginLeft : "2%"}} />
                                 <img src={registrationNumber} className="tooltiptext" style={{width:"600px",height:"80px"}}  />
                             </span>  
                         : ""}
@@ -27503,7 +28278,7 @@ handleInput = (event) => {
 
                                  {this.state.isIndicatorEnabled === false ? 
                                  <span className="tooltip" style={{marginLeft:"26%"}}>
-                            <img src={indicator} style={{width:"2.4%",height:"2.4%", marginLeft: "3.2%"}} />
+                            <img src={indicator} style={{width:"2.4%",height:"2.4%", marginLeft: "5.2%"}} />
                                 <img src={aadhaarnumber} className="tooltiptext" style={{width:"600px",height:"70px"}}  />
                             </span>  
                             : ""}
@@ -27813,7 +28588,7 @@ handleInput = (event) => {
                     <label className="FirstLabel"> Name as per AADHAAR letter or card or as per the Enrolment ID of Aadhaar application form</label>
                     {this.state.isIndicatorEnabled === false ? 
                     <span className="tooltip" style={{marginLeft:"28.55%"}}>
-                            <img src={indicator} style={{width:"2.4%",height:"2.4%", marginLeft: "1.1%"}} />
+                            <img src={indicator} style={{width:"2.4%",height:"2.4%", marginLeft: "4.8%"}} />
                                 <img src={aadhaarnamefield} className="tooltiptext" style={{width:"600px",height:"120px"}}  />
                             </span> 
                     : ""}  <br/>
@@ -28609,7 +29384,7 @@ handleInput = (event) => {
                        <label className = "ColouredLabel"> as applicable</label> 
                        {this.state.isIndicatorEnabled === false ?
                        <span className="tooltip" style={{marginLeft:"5.3%"}}>
-                            <img src={indicator} style={{width:"2.3%",height:"2.3%"}} />
+                            <img src={indicator} style={{width:"2.3%",height:"2.3%", marginLeft: "2%"}} />
                                 <img src={sourceOfIncome} className="tooltiptext" style={{width:"600px",height:"300px"}}  />
                             </span> 
                         : ""}
@@ -28682,6 +29457,7 @@ handleInput = (event) => {
                        id = "36"
                        name = "IncomeOtherSource"
                        disabled={!this.state.isEnabledCheck}
+                       style = {{marginLeft : "7%"}}
                        onClick={(e)=>this.handleIncomeOtherSourceCheck(e,"IncomeOtherSource")}/>                         
                     <label className = "Label_with_no_space"> Income from Other sources</label> <br/>
                     
@@ -28701,6 +29477,7 @@ handleInput = (event) => {
                        value = " No income"
                        id = "38"
                        name = "NoIncome"
+                       style = {{marginLeft : "52%"}}
                        onClick={(e)=>this.handleNoIncomeCheck(e,"NoIncome")}/> 
                     <label className = "Label_with_no_space"> No income</label> <br/>
 
@@ -28721,7 +29498,7 @@ handleInput = (event) => {
                     </div>
                      
                     <label className="FirstLabel"> &nbsp;&nbsp; Full name, address of the Representative Assessee, who is assessible under the Income Tax Act in respect of the person, whose particulars have
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;been given in the column 1-13.</label> 
+                    <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;been given in the column 1-13.</label> 
                     
                     <div className = "ColouredLabel"> 
                         <label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Full Name (Full expanded name : initials are not permitted)</label>
@@ -30993,7 +31770,7 @@ handleInput = (event) => {
                     <label  className = "ColouredLabel">&nbsp;&nbsp;15 &nbsp; Douments submitted as Proof of Identity (POI), Proof of Address (POA) and Proof of Date of Birth (POB)</label>
                     {this.state.isIndicatorEnabled === false ?
                     <span className="tooltip" style={{marginLeft:"16.7%"}}>
-                          <img src={indicator} style={{width:"2.3%",height:"2.3%"}} />
+                          <img src={indicator} style={{width:"2.3%",height:"2.3%", marginLeft : "4.5%"}} />
                             <img src={prooffield} className="tooltiptext" style={{width:"600px",height:"100px"}}  />
                     </span>
                     :""}

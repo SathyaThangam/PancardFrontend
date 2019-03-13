@@ -22,7 +22,7 @@
 
 .Name-control
 {
-   width: 2.69%;
+   width: 15px;
    text-align: center;
 }
 
@@ -84,7 +84,7 @@
 
 .Abbreviation-control
 {
-  width: 1.92%;
+  width: 14px;
   text-align: center;
 }
 
@@ -130,6 +130,7 @@
 
 .tooltip {
   position: relative;
+   
  }
  
  .tooltip .tooltiptext {
@@ -195,6 +196,7 @@ input[type="text"]{
 .App {
     text-align: center;
     background-color: #525659;  
+    width: 100%;
   }
  
   .ErrorMsg {
@@ -204,7 +206,7 @@ input[type="text"]{
   }
   
   .tablebox1 {
-    margin-left: 3%;
+    margin-left: 3px;
     width: 100px;
     height: 120px;
     border  :  1px solid black;
@@ -220,7 +222,7 @@ input[type="text"]{
  }
 
  .tablebox11 {
-   margin-left: 3%;
+   margin-left: 3px;
    width: 100px;
    height: 16px;
    border  :  1px solid black;
@@ -237,17 +239,17 @@ input[type="text"]{
 }
 
  .tablebox2 {
-   margin-left: 22%;
-   width: 100px;
+   margin-left: 40px;
+   width: 90px;
    height: 120px;
    border  :  1px solid black;
-   margin-right: 3%;
+   /* margin-right: 3%; */
    text-align: center;
 }
 
 .column2 {
-  margin-left: 10%;
-  width: 485px;
+  margin-left: 100px;
+  width: 440px;
   align-content: center;
 }
 
@@ -288,10 +290,10 @@ input[type="text"]{
 
 .Form2 {
   /* width: 61%; */
-  width: 800px;
+  width: 850px;
   /* width:63%; */
   height:80%;
-  margin-left: 17.5%;
+  margin-left: 224px;
   text-align: left;
   background-color: white;
    
@@ -319,7 +321,7 @@ flex-wrap: wrap; */
 .navtitle {
  font-size: 25px;
  color: #ffffff;
- margin-left:  35%;
+ margin-left:  600px;
 }
 
 /* .navbutton {
@@ -337,7 +339,7 @@ flex-wrap: wrap; */
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  margin-left: 30%;
+  margin-left: 300px;
   
 }
 .button1 {
@@ -351,7 +353,7 @@ flex-wrap: wrap; */
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  margin-left: 1%;
+  margin-left: 10px;
 }
 .button3 {border-radius: 8px;}
 
@@ -373,32 +375,30 @@ margin-left: 44%;
 }
  
   /* First Component */
-
 .Form1 {
     /* width:63%; */
-    width: 61%;
-    width: 800px;
+    /* width: 61%; */
+    width: 850px;
     height:80%;
-    margin-left: 17.5%;
+    margin-left: 224px;
     text-align: left;
     background-color: white;
-    margin-top: 4%;
+    margin-top: 50px;
 }
 
 .box {
-    margin-left: 3%;
+    margin-left: 25px;
     border  :  1px solid black;
-    margin-right: 3%;
+    margin-right: 25px;
 }
 
   
 .ColouredLabel{
      font-weight: bold;
-     margin-left: 0%;
      font-size: 10.75px;
      font-family: 'arial';
      background-color: #dcdddf;
-     margin-top: 0.4%;
+     margin-top: 10px;
 }
 
 .FirstLabel {
@@ -407,9 +407,13 @@ margin-left: 44%;
     margin-left: 3.2%;
 }
 
+.Check_align {
+  vertical-align: middle;
+}
+
 
 .Check {
-  margin-left: 2.5%;
+  margin-left: 15px;
   width: 20px;
   height: 20px;
   border: 1px solid black;
@@ -424,7 +428,7 @@ margin-left: 44%;
 
 .first_td {
   width: 210px;
-  margin-left: 4%;
+  margin-left: 20px;
   border: none;
 }
 
@@ -447,7 +451,7 @@ margin-left: 44%;
 /* Second Component......*/
 
 .box_left {
-  margin-left: 3.2%;
+  margin-left: 25px;
 }
 
 /* Third Component */
@@ -600,8 +604,8 @@ margin-left: 44%;
   width: 200px;
   height: 14px;
   align-content: left;
-  margin-left: -66%;
-  margin-bottom: 2%;
+  margin-left: -87%;
+  margin-bottom: 1%;
 }
 
 .PincodeValue {
