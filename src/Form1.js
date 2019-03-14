@@ -527,149 +527,191 @@ class Form1 extends Component {
 
     if(this.state.data.NameTitleOne === "")
     {
-       let errors = Object.assign({}, this.state.errors);
-       $( "#1" ).focus();
-       errors.NameTitleOne = '*Please select title as applicable';                         
-       this.setState({errors});
+
+        let errors1 = this.state.errors;
+        let name4= "NameTitleOne";
+        this.setState(errors1);
+        errors1[name4] = "*Please select title as applicable";
+        $( "#1" ).focus();
+       
     }
     else if(this.state.data.LastName === "")
     { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.LastName = '*Fields are required';                         
-       this.setState({errors});
+
+        let errors1 = this.state.errors;
+        let name4= "LastName";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
        $( "#LastName1" ).focus();
        this.HighlightLastNameError();
     }
     else if( this.state.data.FirstName === "")
     { 
-       let errors = Object.assign({}, this.state.errors);     
-       errors.FirstName = '*Fields are required';                         
-       this.setState({errors});
+
+        let errors1 = this.state.errors;
+        let name4= "FirstName";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+
        $( "#FirstName1" ).focus();
        this.HighlightFirstNameError();
     }
     else if(this.state.data.OtherName === "")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.OtherName = '*Please tick as applicable';                         
-        this.setState({errors});
+
+        let errors1 = this.state.errors;
+        let name4= "OtherName";
+        this.setState(errors1);
+        errors1[name4] = "*Please tick as applicable";
+ 
         $( "#OtherName1" ).focus();
         
     }
     else if(this.state.data.NameTitleTwo === "" && this.state.data.OtherName === "5")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.NameTitleTwo = '*Please select title as applicable';                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "NameTitleTwo";
+        this.setState(errors1);
+        errors1[name4] = "*Please select title as applicable";
         $( "#7" ).focus();
     }
     else if(this.state.data.OtherName === "5" &&  this.state.data.OtherLastName === "" )
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.OtherLastName = '*Fields are required';                         
-        this.setState({errors});
+
+        let errors1 = this.state.errors;
+        let name4= "OtherLastName";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+
         $( "#OtherLastName1" ).focus();
         this.HighlightOtherLastNameError();
     }
     else if(this.state.data.OtherName === "5" && this.state.data.OtherFirstName === "" )
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.OtherFirstName = '*Fields are required';                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "OtherFirstName";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#OtherFirstName1" ).focus();
         this.HighlightOtherFirstNameError();
     }
     else if(this.state.data.Gender === "")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.Gender = '*Please tick as applicable';                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "Gender";
+        this.setState(errors1);
+        errors1[name4] = "*Please tick as applicable";
+
         $( "#11" ).focus();
     }
     else if(this.state.data.Day === "" )
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.Day = '*Fields are required';                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "Day";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#Day1" ).focus();
         this.HighlightDayError();
     }
     else if(this.state.data.Month === "")
     {  
-        let errors = Object.assign({}, this.state.errors);     
-        errors.Month = '*Fields are required';                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "Month";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+
         $( "#Month1" ).focus();
         this.HighlightMonthError();
     }
     else if(this.state.data.Year === "")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.Year = '*Fields are required';                         
-        this.setState({errors});
+
+        let errors1 = this.state.errors;
+        let name4= "Year";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+
         $( "#Year1" ).focus();
         this.HighlightYearError();
     }
     else if(this.state.data.FatherLastName === "")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.FatherLastName = '*Fields are required';                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "FatherLastName";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#FatherLastName1" ).focus();
         this.HighlightFatherLastNameError();
     }
     else if(this.state.data.FatherFirstName === "")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.FatherFirstName = '*Fields are required';                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "FatherFirstName";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#FatherFirstName1" ).focus();
         this.HighlightFatherFirstNameError();
     }
     else if(this.state.data.ParentName === "")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.ParentName = '*Please tick as applicable';                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "ParentName";
+        this.setState(errors1);
+        errors1[name4] = "*Please tick as applicable";
+ 
         $( "#14" ).focus();
     }
     else if( this.state.data.ParentName === "15" && this.state.data.MotherLastName === "")
     { 
-        let errors = Object.assign({}, this.state.errors);     
-        errors.MotherLastName = "*Please enter Mother's name";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "MotherLastName";
+        this.setState(errors1);
+        errors1[name4] = "*Please enter Mother's name";
+ 
         $( "#MotherLastName1" ).focus();
         this.HighlightMotherLastNameError();
     }
     else if(this.state.data.ParentName === "15 " && this.state.data.MotherFirstName === "")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.MotherFirstName = "*Please enter Mother's name";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "MotherFirstName";
+        this.setState(errors1);
+        errors1[name4] = "*Please enter Mother's name";
+ 
         $( "#MotherFirstName1" ).focus();
         this.HighlightMotherFirstNameError();
     }
     else if(this.state.data.ResidenceFlat === "")
     {  
-        let errors = Object.assign({}, this.state.errors);     
-        errors.ResidenceFlat = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "ResidenceFlat";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#ResidenceFlat1" ).focus();
         this.HighlightResidenceFlatError();
     }
     else if(this.state.data.ResidencePremises === "")
     {  
-        let errors = Object.assign({}, this.state.errors);     
-        errors.ResidencePremises = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "ResidencePremises";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#ResidencePremises1" ).focus();
         this.HighlightResidencePremisesError();
     }
     else if(this.state.data.ResidenceRoad === "")
     {  
-        let errors = Object.assign({}, this.state.errors);     
-        errors.ResidenceRoad = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "ResidenceRoad";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#ResidenceRoad1" ).focus();
         this.HighlightResidenceRoadError();
     }
@@ -1125,7 +1167,7 @@ class Form1 extends Component {
         $( "#Capacity" ).focus();
      }
 
-if(this.state.errors.Applicant !== "")
+  if(this.state.errors.Applicant !== "")
      {
         $('#Applicant').css('border-color', "red")
         $( "#Applicant" ).focus();
