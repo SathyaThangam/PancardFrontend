@@ -1,0 +1,65 @@
+.image {
+    margin-left: 10%;
+    margin-top: 3%;
+    width: 95%; 
+    height: 40%;
+    border: 0;
+}
+
+.newform{
+    color: rgb(148, 72, 255);
+    font-size: 100%;
+    vertical-align: middle;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    outline: none;
+    background: transparent;
+    margin: 0px;
+    padding: 0px;
+}
+
+.navlogout{
+    margin-left: 40%;
+    margin-right: 4em;
+    letter-spacing: 0.1em;
+    font-size: 1.2em;
+    color: rgb(72, 144, 226);
+    position: relative;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.navlogo{
+    font-size: 30px;
+    margin-top: 25%;
+    margin-left: 10%;
+    color: #a270ff;
+}
+
+.formlabel {
+    font-size: 25px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    line-height: 1.4;
+    margin-top: 15px;
+}
+
+.fillformbutton {
+    color: rgb(255, 255, 255);
+    background-color: rgb(148, 72, 255);
+    width: 180px;
+    border-radius: 25px;
+    text-align: center;
+    align-self: flex-start;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: 30px;
+    margin-right: 20px;
+}
+
+.content1 {
+    margin-left: 25%;
+    align-content: center;
+}

@@ -1,15 +1,11 @@
-import React from 'react';
-import dummyimage from './images/dummyimage.png';
-import forwardarrow from './images/forwardPurpleIcon.png';
-import "./Panmain.css";
-import "./login.css";    
-import "./Form1.css"; 
-import Modal from "react-responsive-modal";
+import React, { Component } from 'react';
+import "./Form1.css";
+import OtpInput from 'react-otp-input';
 import axios from "axios";
+import $ from 'jquery';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas'
-import Pdfform from './Pdfform'
-import previmg from './images/eye.png'
+import Modal from "react-responsive-modal";
 import indicator from "./instuction.png"
 import namefield from "./namefield.jpeg"
 import datefield from "./datefield.jpeg"
@@ -26,588 +22,487 @@ import residencefield from "./residencefield.jpeg"
 import respresentativeAssessee from "./respresentativeAssessee.jpeg"
 import sourceOfIncome from "./sourceOfIncome.jpeg"
 import statusfield from "./statusfield.jpeg"
-import {NavLink} from "react-router-dom"
+// import CodeInput from 'react-native-confirmation-code-input';
 
-let responseotp;
-let mydata;
-class Panmain extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            open: false,
-            open1: false,
-            otpnumber: "",
-            enteredotp: "",
-            otpvalue: "",
-            cardview: 0,
-            check: 0,
-            displaypdf:0,
-            number: {
-                phonenumber: "",
-            },
-            address: ["Name of Office", "Flat / Room / Door / Block No.", "Name of Premises / Building / Village", "Road / Street / Lane / Post Office", "Area / Locality / Taluka / Sub-Division", "Town / City / District"],
-            addressTwo: ["Flat / Room / Door / Block No.", "Name of Premises / Building / Village", "Road / Street / Lane / Post Office", "Area / Locality / Taluka / Sub-Division", "Town / City / District"],
-            name: ["Last Name / Surname", "First Name", "Middle Name"],
-            addressThree: ["Name of Premises / Building / Village", "Road / Street / Lane/Post Office", "Area / Locality / Taluka/ Sub- Division", "Town / City / District"],
-            
-            isModalEnabled: false,
-            isIndicatorEnabled: false,
-            officeEnabled: false,
-            isEnabled : false,
-            isEnabledCheck: true,
-            OtpInput: "",
+
+let alldata ;
+class Form1 extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      address: ["Name of Office", "Flat / Room / Door / Block No.", "Name of Premises / Building / Village", "Road / Street / Lane / Post Office", "Area / Locality / Taluka / Sub-Division", "Town / City / District"],
+      addressTwo: ["Flat / Room / Door / Block No.", "Name of Premises / Building / Village", "Road / Street / Lane / Post Office", "Area / Locality / Taluka / Sub-Division", "Town / City / District"],
+      name: ["Last Name / Surname", "First Name", "Middle Name"],
+      addressThree: ["Name of Premises / Building / Village", "Road / Street / Lane/Post Office", "Area / Locality / Taluka/ Sub- Division", "Town / City / District"],
       
-            errors: {
-              NameTitleOne : "",
-              OtherName : "",
-              NameTitleTwo : "",
-              Gender : "",
-              ParentName : "",
-              Communication : "",
-              Status : "",
-              Income : "",
-              NameTitleThree : "",
-              FirstName: "",
-              LastName : "",
-              MiddleName : "",
-              FatherFirstName : "",
-              FatherMiddleName: "",
-              FatherLastName: "",
-              MotherFirstName: "",
-              MotherMiddleName: "",
-              MotherLastName: "",
-              OtherFirstName: "",
-              OtherLastName: "",
-              OtherMiddleName: "",
-              RAFirstName: "",
-              RALastName: "",
-              RAMiddleName: "",
-              AbbreviationOne: "",
-              AbbreviationTwo: "",
-              ResidenceFlat: "",
-              ResidencePremises: "",
-              ResidenceRoad: "",
-              ResidenceArea: "",
-              ResidenceTown: "",
-              OfficeName: "",
-              OfficeFlat: "",
-              OfficePremises: "",
-              OfficeRoad: "",
-              OfficeArea: "",
-              OfficeTown: "",
-              RAFlat: "",
-              RAPremises: "",
-              RARoad: "",
-              RAArea: "",
-              RATown: "",
-              AadhaarFirstName: "",
-              AadhaarLastName: "",
-              AadhaarMiddleName: "",
-              AadhaarNumber: "",
-              EnrolmentId : "",
-              RegistrationNumber: "",
-              ResidenceState: "",
-              ResidencePincode: "",
-              ResidenceCountry: "",
-              OfficeState: "",
-              OfficePincode: "",
-              OfficeCountry: "",
-              RAState: "",
-              RAPincode: "",
-              CountryCode: "",
-              StdCode: "",
-              PhoneNumber: "",
-              Day: "",
-              Month: "",
-              Year: "",
-              POI: "",
-              POA: "",
-              POB: "",
-              Applicant: "",
-              Capacity: "",
-              Email: "",
-              BusinessCode1: "",
-              BusinessCode2: "",
-              Salary: "",
-              CapitalGains: "",
-              IncomeBusiness: "",
-              IncomeOtherSource: "",
-              IncomeFromHouse: "",
-              NoIncome: "",
-              phonenumber: "",
-              errorid: "1"
-            },
-            data : {
-               NameTitleOne : "",
-               OtherName : "",
-               NameTitleTwo : "",
-               Gender : "",
-               ParentName : "",
-               Communication : "",
-               Status : "",
-               Income : "",
-               NameTitleThree : "",
-               FirstName1 : "", FirstName2: "", FirstName3: "", FirstName4: "", FirstName5: "",
-               FirstName6 : "", FirstName7: "", FirstName8: "", FirstName9: "", FirstName10: "",
-               FirstName11 : "", FirstName12: "", FirstName13: "", FirstName14: "", FirstName15: "",
-               FirstName16 : "", FirstName17: "", FirstName18: "", FirstName19: "", FirstName20: "",
-               FirstName21 : "", FirstName22: "", FirstName23: "", FirstName24: "", FirstName25: "",
-               FirstName: "",
-               LastName1 : "", LastName2: "", LastName3: "", LastName4: "", LastName5: "",
-               LastName6 : "", LastName7: "", LastName8: "", LastName9: "", LastName10: "",
-               LastName11 : "", LastName12: "", LastName13: "", LastName14: "", LastName15: "",
-               LastName16 : "", LastName17: "", LastName18: "", LastName19: "", LastName20: "",
-               LastName21 : "", LastName22: "", LastName23: "", LastName24: "", LastName25: "",
-               LastName : "",
-               MiddleName1 : "", MiddleName2: "", MiddleName3: "", MiddleName4: "", MiddleName5: "",
-               MiddleName6 : "", MiddleName7: "", MiddleName8: "", MiddleName9: "", MiddleName10: "",
-               MiddleName11 : "", MiddleName12: "", MiddleName13: "", MiddleName14: "", MiddleName15: "",
-               MiddleName16 : "", MiddleName17: "", MiddleName18: "", MiddleName19: "", MiddleName20: "",
-               MiddleName21 : "", MiddleName22: "", MiddleName23: "", MiddleName24: "", MiddleName25: "",
-               MiddleName : "",
-               FatherFirstName1 : "", FatherFirstName2: "", FatherFirstName3: "", FatherFirstName4: "", FatherFirstName5: "",
-               FatherFirstName6 : "", FatherFirstName7: "", FatherFirstName8: "", FatherFirstName9: "", FatherFirstName10: "",
-               FatherFirstName11 : "", FatherFirstName12: "", FatherFirstName13: "", FatherFirstName14: "", FatherFirstName15: "",
-               FatherFirstName16 : "", FatherFirstName17: "", FatherFirstName18: "", FatherFirstName19: "", FatherFirstName20: "",
-               FatherFirstName21 : "", FatherFirstName22: "", FatherFirstName23: "", FatherFirstName24: "", FatherFirstName25: "",
-               FatherFirstName : "",
-               FatherMiddleName1 : "", FatherMiddleName2: "", FatherMiddleName3: "", FatherMiddleName4: "", FatherMiddleName5: "",
-               FatherMiddleName6 : "", FatherMiddleName7: "", FatherMiddleName8: "", FatherMiddleName9: "", FatherMiddleName10: "",
-               FatherMiddleName11 : "", FatherMiddleName12: "", FatherMiddleName13: "", FatherMiddleName14: "", FatherMiddleName15: "",
-               FatherMiddleName16 : "", FatherMiddleName17: "", FatherMiddleName18: "", FatherMiddleName19: "", FatherMiddleName20: "",
-               FatherMiddleName21 : "", FatherMiddleName22: "", FatherMiddleName23: "", FatherMiddleName24: "", FatherMiddleName25: "",
-               FatherMiddleName: "",
-               FatherLastName1 : "", FatherLastName2: "", FatherLastName3: "", FatherLastName4: "", FatherLastName5: "",
-               FatherLastName6 : "", FatherLastName7: "", FatherLastName8: "", FatherLastName9: "", FatherLastName10: "",
-               FatherLastName11 : "", FatherLastName12: "", FatherLastName13: "", FatherLastName14: "", FatherLastName15: "",
-               FatherLastName16 : "", FatherLastName17: "", FatherLastName18: "", FatherLastName19: "", FatherLastName20: "",
-               FatherLastName21 : "", FatherLastName22: "", FatherLastName23: "", FatherLastName24: "", FatherLastName25: "",
-               FatherLastName: "",
-               MotherFirstName1 : "", MotherFirstName2: "", MotherFirstName3: "", MotherFirstName4: "", MotherFirstName5: "",
-               MotherFirstName6 : "", MotherFirstName7: "", MotherFirstName8: "", MotherFirstName9: "", MotherFirstName10: "",
-               MotherFirstName11 : "", MotherFirstName12: "", MotherFirstName13: "", MotherFirstName14: "", MotherFirstName15: "",
-               MotherFirstName16 : "", MotherFirstName17: "", MotherFirstName18: "", MotherFirstName19: "", MotherFirstName20: "",
-               MotherFirstName21 : "", MotherFirstName22: "", MotherFirstName23: "", MotherFirstName24: "", MotherFirstName25: "",
-               MotherFirstName: "",
-               MotherMiddleName1 : "", MotherMiddleName2: "", MotherMiddleName3: "", MotherMiddleName4: "", MotherMiddleName5: "",
-               MotherMiddleName6 : "", MotherMiddleName7: "", MotherMiddleName8: "", MotherMiddleName9: "", MotherMiddleName10: "",
-               MotherMiddleName11 : "", MotherMiddleName12: "", MotherMiddleName13: "", MotherMiddleName14: "", MotherMiddleName15: "",
-               MotherMiddleName16 : "", MotherMiddleName17: "", MotherMiddleName18: "", MotherMiddleName19: "", MotherMiddleName20: "",
-               MotherMiddleName21 : "", MotherMiddleName22: "", MotherMiddleName23: "", MotherMiddleName24: "", MotherMiddleName25: "",
-               MotherMiddleName: "",
-               MotherLastName1 : "", MotherLastName2: "", MotherLastName3: "", MotherLastName4: "", MotherLastName5: "",
-               MotherLastName6 : "", MotherLastName7: "", MotherLastName8: "", MotherLastName9: "", MotherLastName10: "",
-               MotherLastName11 : "", MotherLastName12: "", MotherLastName13: "", MotherLastName14: "", MotherLastName15: "",
-               MotherLastName16 : "", MotherLastName17: "", MotherLastName18: "", MotherLastName19: "", MotherLastName20: "",
-               MotherLastName21 : "", MotherLastName22: "", MotherLastName23: "", MotherLastName24: "", MotherLastName25: "",
-               MotherLastName: "",
-               OtherFirstName1 : "", OtherFirstName2: "", OtherFirstName3: "", OtherFirstName4: "", OtherFirstName5: "",
-               OtherFirstName6 : "", OtherFirstName7: "", OtherFirstName8: "", OtherFirstName9: "", OtherFirstName10: "",
-               OtherFirstName11 : "", OtherFirstName12: "", OtherFirstName13: "", OtherFirstName14: "", OtherFirstName15: "",
-               OtherFirstName16 : "", OtherFirstName17: "", OtherFirstName18: "", OtherFirstName19: "", OtherFirstName20: "",
-               OtherFirstName21 : "", OtherFirstName22: "", OtherFirstName23: "", OtherFirstName24: "", OtherFirstName25: "",
-               OtherFirstName: "",
-               OtherLastName1 : "", OtherLastName2: "", OtherLastName3: "", OtherLastName4: "", OtherLastName5: "",
-               OtherLastName6 : "", OtherLastName7: "", OtherLastName8: "", OtherLastName9: "", OtherLastName10: "",
-               OtherLastName11 : "", OtherLastName12: "", OtherLastName13: "", OtherLastName14: "", OtherLastName15: "",
-               OtherLastName16 : "", OtherLastName17: "", OtherLastName18: "", OtherLastName19: "", OtherLastName20: "",
-               OtherLastName21 : "", OtherLastName22: "", OtherLastName23: "", OtherLastName24: "", OtherLastName25: "",
-               OtherLastName: "",
-               OtherMiddleName1 : "", OtherMiddleName2: "", OtherMiddleName3: "", OtherMiddleName4: "", OtherMiddleName5: "",
-               OtherMiddleName6 : "", OtherMiddleName7: "", OtherMiddleName8: "", OtherMiddleName9: "", OtherMiddleName10: "",
-               OtherMiddleName11 : "", OtherMiddleName12: "", OtherMiddleName13: "", OtherMiddleName14: "", OtherMiddleName15: "",
-               OtherMiddleName16 : "", OtherMiddleName17: "", OtherMiddleName18: "", OtherMiddleName19: "", OtherMiddleName20: "",
-               OtherMiddleName21 : "", OtherMiddleName22: "", OtherMiddleName23: "", OtherMiddleName24: "", OtherMiddleName25: "",
-               OtherMiddleName: "",
-               RAFirstName1 : "", RAFirstName2: "", RAFirstName3: "", RAFirstName4: "", RAFirstName5: "",
-               RAFirstName6 : "", RAFirstName7: "", RAFirstName8: "", RAFirstName9: "", RAFirstName10: "",
-               RAFirstName11 : "", RAFirstName12: "", RAFirstName13: "", RAFirstName14: "", RAFirstName15: "",
-               RAFirstName16 : "", RAFirstName17: "", RAFirstName18: "", RAFirstName19: "", RAFirstName20: "",
-               RAFirstName21 : "", RAFirstName22: "", RAFirstName23: "", RAFirstName24: "", RAFirstName25: "",
-               RAFirstName: "",
-               RALastName1 : "", RALastName2: "", RALastName3: "", RALastName4: "", RALastName5: "",
-               RALastName6 : "", RALastName7: "", RALastName8: "", RALastName9: "", RALastName10: "",
-               RALastName11 : "", RALastName12: "", RALastName13: "", RALastName14: "", RALastName15: "",
-               RALastName16 : "", RALastName17: "", RALastName18: "", RALastName19: "", RALastName20: "",
-               RALastName21 : "", RALastName22: "", RALastName23: "", RALastName24: "", RALastName25: "",
-               RALastName: "",
-               RAMiddleName1 : "", RAMiddleName2: "", RAMiddleName3: "", RAMiddleName4: "", RAMiddleName5: "",
-               RAMiddleName6 : "", RAMiddleName7: "", RAMiddleName8: "", RAMiddleName9: "", RAMiddleName10: "",
-               RAMiddleName11 : "", RAMiddleName12: "", RAMiddleName13: "", RAMiddleName14: "", RAMiddleName15: "",
-               RAMiddleName16 : "", RAMiddleName17: "", RAMiddleName18: "", RAMiddleName19: "", RAMiddleName20: "",
-               RAMiddleName21 : "", RAMiddleName22: "", RAMiddleName23: "", RAMiddleName24: "", RAMiddleName25: "",
-               RAMiddleName: "",
-               AbbreviationOne: "",
-               AbbreviationTwo: "",
-               ResidenceFlat1 : "", ResidenceFlat2: "", ResidenceFlat3: "", ResidenceFlat4: "", ResidenceFlat5: "",
-               ResidenceFlat6 : "", ResidenceFlat7: "", ResidenceFlat8: "", ResidenceFlat9: "", ResidenceFlat10: "",
-               ResidenceFlat11 : "", ResidenceFlat12: "", ResidenceFlat13: "", ResidenceFlat14: "", ResidenceFlat15: "",
-               ResidenceFlat16 : "", ResidenceFlat17: "", ResidenceFlat18: "", ResidenceFlat19: "", ResidenceFlat20: "",
-               ResidenceFlat21 : "", ResidenceFlat22: "", ResidenceFlat23: "", ResidenceFlat24: "", ResidenceFlat25: "",
-               ResidenceFlat: "",
-               ResidencePremises1 : "", ResidencePremises2: "", ResidencePremises3: "", ResidencePremises4: "", ResidencePremises5: "",
-               ResidencePremises6 : "", ResidencePremises7: "", ResidencePremises8: "", ResidencePremises9: "", ResidencePremises10: "",
-               ResidencePremises11 : "", ResidencePremises12: "", ResidencePremises13: "", ResidencePremises14: "", ResidencePremises15: "",
-               ResidencePremises16 : "", ResidencePremises17: "", ResidencePremises18: "", ResidencePremises19: "", ResidencePremises20: "",
-               ResidencePremises21 : "", ResidencePremises22: "", ResidencePremises23: "", ResidencePremises24: "", ResidencePremises25: "",
-               ResidencePremises: "",
-               ResidenceRoad1 : "", ResidenceRoad2: "", ResidenceRoad3: "", ResidenceRoad4: "", ResidenceRoad5: "",
-               ResidenceRoad6 : "", ResidenceRoad7: "", ResidenceRoad8: "", ResidenceRoad9: "", ResidenceRoad10: "",
-               ResidenceRoad11 : "", ResidenceRoad12: "", ResidenceRoad13: "", ResidenceRoad14: "", ResidenceRoad15: "",
-               ResidenceRoad16 : "", ResidenceRoad17: "", ResidenceRoad18: "", ResidenceRoad19: "", ResidenceRoad20: "",
-               ResidenceRoad21 : "", ResidenceRoad22: "", ResidenceRoad23: "", ResidenceRoad24: "", ResidenceRoad25: "",
-               ResidenceRoad: "",
-               ResidenceArea1 : "", ResidenceArea2: "", ResidenceArea3: "", ResidenceArea4: "", ResidenceArea5: "",
-               ResidenceArea6 : "", ResidenceArea7: "", ResidenceArea8: "", ResidenceArea9: "", ResidenceArea10: "",
-               ResidenceArea11 : "", ResidenceArea12: "", ResidenceArea13: "", ResidenceArea14: "", ResidenceArea15: "",
-               ResidenceArea16 : "", ResidenceArea17: "", ResidenceArea18: "", ResidenceArea19: "", ResidenceArea20: "",
-               ResidenceArea21 : "", ResidenceArea22: "", ResidenceArea23: "", ResidenceArea24: "", ResidenceArea25: "",
-               ResidenceArea: "",
-               ResidenceTown1 : "", ResidenceTown2: "", ResidenceTown3: "", ResidenceTown4: "", ResidenceTown5: "",
-               ResidenceTown6 : "", ResidenceTown7: "", ResidenceTown8: "", ResidenceTown9: "", ResidenceTown10: "",
-               ResidenceTown11 : "", ResidenceTown12: "", ResidenceTown13: "", ResidenceTown14: "", ResidenceTown15: "",
-               ResidenceTown16 : "", ResidenceTown17: "", ResidenceTown18: "", ResidenceTown19: "", ResidenceTown20: "",
-               ResidenceTown21 : "", ResidenceTown22: "", ResidenceTown23: "", ResidenceTown24: "", ResidenceTown25: "",
-               ResidenceTown: "",
-               OfficeName1 : "", OfficeName2: "", OfficeName3: "", OfficeName4: "", OfficeName5: "",
-               OfficeName6 : "", OfficeName7: "", OfficeName8: "", OfficeName9: "", OfficeName10: "",
-               OfficeName11 : "", OfficeName12: "", OfficeName13: "", OfficeName14: "", OfficeName15: "",
-               OfficeName16 : "", OfficeName17: "", OfficeName18: "", OfficeName19: "", OfficeName20: "",
-               OfficeName21 : "", OfficeName22: "", OfficeName23: "", OfficeName24: "", OfficeName25: "",
-               OfficeName: "",
-               OfficeFlat1 : "", OfficeFlat2: "", OfficeFlat3: "", OfficeFlat4: "", OfficeFlat5: "",
-               OfficeFlat6 : "", OfficeFlat7: "", OfficeFlat8: "", OfficeFlat9: "", OfficeFlat10: "",
-               OfficeFlat11 : "", OfficeFlat12: "", OfficeFlat13: "", OfficeFlat14: "", OfficeFlat15: "",
-               OfficeFlat16 : "", OfficeFlat17: "", OfficeFlat18: "", OfficeFlat19: "", OfficeFlat20: "",
-               OfficeFlat21 : "", OfficeFlat22: "", OfficeFlat23: "", OfficeFlat24: "", OfficeFlat25: "",
-               OfficeFlat: "",
-               OfficePremises1 : "", OfficePremises2: "", OfficePremises3: "", OfficePremises4: "", OfficePremises5: "",
-               OfficePremises6 : "", OfficePremises7: "", OfficePremises8: "", OfficePremises9: "", OfficePremises10: "",
-               OfficePremises11 : "", OfficePremises12: "", OfficePremises13: "", OfficePremises14: "", OfficePremises15: "",
-               OfficePremises16 : "", OfficePremises17: "", OfficePremises18: "", OfficePremises19: "", OfficePremises20: "",
-               OfficePremises21 : "", OfficePremises22: "", OfficePremises23: "", OfficePremises24: "", OfficePremises25: "",
-               OfficePremises: "",
-               OfficeRoad1 : "", OfficeRoad2: "", OfficeRoad3: "", OfficeRoad4: "", OfficeRoad5: "",
-               OfficeRoad6 : "", OfficeRoad7: "", OfficeRoad8: "", OfficeRoad9: "", OfficeRoad10: "",
-               OfficeRoad11 : "", OfficeRoad12: "", OfficeRoad13: "", OfficeRoad14: "", OfficeRoad15: "",
-               OfficeRoad16 : "", OfficeRoad17: "", OfficeRoad18: "", OfficeRoad19: "", OfficeRoad20: "",
-               OfficeRoad21 : "", OfficeRoad22: "", OfficeRoad23: "", OfficeRoad24: "", OfficeRoad25: "",
-               OfficeRoad: "",
-               OfficeArea1 : "", OfficeArea2: "", OfficeArea3: "", OfficeArea4: "", OfficeArea5: "",
-               OfficeArea6 : "", OfficeArea7: "", OfficeArea8: "", OfficeArea9: "", OfficeArea10: "",
-               OfficeArea11 : "", OfficeArea12: "", OfficeArea13: "", OfficeArea14: "", OfficeArea15: "",
-               OfficeArea16 : "", OfficeArea17: "", OfficeArea18: "", OfficeArea19: "", OfficeArea20: "",
-               OfficeArea21 : "", OfficeArea22: "", OfficeArea23: "", OfficeArea24: "", OfficeArea25: "",
-               OfficeArea: "",
-               OfficeTown1 : "", OfficeTown2: "", OfficeTown3: "", OfficeTown4: "", OfficeTown5: "",
-               OfficeTown6 : "", OfficeTown7: "", OfficeTown8: "", OfficeTown9: "", OfficeTown10: "",
-               OfficeTown11 : "", OfficeTown12: "", OfficeTown13: "", OfficeTown14: "", OfficeTown15: "",
-               OfficeTown16 : "", OfficeTown17: "", OfficeTown18: "", OfficeTown19: "", OfficeTown20: "",
-               OfficeTown21 : "", OfficeTown22: "", OfficeTown23: "", OfficeTown24: "", OfficeTown25: "",
-               OfficeTown: "",
-               RAFlat1 : "", RAFlat2: "", RAFlat3: "", RAFlat4: "", RAFlat5: "",
-               RAFlat6 : "", RAFlat7: "", RAFlat8: "", RAFlat9: "", RAFlat10: "",
-               RAFlat11 : "", RAFlat12: "", RAFlat13: "", RAFlat14: "", RAFlat15: "",
-               RAFlat16 : "", RAFlat17: "", RAFlat18: "", RAFlat19: "", RAFlat20: "",
-               RAFlat21 : "", RAFlat22: "", RAFlat23: "", RAFlat24: "", RAFlat25: "",
-               RAFlat: "",
-               RAPremises1 : "", RAPremises2: "", RAPremises3: "", RAPremises4: "", RAPremises5: "",
-               RAPremises6 : "", RAPremises7: "", RAPremises8: "", RAPremises9: "", RAPremises10: "",
-               RAPremises11 : "", RAPremises12: "", RAPremises13: "", RAPremises14: "", RAPremises15: "",
-               RAPremises16 : "", RAPremises17: "", RAPremises18: "", RAPremises19: "", RAPremises20: "",
-               RAPremises21 : "", RAPremises22: "", RAPremises23: "", RAPremises24: "", RAPremises25: "",
-               RAPremises: "",
-               RARoad1 : "", RARoad2: "", RARoad3: "", RARoad4: "", RARoad5: "",
-               RARoad6 : "", RARoad7: "", RARoad8: "", RARoad9: "", RARoad10: "",
-               RARoad11 : "", RARoad12: "", RARoad13: "", RARoad14: "", RARoad15: "",
-               RARoad16 : "", RARoad17: "", RARoad18: "", RARoad19: "", RARoad20: "",
-               RARoad21 : "", RARoad22: "", RARoad23: "", RARoad24: "", RARoad25: "",
-               RARoad: "",
-               RAArea1 : "", RAArea2: "", RAArea3: "", RAArea4: "", RAArea5: "",
-               RAArea6 : "", RAArea7: "", RAArea8: "", RAArea9: "", RAArea10: "",
-               RAArea11 : "", RAArea12: "", RAArea13: "", RAArea14: "", RAArea15: "",
-               RAArea16 : "", RAArea17: "", RAArea18: "", RAArea19: "", RAArea20: "",
-               RAArea21 : "", RAArea22: "", RAArea23: "", RAArea24: "", RAArea25: "",
-               RAArea: "",
-               RATown1 : "", RATown2: "", RATown3: "", RATown4: "", RATown5: "",
-               RATown6 : "", RATown7: "", RATown8: "", RATown9: "", RATown10: "",
-               RATown11 : "", RATown12: "", RATown13: "", RATown14: "", RATown15: "",
-               RATown16 : "", RATown17: "", RATown18: "", RATown19: "", RATown20: "",
-               RATown21 : "", RATown22: "", RATown23: "", RATown24: "", RATown25: "",
-               RATown: "",
-               AadhaarFirstName1 : "", AadhaarFirstName2: "", AadhaarFirstName3: "", AadhaarFirstName4: "", AadhaarFirstName5: "",
-               AadhaarFirstName6 : "", AadhaarFirstName7: "", AadhaarFirstName8: "", AadhaarFirstName9: "", AadhaarFirstName10: "",
-               AadhaarFirstName11 : "", AadhaarFirstName12: "", AadhaarFirstName13: "", AadhaarFirstName14: "", AadhaarFirstName15: "",
-               AadhaarFirstName16 : "", AadhaarFirstName17: "", AadhaarFirstName18: "", AadhaarFirstName19: "", AadhaarFirstName20: "",
-               AadhaarFirstName21 : "", AadhaarFirstName22: "", AadhaarFirstName23: "", AadhaarFirstName24: "", AadhaarFirstName25: "",
-               AadhaarFirstName: "",
-               AadhaarLastName1 : "", AadhaarLastName2: "", AadhaarLastName3: "", AadhaarLastName4: "", AadhaarLastName5: "",
-               AadhaarLastName6 : "", AadhaarLastName7: "", AadhaarLastName8: "", AadhaarLastName9: "", AadhaarLastName10: "",
-               AadhaarLastName11 : "", AadhaarLastName12: "", AadhaarLastName13: "", AadhaarLastName14: "", AadhaarLastName15: "",
-               AadhaarLastName16 : "", AadhaarLastName17: "", AadhaarLastName18: "", AadhaarLastName19: "", AadhaarLastName20: "",
-               AadhaarLastName21 : "", AadhaarLastName22: "", AadhaarLastName23: "", AadhaarLastName24: "", AadhaarLastName25: "",
-               AadhaarLastName: "",
-               AadhaarMiddleName1 : "", AadhaarMiddleName2: "", AadhaarMiddleName3: "", AadhaarMiddleName4: "", AadhaarMiddleName5: "",
-               AadhaarMiddleName6 : "", AadhaarMiddleName7: "", AadhaarMiddleName8: "", AadhaarMiddleName9: "", AadhaarMiddleName10: "",
-               AadhaarMiddleName11 : "", AadhaarMiddleName12: "", AadhaarMiddleName13: "", AadhaarMiddleName14: "", AadhaarMiddleName15: "",
-               AadhaarMiddleName16 : "", AadhaarMiddleName17: "", AadhaarMiddleName18: "", AadhaarMiddleName19: "", AadhaarMiddleName20: "",
-               AadhaarMiddleName21 : "", AadhaarMiddleName22: "", AadhaarMiddleName23: "", AadhaarMiddleName24: "", AadhaarMiddleName25: "",
-               AadhaarMiddleName: "",
-               AadhaarNumber1 : "", AadhaarNumber2: "", AadhaarNumber3: "", AadhaarNumber4: "", AadhaarNumber5: "",
-               AadhaarNumber6 : "", AadhaarNumber7: "", AadhaarNumber8: "", AadhaarNumber9: "", AadhaarNumber10: "",
-               AadhaarNumber11 : "", AadhaarNumber12: "",
-               AadhaarNumber: "",
-               EnrolmentId1 : "", EnrolmentId2: "", EnrolmentId3: "", EnrolmentId4: "", EnrolmentId5: "",
-               EnrolmentId6 : "", EnrolmentId7: "", EnrolmentId8: "", EnrolmentId9: "", EnrolmentId10: "",
-               EnrolmentId11 : "", EnrolmentId12: "", EnrolmentId13: "", EnrolmentId14: "", EnrolmentId15: "",
-               EnrolmentId16 : "", EnrolmentId17: "", EnrolmentId18: "", EnrolmentId19: "", EnrolmentId20: "",
-               EnrolmentId21 : "", EnrolmentId22: "", EnrolmentId23: "", EnrolmentId24: "", EnrolmentId25: "",
-               EnrolmentId26 : "", EnrolmentId27: "", EnrolmentId28: "",
-               EnrolmentId : "",
-               RegistrationNumber1 : "", RegistrationNumber2: "", RegistrationNumber3: "", RegistrationNumber4: "", RegistrationNumber5: "",
-               RegistrationNumber6 : "", RegistrationNumber7: "", RegistrationNumber8: "", RegistrationNumber9: "", RegistrationNumber10: "",
-               RegistrationNumber11 : "", RegistrationNumber12: "", RegistrationNumber13: "", RegistrationNumber14: "", RegistrationNumber15: "",
-               RegistrationNumber16 : "", RegistrationNumber17: "", RegistrationNumber18: "", RegistrationNumber19: "", RegistrationNumber20: "",
-               RegistrationNumber21 : "", RegistrationNumber22: "", RegistrationNumber23: "", RegistrationNumber24: "", RegistrationNumber25: "",
-               RegistrationNumber26 : "", RegistrationNumber27: "", RegistrationNumber28: "", RegistrationNumber29: "", RegistrationNumber30: "",
-               RegistrationNumber: "", 
-               ResidenceState: "",
-               ResidencePincode1 : "", ResidencePincode2: "", ResidencePincode3: "", ResidencePincode4: "", ResidencePincode5: "",
-               ResidencePincode6 : "", ResidencePincode7: "",
-               ResidencePincode: "",
-               ResidenceCountry: "",
-               OfficeState: "",
-               OfficePincode1 : "", OfficePincode2: "", OfficePincode3: "", OfficePincode4: "", OfficePincode5: "",
-               OfficePincode6 : "", OfficePincode7: "",
-               OfficePincode: "",
-               OfficeCountry: "",
-               RAState: "",
-               RAPincode1 : "", RAPincode2: "", RAPincode3: "", RAPincode4: "", RAPincode5: "",
-               RAPincode6 : "", RAPincode7: "",
-               RAPincode: "",
-               CountryCode1 : "", CountryCode2: "", CountryCode3: "",
-               CountryCode: "",
-               StdCode1 : "", StdCode2: "", StdCode3: "", StdCode4: "", StdCode5: "",
-               StdCode6 : "", StdCode7: "",
-               StdCode: "",
-               PhoneNumber1 : "", PhoneNumber2: "", PhoneNumber3: "", PhoneNumber4: "", PhoneNumber5: "",
-               PhoneNumber6 : "", PhoneNumber7: "", PhoneNumber8: "", PhoneNumber9: "", PhoneNumber10: "",
-               PhoneNumber11 : "", PhoneNumber12: "", PhoneNumber13: "",
-               PhoneNumber: "",
-               Day1 : "", Day2: "",
-               Day: "",
-               Month1 : "", Month2: "",
-               Month: "",
-               Year1 : "", Year2: "", Year3: "", Year4: "",
-               Year: "",
-               POI: "",
-               POA: "",
-               POB: "",
-               Applicant: "",
-               Capacity: "",
-               Email: "",
-               BusinessCode1: "",
-               BusinessCode2: "",
-               BusinessCode: "",
-               Salary: "",
-               CapitalGains: "",
-               IncomeBusiness: "",
-               IncomeOtherSource: "",
-               IncomeFromHouse: "",
-               NoIncome: "",
-               phonenumber:"",
-               otpnumber:"", 
-               dataid: "1",
+      isModalEnabled: false,
+      isIndicatorEnabled: false,
+      officeEnabled: false,
+      isEnabled : false,
+      isEnabledCheck: true,
+      OtpInput: "",
+
+      errors: {
+        NameTitleOne : "",
+        OtherName : "",
+        NameTitleTwo : "",
+        Gender : "",
+        ParentName : "",
+        Communication : "",
+        Status : "",
+        Income : "",
+        NameTitleThree : "",
+        FirstName: "",
+        LastName : "",
+        MiddleName : "",
+        FatherFirstName : "",
+        FatherMiddleName: "",
+        FatherLastName: "",
+        MotherFirstName: "",
+        MotherMiddleName: "",
+        MotherLastName: "",
+        OtherFirstName: "",
+        OtherLastName: "",
+        OtherMiddleName: "",
+        RAFirstName: "",
+        RALastName: "",
+        RAMiddleName: "",
+        AbbreviationOne: "",
+        AbbreviationTwo: "",
+        ResidenceFlat: "",
+        ResidencePremises: "",
+        ResidenceRoad: "",
+        ResidenceArea: "",
+        ResidenceTown: "",
+        OfficeName: "",
+        OfficeFlat: "",
+        OfficePremises: "",
+        OfficeRoad: "",
+        OfficeArea: "",
+        OfficeTown: "",
+        RAFlat: "",
+        RAPremises: "",
+        RARoad: "",
+        RAArea: "",
+        RATown: "",
+        AadhaarFirstName: "",
+        AadhaarLastName: "",
+        AadhaarMiddleName: "",
+        AadhaarNumber: "",
+        EnrolmentId : "",
+        RegistrationNumber: "",
+        ResidenceState: "",
+        ResidencePincode: "",
+        ResidenceCountry: "",
+        OfficeState: "",
+        OfficePincode: "",
+        OfficeCountry: "",
+        RAState: "",
+        RAPincode: "",
+        CountryCode: "",
+        StdCode: "",
+        PhoneNumber: "",
+        Day: "",
+        Month: "",
+        Year: "",
+        POI: "",
+        POA: "",
+        POB: "",
+        Applicant: "",
+        Capacity: "",
+        Email: "",
+        BusinessCode1: "",
+        BusinessCode2: "",
+        Salary: "",
+        CapitalGains: "",
+        IncomeBusiness: "",
+        IncomeOtherSource: "",
+        IncomeFromHouse: "",
+        NoIncome: "",
+        phonenumber: "",
+        errorid: "1"
+      },
+      data : {
+         NameTitleOne : "",
+         OtherName : "",
+         NameTitleTwo : "",
+         Gender : "",
+         ParentName : "",
+         Communication : "",
+         Status : "",
+         Income : "",
+         NameTitleThree : "",
+         FirstName1 : "", FirstName2: "", FirstName3: "", FirstName4: "", FirstName5: "",
+         FirstName6 : "", FirstName7: "", FirstName8: "", FirstName9: "", FirstName10: "",
+         FirstName11 : "", FirstName12: "", FirstName13: "", FirstName14: "", FirstName15: "",
+         FirstName16 : "", FirstName17: "", FirstName18: "", FirstName19: "", FirstName20: "",
+         FirstName21 : "", FirstName22: "", FirstName23: "", FirstName24: "", FirstName25: "",
+         FirstName: "",
+         LastName1 : "", LastName2: "", LastName3: "", LastName4: "", LastName5: "",
+         LastName6 : "", LastName7: "", LastName8: "", LastName9: "", LastName10: "",
+         LastName11 : "", LastName12: "", LastName13: "", LastName14: "", LastName15: "",
+         LastName16 : "", LastName17: "", LastName18: "", LastName19: "", LastName20: "",
+         LastName21 : "", LastName22: "", LastName23: "", LastName24: "", LastName25: "",
+         LastName : "",
+         MiddleName1 : "", MiddleName2: "", MiddleName3: "", MiddleName4: "", MiddleName5: "",
+         MiddleName6 : "", MiddleName7: "", MiddleName8: "", MiddleName9: "", MiddleName10: "",
+         MiddleName11 : "", MiddleName12: "", MiddleName13: "", MiddleName14: "", MiddleName15: "",
+         MiddleName16 : "", MiddleName17: "", MiddleName18: "", MiddleName19: "", MiddleName20: "",
+         MiddleName21 : "", MiddleName22: "", MiddleName23: "", MiddleName24: "", MiddleName25: "",
+         MiddleName : "",
+         FatherFirstName1 : "", FatherFirstName2: "", FatherFirstName3: "", FatherFirstName4: "", FatherFirstName5: "",
+         FatherFirstName6 : "", FatherFirstName7: "", FatherFirstName8: "", FatherFirstName9: "", FatherFirstName10: "",
+         FatherFirstName11 : "", FatherFirstName12: "", FatherFirstName13: "", FatherFirstName14: "", FatherFirstName15: "",
+         FatherFirstName16 : "", FatherFirstName17: "", FatherFirstName18: "", FatherFirstName19: "", FatherFirstName20: "",
+         FatherFirstName21 : "", FatherFirstName22: "", FatherFirstName23: "", FatherFirstName24: "", FatherFirstName25: "",
+         FatherFirstName : "",
+         FatherMiddleName1 : "", FatherMiddleName2: "", FatherMiddleName3: "", FatherMiddleName4: "", FatherMiddleName5: "",
+         FatherMiddleName6 : "", FatherMiddleName7: "", FatherMiddleName8: "", FatherMiddleName9: "", FatherMiddleName10: "",
+         FatherMiddleName11 : "", FatherMiddleName12: "", FatherMiddleName13: "", FatherMiddleName14: "", FatherMiddleName15: "",
+         FatherMiddleName16 : "", FatherMiddleName17: "", FatherMiddleName18: "", FatherMiddleName19: "", FatherMiddleName20: "",
+         FatherMiddleName21 : "", FatherMiddleName22: "", FatherMiddleName23: "", FatherMiddleName24: "", FatherMiddleName25: "",
+         FatherMiddleName: "",
+         FatherLastName1 : "", FatherLastName2: "", FatherLastName3: "", FatherLastName4: "", FatherLastName5: "",
+         FatherLastName6 : "", FatherLastName7: "", FatherLastName8: "", FatherLastName9: "", FatherLastName10: "",
+         FatherLastName11 : "", FatherLastName12: "", FatherLastName13: "", FatherLastName14: "", FatherLastName15: "",
+         FatherLastName16 : "", FatherLastName17: "", FatherLastName18: "", FatherLastName19: "", FatherLastName20: "",
+         FatherLastName21 : "", FatherLastName22: "", FatherLastName23: "", FatherLastName24: "", FatherLastName25: "",
+         FatherLastName: "",
+         MotherFirstName1 : "", MotherFirstName2: "", MotherFirstName3: "", MotherFirstName4: "", MotherFirstName5: "",
+         MotherFirstName6 : "", MotherFirstName7: "", MotherFirstName8: "", MotherFirstName9: "", MotherFirstName10: "",
+         MotherFirstName11 : "", MotherFirstName12: "", MotherFirstName13: "", MotherFirstName14: "", MotherFirstName15: "",
+         MotherFirstName16 : "", MotherFirstName17: "", MotherFirstName18: "", MotherFirstName19: "", MotherFirstName20: "",
+         MotherFirstName21 : "", MotherFirstName22: "", MotherFirstName23: "", MotherFirstName24: "", MotherFirstName25: "",
+         MotherFirstName: "",
+         MotherMiddleName1 : "", MotherMiddleName2: "", MotherMiddleName3: "", MotherMiddleName4: "", MotherMiddleName5: "",
+         MotherMiddleName6 : "", MotherMiddleName7: "", MotherMiddleName8: "", MotherMiddleName9: "", MotherMiddleName10: "",
+         MotherMiddleName11 : "", MotherMiddleName12: "", MotherMiddleName13: "", MotherMiddleName14: "", MotherMiddleName15: "",
+         MotherMiddleName16 : "", MotherMiddleName17: "", MotherMiddleName18: "", MotherMiddleName19: "", MotherMiddleName20: "",
+         MotherMiddleName21 : "", MotherMiddleName22: "", MotherMiddleName23: "", MotherMiddleName24: "", MotherMiddleName25: "",
+         MotherMiddleName: "",
+         MotherLastName1 : "", MotherLastName2: "", MotherLastName3: "", MotherLastName4: "", MotherLastName5: "",
+         MotherLastName6 : "", MotherLastName7: "", MotherLastName8: "", MotherLastName9: "", MotherLastName10: "",
+         MotherLastName11 : "", MotherLastName12: "", MotherLastName13: "", MotherLastName14: "", MotherLastName15: "",
+         MotherLastName16 : "", MotherLastName17: "", MotherLastName18: "", MotherLastName19: "", MotherLastName20: "",
+         MotherLastName21 : "", MotherLastName22: "", MotherLastName23: "", MotherLastName24: "", MotherLastName25: "",
+         MotherLastName: "",
+         OtherFirstName1 : "", OtherFirstName2: "", OtherFirstName3: "", OtherFirstName4: "", OtherFirstName5: "",
+         OtherFirstName6 : "", OtherFirstName7: "", OtherFirstName8: "", OtherFirstName9: "", OtherFirstName10: "",
+         OtherFirstName11 : "", OtherFirstName12: "", OtherFirstName13: "", OtherFirstName14: "", OtherFirstName15: "",
+         OtherFirstName16 : "", OtherFirstName17: "", OtherFirstName18: "", OtherFirstName19: "", OtherFirstName20: "",
+         OtherFirstName21 : "", OtherFirstName22: "", OtherFirstName23: "", OtherFirstName24: "", OtherFirstName25: "",
+         OtherFirstName: "",
+         OtherLastName1 : "", OtherLastName2: "", OtherLastName3: "", OtherLastName4: "", OtherLastName5: "",
+         OtherLastName6 : "", OtherLastName7: "", OtherLastName8: "", OtherLastName9: "", OtherLastName10: "",
+         OtherLastName11 : "", OtherLastName12: "", OtherLastName13: "", OtherLastName14: "", OtherLastName15: "",
+         OtherLastName16 : "", OtherLastName17: "", OtherLastName18: "", OtherLastName19: "", OtherLastName20: "",
+         OtherLastName21 : "", OtherLastName22: "", OtherLastName23: "", OtherLastName24: "", OtherLastName25: "",
+         OtherLastName: "",
+         OtherMiddleName1 : "", OtherMiddleName2: "", OtherMiddleName3: "", OtherMiddleName4: "", OtherMiddleName5: "",
+         OtherMiddleName6 : "", OtherMiddleName7: "", OtherMiddleName8: "", OtherMiddleName9: "", OtherMiddleName10: "",
+         OtherMiddleName11 : "", OtherMiddleName12: "", OtherMiddleName13: "", OtherMiddleName14: "", OtherMiddleName15: "",
+         OtherMiddleName16 : "", OtherMiddleName17: "", OtherMiddleName18: "", OtherMiddleName19: "", OtherMiddleName20: "",
+         OtherMiddleName21 : "", OtherMiddleName22: "", OtherMiddleName23: "", OtherMiddleName24: "", OtherMiddleName25: "",
+         OtherMiddleName: "",
+         RAFirstName1 : "", RAFirstName2: "", RAFirstName3: "", RAFirstName4: "", RAFirstName5: "",
+         RAFirstName6 : "", RAFirstName7: "", RAFirstName8: "", RAFirstName9: "", RAFirstName10: "",
+         RAFirstName11 : "", RAFirstName12: "", RAFirstName13: "", RAFirstName14: "", RAFirstName15: "",
+         RAFirstName16 : "", RAFirstName17: "", RAFirstName18: "", RAFirstName19: "", RAFirstName20: "",
+         RAFirstName21 : "", RAFirstName22: "", RAFirstName23: "", RAFirstName24: "", RAFirstName25: "",
+         RAFirstName: "",
+         RALastName1 : "", RALastName2: "", RALastName3: "", RALastName4: "", RALastName5: "",
+         RALastName6 : "", RALastName7: "", RALastName8: "", RALastName9: "", RALastName10: "",
+         RALastName11 : "", RALastName12: "", RALastName13: "", RALastName14: "", RALastName15: "",
+         RALastName16 : "", RALastName17: "", RALastName18: "", RALastName19: "", RALastName20: "",
+         RALastName21 : "", RALastName22: "", RALastName23: "", RALastName24: "", RALastName25: "",
+         RALastName: "",
+         RAMiddleName1 : "", RAMiddleName2: "", RAMiddleName3: "", RAMiddleName4: "", RAMiddleName5: "",
+         RAMiddleName6 : "", RAMiddleName7: "", RAMiddleName8: "", RAMiddleName9: "", RAMiddleName10: "",
+         RAMiddleName11 : "", RAMiddleName12: "", RAMiddleName13: "", RAMiddleName14: "", RAMiddleName15: "",
+         RAMiddleName16 : "", RAMiddleName17: "", RAMiddleName18: "", RAMiddleName19: "", RAMiddleName20: "",
+         RAMiddleName21 : "", RAMiddleName22: "", RAMiddleName23: "", RAMiddleName24: "", RAMiddleName25: "",
+         RAMiddleName: "",
+         AbbreviationOne: "",
+         AbbreviationTwo: "",
+         ResidenceFlat1 : "", ResidenceFlat2: "", ResidenceFlat3: "", ResidenceFlat4: "", ResidenceFlat5: "",
+         ResidenceFlat6 : "", ResidenceFlat7: "", ResidenceFlat8: "", ResidenceFlat9: "", ResidenceFlat10: "",
+         ResidenceFlat11 : "", ResidenceFlat12: "", ResidenceFlat13: "", ResidenceFlat14: "", ResidenceFlat15: "",
+         ResidenceFlat16 : "", ResidenceFlat17: "", ResidenceFlat18: "", ResidenceFlat19: "", ResidenceFlat20: "",
+         ResidenceFlat21 : "", ResidenceFlat22: "", ResidenceFlat23: "", ResidenceFlat24: "", ResidenceFlat25: "",
+         ResidenceFlat: "",
+         ResidencePremises1 : "", ResidencePremises2: "", ResidencePremises3: "", ResidencePremises4: "", ResidencePremises5: "",
+         ResidencePremises6 : "", ResidencePremises7: "", ResidencePremises8: "", ResidencePremises9: "", ResidencePremises10: "",
+         ResidencePremises11 : "", ResidencePremises12: "", ResidencePremises13: "", ResidencePremises14: "", ResidencePremises15: "",
+         ResidencePremises16 : "", ResidencePremises17: "", ResidencePremises18: "", ResidencePremises19: "", ResidencePremises20: "",
+         ResidencePremises21 : "", ResidencePremises22: "", ResidencePremises23: "", ResidencePremises24: "", ResidencePremises25: "",
+         ResidencePremises: "",
+         ResidenceRoad1 : "", ResidenceRoad2: "", ResidenceRoad3: "", ResidenceRoad4: "", ResidenceRoad5: "",
+         ResidenceRoad6 : "", ResidenceRoad7: "", ResidenceRoad8: "", ResidenceRoad9: "", ResidenceRoad10: "",
+         ResidenceRoad11 : "", ResidenceRoad12: "", ResidenceRoad13: "", ResidenceRoad14: "", ResidenceRoad15: "",
+         ResidenceRoad16 : "", ResidenceRoad17: "", ResidenceRoad18: "", ResidenceRoad19: "", ResidenceRoad20: "",
+         ResidenceRoad21 : "", ResidenceRoad22: "", ResidenceRoad23: "", ResidenceRoad24: "", ResidenceRoad25: "",
+         ResidenceRoad: "",
+         ResidenceArea1 : "", ResidenceArea2: "", ResidenceArea3: "", ResidenceArea4: "", ResidenceArea5: "",
+         ResidenceArea6 : "", ResidenceArea7: "", ResidenceArea8: "", ResidenceArea9: "", ResidenceArea10: "",
+         ResidenceArea11 : "", ResidenceArea12: "", ResidenceArea13: "", ResidenceArea14: "", ResidenceArea15: "",
+         ResidenceArea16 : "", ResidenceArea17: "", ResidenceArea18: "", ResidenceArea19: "", ResidenceArea20: "",
+         ResidenceArea21 : "", ResidenceArea22: "", ResidenceArea23: "", ResidenceArea24: "", ResidenceArea25: "",
+         ResidenceArea: "",
+         ResidenceTown1 : "", ResidenceTown2: "", ResidenceTown3: "", ResidenceTown4: "", ResidenceTown5: "",
+         ResidenceTown6 : "", ResidenceTown7: "", ResidenceTown8: "", ResidenceTown9: "", ResidenceTown10: "",
+         ResidenceTown11 : "", ResidenceTown12: "", ResidenceTown13: "", ResidenceTown14: "", ResidenceTown15: "",
+         ResidenceTown16 : "", ResidenceTown17: "", ResidenceTown18: "", ResidenceTown19: "", ResidenceTown20: "",
+         ResidenceTown21 : "", ResidenceTown22: "", ResidenceTown23: "", ResidenceTown24: "", ResidenceTown25: "",
+         ResidenceTown: "",
+         OfficeName1 : "", OfficeName2: "", OfficeName3: "", OfficeName4: "", OfficeName5: "",
+         OfficeName6 : "", OfficeName7: "", OfficeName8: "", OfficeName9: "", OfficeName10: "",
+         OfficeName11 : "", OfficeName12: "", OfficeName13: "", OfficeName14: "", OfficeName15: "",
+         OfficeName16 : "", OfficeName17: "", OfficeName18: "", OfficeName19: "", OfficeName20: "",
+         OfficeName21 : "", OfficeName22: "", OfficeName23: "", OfficeName24: "", OfficeName25: "",
+         OfficeName: "",
+         OfficeFlat1 : "", OfficeFlat2: "", OfficeFlat3: "", OfficeFlat4: "", OfficeFlat5: "",
+         OfficeFlat6 : "", OfficeFlat7: "", OfficeFlat8: "", OfficeFlat9: "", OfficeFlat10: "",
+         OfficeFlat11 : "", OfficeFlat12: "", OfficeFlat13: "", OfficeFlat14: "", OfficeFlat15: "",
+         OfficeFlat16 : "", OfficeFlat17: "", OfficeFlat18: "", OfficeFlat19: "", OfficeFlat20: "",
+         OfficeFlat21 : "", OfficeFlat22: "", OfficeFlat23: "", OfficeFlat24: "", OfficeFlat25: "",
+         OfficeFlat: "",
+         OfficePremises1 : "", OfficePremises2: "", OfficePremises3: "", OfficePremises4: "", OfficePremises5: "",
+         OfficePremises6 : "", OfficePremises7: "", OfficePremises8: "", OfficePremises9: "", OfficePremises10: "",
+         OfficePremises11 : "", OfficePremises12: "", OfficePremises13: "", OfficePremises14: "", OfficePremises15: "",
+         OfficePremises16 : "", OfficePremises17: "", OfficePremises18: "", OfficePremises19: "", OfficePremises20: "",
+         OfficePremises21 : "", OfficePremises22: "", OfficePremises23: "", OfficePremises24: "", OfficePremises25: "",
+         OfficePremises: "",
+         OfficeRoad1 : "", OfficeRoad2: "", OfficeRoad3: "", OfficeRoad4: "", OfficeRoad5: "",
+         OfficeRoad6 : "", OfficeRoad7: "", OfficeRoad8: "", OfficeRoad9: "", OfficeRoad10: "",
+         OfficeRoad11 : "", OfficeRoad12: "", OfficeRoad13: "", OfficeRoad14: "", OfficeRoad15: "",
+         OfficeRoad16 : "", OfficeRoad17: "", OfficeRoad18: "", OfficeRoad19: "", OfficeRoad20: "",
+         OfficeRoad21 : "", OfficeRoad22: "", OfficeRoad23: "", OfficeRoad24: "", OfficeRoad25: "",
+         OfficeRoad: "",
+         OfficeArea1 : "", OfficeArea2: "", OfficeArea3: "", OfficeArea4: "", OfficeArea5: "",
+         OfficeArea6 : "", OfficeArea7: "", OfficeArea8: "", OfficeArea9: "", OfficeArea10: "",
+         OfficeArea11 : "", OfficeArea12: "", OfficeArea13: "", OfficeArea14: "", OfficeArea15: "",
+         OfficeArea16 : "", OfficeArea17: "", OfficeArea18: "", OfficeArea19: "", OfficeArea20: "",
+         OfficeArea21 : "", OfficeArea22: "", OfficeArea23: "", OfficeArea24: "", OfficeArea25: "",
+         OfficeArea: "",
+         OfficeTown1 : "", OfficeTown2: "", OfficeTown3: "", OfficeTown4: "", OfficeTown5: "",
+         OfficeTown6 : "", OfficeTown7: "", OfficeTown8: "", OfficeTown9: "", OfficeTown10: "",
+         OfficeTown11 : "", OfficeTown12: "", OfficeTown13: "", OfficeTown14: "", OfficeTown15: "",
+         OfficeTown16 : "", OfficeTown17: "", OfficeTown18: "", OfficeTown19: "", OfficeTown20: "",
+         OfficeTown21 : "", OfficeTown22: "", OfficeTown23: "", OfficeTown24: "", OfficeTown25: "",
+         OfficeTown: "",
+         RAFlat1 : "", RAFlat2: "", RAFlat3: "", RAFlat4: "", RAFlat5: "",
+         RAFlat6 : "", RAFlat7: "", RAFlat8: "", RAFlat9: "", RAFlat10: "",
+         RAFlat11 : "", RAFlat12: "", RAFlat13: "", RAFlat14: "", RAFlat15: "",
+         RAFlat16 : "", RAFlat17: "", RAFlat18: "", RAFlat19: "", RAFlat20: "",
+         RAFlat21 : "", RAFlat22: "", RAFlat23: "", RAFlat24: "", RAFlat25: "",
+         RAFlat: "",
+         RAPremises1 : "", RAPremises2: "", RAPremises3: "", RAPremises4: "", RAPremises5: "",
+         RAPremises6 : "", RAPremises7: "", RAPremises8: "", RAPremises9: "", RAPremises10: "",
+         RAPremises11 : "", RAPremises12: "", RAPremises13: "", RAPremises14: "", RAPremises15: "",
+         RAPremises16 : "", RAPremises17: "", RAPremises18: "", RAPremises19: "", RAPremises20: "",
+         RAPremises21 : "", RAPremises22: "", RAPremises23: "", RAPremises24: "", RAPremises25: "",
+         RAPremises: "",
+         RARoad1 : "", RARoad2: "", RARoad3: "", RARoad4: "", RARoad5: "",
+         RARoad6 : "", RARoad7: "", RARoad8: "", RARoad9: "", RARoad10: "",
+         RARoad11 : "", RARoad12: "", RARoad13: "", RARoad14: "", RARoad15: "",
+         RARoad16 : "", RARoad17: "", RARoad18: "", RARoad19: "", RARoad20: "",
+         RARoad21 : "", RARoad22: "", RARoad23: "", RARoad24: "", RARoad25: "",
+         RARoad: "",
+         RAArea1 : "", RAArea2: "", RAArea3: "", RAArea4: "", RAArea5: "",
+         RAArea6 : "", RAArea7: "", RAArea8: "", RAArea9: "", RAArea10: "",
+         RAArea11 : "", RAArea12: "", RAArea13: "", RAArea14: "", RAArea15: "",
+         RAArea16 : "", RAArea17: "", RAArea18: "", RAArea19: "", RAArea20: "",
+         RAArea21 : "", RAArea22: "", RAArea23: "", RAArea24: "", RAArea25: "",
+         RAArea: "",
+         RATown1 : "", RATown2: "", RATown3: "", RATown4: "", RATown5: "",
+         RATown6 : "", RATown7: "", RATown8: "", RATown9: "", RATown10: "",
+         RATown11 : "", RATown12: "", RATown13: "", RATown14: "", RATown15: "",
+         RATown16 : "", RATown17: "", RATown18: "", RATown19: "", RATown20: "",
+         RATown21 : "", RATown22: "", RATown23: "", RATown24: "", RATown25: "",
+         RATown: "",
+         AadhaarFirstName1 : "", AadhaarFirstName2: "", AadhaarFirstName3: "", AadhaarFirstName4: "", AadhaarFirstName5: "",
+         AadhaarFirstName6 : "", AadhaarFirstName7: "", AadhaarFirstName8: "", AadhaarFirstName9: "", AadhaarFirstName10: "",
+         AadhaarFirstName11 : "", AadhaarFirstName12: "", AadhaarFirstName13: "", AadhaarFirstName14: "", AadhaarFirstName15: "",
+         AadhaarFirstName16 : "", AadhaarFirstName17: "", AadhaarFirstName18: "", AadhaarFirstName19: "", AadhaarFirstName20: "",
+         AadhaarFirstName21 : "", AadhaarFirstName22: "", AadhaarFirstName23: "", AadhaarFirstName24: "", AadhaarFirstName25: "",
+         AadhaarFirstName: "",
+         AadhaarLastName1 : "", AadhaarLastName2: "", AadhaarLastName3: "", AadhaarLastName4: "", AadhaarLastName5: "",
+         AadhaarLastName6 : "", AadhaarLastName7: "", AadhaarLastName8: "", AadhaarLastName9: "", AadhaarLastName10: "",
+         AadhaarLastName11 : "", AadhaarLastName12: "", AadhaarLastName13: "", AadhaarLastName14: "", AadhaarLastName15: "",
+         AadhaarLastName16 : "", AadhaarLastName17: "", AadhaarLastName18: "", AadhaarLastName19: "", AadhaarLastName20: "",
+         AadhaarLastName21 : "", AadhaarLastName22: "", AadhaarLastName23: "", AadhaarLastName24: "", AadhaarLastName25: "",
+         AadhaarLastName: "",
+         AadhaarMiddleName1 : "", AadhaarMiddleName2: "", AadhaarMiddleName3: "", AadhaarMiddleName4: "", AadhaarMiddleName5: "",
+         AadhaarMiddleName6 : "", AadhaarMiddleName7: "", AadhaarMiddleName8: "", AadhaarMiddleName9: "", AadhaarMiddleName10: "",
+         AadhaarMiddleName11 : "", AadhaarMiddleName12: "", AadhaarMiddleName13: "", AadhaarMiddleName14: "", AadhaarMiddleName15: "",
+         AadhaarMiddleName16 : "", AadhaarMiddleName17: "", AadhaarMiddleName18: "", AadhaarMiddleName19: "", AadhaarMiddleName20: "",
+         AadhaarMiddleName21 : "", AadhaarMiddleName22: "", AadhaarMiddleName23: "", AadhaarMiddleName24: "", AadhaarMiddleName25: "",
+         AadhaarMiddleName: "",
+         AadhaarNumber1 : "", AadhaarNumber2: "", AadhaarNumber3: "", AadhaarNumber4: "", AadhaarNumber5: "",
+         AadhaarNumber6 : "", AadhaarNumber7: "", AadhaarNumber8: "", AadhaarNumber9: "", AadhaarNumber10: "",
+         AadhaarNumber11 : "", AadhaarNumber12: "",
+         AadhaarNumber: "",
+         EnrolmentId1 : "", EnrolmentId2: "", EnrolmentId3: "", EnrolmentId4: "", EnrolmentId5: "",
+         EnrolmentId6 : "", EnrolmentId7: "", EnrolmentId8: "", EnrolmentId9: "", EnrolmentId10: "",
+         EnrolmentId11 : "", EnrolmentId12: "", EnrolmentId13: "", EnrolmentId14: "", EnrolmentId15: "",
+         EnrolmentId16 : "", EnrolmentId17: "", EnrolmentId18: "", EnrolmentId19: "", EnrolmentId20: "",
+         EnrolmentId21 : "", EnrolmentId22: "", EnrolmentId23: "", EnrolmentId24: "", EnrolmentId25: "",
+         EnrolmentId26 : "", EnrolmentId27: "", EnrolmentId28: "",
+         EnrolmentId : "",
+         RegistrationNumber1 : "", RegistrationNumber2: "", RegistrationNumber3: "", RegistrationNumber4: "", RegistrationNumber5: "",
+         RegistrationNumber6 : "", RegistrationNumber7: "", RegistrationNumber8: "", RegistrationNumber9: "", RegistrationNumber10: "",
+         RegistrationNumber11 : "", RegistrationNumber12: "", RegistrationNumber13: "", RegistrationNumber14: "", RegistrationNumber15: "",
+         RegistrationNumber16 : "", RegistrationNumber17: "", RegistrationNumber18: "", RegistrationNumber19: "", RegistrationNumber20: "",
+         RegistrationNumber21 : "", RegistrationNumber22: "", RegistrationNumber23: "", RegistrationNumber24: "", RegistrationNumber25: "",
+         RegistrationNumber26 : "", RegistrationNumber27: "", RegistrationNumber28: "", RegistrationNumber29: "", RegistrationNumber30: "",
+         RegistrationNumber: "", 
+         ResidenceState: "",
+         ResidencePincode1 : "", ResidencePincode2: "", ResidencePincode3: "", ResidencePincode4: "", ResidencePincode5: "",
+         ResidencePincode6 : "", ResidencePincode7: "",
+         ResidencePincode: "",
+         ResidenceCountry: "",
+         OfficeState: "",
+         OfficePincode1 : "", OfficePincode2: "", OfficePincode3: "", OfficePincode4: "", OfficePincode5: "",
+         OfficePincode6 : "", OfficePincode7: "",
+         OfficePincode: "",
+         OfficeCountry: "",
+         RAState: "",
+         RAPincode1 : "", RAPincode2: "", RAPincode3: "", RAPincode4: "", RAPincode5: "",
+         RAPincode6 : "", RAPincode7: "",
+         RAPincode: "",
+         CountryCode1 : "", CountryCode2: "", CountryCode3: "",
+         CountryCode: "",
+         StdCode1 : "", StdCode2: "", StdCode3: "", StdCode4: "", StdCode5: "",
+         StdCode6 : "", StdCode7: "",
+         StdCode: "",
+         PhoneNumber1 : "", PhoneNumber2: "", PhoneNumber3: "", PhoneNumber4: "", PhoneNumber5: "",
+         PhoneNumber6 : "", PhoneNumber7: "", PhoneNumber8: "", PhoneNumber9: "", PhoneNumber10: "",
+         PhoneNumber11 : "", PhoneNumber12: "", PhoneNumber13: "",
+         PhoneNumber: "",
+         Day1 : "", Day2: "",
+         Day: "",
+         Month1 : "", Month2: "",
+         Month: "",
+         Year1 : "", Year2: "", Year3: "", Year4: "",
+         Year: "",
+         POI: "",
+         POA: "",
+         POB: "",
+         Applicant: "",
+         Capacity: "",
+         Email: "",
+         BusinessCode1: "",
+         BusinessCode2: "",
+         BusinessCode: "",
+         Salary: "",
+         CapitalGains: "",
+         IncomeBusiness: "",
+         IncomeOtherSource: "",
+         IncomeFromHouse: "",
+         NoIncome: "",
+         phonenumber:"",
+         otpnumber:"", 
+         dataid: "1",
+
+      },
       
-            },
-            
-            checkarray:["NameTitleOne",'OtherName','NameTitleTwo','Gender','ParentName','Communication','Status','Salary','CapitalGains','IncomeBusiness','IncomeOtherSource','IncomeFromHouse','NoIncome','NameTitleThree'],
-            show: false,
-            check:0,
-            otpverify:0,
-            secondcheck:0,
-            number : {
-                phonenumber:"",
-            },
-            open: false,
-         }
-        }
-      
+      checkarray:["NameTitleOne",'OtherName','NameTitleTwo','Gender','ParentName','Communication','Status','Salary','CapitalGains','IncomeBusiness','IncomeOtherSource','IncomeFromHouse','NoIncome','NameTitleThree'],
+      show: false,
+      check:0,
+      otpverify:0,
+      secondcheck:0,
+      number : {
+          phonenumber:"",
+      },
+      open: false,
+   }
+  }
 
-    handleExistingUser = () => {
-        this.state.number.phonenumber = this.state.otpnumber;
-        const dataa = this.state.number.phonenumber;
-        this.setState({ dataa })
-        console.log("vvv", this.state.number)
-        axios.post('http://localhost:5000/checkphonenumber', this.state.number)
-            .then(function (response) {
-                if (response.data == "Nulldata") {
-                    alert("Please fill the form")
-                }
-                else {
-                    console.log("aaa11111", response.data);
-                    console.log("aaa", response.data.result.alldata);
-                    mydata = response.data.result.alldata;
-                    responseotp = response.data.token;
-                    console.log("mydata", mydata);
-                    alert("Document is ready to download")
-                    this.setState({data:mydata})
-                    console.log("dataset", this.state.data);
-                }
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-    }
-
-    handlephno = (e) => {
-        // this.state.otpnumber = 
-        this.setState({ otpnumber: e.target.value })
-        console.log("data", responseotp)
-    }
-
-    handlecheckotp = (e) => {
-        this.state.enteredotp = e.target.value
-        let data = this.state.enteredotp;
+  componentWillMount() {
     
-        this.setState({ data })
-        console.log("__1__", data)
-        console.log("__2__", responseotp)
-        if (this.state.enteredotp == responseotp) {
-            this.setState({ check: 1 });
-        }
-        console.log("matched")
+    let alldata = JSON.parse(localStorage.getItem('localdata'));
+    let allerror = JSON.parse(localStorage.getItem('localerror'));
+    let otp =  JSON.parse(localStorage.getItem('otp'));
+ 
+    this.state.OtpInput = otp;
+    let val = this.state.OtpInput;
+    this.setState({val})
+    
+    if (alldata == null) {
+       localStorage.setItem('localdata', JSON.stringify({}));
     }
-
-    onOpenModal = () => {
-        this.setState({ open: true });
+    else
+    {
+       if(alldata !== {}){
+          if(alldata.dataid === "1"){
+                 this.setState({ data: alldata }); 
+          }
+       }  
     }
-
-    closeModal = () => {
-        this.setState({ open: false });
-        this.setState({ open1: false });
-    }
-    onOpenModal1 = () => {
-        this.setState({ open1: true });
-    }
-
+ 
+    if (allerror == null) {
+      localStorage.setItem('localerror', JSON.stringify({}));
+     }
+     else
+     {
+       if(allerror !== {}){
+         if(allerror.errorid === "1"){
+               this.setState({ errors: allerror });
+         }
+       }  
+     }
+  }
   
-    handlesignin = () => {
-        this.setState({ cardview : 1 });
-        this.setState({ open: false }); 
-        this.setState({data:mydata})
-        console.log("dataset", this.state.data);
-
+  handleSave = () => {
+     
+   axios.post('http://localhost:5000/saveData',this.state.data)
+     .then(function (response) 
+     {
+        console.log(response);
+     })
+    .catch(function (error) {
+        console.log(error);
+    });
+   }
+ 
+   handleInputdata = (otp, name, id) => {
+   
+     if (id == "1") {
+       let textPattern = /[!@#$%^&*(),.?":{}|<>]/
+       let checkdata = textPattern.test(otp);
+  
+       if (checkdata != "true") {
+         const datainput = this.state.data;
+         datainput[name] = otp;
+         this.setState({ datainput })
+  
+         localStorage.setItem('localdata', JSON.stringify(this.state.data));
+         localStorage.setItem('localerror', JSON.stringify(this.state.errors));
+       }
     }
-    savepdf = () => {
+   }
 
-        let imgData ;
-       const input = document.getElementById('Form1');
-        html2canvas(input)
-          .then((canvas) => { 
-               imgData = canvas.toDataURL('image/png');
-              console.log("image",imgData)
+   handleOtpInput = (value) => {
+      
+    this.state.OtpInput = value;
+    let val = this.state.OtpInput;
+    this.setState({val})
 
-              const pdf = new jsPDF();
-              pdf.addImage(imgData, 'JPEG', 0, 5, 215, 290);
-              // pdf.output('dataurlnewwindow');
-              pdf.save("download.pdf");
-          });
+    localStorage.setItem('otp', JSON.stringify(this.state.OtpInput));
+    console.log(value)
+    console.log(val)
+    console.log(this.state.OtpInput)
 
-        }
+   }
 
-    render() {
-        const { open } = this.state;
-        const { open1 } = this.state;
-        return (
-            <div>
-                <div >
-                    <br />
-                    <label className="navlogo" > Panform </label>
-                    {/* <label className="navlogout" > Login </label> */}
+  render() {
 
-                    <label className="navlogout" onClick={this.onOpenModal} >Login</label>
-                    <div>
-
-                        {/* <button onClick={this.onOpenModal} style={{width:"auto"}}>Login</button> */}
-                        <Modal style={{ backgroundColor: "#404040" }} open={open} onClose={this.closeModal} center >
-                            <div className="modal-content animate" >
-                                {/* <div className="imgcontainer">
-                                <span onClose={this.closeModal}  className="close" title="Close Modal">&times;</span>
-                                 ?  <img src="img_avatar2.png" alt="Avatar" class="avatar" /> }
-                            </div> */}
-
-                                <div className="container">
-                                    <br />
-                                    <label style={{ marginLeft: "26%" }} for="uname"><b>Phone Number</b></label>
-                                    <input type="number" onChange={this.handlephno} placeholder="Phone Number" name="uname" required />
-                                    <button className="btnlogin" type="submit" onClick={this.handleExistingUser}>Send OTP</button>
-                                    {/* <label for="psw"><b>OTP Number</b></label><br /> */}
-                                    <input type="number" placeholder="OTP Number" onChange={this.handlecheckotp} name="psw" required />
-                                    {this.state.check == 1 ?
-                                        <button className="btnlogin" onClick={this.handlesignin} type="submit">SignIn</button>
-                                        : ""}
-                                </div>
-
-                                {/* <div className="container" style={{backgroundColor:"#f1f1f1"}}>
-                    <button type="button" onClick="" className="cancelbtn">Cancel</button>
-                    </div> */}
-                            </div>
-                        </Modal>
-                    </div>
-                    {/*  */}
-                </div>
-                <br /> <br /> <br /><br />
-                <div >
-                    <table border="0" >
-                        <col width="40%" />
-                        <col width="60%" />
-                        <tr>
-                            <td>  <img src={dummyimage} className="image" />  </td>
-                            <td>
-                                <div className="content1">
-                                    <label className="formlabel">Online Pancard application</label><br /><br /><br />
-                                 
-                                    {this.state.cardview == 0 ?
-                                        <a href="http://www.form49a.in">
-                                        {/* <button type="text" className="fillformbutton"> Fill the Form</button> */}
-                                        <NavLink to="/panform"><button className="fillformbutton">Fill the Form</button></NavLink>
-                                    </a>
-                                          : 
-                                          <div>
-                                          <div className="animate" >
-                                              <div className="downloadcard">
-            {/* <button type="text" onClick={this.savepdf} className="fillformbutton"><label>Preview</label> <img src={previmg} style={{width:"20%",height:"20%"}} /> </button> */}
-            <button type="text" onClick={this.onOpenModal1} className="fillformbutton"><label>Preview & Download</label> </button>
-                <br />
-            <div className="newform">
-                     <label >Do u want to fill a new Form<img src={forwardarrow} /></label>
-                 </div>
-           
-                                              </div>
-                                          </div>
-                                      </div>}
-
-                                </div>
-                          </td>
-                        </tr>
-                     <tr>
-
-                        </tr>
-                    </table>
-                </div>
-
-                    {/* pdf generator */}
-                        {/* {this.state.displaypdf == 1 ? */}
-                     
-                        <div id="Formdata" >
-                                {/* <Pdfform />      */}
-
-
-                                <Modal style={{ backgroundColor: "#404040" }} open={open1} onClose={this.closeModal} center >
-                                <button type="text" onClick={this.savepdf} style={{marginLeft:"43%"}}  className="fillformbutton"><label>Download</label> </button>
-    <div id = "Form1" >    
-        <div className="Form1" style={{marginLeft:"0%",width:"102%"}}>  
+    return (
+   <div>
+          <div id = "Form1">    
+        <div className="Form1" ><br />
            <div className = "box"> 
 
                 <div>
@@ -643,7 +538,7 @@ class Panmain extends React.Component {
                   </div>  
                    </td>
                    <td>   
-                       <div className="tablebox2" style={{marginLeft:"2%"}}>
+                       <div className="tablebox2">
                        <br/> <br/>
                              <div className = "tablebox1Label"> <label className = "tablebox1Label"> Only</label>  </div>  
                              <div className = "tablebox1Label"> <label className = "tablebox1Label"> ‘Individuals’ </label></div>   
@@ -6407,7 +6302,7 @@ class Panmain extends React.Component {
                     <br />
                     </div>
                     <br /><br />
-                    <div className="Form2" style={{marginLeft:"0%",width:"102%"}}>
+                    <div className="Form2">
                     <br />
                     <div className="box2">
                      <div className="content2">
@@ -12578,20 +12473,15 @@ response
            <br />
 
 
+       
             
       </div>
 
      </div>
 
-
-    </Modal>
-
-                         </div>
-                        
-                            {/* : ""} */}
-            </div>
-        );
-    }
+        </div>
+    );
+  }
 }
 
-export default Panmain;
+export default Form1;

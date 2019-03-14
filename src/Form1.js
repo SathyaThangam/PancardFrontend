@@ -717,186 +717,234 @@ class Form1 extends Component {
     }
     else if(this.state.data.ResidenceArea === "")
     {  
-        let errors = Object.assign({}, this.state.errors);     
-        errors.ResidenceArea = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "ResidenceArea";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#ResidenceArea1" ).focus();
         this.HighlightResidenceAreaError();
     }
     else if(this.state.data.ResidenceTown === "")
     {  
-        let errors = Object.assign({}, this.state.errors);     
-        errors.ResidenceTown = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "ResidenceTown";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#ResidenceTown1" ).focus();
         this.HighlightResidenceTownError();
     }
     else if(this.state.data.ResidenceState === "")
     {  
-        let errors = Object.assign({}, this.state.errors);     
-        errors.ResidenceState = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "ResidenceState";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#ResidenceState1" ).focus();
     }
     else if(this.state.data.ResidencePincode === "")
     {  
-        let errors = Object.assign({}, this.state.errors);     
-        errors.ResidencePincode = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "ResidencePincode";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#ResidencePincode1" ).focus();
         this.HighlightResidencePincodeError();
     }
     else if(this.state.data.ResidenceCountry === "")
     {  
-        let errors = Object.assign({}, this.state.errors);     
-        errors.ResidenceCountry = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "ResidenceCountry";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#ResidenceCountry1" ).focus();
     }
     else if(this.state.data.Communication === "")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.Communication = "*Please tick as applicable";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "Communication";
+        this.setState(errors1);
+        errors1[name4] = "*Please tick as applicable";
+
         $( "#16" ).focus();
     }
     else if(this.state.data.OfficeName === ""  && this.state.data.Communication === "Office")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.OfficeName = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "OfficeName";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#OfficeName1" ).focus();
         this.HighlightOfficeNameError();
     }
     else if(this.state.data.OfficeFlat === "" && this.state.data.Communication === "Office")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.OfficeFlat = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "OfficeFlat";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#OfficeFlat1" ).focus();
         this.HighlightOfficeFlatError();
     }
     else if(this.state.data.OfficePremises === "" && this.state.data.Communication === "Office")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.OfficePremises = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "OfficePremises";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#OfficePremises1" ).focus();
         this.HighlightOfficePremisesError();
     }
     else if(this.state.data.OfficeRoad === "" && this.state.data.Communication === "Office")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.OfficeRoad = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "OfficeRoad";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#OfficeRoad1" ).focus();
         this.HighlightOfficeRoadError();
     }
     else if(this.state.data.OfficeArea === "" && this.state.data.Communication === "Office")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.OfficeArea = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "OfficeArea";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#OfficeArea1" ).focus();
         this.HighlightOfficeAreaError();
     }
     else if(this.state.data.OfficeTown === "" && this.state.data.Communication === "Office")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.OfficeTown = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "OfficeTown";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#OfficeTown1" ).focus();
         this.HighlightOfficeTownError();
     }
     else if(this.state.data.OfficeState === "" && this.state.data.Communication === "Office")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.OfficeState = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "OfficeState";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#OfficeState1" ).focus();
     }
     else if(this.state.data.OfficePincode === "" && this.state.data.Communication === "Office")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.OfficePincode = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "OfficePincode";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+
         $( "#OfficePincode1" ).focus();
         this.HighlightOfficePincodeError();
     }
     else if(this.state.data.OfficeCountry === "" && this.state.data.Communication === "Office")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.OfficeCountry = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "OfficeCountry";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+
         $( "#OfficeCountry1" ).focus();
     }
     else if(this.state.data.CountryCode === "" )
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.CountryCode = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "CountryCode";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+       
         $( "#CountryCode1" ).focus();
         this.HighlightCountryCodeError();
     }
     else if(this.state.data.StdCode === "" )
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.StdCode = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "StdCode";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#StdCode1" ).focus();
         this.HighlightStdCodeError();
     }
     else if(this.state.data.PhoneNumber === "" )
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.PhoneNumber = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "PhoneNumber";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#PhoneNumber1" ).focus();
         this.HighlightPhoneNumberError();
     }
     else if(this.state.data.Email === "" )
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.Email = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "Email";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#Email1" ).focus();
     }
     else if(this.state.data.Status === "")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.Status = "*Please select status as applicable";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "Status";
+        this.setState(errors1);
+        errors1[name4] = "*Please select status as applicable";
+ 
         $( "#22" ).focus();
     }
     else if((this.state.data.Status === "Company"  && this.state.data.RegistrationNumber === ""))
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.RegistrationNumber = "*Registration number is required for Company";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "RegistrationNumber";
+        this.setState(errors1);
+        errors1[name4] = "*Registration number is required for Company";
+ 
         $( "#RegistrationNumber1" ).focus();
         this.HighlightRegistrationNumberError();
     }
     else if(this.state.data.Status === "Limited Liability Partnership" && this.state.data.RegistrationNumber === "")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.RegistrationNumber = "*Registration number is required for Limited Liability Partnership";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "RegistrationNumber";
+        this.setState(errors1);
+        errors1[name4] = "*Registration number is required for Limited Liability Partnership";
+ 
         $( "#RegistrationNumber1" ).focus();
         this.HighlightRegistrationNumberError();
     }
     else if(this.state.data.AadhaarNumber === "" && this.state.data.EnrolmentId === "")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.AadhaarNumber = "*Either Aadhaar number or Enrolment Id is required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "AadhaarNumber";
+        this.setState(errors1);
+        errors1[name4] = "*Either Aadhaar number or Enrolment Id is required";
+ 
         $( "#AadhaarNumber1" ).focus();
         this.HighlightAadhaarNumberError();
     }
     else if(this.state.data.AadhaarLastName === "" )
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.AadhaarLastName = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "AadhaarLastName";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#AadhaarLastName1" ).focus();
         this.HighlightAadhaarLastNameError();
     }
@@ -904,131 +952,165 @@ class Form1 extends Component {
     this.state.data.IncomeBusiness === "" && this.state.data.IncomeOtherSource === "" &&
     this.state.data.IncomeFromHouse === "" && this.state.data.NoIncome === "")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.Income = "*Please select the Source of Income";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "Income";
+        this.setState(errors1);
+        errors1[name4] = "*Please select the Source of Income";
+ 
         $( "#33" ).focus();
     }
     else if(this.state.data.IncomeBusiness !== "" && this.state.data.BusinessCode1 === "" &&
        this.state.data.BusinessCode2 === "")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.BusinessCode1 = "*Business / Profession code is required for Income from Business / Profession";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "BusinessCode1";
+        this.setState(errors1);
+        errors1[name4] = "*Business / Profession code is required for Income from Business / Profession";
+ 
         $( "#BusinessCodeDiv" ).focus();
         
     }
     else if(this.state.data.NameTitleThree === "")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.NameTitleThree = "*Please select title as applicable";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "NameTitleThree";
+        this.setState(errors1);
+        errors1[name4] = "*Please select title as applicable";
+ 
         $( "#36" ).focus();
     }
     else if(this.state.data.RALastName === "" )
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.RALastName = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "RALastName";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#RALastName1" ).focus();
         this.HighlightRALastNameError();
     }
     else if(this.state.data.RAFirstName === "")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.RAFirstName = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "RAFirstName";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#RAFirstName1" ).focus();
         this.HighlightRAFirstNameError();
     }
     else if(this.state.data.RAFlat === "")
     {  
-        let errors = Object.assign({}, this.state.errors);     
-        errors.RAFlat = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "RAFlat";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#RAFlat1" ).focus();
         this.HighlightRAFlatError();
     }
     else if(this.state.data.RAPremises === "")
     {  
-        let errors = Object.assign({}, this.state.errors);     
-        errors.RAPremises = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "RAPremises";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#RAPremises1" ).focus();
         this.HighlightRAPremisesError();
     }
     else if(this.state.data.RARoad === "")
     {  
-        let errors = Object.assign({}, this.state.errors);     
-        errors.RARoad = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "RARoad";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#RARoad1" ).focus();
         this.HighlightRARoadError();
     } 
     else if(this.state.data.RAArea === "")
     {  
-        let errors = Object.assign({}, this.state.errors);     
-        errors.RAArea = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "RAArea";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#RAArea1" ).focus();
         this.HighlightRAAreaError();
     }
     else if(this.state.data.RATown === "")
     {  
-        let errors = Object.assign({}, this.state.errors);     
-        errors.RATown = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "RATown";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#RATown1" ).focus();
         this.HighlightRATownError();
     }
     else if(this.state.data.RAState === "")
     {  
-        let errors = Object.assign({}, this.state.errors);     
-        errors.RAState = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "RAState";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#RAState1" ).focus();
     }
     else if(this.state.data.RAPincode === "")
     {  
-        let errors = Object.assign({}, this.state.errors);     
-        errors.RAPincode = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "RAPincode";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#RAPincode1" ).focus();
         this.HighlightRAPincodeError();
     }
     else if(this.state.data.POI === "")
     {  
-        let errors = Object.assign({}, this.state.errors);     
-        errors.POI = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "POI";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#POI" ).focus();
     }
     else if(this.state.data.POA === "")
     {  
-        let errors = Object.assign({}, this.state.errors);     
-        errors.POA = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "POA";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#POA" ).focus();
     }
     else if(this.state.data.POB === "")
     {  
-        let errors = Object.assign({}, this.state.errors);     
-        errors.POB = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "POB";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#POB" ).focus();
     }
     else if(this.state.data.Applicant === "")
     {  
-        let errors = Object.assign({}, this.state.errors);     
-        errors.Applicant = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "Applicant";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#Applicant" ).focus();
     }
     else if(this.state.data.Capacity === "")
     {
-        let errors = Object.assign({}, this.state.errors);     
-        errors.Capacity = "*Fields are required";                         
-        this.setState({errors});
+        let errors1 = this.state.errors;
+        let name4= "Capacity";
+        this.setState(errors1);
+        errors1[name4] = "*Fields are required";
+ 
         $( "#Capacity" ).focus();
     }
     else if(this.state.errors.FirstName === "" && this.state.errors.LastName === "" 
@@ -1656,10 +1738,12 @@ if(this.state.errors.LastName !== "")
         document.getElementById(i).checked = false;
     }
     document.getElementById(e.target.id).checked = true;
-    let errors = Object.assign({}, this.state.errors);     
-    errors.NameTitleOne = "";                         
-    this.setState({errors});
-  
+
+    let errors1 = this.state.errors;
+    let name4= "NameTitleOne";
+    this.setState(errors1);
+    errors1[name4] = "";
+ 
     const check = this.state.data;
     check[name] = e.target.id;
     this.setState({ check })
@@ -1679,9 +1763,10 @@ if(this.state.errors.LastName !== "")
     }
     document.getElementById(e.target.id).checked = true;
      
-    let errors = Object.assign({}, this.state.errors);     
-    errors.OtherName = "";                         
-    this.setState({errors});
+    let errors1 = this.state.errors;
+    let name4= "OtherName";
+    this.setState(errors1);
+    errors1[name4] = "";
 
     const check = this.state.data;
     check[name] = e.target.id;
@@ -1762,11 +1847,11 @@ if(this.state.errors.LastName !== "")
     }
     document.getElementById(e.target.id).checked = true;
     
-    let errors = Object.assign({}, this.state.errors);     
-    errors.NameTitleTwo = "";                         
-    this.setState({errors});
-    
-  
+    let errors1 = this.state.errors;
+    let name4= "NameTitleTwo";
+    this.setState(errors1);
+    errors1[name4] = "";
+ 
     const check = this.state.data;
     check[name] = e.target.id;
     this.setState({ check })
@@ -1785,10 +1870,11 @@ if(this.state.errors.LastName !== "")
     }
     document.getElementById(e.target.id).checked = true;    
     
-    let errors = Object.assign({}, this.state.errors);     
-    errors.Gender = "";                         
-    this.setState({errors});
-  
+    let errors1 = this.state.errors;
+    let name4= "Gender";
+    this.setState(errors1);
+    errors1[name4] = "";
+ 
     const check = this.state.data;
     check[name] = e.target.id;
     this.setState({ check })
@@ -1808,10 +1894,11 @@ if(this.state.errors.LastName !== "")
     }
     document.getElementById(e.target.id).checked = true;
      
-    let errors = Object.assign({}, this.state.errors);     
-    errors.ParentName = "";                         
-    this.setState({errors});
-  
+    let errors1 = this.state.errors;
+    let name4= "ParentName";
+    this.setState(errors1);
+    errors1[name4] = "";
+ 
     const check = this.state.data;
     check[name] = e.target.id;
     this.setState({ check })
@@ -1821,16 +1908,20 @@ if(this.state.errors.LastName !== "")
         if(this.state.errors.MotherLastName === "*Please enter Mother's name")
         {
             
-            let errors = Object.assign({}, this.state.errors);     
-            errors.MotherLastName = "";                         
-            this.setState({errors});
+            let errors1 = this.state.errors;
+            let name4= "MotherLastName";
+            this.setState(errors1);
+            errors1[name4] = "";
+   
         }
 
         if(this.state.errors.MotherFirstName === "*Please enter Mother's name")
         {
-            let errors = Object.assign({}, this.state.errors);     
-            errors.MotherFirstName = "";                         
-            this.setState({errors});
+            let errors1 = this.state.errors;
+            let name4= "MotherFirstName";
+            this.setState(errors1);
+            errors1[name4] = "";
+  
         }
     }
 
@@ -1847,9 +1938,10 @@ if(this.state.errors.LastName !== "")
     }
     document.getElementById(e.target.id).checked = true;
     
-    let errors = Object.assign({}, this.state.errors);     
-    errors.Communication = "";                         
-    this.setState({errors});
+    let errors1 = this.state.errors;
+    let name4= "Communication";
+    this.setState(errors1);
+    errors1[name4] = "";
   
     const check = this.state.data;
     check[name] = e.target.id;
@@ -2077,9 +2169,11 @@ if(this.state.errors.LastName !== "")
         document.getElementById(i).checked = false;
     }
     document.getElementById(e.target.id).checked = true;
-    let errors = Object.assign({}, this.state.errors);     
-    errors.NameTitleThree = "";                         
-    this.setState({errors});
+
+    let errors1 = this.state.errors;
+    let name4= "NameTitleThree";
+    this.setState(errors1);
+    errors1[name4] = "";
   
     const check = this.state.data;
     check[name] = e.target.id;
@@ -2098,9 +2192,11 @@ if(this.state.errors.LastName !== "")
         document.getElementById(i).checked = false;
     }
     document.getElementById(e.target.id).checked = true;
-    let errors = Object.assign({}, this.state.errors);     
-    errors.Status = "";                         
-    this.setState({errors});
+
+    let errors1 = this.state.errors;
+    let name4= "Status";
+    this.setState(errors1);
+    errors1[name4] = "";
     
     const check = this.state.data;
     check[name] = e.target.id;
@@ -2118,9 +2214,12 @@ if(this.state.errors.LastName !== "")
     if(document.getElementsByTagName("Salary").checked === false)
     {
         document.getElementsByTagName("Salary").checked = true; 
-        let data = Object.assign({}, this.state.data);     
-        data.Salary = "";                         
-        this.setState({data});
+
+        let errors1 = this.state.errors;
+        let name4= "Salary";
+        this.setState(errors1);
+        errors1[name4] = "";
+ 
 
     }
     else 
@@ -2134,9 +2233,11 @@ if(this.state.errors.LastName !== "")
         this.state.data.IncomeBusiness === "" && this.state.data.IncomeOtherSource === "" &&
         this.state.data.IncomeFromHouse === "" && this.state.data.NoIncome === ""))
         {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.Income = "";                         
-           this.setState({errors});
+            let errors1 = this.state.errors;
+            let name4= "Income";
+            this.setState(errors1);
+            errors1[name4] = "";
+      
         }
         
     }
@@ -2153,9 +2254,11 @@ if(this.state.errors.LastName !== "")
     {
         document.getElementsByTagName("CapitalGains").checked = true;
 
-        let data = Object.assign({}, this.state.data);     
-        data.CapitalGains = "";                         
-        this.setState({data});
+        let errors1 = this.state.errors;
+        let name4= "CapitalGains";
+        this.setState(errors1);
+        errors1[name4] = "";
+ 
     }
     else 
     {
@@ -2168,9 +2271,11 @@ if(this.state.errors.LastName !== "")
         this.state.data.IncomeBusiness === "" && this.state.data.IncomeOtherSource === "" &&
         this.state.data.IncomeFromHouse === "" && this.state.data.NoIncome === ""))
         {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.Income = "";                         
-           this.setState({errors});
+            let errors1 = this.state.errors;
+            let name4= "Income";
+            this.setState(errors1);
+            errors1[name4] = "";
+ 
         }
         
     }
@@ -2329,9 +2434,11 @@ if(this.state.errors.LastName !== "")
     {
         document.getElementsByTagName("IncomeOtherSource").checked = true;
         
-        let data = Object.assign({}, this.state.data);     
-        data.IncomeOtherSource = "";                         
-        this.setState({data});
+        let errors1 = this.state.errors;
+        let name4= "IncomeOtherSource";
+        this.setState(errors1);
+        errors1[name4] = "";
+ 
     }
     else 
     {
@@ -2344,9 +2451,11 @@ if(this.state.errors.LastName !== "")
         this.state.data.IncomeBusiness === "" && this.state.data.IncomeOtherSource === "" &&
         this.state.data.IncomeFromHouse === "" && this.state.data.NoIncome === ""))
         {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.Income = "";                         
-           this.setState({errors});   
+            let errors1 = this.state.errors;
+            let name4= "Income";
+            this.setState(errors1);
+            errors1[name4] = "";
+ 
         }
         
     }
@@ -2361,9 +2470,11 @@ if(this.state.errors.LastName !== "")
     {
         document.getElementsByTagName("IncomeOtherSource").checked = true;
         
-        let data = Object.assign({}, this.state.data);     
-        data.IncomeOtherSource = "";                         
-        this.setState({data});
+        let errors1 = this.state.errors;
+        let name4= "IncomeOtherSource";
+        this.setState(errors1);
+        errors1[name4] = "";
+ 
     }
     else 
     {
@@ -2376,9 +2487,11 @@ if(this.state.errors.LastName !== "")
         this.state.data.IncomeBusiness === "" && this.state.data.IncomeOtherSource === "" &&
         this.state.data.IncomeFromHouse === "" && this.state.data.NoIncome === ""))
         {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.Income = "";                         
-           this.setState({errors});   
+            let errors1 = this.state.errors;
+            let name4= "Income";
+            this.setState(errors1);
+            errors1[name4] = "";
+  
         }
         
     }
@@ -2393,10 +2506,11 @@ if(this.state.errors.LastName !== "")
     if(document.getElementsByTagName("IncomeOtherSource").checked === false)
     {
         document.getElementsByTagName("IncomeOtherSource").checked = true;
-        
-        let data = Object.assign({}, this.state.data);     
-        data.IncomeOtherSource = "";                         
-        this.setState({data});
+        let errors1 = this.state.errors;
+        let name4= "IncomeOtherSource";
+        this.setState(errors1);
+        errors1[name4] = "";
+ 
     }
     else 
     {
@@ -2409,9 +2523,11 @@ if(this.state.errors.LastName !== "")
         this.state.data.IncomeBusiness === "" && this.state.data.IncomeOtherSource === "" &&
         this.state.data.IncomeFromHouse === "" && this.state.data.NoIncome === ""))
         {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.Income = "";                         
-           this.setState({errors});   
+            let errors1 = this.state.errors;
+            let name4= "Income";
+            this.setState(errors1);
+            errors1[name4] = "";
+ 
         }
         
     }
@@ -2426,9 +2542,11 @@ if(this.state.errors.LastName !== "")
     {
         document.getElementsByTagName("IncomeFromHouse").checked = true;
 
-        let data = Object.assign({}, this.state.data);     
-        data.IncomeFromHouse = "";                         
-        this.setState({data});
+        let errors1 = this.state.errors;
+        let name4= "IncomeFromHouse";
+        this.setState(errors1);
+        errors1[name4] = "";
+ 
     }
     else 
     {
@@ -2441,9 +2559,11 @@ if(this.state.errors.LastName !== "")
         this.state.data.IncomeBusiness === "" && this.state.data.IncomeOtherSource === "" &&
         this.state.data.IncomeFromHouse === "" && this.state.data.NoIncome === ""))
         {
-           let errors = Object.assign({}, this.state.errors);     
-           errors.Income = "";                         
-           this.setState({errors});
+            let errors1 = this.state.errors;
+            let name4= "Income";
+            this.setState(errors1);
+            errors1[name4] = "";
+    
         }
         
     }
@@ -2472,10 +2592,6 @@ if(this.state.errors.LastName !== "")
         let name= "NoIncome";
         this.setState(data);
         data[name] = "";
-
-        // let data = Object.assign({}, this.state.data);     
-        // data.NoIncome = "";                         
-        // this.setState({data});
 
         let val = false;
         this.setState({isEnabledCheck : false});
@@ -2623,10 +2739,7 @@ if(this.state.errors.LastName !== "")
         this.state.data.IncomeBusiness === "" && this.state.data.IncomeOtherSource === "" &&
         this.state.data.IncomeFromHouse === "" && this.state.data.NoIncome === ""))
         {
-        //    let errors = Object.assign({}, this.state.errors);     
-        //    errors.Income = "";                         
-        //    this.setState({errors});
-
+ 
            let errors3 = this.state.errors;
            let name3= "Income";
            this.setState(errors3);
@@ -14577,7 +14690,7 @@ handleInput = (event) => {
 
     const { open } = this.state;
     return (
-   <div>
+   <div className="fullcontent">
      <div className="nav">
       <div className="navbar">
        <label className="navtitle">Panform</label>
