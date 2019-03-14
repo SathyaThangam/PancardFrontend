@@ -741,7 +741,7 @@ class Form1 extends Component {
         let name4= "ResidenceState";
         this.setState(errors1);
         errors1[name4] = "*Fields are required";
- 
+        $('#ResidenceState').css('border-color', "red")
         $( "#ResidenceState1" ).focus();
     }
     else if(this.state.data.ResidencePincode === "")
@@ -760,7 +760,7 @@ class Form1 extends Component {
         let name4= "ResidenceCountry";
         this.setState(errors1);
         errors1[name4] = "*Fields are required";
- 
+        $('#ResidenceCountry').css('border-color', "red")
         $( "#ResidenceCountry1" ).focus();
     }
     else if(this.state.data.Communication === "")
@@ -838,7 +838,7 @@ class Form1 extends Component {
         let name4= "OfficeState";
         this.setState(errors1);
         errors1[name4] = "*Fields are required";
- 
+        $('#OfficeState').css('border-color', "red")
         $( "#OfficeState1" ).focus();
     }
     else if(this.state.data.OfficePincode === "" && this.state.data.Communication === "Office")
@@ -857,7 +857,7 @@ class Form1 extends Component {
         let name4= "OfficeCountry";
         this.setState(errors1);
         errors1[name4] = "*Fields are required";
-
+        $('#OfficeCountry').css('border-color', "red")
         $( "#OfficeCountry1" ).focus();
     }
     else if(this.state.data.CountryCode === "" )
@@ -896,7 +896,7 @@ class Form1 extends Component {
         let name4= "Email";
         this.setState(errors1);
         errors1[name4] = "*Fields are required";
- 
+        $('#Email').css('border-color', "red")
         $( "#Email1" ).focus();
     }
     else if(this.state.data.Status === "")
@@ -1055,7 +1055,7 @@ class Form1 extends Component {
         let name4= "RAState";
         this.setState(errors1);
         errors1[name4] = "*Fields are required";
- 
+        $('#RAState').css('border-color', "red")
         $( "#RAState1" ).focus();
     }
     else if(this.state.data.RAPincode === "")
@@ -1074,7 +1074,7 @@ class Form1 extends Component {
         let name4= "POI";
         this.setState(errors1);
         errors1[name4] = "*Fields are required";
- 
+        $('#POI').css('border-color', "red")
         $( "#POI" ).focus();
     }
     else if(this.state.data.POA === "")
@@ -1083,7 +1083,7 @@ class Form1 extends Component {
         let name4= "POA";
         this.setState(errors1);
         errors1[name4] = "*Fields are required";
- 
+        $('#POB').css('border-color', "red")
         $( "#POA" ).focus();
     }
     else if(this.state.data.POB === "")
@@ -1092,7 +1092,7 @@ class Form1 extends Component {
         let name4= "POB";
         this.setState(errors1);
         errors1[name4] = "*Fields are required";
- 
+        $('#POB').css('border-color', "red")
         $( "#POB" ).focus();
     }
     else if(this.state.data.Applicant === "")
@@ -1101,7 +1101,7 @@ class Form1 extends Component {
         let name4= "Applicant";
         this.setState(errors1);
         errors1[name4] = "*Fields are required";
- 
+        $('#Applicant').css('border-color', "red")
         $( "#Applicant" ).focus();
     }
     else if(this.state.data.Capacity === "")
@@ -1110,7 +1110,7 @@ class Form1 extends Component {
         let name4= "Capacity";
         this.setState(errors1);
         errors1[name4] = "*Fields are required";
- 
+        $('#Capacity').css('border-color', "red")
         $( "#Capacity" ).focus();
     }
     else if(this.state.errors.FirstName === "" && this.state.errors.LastName === "" 
@@ -1774,62 +1774,54 @@ if(this.state.errors.LastName !== "")
 
     if(e.target.id === "6")
     {
-        this.setState(prevState => ({
-            data: {
-                ...prevState.data,
-                OtherLastName : ""
-            }
-        }))
+        let data1 = this.state.data;
+        let name1= "OtherFirstName";
+        this.setState(data1);
+        data1[name1] = "";
+
+        let data2 = this.state.data;
+        let name2= "OtherLastName";
+        this.setState(data2);
+        data2[name2] = "";
+
+        let data3 = this.state.data;
+        let name3= "OtherMiddleName";
+        this.setState(data3);
+        data3[name3] = "";
+
+        let data4 = this.state.data;
+        let name4= "NameTitleTwo";
+        this.setState(data4);
+        data4[name4] = "";
+
+        let errors1 = this.state.errors;
+        let name5= "OtherLastName";
+        this.setState(errors1);
+        errors1[name5] = "";
+        this.ResetOtherLastNameError();
  
-        this.setState(prevState => ({
-            data: {
-                ...prevState.data,
-                OtherFirstName : ""
-            }
-        }))
+        let errors2 = this.state.errors;
+        let name6= "OtherFirstName";
+        this.setState(errors2);
+        errors2[name6] = "";
+        this.ResetOtherFirstNameError();
+   
+        let errors3 = this.state.errors;
+        let name7= "OtherMiddleName";
+        this.setState(errors3);
+        errors3[name7] = "";
+        this.ResetOtherMiddleNameError();
+     
 
-        this.setState(prevState => ({
-            data: {
-                ...prevState.data,
-                OtherMiddleName : ""
-            }
-        }))
+        let errors4 = this.state.errors;
+        let name8= "NameTitleTwo";
+        this.setState(errors4);
+        errors4[name8] = "";
 
-        this.setState(prevState => ({
-            data: {
-                ...prevState.data,
-                NameTitleTwo : ""
-            }
-        }))
-
-        this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                OtherLastName : ""
-            }
-        }))
-
-        this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                OtherFirstName : ""
-            }
-        }))
-
-        this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                OtherMiddleName : ""
-            }
-        }))
-
-        this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                NameTitleTwo : ""
-            }
-        }))
-
+        for (var i = 7;i <= 10; i++)
+        {
+            document.getElementById(i).checked = false;
+        }
         
     }
    
@@ -1912,6 +1904,7 @@ if(this.state.errors.LastName !== "")
             let name4= "MotherLastName";
             this.setState(errors1);
             errors1[name4] = "";
+            this.ResetMotherLastNameError();
    
         }
 
@@ -1921,7 +1914,18 @@ if(this.state.errors.LastName !== "")
             let name4= "MotherFirstName";
             this.setState(errors1);
             errors1[name4] = "";
-  
+            this.ResetMotherFirstNameError();
+        }
+    }
+    else {
+        if(this.state.data.MotherLastName === "")
+        {
+            this.HighlightMotherLastNameError();
+        }
+
+        if(this.state.data.MotherFirstName === "")
+        {
+            this.HighlightMotherFirstNameError();
         }
     }
 
@@ -1956,81 +1960,82 @@ if(this.state.errors.LastName !== "")
        if(this.state.data.OfficeName === "" || ((isNaN(this.state.data.OfficeName) === false) 
        && (this.state.data.OfficeName.match(/^[ ]*$/))))
        { 
-            this.setState(prevState => ({
-                errors: {
-                    ...prevState.errors,
-                    OfficeName: "*Please enter your Office's Name"
-                }
-            }))
-            this.state.isModalEnabled =  false;
+        let errors1 = this.state.errors;
+        let name4= "OfficeName";
+        this.setState(errors1);
+        errors1[name4] = "*Please enter your Office's Name";
+        this.HighlightOfficeNameError();
+            this.state.imsModalEnabled =  false;
        }
 
        if(this.state.data.OfficeFlat === "" || ((isNaN(this.state.data.OfficeFlat) === false) 
        && (this.state.data.OfficeFlat.match(/^[ ]*$/))))
        {     
-           this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                OfficeFlat : "*Please enter your Office Flat / Room / Door / Block No."
-            }
-           }))       
+        let errors1 = this.state.errors;
+        let name4= "OfficeFlat";
+        this.setState(errors1);
+        errors1[name4] = "*Please enter your Office Flat / Room / Door / Block No.";
+        this.HighlightOfficeFlatError();
            this.state.isModalEnabled =  false;
        }
 
        if(this.state.data.OfficePremises === "" || ((isNaN(this.state.data.OfficePremises) === false) 
        && (this.state.data.OfficePremises.match(/^[ ]*$/))))
        {     
-           this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                OfficePremises : "*Please enter your Office Premises / Building / Village"
-            }
-          }))
+
+        let errors1 = this.state.errors;
+        let name4= "OfficePremises";
+        this.setState(errors1);
+        errors1[name4] = "*Please enter your Office Premises / Building / Village";
+        this.HighlightOfficePremisesError();
+ 
            this.state.isModalEnabled =  false;
        }
     
        if(this.state.data.OfficeRoad === "" || ((isNaN(this.state.data.OfficeRoad) === false) 
        && (this.state.data.OfficeRoad.match(/^[ ]*$/))))
        { 
-           this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                OfficeRoad : "*Please enter your Office Road / Street / Lane / Post Office"
-            }
-           }))
+
+        let errors1 = this.state.errors;
+        let name4= "OfficeRoad";
+        this.setState(errors1);
+        errors1[name4] = "*Please enter your Office Road / Street / Lane / Post Office";
+        this.HighlightOfficeRoadError();
+ 
            this.state.isModalEnabled =  false;
        }
      
        if(this.state.data.OfficeArea === "" || (isNaN(this.state.data.OfficeArea) === false))
        {  
-           this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                OfficeArea : "*Please enter your Office Area / Locality / Taluka / Sub-division"
-            }
-           }))
+
+        let errors1 = this.state.errors;
+        let name4= "OfficeArea";
+        this.setState(errors1);
+        errors1[name4] = "*Please enter your Office Area / Locality / Taluka / Sub-division";
+        this.HighlightOfficeAreaError();
+
            this.state.isModalEnabled =  false;
        }
 
        if(this.state.data.OfficeTown === "" || (isNaN(this.state.data.OfficeTown) === false))
        {   
-           this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                OfficeTown : "*Please enter your Office Town / City / District"
-            }
-           }))
+
+        let errors1 = this.state.errors;
+        let name4= "OfficeTown";
+        this.setState(errors1);
+        errors1[name4] = "*Please enter your Office Town / City / District";
+        this.HighlightOfficeTownError();
            this.state.isModalEnabled =  false;
        }
 
        if(this.state.data.OfficeState === "" || (isNaN(this.state.data.OfficeState) === false))
        {  
-           this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                OfficeState : "*Please enter your Office State"
-            }
-           }))
+
+        let errors1 = this.state.errors;
+        let name4= "OfficeState";
+        this.setState(errors1);
+        errors1[name4] = "*Please enter your Office State";
+        $('#OfficeState').css('border-color', "red")
            let val = this.state.isModalEnabled;
            val = false;
            this.setState({val});
@@ -2038,23 +2043,24 @@ if(this.state.errors.LastName !== "")
 
        if(this.state.data.OfficePincode === "" || (this.state.data.OfficePincode.match(/^[ ]*$/)))
        {   
-           this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                OfficePincode : "*Please enter your Office Pincode"
-            }
-           }))
+
+        let errors1 = this.state.errors;
+        let name4= "OfficePincode";
+        this.setState(errors1);
+        errors1[name4] = "*Please enter your Office Pincode";
+        this.HighlightOfficePincodeError();
+
+      
            this.state.isModalEnabled =  false;
        }
       
        if(this.state.data.OfficeCountry === "" || (isNaN(this.state.data.OfficeCountry) === false))
        {  
-           this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                OfficeCountry : "*Please enter your OfficeCountry"
-            }
-           }))
+        let errors1 = this.state.errors;
+        let name4= "OfficeCountry";
+        this.setState(errors1);
+        errors1[name4] = "*Please enter your OfficeCountry";
+        $('#OfficeCountry').css('border-color', "red")
            this.state.isModalEnabled =  false;
        }
         
@@ -2067,92 +2073,91 @@ if(this.state.errors.LastName !== "")
 
        if(this.state.errors.OfficeName === "*Please enter your Office's Name" )
        { 
-           this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                OfficeName : ""
-            }
-          }))
+        let errors1 = this.state.errors;
+        let name4= "OfficeName";
+        this.setState(errors1);
+        errors1[name4] = "";
+        this.ResetOfficeNameError();
+ 
        }
 
        if(this.state.errors.OfficeFlat === "*Please enter your Office Flat / Room / Door / Block No.")
        { 
-           this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                OfficeFlat : ""
-            }
-          }))
+        let errors1 = this.state.errors;
+        let name4= "OfficeFlat";
+        this.setState(errors1);
+        errors1[name4] = "";
+        this.ResetOfficeFlatError();
+
        }
 
        if(this.state.errors.OfficePremises === "*Please enter your Office Premises / Building / Village")
        { 
-           this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                OfficePremises : ""
-            }
-          }))
+        let errors1 = this.state.errors;
+        let name4= "OfficePremises";
+        this.setState(errors1);
+        errors1[name4] = "";
+        this.ResetOfficePremisesError();
+ 
        }
 
        if(this.state.errors.OfficeRoad === "*Please enter your Office Road / Street / Lane / Post Office")
        {
-           this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                OfficeRoad : ""
-            }
-          }))
+        let errors1 = this.state.errors;
+        let name4= "OfficeRoad";
+        this.setState(errors1);
+        errors1[name4] = "";
+        this.ResetOfficeRoadError();
+
        }
 
        if(this.state.errors.OfficeArea === "*Please enter your Office Area / Locality / Taluka / Sub-division")
        {
-           this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                OfficeArea : ""
-            }
-          }))
+        let errors1 = this.state.errors;
+        let name4= "OfficeArea";
+        this.setState(errors1);
+        errors1[name4] = "";
+        this.ResetOfficeAreaError();
+
        }
         
        if(this.state.errors.OfficeTown === "*Please enter your Office Town / City / District")
        {
-           this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                OfficeTown : ""
-            }
-           }))
+        let errors1 = this.state.errors;
+        let name4= "OfficeTown";
+        this.setState(errors1);
+        errors1[name4] = "";
+        this.ResetOfficeTownError();
+ 
        }
 
        if(this.state.errors.OfficeState === "*Please enter your Office State")
        {
-           this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                OfficeState : ""
-            }
-           })) 
+        let errors1 = this.state.errors;
+        let name4= "OfficeState";
+        this.setState(errors1);
+        errors1[name4] = "";
+        $('#OfficeState').css('border-color', '')
+
        }
 
        if(this.state.errors.OfficePincode === "*Please enter your Office Pincode")
        {
-           this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                OfficePincode : ""
-            }
-          }))
+        let errors1 = this.state.errors;
+        let name4= "OfficePincode";
+        this.setState(errors1);
+        errors1[name4] = "";
+        this.ResetOfficePincodeError();
        }
 
        if(this.state.errors.OfficeCountry === "*Please enter your OfficeCountry")
        {
-           this.setState(prevState => ({
-            errors: {
-                ...prevState.errors,
-                OfficeCountry : ""
-            }
-          }))
+        let errors1 = this.state.errors;
+        let name4= "OfficeCountry";
+        this.setState(errors1);
+        errors1[name4] = "";
+        $('#OfficeCountry').css('border-color', '')
+     
        }
     }
 
@@ -2237,6 +2242,7 @@ if(this.state.errors.LastName !== "")
             let name4= "Income";
             this.setState(errors1);
             errors1[name4] = "";
+
       
         }
         
@@ -2342,24 +2348,15 @@ if(this.state.errors.LastName !== "")
         let name4= "BusinessCode1";
         this.setState(errors1);
         errors1[name4] = "";
+        $('#BusinessCodeDiv').css('border-color', '')
 
         let errors2 = this.state.errors;
         let name5= "BusinessCode2";
         this.setState(errors2);
         errors2[name5] = "";
+        $('#BusinessCodeDiv1').css('border-color', '')
 
     }
-    // else if ( (document.getElementsByTagName("NoIncome").checked === false &&
-    // document.getElementsByTagName("IncomeBusiness").checked === true))
-    // {
-    //      console.log("condition 3")
-
-    // }
-    // else if ( (document.getElementsByTagName("NoIncome").checked === false &&
-    // document.getElementsByTagName("IncomeBusiness").checked === false))
-    // {
-    //      console.log("condition 4")
-    // }
     else if (document.getElementsByTagName("IncomeBusiness").checked === true)
     {
         console.log("condition 3")
@@ -2410,12 +2407,13 @@ if(this.state.errors.LastName !== "")
         let name4= "BusinessCode1";
         this.setState(errors1);
         errors1[name4] = "";
+        $('#BusinessCodeDiv').css('border-color', '')
  
         let errors2 = this.state.errors;
         let name5= "BusinessCode2";
         this.setState(errors2);
         errors2[name5] = "";
- 
+        $('#BusinessCodeDiv1').css('border-color', '')
     }
     
     console.log("isenabled", this.state.isEnabled);
@@ -2610,121 +2608,59 @@ if(this.state.errors.LastName !== "")
         this.setState(errors);
         errors[name1] = "";
 
-        // this.setState(prevState => ({
-        //     errors: {
-        //         ...prevState.errors,
-        //         IncomeBusiness: ""
-        //     }
-        //    }))
-
            let errors1 = this.state.errors;
            let name2= "BusinessCode1";
            this.setState(errors1);
            errors1[name2] = "";
+           $('#BusinessCodeDiv').css('border-color', '')
     
-        //    this.setState(prevState => ({
-        //     errors: {
-        //         ...prevState.errors,
-        //         BusinessCode1: ""
-        //     }
-        //    }))
 
            let errors2 = this.state.errors;
            let name3= "BusinessCode2";
            this.setState(errors2);
            errors2[name3] = "";
-    
-        //    this.setState(prevState => ({
-        //     errors: {
-        //         ...prevState.errors,
-        //         BusinessCode2: ""
-        //     }
-        //    }))
+           $('#BusinessCodeDiv1').css('border-color', '')
 
            let data2 = this.state.data;
            let name4= "IncomeBusiness";
            this.setState(data2);
            data2[name4] = "";
-    
-        //    this.setState(prevState => ({
-        //     data: {
-        //         ...prevState.data,
-        //         IncomeBusiness: ""
-        //     }
-        //    }))
+     
 
            let data3 = this.state.data;
            let name5= "BusinessCode1";
            this.setState(data3);
            data3[name5] = "";
-    
-        //    this.setState(prevState => ({
-        //     data: {
-        //         ...prevState.data,
-        //         BusinessCode1: ""
-        //     }
-        //    }))
+   
     
            let data4 = this.state.data;
            let name6= "BusinessCode2";
            this.setState(data4);
            data4[name6] = "";
-
-        //    this.setState(prevState => ({
-        //     data: {
-        //         ...prevState.data,
-        //         BusinessCode2: ""
-        //     }
-        //    }))
-
+ 
            let data5 = this.state.data;
            let name7= "Salary";
            this.setState(data5);
            data5[name7] = "";
     
-        //    this.setState(prevState => ({
-        //     data: {
-        //         ...prevState.data,
-        //         Salary: ""
-        //     }
-        //    }))
 
            let data6 = this.state.data;
            let name8= "CapitalGains";
            this.setState(data6);
            data6[name8] = "";
-    
-        //    this.setState(prevState => ({
-        //     data: {
-        //         ...prevState.data,
-        //         CapitalGains: ""
-        //     }
-        //    }))
+     
     
            let data7 = this.state.data;
            let name9= "IncomeOtherSource";
            this.setState(data7);
            data7[name9] = "";
-
-        //    this.setState(prevState => ({
-        //     data: {
-        //         ...prevState.data,
-        //         IncomeOtherSource: ""
-        //     }
-        //    }))
+ 
 
            let data8 = this.state.data;
            let name10= "IncomeFromHouse";
            this.setState(data8);
            data8[name10] = "";
     
-        //    this.setState(prevState => ({
-        //     data: {
-        //         ...prevState.data,
-        //         IncomeFromHouse: ""
-        //     }
-        //    }))
-
 
     }
     else if(document.getElementsByTagName("NoIncome").checked === false)
@@ -12807,9 +12743,7 @@ async validateOfficeName(event) {
              this.state.isModalEnabled =  false;
              this.HighlightOfficeNameError();
         }
-
-    }
-    else if (typeof  this.state.data.OfficeName !== "undefined") {
+       else if (typeof  this.state.data.OfficeName !== "undefined") {
        if (!this.state.data.OfficeName.match(/^[a-zA-Z0-9 ]*$/)) {
 
         let errors = this.state.errors;
@@ -12821,6 +12755,9 @@ async validateOfficeName(event) {
            this.HighlightOfficeNameError();
        }
    }
+
+    }
+    
  
    localStorage.setItem('localdata', JSON.stringify(this.state.data));
    localStorage.setItem('localerror', JSON.stringify(this.state.errors));
@@ -13591,19 +13528,8 @@ async validateRegistrationNumber(event) {
  
    this.ResetRegistrationNumberError();
 
-   if(this.state.data.RegistrationNumber === "" )
-   { 
-    let errors = this.state.errors;
-    let name = "RegistrationNumber";
-    this.setState(errors);
-    errors[name] = "*Please enter your Residence Pincode";
- 
-       this.state.isModalEnabled =  false;
-       this.HighlightRegistrationNumberError();
-
-   }
-   else if (typeof  this.state.data.RegistrationNumber !== "undefined") {
-       if (!this.state.data.RegistrationNumber.match(/^[1-9][0-9]*$/)) {
+   if (typeof  this.state.data.RegistrationNumber !== "undefined") {
+       if (!this.state.data.RegistrationNumber.match(/^[1-9][0-9 ]*$/)) {
 
         let errors = this.state.errors;
         let name = "RegistrationNumber";
@@ -14695,7 +14621,7 @@ handleInput = (event) => {
       <div className="navbar">
        <label className="navtitle">Panform</label>
        <button  className="button button3 navbutton"  onClick={this.onOpenModal}>Download </button>
-       <a href="/" className="button1 button3 navbutton"  onClick={this.handleResetall}>Reset </a>
+       <a href="/panform" className="button1 button3 navbutton"  onClick={this.handleResetall}>Reset </a>
         </div>
         <Modal   open={open} onClose={this.onCloseModal} center>
             <br />

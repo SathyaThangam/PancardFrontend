@@ -439,7 +439,7 @@ class Panmain extends React.Component {
         const dataa = this.state.number.phonenumber;
         this.setState({ dataa })
         console.log("vvv", this.state.number)
-        axios.post('http://localhost:5000/checkphonenumber', this.state.number)
+        axios.post('http://159.89.165.174:5000/checkphonenumber', this.state.number)
             .then(function (response) {
                 if (response.data == "Nulldata") {
                     alert("Please fill the form")
