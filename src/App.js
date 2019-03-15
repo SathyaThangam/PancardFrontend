@@ -4,7 +4,8 @@ import "./Panmain.css";
 // import Form1 from './Form1';
 import Panmain from './Panmain.js';
 // import Login from './login';
-import {BrowserRouter,Route} from "react-router-dom";
+// import {BrowserRouter,Route} from "react-router-dom";
+import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 import Form1 from './/Form1';
 
 class App extends Component {
@@ -16,12 +17,12 @@ class App extends Component {
       //     {/* <Login /> */}
       // </div>
 
-      <BrowserRouter>
+      <Router>
       <div>
       <Route path="/" component={Panmain} exact/>
       <Route path="/panform" component={Form1}/>
       </div>
-      </BrowserRouter>
+      </Router>
 
 
     );

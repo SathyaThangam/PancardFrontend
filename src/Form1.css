@@ -321,7 +321,7 @@ flex-wrap: wrap; */
 .navtitle {
  font-size: 25px;
  color: #ffffff;
- margin-left:  600px;
+ margin-left:  500px;
 }
 
 /* .navbutton {
@@ -339,9 +339,14 @@ flex-wrap: wrap; */
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  margin-left: 300px;
+  
   
 }
+
+.resetbutton {
+  margin-left: 1% !important;
+}
+
 .button1 {
   background-color: #4CAF50; /* Green */
   border: none;
@@ -355,7 +360,10 @@ flex-wrap: wrap; */
   cursor: pointer;
   margin-left: 10px;
 }
-.button3 {border-radius: 8px;}
+.button3 {
+  border-radius: 8px;
+  margin-left: 25%;
+}
 
 /* Modal */
 
@@ -477,7 +485,7 @@ margin-left: 44%;
 /* Fifth Component */
 
 .ColouredLabel.Top_space {
-  margin-top: 0.4%;
+  margin-top: 1.5%;
 }
  
 .Day {

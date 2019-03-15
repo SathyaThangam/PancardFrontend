@@ -897,7 +897,7 @@ class Form1 extends Component {
         this.setState(errors1);
         errors1[name4] = "*Fields are required";
         $('#Email').css('border-color', "red")
-        $( "#Email1" ).focus();
+        $( "#Email" ).focus();
     }
     else if(this.state.data.Status === "")
     {
@@ -908,7 +908,7 @@ class Form1 extends Component {
  
         $( "#22" ).focus();
     }
-    else if((this.state.data.Status === "Company"  && this.state.data.RegistrationNumber === ""))
+    else if((this.state.data.Status === "25"  && this.state.data.RegistrationNumber === ""))
     {
         let errors1 = this.state.errors;
         let name4= "RegistrationNumber";
@@ -918,7 +918,17 @@ class Form1 extends Component {
         $( "#RegistrationNumber1" ).focus();
         this.HighlightRegistrationNumberError();
     }
-    else if(this.state.data.Status === "Limited Liability Partnership" && this.state.data.RegistrationNumber === "")
+    else if((this.state.data.Status === "26"  && this.state.data.RegistrationNumber === ""))
+    {
+        let errors1 = this.state.errors;
+        let name4= "RegistrationNumber";
+        this.setState(errors1);
+        errors1[name4] = "*Registration number is required for Patnership firm";
+ 
+        $( "#RegistrationNumber1" ).focus();
+        this.HighlightRegistrationNumberError();
+    }
+    else if(this.state.data.Status === "32" && this.state.data.RegistrationNumber === "")
     {
         let errors1 = this.state.errors;
         let name4= "RegistrationNumber";
@@ -933,8 +943,8 @@ class Form1 extends Component {
         let errors1 = this.state.errors;
         let name4= "AadhaarNumber";
         this.setState(errors1);
-        errors1[name4] = "*Either Aadhaar number or Enrolment Id is required";
- 
+        errors1[name4] = "*Please enter your Aadhaar Number or Enrolment Id";
+         
         $( "#AadhaarNumber1" ).focus();
         this.HighlightAadhaarNumberError();
     }
@@ -1056,7 +1066,7 @@ class Form1 extends Component {
         this.setState(errors1);
         errors1[name4] = "*Fields are required";
         $('#RAState').css('border-color', "red")
-        $( "#RAState1" ).focus();
+        $( "#RAState" ).focus();
     }
     else if(this.state.data.RAPincode === "")
     {  
@@ -1083,7 +1093,7 @@ class Form1 extends Component {
         let name4= "POA";
         this.setState(errors1);
         errors1[name4] = "*Fields are required";
-        $('#POB').css('border-color', "red")
+        $('#POA').css('border-color', "red")
         $( "#POA" ).focus();
     }
     else if(this.state.data.POB === "")
@@ -1728,7 +1738,394 @@ if(this.state.errors.LastName !== "")
    }
    
   
- 
+  ResetOtherLastName = () =>  {
+
+    let data1 = this.state.data;
+    let name1= "OtherLastName1";
+    this.setState(data1);
+    data1[name1] = "";
+
+    let data2 = this.state.data;
+    let name2= "OtherLastName2";
+    this.setState(data2);
+    data2[name2] = "";
+
+    let data3 = this.state.data;
+    let name3= "OtherLastName3";
+    this.setState(data3);
+    data3[name3] = "";
+
+    let data4 = this.state.data;
+    let name4= "OtherLastName4";
+    this.setState(data4);
+    data4[name4] = "";
+
+    let data5 = this.state.data;
+    let name5= "OtherLastName";
+    this.setState(data5);
+    data5[name5] = "";
+
+    let data6 = this.state.data;
+    let name6= "OtherLastName6";
+    this.setState(data6);
+    data6[name6] = "";
+
+    let data7 = this.state.data;
+    let name7= "OtherLastName7";
+    this.setState(data7);
+    data7[name7] = "";
+
+    let data8 = this.state.data;
+    let name8= "OtherLastName8";
+    this.setState(data8);
+    data8[name8] = "";
+
+    let data9 = this.state.data;
+    let name9= "OtherLastName9";
+    this.setState(data9);
+    data9[name9] = "";
+    
+    let data10 = this.state.data;
+    let name10= "OtherLastName10";
+    this.setState(data10);
+    data10[name10] = "";
+
+    let data11 = this.state.data;
+    let name11= "OtherLastName11";
+    this.setState(data11);
+    data11[name11] = "";
+
+    let data12 = this.state.data;
+    let name12= "OtherLastName12";
+    this.setState(data12);
+    data12[name12] = "";
+
+    let data13 = this.state.data;
+    let name13= "OtherLastName13";
+    this.setState(data13);
+    data13[name13] = "";
+
+    let data14 = this.state.data;
+    let name14= "OtherLastName14";
+    this.setState(data14);
+    data14[name14] = "";
+
+    let data15 = this.state.data;
+    let name15= "OtherLastName15";
+    this.setState(data15);
+    data15[name15] = "";
+
+    let data16 = this.state.data;
+    let name16= "OtherLastName16";
+    this.setState(data16);
+    data16[name16] = "";
+
+    let data17 = this.state.data;
+    let name17= "OtherLastName17";
+    this.setState(data17);
+    data17[name17] = "";
+
+    let data18 = this.state.data;
+    let name18= "OtherLastName18";
+    this.setState(data18);
+    data18[name18] = "";
+
+    let data19 = this.state.data;
+    let name19= "OtherLastName19";
+    this.setState(data19);
+    data19[name19] = "";
+
+    let data20 = this.state.data;
+    let name20= "OtherLastName20";
+    this.setState(data20);
+    data20[name20] = "";
+
+    let data21 = this.state.data;
+    let name21= "OtherLastName21";
+    this.setState(data21);
+    data21[name21] = "";
+
+    let data22 = this.state.data;
+    let name22= "OtherLastName22";
+    this.setState(data22);
+    data22[name22] = "";
+
+    let data23 = this.state.data;
+    let name23= "OtherLastName23";
+    this.setState(data23);
+    data23[name23] = "";
+
+    let data24 = this.state.data;
+    let name24= "OtherLastName24";
+    this.setState(data24);
+    data24[name24] = "";
+
+    let data25 = this.state.data;
+    let name25= "OtherLastName25";
+    this.setState(data25);
+    data25[name25] = "";
+
+  
+  }
+
+  ResetOtherFirstName = () => {
+
+    let data1 = this.state.data;
+    let name1= "OtherFirstName1";
+    this.setState(data1);
+    data1[name1] = "";
+
+    let data2 = this.state.data;
+    let name2= "OtherFirstName2";
+    this.setState(data2);
+    data2[name2] = "";
+
+    let data3 = this.state.data;
+    let name3= "OtherFirstName3";
+    this.setState(data3);
+    data3[name3] = "";
+
+    let data4 = this.state.data;
+    let name4= "OtherFirstName4";
+    this.setState(data4);
+    data4[name4] = "";
+
+    let data5 = this.state.data;
+    let name5= "OtherFirstName";
+    this.setState(data5);
+    data5[name5] = "";
+
+    let data6 = this.state.data;
+    let name6= "OtherFirstName6";
+    this.setState(data6);
+    data6[name6] = "";
+
+    let data7 = this.state.data;
+    let name7= "OtherFirstName7";
+    this.setState(data7);
+    data7[name7] = "";
+
+    let data8 = this.state.data;
+    let name8= "OtherFirstName8";
+    this.setState(data8);
+    data8[name8] = "";
+
+    let data9 = this.state.data;
+    let name9= "OtherFirstName9";
+    this.setState(data9);
+    data9[name9] = "";
+    
+    let data10 = this.state.data;
+    let name10= "OtherFirstName10";
+    this.setState(data10);
+    data10[name10] = "";
+
+    let data11 = this.state.data;
+    let name11= "OtherFirstName11";
+    this.setState(data11);
+    data11[name11] = "";
+
+    let data12 = this.state.data;
+    let name12= "OtherFirstName12";
+    this.setState(data12);
+    data12[name12] = "";
+
+    let data13 = this.state.data;
+    let name13= "OtherFirstName13";
+    this.setState(data13);
+    data13[name13] = "";
+
+    let data14 = this.state.data;
+    let name14= "OtherFirstName14";
+    this.setState(data14);
+    data14[name14] = "";
+
+    let data15 = this.state.data;
+    let name15= "OtherFirstName15";
+    this.setState(data15);
+    data15[name15] = "";
+
+    let data16 = this.state.data;
+    let name16= "OtherFirstName16";
+    this.setState(data16);
+    data16[name16] = "";
+
+    let data17 = this.state.data;
+    let name17= "OtherFirstName17";
+    this.setState(data17);
+    data17[name17] = "";
+
+    let data18 = this.state.data;
+    let name18= "OtherFirstName18";
+    this.setState(data18);
+    data18[name18] = "";
+
+    let data19 = this.state.data;
+    let name19= "OtherFirstName19";
+    this.setState(data19);
+    data19[name19] = "";
+
+    let data20 = this.state.data;
+    let name20= "OtherFirstName20";
+    this.setState(data20);
+    data20[name20] = "";
+
+    let data21 = this.state.data;
+    let name21= "OtherFirstName21";
+    this.setState(data21);
+    data21[name21] = "";
+
+    let data22 = this.state.data;
+    let name22= "OtherFirstName22";
+    this.setState(data22);
+    data22[name22] = "";
+
+    let data23 = this.state.data;
+    let name23= "OtherFirstName23";
+    this.setState(data23);
+    data23[name23] = "";
+
+    let data24 = this.state.data;
+    let name24= "OtherFirstName24";
+    this.setState(data24);
+    data24[name24] = "";
+
+    let data25 = this.state.data;
+    let name25= "OtherFirstName25";
+    this.setState(data25);
+    data25[name25] = "";
+
+
+  }
+
+  ResetOtherMiddleName = () => {
+
+    let data1 = this.state.data;
+    let name1= "OtherMiddleName1";
+    this.setState(data1);
+    data1[name1] = "";
+
+    let data2 = this.state.data;
+    let name2= "OtherMiddleName2";
+    this.setState(data2);
+    data2[name2] = "";
+
+    let data3 = this.state.data;
+    let name3= "OtherMiddleName3";
+    this.setState(data3);
+    data3[name3] = "";
+
+    let data4 = this.state.data;
+    let name4= "OtherMiddleName4";
+    this.setState(data4);
+    data4[name4] = "";
+
+    let data5 = this.state.data;
+    let name5= "OtherMiddleName";
+    this.setState(data5);
+    data5[name5] = "";
+
+    let data6 = this.state.data;
+    let name6= "OtherMiddleName6";
+    this.setState(data6);
+    data6[name6] = "";
+
+    let data7 = this.state.data;
+    let name7= "OtherMiddleName7";
+    this.setState(data7);
+    data7[name7] = "";
+
+    let data8 = this.state.data;
+    let name8= "OtherMiddleName8";
+    this.setState(data8);
+    data8[name8] = "";
+
+    let data9 = this.state.data;
+    let name9= "OtherMiddleName9";
+    this.setState(data9);
+    data9[name9] = "";
+    
+    let data10 = this.state.data;
+    let name10= "OtherMiddleName10";
+    this.setState(data10);
+    data10[name10] = "";
+
+    let data11 = this.state.data;
+    let name11= "OtherMiddleName11";
+    this.setState(data11);
+    data11[name11] = "";
+
+    let data12 = this.state.data;
+    let name12= "OtherMiddleName12";
+    this.setState(data12);
+    data12[name12] = "";
+
+    let data13 = this.state.data;
+    let name13= "OtherMiddleName13";
+    this.setState(data13);
+    data13[name13] = "";
+
+    let data14 = this.state.data;
+    let name14= "OtherMiddleName14";
+    this.setState(data14);
+    data14[name14] = "";
+
+    let data15 = this.state.data;
+    let name15= "OtherMiddleName15";
+    this.setState(data15);
+    data15[name15] = "";
+
+    let data16 = this.state.data;
+    let name16= "OtherMiddleName16";
+    this.setState(data16);
+    data16[name16] = "";
+
+    let data17 = this.state.data;
+    let name17= "OtherMiddleName17";
+    this.setState(data17);
+    data17[name17] = "";
+
+    let data18 = this.state.data;
+    let name18= "OtherMiddleName18";
+    this.setState(data18);
+    data18[name18] = "";
+
+    let data19 = this.state.data;
+    let name19= "OtherMiddleName19";
+    this.setState(data19);
+    data19[name19] = "";
+
+    let data20 = this.state.data;
+    let name20= "OtherMiddleName20";
+    this.setState(data20);
+    data20[name20] = "";
+
+    let data21 = this.state.data;
+    let name21= "OtherMiddleName21";
+    this.setState(data21);
+    data21[name21] = "";
+
+    let data22 = this.state.data;
+    let name22= "OtherMiddleName22";
+    this.setState(data22);
+    data22[name22] = "";
+
+    let data23 = this.state.data;
+    let name23= "OtherMiddleName23";
+    this.setState(data23);
+    data23[name23] = "";
+
+    let data24 = this.state.data;
+    let name24= "OtherMiddleName24";
+    this.setState(data24);
+    data24[name24] = "";
+
+    let data25 = this.state.data;
+    let name25= "OtherMiddleName25";
+    this.setState(data25);
+    data25[name25] = "";
+
+  }
 
 
   handleNameTitleOneCheck = (e,name) =>  {
@@ -1774,16 +2171,19 @@ if(this.state.errors.LastName !== "")
 
     if(e.target.id === "6")
     {
+        this.ResetOtherFirstName();
         let data1 = this.state.data;
         let name1= "OtherFirstName";
         this.setState(data1);
         data1[name1] = "";
 
+        this.ResetOtherLastName();
         let data2 = this.state.data;
         let name2= "OtherLastName";
         this.setState(data2);
         data2[name2] = "";
 
+        this.ResetOtherMiddleName();
         let data3 = this.state.data;
         let name3= "OtherMiddleName";
         this.setState(data3);
@@ -1895,7 +2295,7 @@ if(this.state.errors.LastName !== "")
     check[name] = e.target.id;
     this.setState({ check })
 
-    if(e.target.id === "14")
+    if(this.state.data.ParentName === "14")
     {
         if(this.state.errors.MotherLastName === "*Please enter Mother's name")
         {
@@ -1918,13 +2318,23 @@ if(this.state.errors.LastName !== "")
         }
     }
     else {
-        if(this.state.data.MotherLastName === "")
+
+    
+        if(this.state.data.MotherLastName === "" || (isNaN(this.state.data.MotherLastName) === false))
         {
+            let errors1 = this.state.errors;
+            let name4= "MotherLastName";
+            this.setState(errors1);
+            errors1[name4] = "*Please enter Mother's name";
             this.HighlightMotherLastNameError();
         }
 
-        if(this.state.data.MotherFirstName === "")
+        if(this.state.data.MotherFirstName === "" || (isNaN(this.state.data.MotherFirstName) === false))
         {
+            let errors1 = this.state.errors;
+            let name4= "MotherFirstName";
+            this.setState(errors1);
+            errors1[name4] = "*Please enter Mother's name";
             this.HighlightMotherFirstNameError();
         }
     }
@@ -1951,7 +2361,7 @@ if(this.state.errors.LastName !== "")
     check[name] = e.target.id;
     this.setState({ check })
 
-    if(e.target.id === "17")
+    if(this.state.data.Communication === "17")
     {
        this.state.officeEnabled = true;
        let val = this.state.officeEnabled;
@@ -2206,6 +2616,38 @@ if(this.state.errors.LastName !== "")
     const check = this.state.data;
     check[name] = e.target.id;
     this.setState({ check })
+
+    this.ResetRegistrationNumberError();
+    if((this.state.data.Status === "25"  && this.state.data.RegistrationNumber === ""))
+    {
+        let errors1 = this.state.errors;
+        let name4= "RegistrationNumber";
+        this.setState(errors1);
+        errors1[name4] = "*Registration number is required for Company";
+ 
+        $( "#RegistrationNumber1" ).focus();
+        this.HighlightRegistrationNumberError();
+    }
+    else if((this.state.data.Status === "26"  && this.state.data.RegistrationNumber === ""))
+    {
+        let errors1 = this.state.errors;
+        let name4= "RegistrationNumber";
+        this.setState(errors1);
+        errors1[name4] = "*Registration number is required for Patnership firm";
+ 
+        $( "#RegistrationNumber1" ).focus();
+        this.HighlightRegistrationNumberError();
+    }
+    else if(this.state.data.Status === "32" && this.state.data.RegistrationNumber === "")
+    {
+        let errors1 = this.state.errors;
+        let name4= "RegistrationNumber";
+        this.setState(errors1);
+        errors1[name4] = "*Registration number is required for Limited Liability Partnership";
+ 
+        $( "#RegistrationNumber1" ).focus();
+        this.HighlightRegistrationNumberError();
+    }
  
     localStorage.setItem('localdata', JSON.stringify(this.state.data));
     localStorage.setItem('localerror', JSON.stringify(this.state.errors));
@@ -2290,7 +2732,7 @@ if(this.state.errors.LastName !== "")
     
   }
 
-
+ 
   handleIncomeBusinessCheck = (e,name) =>  {
 
 
@@ -2299,68 +2741,176 @@ if(this.state.errors.LastName !== "")
         document.getElementsByTagName("IncomeBusiness").checked = true;
         
     }
-    if ( (document.getElementsByTagName("NoIncome").checked === true &&
-    document.getElementsByTagName("IncomeBusiness").checked === false))
-    { 
-        console.log("condition 4")
-        this.setState({isEnabled : true})
-        
-        document.getElementsByTagName("IncomeBusiness").checked = true;
-        const check = this.state.data;
-        check[name] = e.target.id;
-        this.setState({ check });
-
-        if(!(this.state.data.Salary === "" && this.state.data.CapitalGains === "" &&
-        this.state.data.IncomeBusiness === "" && this.state.data.IncomeOtherSource === "" &&
-        this.state.data.IncomeFromHouse === "" && this.state.data.NoIncome === ""))
-        {
-            let errors = this.state.errors;
-            let name= "Income";
-            this.setState(errors); 
-            errors[name] = "";
- 
+    if(document.getElementsByTagName("IncomeBusiness").checked === false )
+    {  
+        console.log("condition 44")
+       
+        if(this.state.isEnabled  == true){
+            console.log("1");
+            this.setState({isEnabled : false})
         }
-    }
-    else if ( (document.getElementsByTagName("NoIncome").checked === true &&
-    document.getElementsByTagName("IncomeBusiness").checked === true))
-    {
-        console.log("condition 2")
-        this.setState({isEnabled : false})
-        document.getElementsByTagName("IncomeBusiness").checked = false; 
+        else{
+            console.log("2");
+            this.setState({isEnabled : true})
+
+            let errors1 = this.state.errors;
+            let name2= "BusinessCode1";
+            this.setState(errors1);
+            errors1[name2] = "";
+            $('#BusinessCodeDiv').css({'border-color': ''})
+            $('#BusinessCodeDiv1').css({'border-color': ''})
+   
+ 
+            let errors2 = this.state.errors;
+            let name3= "BusinessCode2";
+            this.setState(errors2);
+            errors2[name3] = "";
+
+            let data2 = this.state.data;
+            let name7= "BusinessCode1";
+            this.setState(data2);
+            data2[name7] = "";
+     
+    
+            let data3 = this.state.data;
+            let name8= "BusinessCode2";
+            this.setState(data3);
+            data3[name8] = "";
+        }
+    
+        document.getElementsByTagName("IncomeBusiness").checked = true; 
         
 
         let data1 = this.state.data;
         let name1= "IncomeBusiness";
         this.setState(data1);
         data1[name1] = "";
+        $('#BusinessCodeDiv').css({'border-color': ''})
+        $('#BusinessCodeDiv1').css({'border-color': ''})
  
         let data2 = this.state.data;
         let name2= "BusinessCode1";
         this.setState(data2);
         data2[name2] = "";
+ 
 
         let data3 = this.state.data;
         let name3= "BusinessCode2";
         this.setState(data3);
         data3[name3] = "";
-
+ 
         let errors1 = this.state.errors;
         let name4= "BusinessCode1";
         this.setState(errors1);
         errors1[name4] = "";
-        $('#BusinessCodeDiv').css('border-color', '')
-
+ 
         let errors2 = this.state.errors;
         let name5= "BusinessCode2";
         this.setState(errors2);
         errors2[name5] = "";
-        $('#BusinessCodeDiv1').css('border-color', '')
-
+ 
     }
+  
+        // this.setState({isEnabled : false})
+        // document.getElementsByTagName("IncomeBusiness").checked = false; 
+        
+
+        // let data1 = this.state.data;
+        // let name1= "IncomeBusiness";
+        // this.setState(data1);
+        // data1[name1] = "";
+ 
+        // let data2 = this.state.data;
+        // let name2= "BusinessCode1";
+        // this.setState(data2);
+        // data2[name2] = "";
+
+        // let data3 = this.state.data;
+        // let name3= "BusinessCode2";
+        // this.setState(data3);
+        // data3[name3] = "";
+
+        // let errors1 = this.state.errors;
+        // let name4= "BusinessCode1";
+        // this.setState(errors1);
+        // errors1[name4] = "";
+
+        // let errors2 = this.state.errors;
+        // let name5= "BusinessCode2";
+        // this.setState(errors2);
+        // errors2[name5] = "";
+
+    // }
+    // else if ( (document.getElementsByTagName("NoIncome").checked === false &&
+    // document.getElementsByTagName("IncomeBusiness").checked === true))
+    // {
+    //      console.log("condition 3")
+
+    // }
+    // else if ( (document.getElementsByTagName("NoIncome").checked === false &&
+    // document.getElementsByTagName("IncomeBusiness").checked === false))
+    // {
+    //      console.log("condition 4")
+    // }
     else if (document.getElementsByTagName("IncomeBusiness").checked === true)
     {
         console.log("condition 3")
-        this.setState({isEnabled : true})
+        if(this.state.isEnabled  == true){
+            console.log("3");
+            this.setState({isEnabled : false})
+
+            let errors1 = this.state.errors;
+            let name2= "BusinessCode1";
+            this.setState(errors1);
+            errors1[name2] = "";
+            $('#BusinessCodeDiv').css({'border-color': ''})
+            $('#BusinessCodeDiv1').css({'border-color': ''})
+ 
+            let errors2 = this.state.errors;
+            let name3= "BusinessCode2";
+            this.setState(errors2);
+            errors2[name3] = "";
+
+
+            let data2 = this.state.data;
+            let name7= "BusinessCode1";
+            this.setState(data2);
+            data2[name7] = "";
+     
+    
+            let data3 = this.state.data;
+            let name8= "BusinessCode2";
+            this.setState(data3);
+            data3[name8] = "";
+        }
+        else{
+            console.log("4");
+            this.setState({isEnabled : true})
+            let errors1 = this.state.errors;
+            let name2= "BusinessCode1";
+            this.setState(errors1);
+            errors1[name2] = "";
+            $('#BusinessCodeDiv').css({'border-color': ''})
+            $('#BusinessCodeDiv1').css({'border-color': ''})
+ 
+            let errors2 = this.state.errors;
+            let name3= "BusinessCode2";
+            this.setState(errors2);
+            errors2[name3] = "";
+
+
+            let data2 = this.state.data;
+            let name7= "BusinessCode1";
+            this.setState(data2);
+            data2[name7] = "";
+     
+    
+            let data3 = this.state.data;
+            let name8= "BusinessCode2";
+            this.setState(data3);
+            data3[name8] = "";
+        }
+    
         
         document.getElementsByTagName("IncomeBusiness").checked = false;
         const check = this.state.data;
@@ -2379,42 +2929,41 @@ if(this.state.errors.LastName !== "")
         }
  
     }
-    else if(document.getElementsByTagName("IncomeBusiness").checked === false )
-    {  
-        console.log("condition 4")
-        this.setState({isEnabled : false})
+    // else if(document.getElementsByTagName("IncomeBusiness").checked === false )
+    // {  
+    //     console.log("condition 44")
+    //     this.setState({isEnabled : false})
     
-        document.getElementsByTagName("IncomeBusiness").checked = true; 
+    //     document.getElementsByTagName("IncomeBusiness").checked = true; 
         
 
-        let data1 = this.state.data;
-        let name1= "IncomeBusiness";
-        this.setState(data1);
-        data1[name1] = "";
+    //     let data1 = this.state.data;
+    //     let name1= "IncomeBusiness";
+    //     this.setState(data1);
+    //     data1[name1] = "";
  
-        let data2 = this.state.data;
-        let name2= "BusinessCode1";
-        this.setState(data2);
-        data2[name2] = "";
+    //     let data2 = this.state.data;
+    //     let name2= "BusinessCode1";
+    //     this.setState(data2);
+    //     data2[name2] = "";
  
 
-        let data3 = this.state.data;
-        let name3= "BusinessCode2";
-        this.setState(data3);
-        data3[name3] = "";
+    //     let data3 = this.state.data;
+    //     let name3= "BusinessCode2";
+    //     this.setState(data3);
+    //     data3[name3] = "";
  
-        let errors1 = this.state.errors;
-        let name4= "BusinessCode1";
-        this.setState(errors1);
-        errors1[name4] = "";
-        $('#BusinessCodeDiv').css('border-color', '')
+    //     let errors1 = this.state.errors;
+    //     let name4= "BusinessCode1";
+    //     this.setState(errors1);
+    //     errors1[name4] = "";
  
-        let errors2 = this.state.errors;
-        let name5= "BusinessCode2";
-        this.setState(errors2);
-        errors2[name5] = "";
-        $('#BusinessCodeDiv1').css('border-color', '')
-    }
+    //     let errors2 = this.state.errors;
+    //     let name5= "BusinessCode2";
+    //     this.setState(errors2);
+    //     errors2[name5] = "";
+ 
+    // }
     
     console.log("isenabled", this.state.isEnabled);
     console.log("isenabledcheck", this.state.isEnabledCheck)
@@ -2570,135 +3119,131 @@ if(this.state.errors.LastName !== "")
     
   }
 
-
   handleNoIncomeCheck = (e,name) =>  {
 
-   // console.log("checkbox",document.getElementsByTagName("NoIncome").checked)
-
-    if(isNaN( document.getElementsByTagName("NoIncome").checked))
-    {
+    // console.log("checkbox",document.getElementsByTagName("NoIncome").checked)
+ 
+     if(isNaN( document.getElementsByTagName("NoIncome").checked))
+     {
+         document.getElementsByTagName("NoIncome").checked = true;
+         console.log("true -no income")
+     }
+    
+     if(document.getElementsByTagName("NoIncome").checked === true)
+     {
+         console.log("false -no income")
+         document.getElementsByTagName("NoIncome").checked = false; 
+ 
+         let data = this.state.data;
+         let name= "NoIncome";
+         this.setState(data);
+         data[name] = "";
+ 
+         let val = false;
+         this.setState({isEnabledCheck : false});
+ 
+         let vall = false;
+         this.setState({isEnabled : false});
+ 
+ 
+         for (var i = 33;i <= 37; i++)
+         {
+            document.getElementById(i).checked = false;
+         }
+ 
+         let errors = this.state.errors;
+         let name1= "IncomeBusiness";
+         this.setState(errors);
+         errors[name1] = "";
+ 
+         $('#BusinessCodeDiv').css({'border-color': ''})
+         $('#BusinessCodeDiv1').css({'border-color': ''})
+ 
+            let errors1 = this.state.errors;
+            let name2= "BusinessCode1";
+            this.setState(errors1);
+            errors1[name2] = "";
+   
+ 
+            let errors2 = this.state.errors;
+            let name3= "BusinessCode2";
+            this.setState(errors2);
+            errors2[name3] = "";
+ 
+            let data2 = this.state.data;
+            let name4= "IncomeBusiness";
+            this.setState(data2);
+            data2[name4] = "";
+ 
+            let data3 = this.state.data;
+            let name5= "BusinessCode1";
+            this.setState(data3);
+            data3[name5] = "";
+    
+     
+            let data4 = this.state.data;
+            let name6= "BusinessCode2";
+            this.setState(data4);
+            data4[name6] = "";
+  
+            let data5 = this.state.data;
+            let name7= "Salary";
+            this.setState(data5);
+            data5[name7] = "";
+ 
+            let data6 = this.state.data;
+            let name8= "CapitalGains";
+            this.setState(data6);
+            data6[name8] = "";
+     
+            let data7 = this.state.data;
+            let name9= "IncomeOtherSource";
+            this.setState(data7);
+            data7[name9] = "";
+  
+            let data8 = this.state.data;
+            let name10= "IncomeFromHouse";
+            this.setState(data8);
+            data8[name10] = "";
+      
+ 
+ 
+     }
+     else if(document.getElementsByTagName("NoIncome").checked === false)
+     {
+         console.log("false -no income1")
         document.getElementsByTagName("NoIncome").checked = true;
-        console.log("true -no income")
-        
-    }
-    if(document.getElementsByTagName("NoIncome").checked === true)
-    {
-        console.log("false -no income")
-        document.getElementsByTagName("NoIncome").checked = false; 
-
-        let data = this.state.data;
-        let name= "NoIncome";
-        this.setState(data);
-        data[name] = "";
-
-        let val = false;
-        this.setState({isEnabledCheck : false});
-
+         const check = this.state.data;
+         check[name] = e.target.id;
+         this.setState({ check });
+ 
+         if(!(this.state.data.Salary === "" && this.state.data.CapitalGains === "" &&
+         this.state.data.IncomeBusiness === "" && this.state.data.IncomeOtherSource === "" &&
+         this.state.data.IncomeFromHouse === "" && this.state.data.NoIncome === ""))
+         {
+  
+            let errors3 = this.state.errors;
+            let name3= "Income";
+            this.setState(errors3);
+            errors3[name3] = "";
+         }
+  
+ 
+        let val = true;
+        this.setState({isEnabledCheck : true});
+ 
         let vall = false;
         this.setState({isEnabled : false});
-
-
-        for (var i = 33;i <= 37; i++)
-        {
-           document.getElementById(i).checked = false;
-        }
-
-        let errors = this.state.errors;
-        let name1= "IncomeBusiness";
-        this.setState(errors);
-        errors[name1] = "";
-
-           let errors1 = this.state.errors;
-           let name2= "BusinessCode1";
-           this.setState(errors1);
-           errors1[name2] = "";
-           $('#BusinessCodeDiv').css('border-color', '')
+ 
+     }
     
-
-           let errors2 = this.state.errors;
-           let name3= "BusinessCode2";
-           this.setState(errors2);
-           errors2[name3] = "";
-           $('#BusinessCodeDiv1').css('border-color', '')
-
-           let data2 = this.state.data;
-           let name4= "IncomeBusiness";
-           this.setState(data2);
-           data2[name4] = "";
+     console.log("isenabled", this.state.isEnabled);
+     console.log("isenabledcheck", this.state.isEnabledCheck)
      
-
-           let data3 = this.state.data;
-           let name5= "BusinessCode1";
-           this.setState(data3);
-           data3[name5] = "";
-   
-    
-           let data4 = this.state.data;
-           let name6= "BusinessCode2";
-           this.setState(data4);
-           data4[name6] = "";
- 
-           let data5 = this.state.data;
-           let name7= "Salary";
-           this.setState(data5);
-           data5[name7] = "";
-    
-
-           let data6 = this.state.data;
-           let name8= "CapitalGains";
-           this.setState(data6);
-           data6[name8] = "";
+     localStorage.setItem('localdata', JSON.stringify(this.state.data));
+     localStorage.setItem('localerror', JSON.stringify(this.state.errors));
      
-    
-           let data7 = this.state.data;
-           let name9= "IncomeOtherSource";
-           this.setState(data7);
-           data7[name9] = "";
- 
-
-           let data8 = this.state.data;
-           let name10= "IncomeFromHouse";
-           this.setState(data8);
-           data8[name10] = "";
-    
-
-    }
-    else if(document.getElementsByTagName("NoIncome").checked === false)
-    {
-        console.log("false -no income")
-        document.getElementsByTagName("NoIncome").checked = true;
-        const check = this.state.data;
-        check[name] = e.target.id;
-        this.setState({ check });
-
-        if(!(this.state.data.Salary === "" && this.state.data.CapitalGains === "" &&
-        this.state.data.IncomeBusiness === "" && this.state.data.IncomeOtherSource === "" &&
-        this.state.data.IncomeFromHouse === "" && this.state.data.NoIncome === ""))
-        {
- 
-           let errors3 = this.state.errors;
-           let name3= "Income";
-           this.setState(errors3);
-           errors3[name3] = "";
-        }
- 
-
-       let val = true;
-       this.setState({isEnabledCheck : true});
-
-       let vall = false;
-       this.setState({isEnabled : false});
-
-    }
-   
-    console.log("isenabled", this.state.isEnabled);
-    console.log("isenabledcheck", this.state.isEnabledCheck)
-    
-    localStorage.setItem('localdata', JSON.stringify(this.state.data));
-    localStorage.setItem('localerror', JSON.stringify(this.state.errors));
-    
-  }
-
+   }
 
  handleBackspaceKey = (event, backFocus, onFocus) => {
 
@@ -12226,8 +12771,34 @@ async validateMotherFirstName(event) {
 
   
    this.ResetMotherFirstNameError();
+
+   if(this.state.data.ParentName === "15")
+   {  
+    if(this.state.data.MotherFirstName === "" || (isNaN(this.state.data.MotherFirstName) === false))
+    { 
+     let errors = this.state.errors;
+     let name = "MotherFirstName";
+     this.setState(errors);
+     errors[name] = "*Please enter Mother's name";
+  
+        this.state.isModalEnabled =  false;
+        this.HighlightMotherFirstNameError();
+    }
+    if (typeof  this.state.data.MotherFirstName !== "undefined") {
+        if (!this.state.data.MotherFirstName.match(/^[a-zA-Z ]*$/)) {
  
-   if (typeof  this.state.data.MotherFirstName !== "undefined") {
+         let errors = this.state.errors;
+         let name = "MotherFirstName";
+         this.setState(errors);
+         errors[name] = "*Please enter alphabet characters only.";
+  
+            this.state.isModalEnabled =  false;
+            this.HighlightMotherFirstNameError();
+        }
+    }
+          
+   }
+   else if (typeof  this.state.data.MotherFirstName !== "undefined") {
        if (!this.state.data.MotherFirstName.match(/^[a-zA-Z ]*$/)) {
 
         let errors = this.state.errors;
@@ -12265,8 +12836,36 @@ async validateMotherLastName(event) {
          errors[name] = "";
  
    this.ResetMotherLastNameError();
+
+   if(this.state.data.ParentName === "15")
+   {  
+    console.log("error")
+    if(this.state.data.MotherLastName === "" || (isNaN(this.state.data.MotherLastName) === false))
+    { 
+     let errors = this.state.errors;
+     let name = "MotherLastName";
+     this.setState(errors);
+     errors[name] = "*Please enter Mother's name";
   
-   if (typeof  this.state.data.MotherLastName !== "undefined") {
+        this.state.isModalEnabled =  false;
+        this.HighlightMotherLastNameError();
+    }
+    if (typeof  this.state.data.MotherLastName !== "undefined") {
+        if (!this.state.data.MotherLastName.match(/^[a-zA-Z ]*$/)) {
+ 
+ 
+         let errors = this.state.errors;
+         let name = "MotherLastName";
+         this.setState(errors);
+         errors[name] = "*Please enter alphabet characters only.";
+           
+            this.state.isModalEnabled =  false;
+            this.HighlightMotherLastNameError();
+        }
+    }
+          
+   }
+   else if (typeof  this.state.data.MotherLastName !== "undefined") {
        if (!this.state.data.MotherLastName.match(/^[a-zA-Z ]*$/)) {
 
 
@@ -12730,7 +13329,7 @@ async validateOfficeName(event) {
  
    this.ResetOfficeNameError();
         
-    if(this.state.officeEnabled)
+    if(this.state.data.Communication === "17")
     {
         if(this.state.data.OfficeName === "" || ((isNaN(this.state.data.OfficeName) === false) 
         && (this.state.data.OfficeName.match(/^[ ]*$/))))
@@ -12743,7 +13342,7 @@ async validateOfficeName(event) {
              this.state.isModalEnabled =  false;
              this.HighlightOfficeNameError();
         }
-       else if (typeof  this.state.data.OfficeName !== "undefined") {
+       if (typeof  this.state.data.OfficeName !== "undefined") {
        if (!this.state.data.OfficeName.match(/^[a-zA-Z0-9 ]*$/)) {
 
         let errors = this.state.errors;
@@ -12756,6 +13355,18 @@ async validateOfficeName(event) {
        }
    }
 
+    }
+    else  if (typeof  this.state.data.OfficeName !== "undefined") {
+        if (!this.state.data.OfficeName.match(/^[a-zA-Z0-9 ]*$/)) {
+ 
+         let errors = this.state.errors;
+         let name = "OfficeName";
+         this.setState(errors);
+         errors[name] = "*Please enter alphabet characters only.";
+  
+            this.state.isModalEnabled =  false;
+            this.HighlightOfficeNameError();
+        }
     }
     
  
@@ -12781,7 +13392,7 @@ this.state.data.OfficeFlat = this.state.data.OfficeFlat1 + this.state.data.Offic
     errors[name] = "";
    this.ResetOfficeFlatError();
  
-    if(this.state.officeEnabled)
+    if(this.state.data.Communication === "17")
     {
         if(this.state.data.OfficeFlat === "" || ((isNaN(this.state.data.OfficeFlat) === false) 
         && (this.state.data.OfficeFlat.match(/^[ ]*$/))))
@@ -12793,6 +13404,17 @@ this.state.data.OfficeFlat = this.state.data.OfficeFlat1 + this.state.data.Offic
 
             this.state.isModalEnabled =  false;
             this.HighlightOfficeFlatError();
+        }
+        if (typeof  this.state.data.OfficeFlat !== "undefined") {
+            if (!this.state.data.OfficeFlat.match(/^[a-zA-Z0-9'-/ ]*$/)) {
+             let errors = this.state.errors;
+             let name = "OfficeFlat";
+             this.setState(errors);
+             errors[name] = "*Please enter alphanumeric characters only.";
+      
+                this.state.isModalEnabled =  false;
+                this.HighlightOfficeFlatError();
+            }
         }
     }
     else if (typeof  this.state.data.OfficeFlat !== "undefined") {
@@ -12832,7 +13454,7 @@ this.state.data.OfficePremises = this.state.data.OfficePremises1 + this.state.da
  
    this.ResetOfficePremisesError();
  
-   if(this.state.officeEnabled)
+   if(this.state.data.Communication === "17")
    {
     if(this.state.data.OfficePremises === "" || ((isNaN(this.state.data.OfficePremises) === false) 
     && (this.state.data.OfficePremises.match(/^[ ]*$/))))
@@ -12845,6 +13467,19 @@ this.state.data.OfficePremises = this.state.data.OfficePremises1 + this.state.da
   
         this.state.isModalEnabled =  false;
         this.HighlightOfficePremisesError();
+    }
+
+    if (typeof  this.state.data.OfficePremises !== "undefined") {
+        if (!this.state.data.OfficePremises.match(/^[a-zA-Z0-9 ]*$/)) {
+ 
+         let errors = this.state.errors;
+         let name = "OfficePremises";
+         this.setState(errors);
+         errors[name] = "*Please enter alphanumeric characters only.";
+   
+            this.state.isModalEnabled =  false;
+            this.HighlightOfficePremisesError();
+        }
     }
    }
    else if (typeof  this.state.data.OfficePremises !== "undefined") {
@@ -12884,7 +13519,7 @@ this.state.data.OfficeRoad = this.state.data.OfficeRoad1 + this.state.data.Offic
  
    this.ResetOfficeRoadError();
    
-   if(this.state.officeEnabled)
+   if(this.state.data.Communication === "17")
    {
     if(this.state.data.OfficeRoad === "" || ((isNaN(this.state.data.OfficeRoad) === false) 
     && (this.state.data.OfficeRoad.match(/^[ ]*$/))))
@@ -12896,6 +13531,19 @@ this.state.data.OfficeRoad = this.state.data.OfficeRoad1 + this.state.data.Offic
   
         this.state.isModalEnabled =  false;
         this.HighlightOfficeRoadError();
+    }
+
+    if (typeof  this.state.data.OfficeRoad !== "undefined") {
+        if (!this.state.data.OfficeRoad.match(/^[a-zA-Z0-9 ]*$/)) {
+ 
+         let errors = this.state.errors;
+         let name = "OfficeRoad";
+         this.setState(errors);
+         errors[name] = "*Please enter alphanumeric characters only.";
+  
+            this.state.isModalEnabled =  false;
+            this.HighlightOfficeRoadError();
+        }
     }
 
    }
@@ -12937,7 +13585,7 @@ this.state.data.OfficeArea = this.state.data.OfficeArea1 + this.state.data.Offic
   
    this.ResetOfficeAreaError();
 
-   if(this.state.officeEnabled)
+   if(this.state.data.Communication === "17")
    {
     if(this.state.data.OfficeArea === "" || (isNaN(this.state.data.OfficeArea) === false))
     { 
@@ -12949,6 +13597,20 @@ this.state.data.OfficeArea = this.state.data.OfficeArea1 + this.state.data.Offic
       
         this.state.isModalEnabled =  false;
         this.HighlightOfficeAreaError();
+    }
+
+    if (typeof  this.state.data.OfficeArea !== "undefined") {
+        if (!this.state.data.OfficeArea.match(/^[a-zA-Z ]*$/)) {
+ 
+         let errors = this.state.errors;
+         let name = "OfficeArea";
+         this.setState(errors);
+         errors[name] = "*Please enter alphabet characters only.";
+      
+        
+            this.state.isModalEnabled =  false;
+            this.HighlightOfficeAreaError();
+        }
     }
 
    }
@@ -12991,7 +13653,7 @@ async validateOfficeTown(event) {
   
    this.ResetOfficeTownError();
  
-   if(this.state.officeEnabled)
+   if(this.state.data.Communication === "17")
    {
     if(this.state.data.OfficeTown === "" || (isNaN(this.state.data.OfficeTown) === false))
     { 
@@ -13003,6 +13665,20 @@ async validateOfficeTown(event) {
         this.state.isModalEnabled =  false;
         this.HighlightOfficeTownError();
     }
+
+    if (typeof  this.state.data.OfficeTown !== "undefined") {
+        if (!this.state.data.OfficeTown.match(/^[a-zA-Z ]*$/)) {
+ 
+         let errors = this.state.errors;
+         let name = "OfficeTown";
+         this.setState(errors);
+         errors[name] = "*Please enter alphabet characters only.";
+      
+            this.state.isModalEnabled =  false;
+            this.HighlightOfficeTownError();
+        }
+    }
+  
    }
    else if (typeof  this.state.data.OfficeTown !== "undefined") {
        if (!this.state.data.OfficeTown.match(/^[a-zA-Z ]*$/)) {
@@ -13413,6 +14089,17 @@ async validateAadhaarNumber(event) {
     let name = "AadhaarNumber";
     this.setState(errors);
     errors[name] = "";
+    this.ResetAadhaarNumberError();
+ 
+   }
+
+   if(this.state.errors.EnrolmentId === "*Please enter your Aadhaar Number or Enrolment Id")
+   {
+    let errors1 = this.state.errors;
+    let name1 = "EnrolmentId";
+    this.setState(errors1);
+    errors1[name1] = "";
+    this.ResetEnrolmentIdError();
  
    }
    
@@ -13428,7 +14115,7 @@ async validateAadhaarNumber(event) {
        this.HighlightAadhaarNumberError();
    } 
    else if (typeof  this.state.data.AadhaarNumber !== "undefined") {
-       if (!this.state.data.AadhaarNumber.match(/^[0-9 ]*$/)) {
+       if (!this.state.data.AadhaarNumber.match(/^([0-9]{12})*$/)) {
 
         let errors = this.state.errors;
         let name = "AadhaarNumber";
@@ -13465,6 +14152,7 @@ async validateEnrolmentId(event) {
     errors[name] = "";
  
    this.ResetEnrolmentIdError();
+   this.ResetAadhaarNumberError();
 
    if(this.state.errors.AadhaarNumber === "*Please enter your Aadhaar Number or Enrolment Id")
    {
@@ -13472,6 +14160,7 @@ async validateEnrolmentId(event) {
     let name = "AadhaarNumber";
     this.setState(errors);
     errors[name] = "";
+    this.ResetAadhaarNumberError();
  
    }
    
@@ -13529,7 +14218,7 @@ async validateRegistrationNumber(event) {
    this.ResetRegistrationNumberError();
 
    if (typeof  this.state.data.RegistrationNumber !== "undefined") {
-       if (!this.state.data.RegistrationNumber.match(/^[1-9][0-9 ]*$/)) {
+       if (!this.state.data.RegistrationNumber.match(/^[1-9][0-9]*$/)) {
 
         let errors = this.state.errors;
         let name = "RegistrationNumber";
@@ -13607,7 +14296,7 @@ async validateOfficePincode(event) {
  
    this.ResetOfficePincodeError();
    
-    if(this.state.officeEnabled)
+    if(this.state.data.Communication === "17")
     {
         if(this.state.data.OfficePincode === "" || (this.state.data.OfficePincode.match(/^[ ]*$/)))
         { 
@@ -13618,6 +14307,18 @@ async validateOfficePincode(event) {
  
             this.state.isModalEnabled =  false;
             this.HighlightOfficePincodeError();
+        }
+
+        if (typeof  this.state.data.OfficePincode !== "undefined") {
+            if (!this.state.data.OfficePincode.match(/^[1-9][0-9]*$/)) {
+             let errors = this.state.errors;
+             let name = "OfficePincode";
+             this.setState(errors);
+             errors[name] = "*Please enter valid pincode";
+      
+                this.state.isModalEnabled =  false;
+                this.HighlightOfficePincodeError();
+            }
         }
     }
     else if (typeof  this.state.data.OfficePincode !== "undefined") {
@@ -13792,7 +14493,7 @@ async validatePhoneNumber(event) {
        this.HighlightPhoneNumberError();
    }
    else if (typeof  this.state.data.PhoneNumber !== "undefined") {
-       if (!this.state.data.PhoneNumber.match(/^[0-9+]*$/)) {
+       if (!this.state.data.PhoneNumber.match(/^([0-9]{7})*$|^([0-9+]{13})*$/)) {
         let errors = this.state.errors;
         let name = "PhoneNumber";
         this.setState(errors);
@@ -14100,7 +14801,7 @@ handleInput = (event) => {
    $('#OfficeState').css('border-color', '')
   
 
-   if(this.state.officeEnabled)
+   if(this.state.data.Communication === "17")
    {
     if(this.state.data.OfficeState === "" || (isNaN(this.state.data.OfficeState) === false))
     { 
@@ -14114,6 +14815,22 @@ handleInput = (event) => {
         this.setState({val});
         $('#OfficeState').css('border-color', "red")
     }
+
+    if (typeof  this.state.data.OfficeState !== "undefined") {
+        if (!textPattern.test(this.state.data.OfficeState)) {
+ 
+         let errors = this.state.errors;
+         let name1 = "OfficeState";
+         this.setState(errors);
+         errors[name1] = "*Please enter alphabet characters only.";
+           
+            let val = this.state.isModalEnabled;
+            val = false;
+            this.setState({val});
+            $('#OfficeState').css('border-color', "red")
+        }
+    }
+  
    }
    else if (typeof  this.state.data.OfficeState !== "undefined") {
        if (!textPattern.test(this.state.data.OfficeState)) {
@@ -14151,7 +14868,7 @@ handleInput = (event) => {
    let textPattern = /^[a-zA-Z ]*$/ 
    $('#OfficeCountry').css('border-color', '')
   
-   if(this.state.officeEnabled)
+   if(this.state.data.Communication === "17")
    {
     if(this.state.data.OfficeCountry === "" || (isNaN(this.state.data.OfficeCountry) === false))
     { 
@@ -14162,6 +14879,21 @@ handleInput = (event) => {
 
         this.state.isModalEnabled =  false;
         $('#OfficeCountry').css('border-color', "red")
+    }
+
+    if (typeof  this.state.data.OfficeCountry !== "undefined") {
+        if (!textPattern.test(this.state.data.OfficeCountry)) {
+ 
+         let errors = this.state.errors;
+         let name1= "OfficeCountry";
+         this.setState(errors);
+         errors[name1] = "*Please enter alphabet characters only.";
+  
+            let val = this.state.isModalEnabled;
+            val = false;
+            this.setState({val});
+            $('#OfficeCountry').css('border-color', "red")
+        }
     }
 
    }
@@ -14621,7 +15353,7 @@ handleInput = (event) => {
       <div className="navbar">
        <label className="navtitle">Panform</label>
        <button  className="button button3 navbutton"  onClick={this.onOpenModal}>Download </button>
-       <a href="/panform" className="button1 button3 navbutton"  onClick={this.handleResetall}>Reset </a>
+       <a href="/panform" className="button1 button3 navbutton resetbutton"  onClick={this.handleResetall}>Reset </a>
         </div>
         <Modal   open={open} onClose={this.onCloseModal} center>
             <br />
@@ -14731,6 +15463,7 @@ handleInput = (event) => {
                    <div className = "ColouredLabel "> 
                       <label className = "ColouredLabelAlign"> &nbsp; &nbsp; 1 &nbsp; Full Name (Full expanded name to be mentioned as appearing in proof of identity/date of birth/address documents: initials are not <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; permitted)</label>
                    </div>
+                   <br/>
 
 
                    <label className="FirstLabel"> Please select title,</label>
@@ -15588,7 +16321,7 @@ handleInput = (event) => {
                          </span>
                       : ""}
                    </div>
-                   
+                   <br/>
                    <div className = "box_left"> 
                        <div> 
                        <input 
@@ -16370,7 +17103,7 @@ handleInput = (event) => {
 
                         {this.state.isIndicatorEnabled === false ? 
                         <span className="tooltip" style={{marginLeft:"5%"}}>
-                          <img src={indicator} style={{width:"2%",height:"2%" , marginLeft: "4.2%"}} />
+                          <img src={indicator} style={{width:"2%",height:"2%" , marginLeft: "4.1%"}} />
                             <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px" , fontSize: "17px", fontWeight: "inherit"}} >Please tick as applicable</label>
                          </span>
                          : ""}
@@ -17252,13 +17985,14 @@ handleInput = (event) => {
                          <label className="Label_with_no_space Move_End1"> (please tick as applicable)</label> 
                          {this.state.isIndicatorEnabled === false ? 
                          <span className="tooltip" style={{marginLeft:"5.2%"}}>
-                          <img src={indicator} style={{width:"2%",height:"2%", marginLeft: "4.5%"}} />
+                          <img src={indicator} style={{width:"2%",height:"2%", marginLeft: "5.1%"}} />
                             <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px", fontSize : "17px", fontWeight: "inherit"}}>This field is mandatory for Individuals.</label>
                          </span>
                          : ""}
                    </div>
                    
                    <span className="ErrorMsg">{this.state.errors.Gender}</span>
+                  
 
                    {/* Fifth Component */}
 
@@ -17357,7 +18091,7 @@ handleInput = (event) => {
                            
 
                            {this.state.isIndicatorEnabled === false ? 
-                           <span className="tooltip" style={{marginLeft:"89%"}}>
+                           <span className="tooltip" style={{marginLeft:"88.7%"}}>
                           <img src={indicator} style={{width:"2.3%",height:"2.3%"}} />
                             <img src={datefield} className="tooltiptext" style={{width:"600px",height:"200px"}}  />
                          </span>
@@ -18987,7 +19721,7 @@ handleInput = (event) => {
                     
                     {this.state.isIndicatorEnabled === false ? 
                     <span className="tooltip" style={{marginLeft:"2.4%"}}>
-                          <img src={indicator} style={{width:"2%",height:"2%", marginLeft: "1.4%"}} />
+                          <img src={indicator} style={{width:"2%",height:"2%"}} />
                           <img src={parentname} className="tooltiptext" style={{width:"600px",height:"150px"}}  />
                          </span>
                      : ""}
@@ -20438,7 +21172,7 @@ handleInput = (event) => {
 
                     <label className = "FirstLabel Bold">Office Address </label> 
                     {this.state.isIndicatorEnabled === false ? 
-                    <span className="tooltip" style={{marginLeft:"78.1%"}}>
+                    <span className="tooltip" style={{marginLeft:"75.9%"}}>
                           <img src={indicator} style={{width:"2.2%",height:"1.9%"}} />
                             <img src={officefield} className="tooltiptext" style={{width:"600px",height:"150px"}}  />
                          </span>
@@ -22146,7 +22880,7 @@ handleInput = (event) => {
                         <label className="Label_with_no_space Move_End1"> (please tick as applicable)</label>
                         {this.state.isIndicatorEnabled === false ? 
                         <span className="tooltip" style={{marginLeft:"9.7%"}}>
-                          <img src={indicator} style={{width:"2.2%",height:"2.2%", marginLeft: "3.2%"}} />
+                          <img src={indicator} style={{width:"2.2%",height:"2.2%", marginLeft: "2.3%"}} />
                             <img src={communicationcheckfield} className="tooltiptext" style={{width:"600px",height:"50px"}}  />
                          </span> 
                          : ""}
@@ -22402,7 +23136,7 @@ handleInput = (event) => {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#PhoneNumber12", "#PhoneNumber13")}
                                onChange = {this.handlePhoneNumber13}/>
                             {this.state.isIndicatorEnabled === false ? 
-                            <span className="tooltip" style={{marginLeft:"27.2%"}}>
+                            <span className="tooltip" style={{marginLeft:"24.9%"}}>
                             <img src={indicator} style={{width:"2.3%",height:"2.3%"}} />
                                 <img src={phonenumberfield} className="tooltiptext" style={{width:"600px",height:"250px"}}  />
                             </span>       
@@ -22423,7 +23157,7 @@ handleInput = (event) => {
                         onChange={event => this.handleEmail(event)}/> 
                           {this.state.isIndicatorEnabled === false ? 
                         <span className="tooltip" style={{marginLeft:"20.1%"}}>
-                            <img src={indicator} style={{width:"2.3%",height:"2.3%", marginLeft: "4%"}} />
+                            <img src={indicator} style={{width:"2.3%",height:"2.3%", marginLeft: "2.4%"}} />
                                 <label className="tooltiptext tooltiptextLabel" style={{width:"600px",height:"40px"}}> Please enter combinations of alphabet, numbers, and special characters. <br/>Must include @, .</label>
                             </span>   
                         : ""} 
@@ -22434,7 +23168,7 @@ handleInput = (event) => {
                     <div className = "ColouredLabel">
                        <label >&nbsp;&nbsp; 10 &nbsp; Status of applicant</label>
                        {this.state.isIndicatorEnabled === false ? 
-                       <span className="tooltip" style={{marginLeft:"75.2%"}}>
+                       <span className="tooltip" style={{marginLeft:"74%"}}>
                             <img src={indicator} style={{width:"2.3%",height:"2.3%", marginLeft: "-0.5%"}} />
                                 <img src={statusfield} className="tooltiptext" style={{width:"600px",height:"70px"}}  />
                             </span>    
@@ -22468,6 +23202,7 @@ handleInput = (event) => {
                     <input 
                        type="checkbox" 
                        className="Check IndividualCheck"
+                       style = {{marginLeft : "4.4%"}}
                        value = "Hindu undivided family"
                        id = "24"
                        name = "Status[7][]"
@@ -22477,6 +23212,7 @@ handleInput = (event) => {
                     <input 
                        type="checkbox" 
                        className="Check "
+                       style = {{marginLeft : "2%"}}
                        value = "Company"
                        id = "25"
                        name = "Status[7][]"
@@ -22487,6 +23223,7 @@ handleInput = (event) => {
                        type="checkbox" 
                        className="Check IndividualCheck"
                        value = "Patnership Firm"
+                       style = {{marginLeft : "3.7%"}}
                        id = "26"
                        name = "Status[7][]"
                        onClick={(e)=>this.handleStatusCheck(e,"Status")}/>
@@ -22497,7 +23234,7 @@ handleInput = (event) => {
                        type="checkbox" 
                        className="Check IndividualCheck"
                        value = " Associations of Persons"
-                       style = {{marginLeft : "4.4%"}}
+                       style = {{marginLeft : "3.8%"}}
                        id = "27"
                        name = "Status[7][]"
                        onClick={(e)=>this.handleStatusCheck(e,"Status")}/>  
@@ -22519,8 +23256,7 @@ handleInput = (event) => {
                        id = "29"
                        name = "Status[7][]"
                        onClick={(e)=>this.handleStatusCheck(e,"Status")}/>    
-                    <label className = "Label_with_no_space"> Body of Individuals</label>&nbsp;&nbsp;&nbsp;&nbsp; 
-
+                    <label className = "Label_with_no_space"> Body of Individuals</label>&nbsp;&nbsp;&nbsp;&nbsp;
                     <input 
                        type="checkbox" 
                        className="Check "
@@ -22557,7 +23293,7 @@ handleInput = (event) => {
                     <div className = "ColouredLabel">
                         <label>&nbsp;&nbsp; 11 &nbsp; Registration Number (for company, firms, LLPs etc.)</label>
                         {this.state.isIndicatorEnabled === false ? 
-                        <span className="tooltip" style={{marginLeft:"52%"}}>
+                        <span className="tooltip" style={{marginLeft:"50%"}}>
                             <img src={indicator} style={{width:"2.3%",height:"2.3%", marginLeft : "2%"}} />
                                 <img src={registrationNumber} className="tooltiptext" style={{width:"600px",height:"80px"}}  />
                             </span>  
@@ -23001,7 +23737,7 @@ handleInput = (event) => {
                                onChange = {this.handleAadhaarNumber12}/> 
 
                                  {this.state.isIndicatorEnabled === false ? 
-                                 <span className="tooltip" style={{marginLeft:"31%"}}>
+                                 <span className="tooltip" style={{marginLeft:"28.5%"}}>
                             <img src={indicator} style={{width:"2.4%",height:"2.4%" }} />
                                 <img src={aadhaarnumber} className="tooltiptext" style={{width:"600px",height:"70px"}}  />
                             </span>     
@@ -23299,7 +24035,7 @@ handleInput = (event) => {
 
                             
                                    {this.state.isIndicatorEnabled === false ? 
-                                 <span className="tooltip" style={{marginLeft:"3.65%"}}>
+                                 <span className="tooltip" style={{marginLeft:"1%"}}>
                             <img src={indicator} style={{width:"3%",height:"2.2%" }} />
                                 <img src={enrolmentid} className="tooltiptext" style={{width:"600px",height:"180px"}}  />
                             </span>  
@@ -23313,7 +24049,7 @@ handleInput = (event) => {
                     <label className="FirstLabel"> Name as per AADHAAR letter or card or as per the Enrolment ID of Aadhaar application form</label>
                     {this.state.isIndicatorEnabled === false ? 
                     <span className="tooltip" style={{marginLeft:"28.55%"}}>
-                            <img src={indicator} style={{width:"2.4%",height:"2.4%", marginLeft: "4.3%"}} />
+                            <img src={indicator} style={{width:"2.4%",height:"2.4%", marginLeft: "2%"}} />
                                 <img src={aadhaarnamefield} className="tooltiptext" style={{width:"600px",height:"120px"}}  />
                             </span> 
                     : ""}  <br/>
@@ -23571,7 +24307,7 @@ handleInput = (event) => {
                                onChange = {this.handleAadhaarLastName25}/>
 
                     {this.state.isIndicatorEnabled === false ? 
-                             <span className="tooltip" style={{marginLeft:"4.4%"}}>
+                             <span className="tooltip" style={{marginLeft:"1.1%"}}>
                           <img src={indicator} style={{width:"3.3%",height:"3.3%"}} />
                             <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}}>Please enter name as in aadhaar card</label>
                          </span>
@@ -23831,7 +24567,7 @@ handleInput = (event) => {
                                onChange = {this.handleAadhaarFirstName25}/>
 
                              {this.state.isIndicatorEnabled === false ?
-                             <span className="tooltip" style={{marginLeft:"4.4%"}}>
+                             <span className="tooltip" style={{marginLeft:"1.1%"}}>
                           <img src={indicator} style={{width:"3.3%",height:"3.3%"}} />
                             <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}}>Please enter name as in aadhaar card</label>
                          </span>
@@ -24091,7 +24827,7 @@ handleInput = (event) => {
                                onChange = {this.handleAadhaarMiddleName25}/>
 
                              {this.state.isIndicatorEnabled === false ?
-                             <span className="tooltip" style={{marginLeft:"4.4%"}}>
+                             <span className="tooltip" style={{marginLeft:"1.1%"}}>
                           <img src={indicator} style={{width:"3.3%",height:"3.3%"}} />
                             <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}}>Please enter name as in aadhaar card</label>
                          </span>
@@ -24108,8 +24844,8 @@ handleInput = (event) => {
                        <label className = "ColouredLabel Move_End2 Italic_text"> Please select,</label> 
                        <label className = "ColouredLabel"> as applicable</label> 
                        {this.state.isIndicatorEnabled === false ?
-                       <span className="tooltip" style={{marginLeft:"5.3%"}}>
-                            <img src={indicator} style={{width:"2.3%",height:"2.3%", marginLeft: "2%"}} />
+                       <span className="tooltip" style={{marginLeft:"4.2%"}}>
+                            <img src={indicator} style={{width:"2.3%",height:"2.3%" }} />
                                 <img src={sourceOfIncome} className="tooltiptext" style={{width:"600px",height:"300px"}}  />
                             </span> 
                         : ""}
@@ -24202,7 +24938,7 @@ handleInput = (event) => {
                        value = " No income"
                        id = "38"
                        name = "NoIncome"
-                       style = {{marginLeft : "52%"}}
+                       style = {{marginLeft : "52.3%"}}
                        onClick={(e)=>this.handleNoIncomeCheck(e,"NoIncome")}/> 
                     <label className = "Label_with_no_space"> No income</label> <br/>
 
@@ -24215,7 +24951,7 @@ handleInput = (event) => {
                     <div className = "ColouredLabel"> 
                         <label >&nbsp;&nbsp; 14 &nbsp; Representative Assessee (RA)</label>
                         {this.state.isIndicatorEnabled === false ?
-                        <span className="tooltip" style={{marginLeft:"67.2%"}}>
+                        <span className="tooltip" style={{marginLeft:"66.2%"}}>
                             <img src={indicator} style={{width:"2.3%",height:"2.3%"}} />
                                 <img src={respresentativeAssessee} className="tooltiptext" style={{width:"600px",height:"180px"}}  />
                             </span> 
@@ -26481,12 +27217,12 @@ handleInput = (event) => {
                     <label  className = "ColouredLabel">&nbsp;&nbsp;15 &nbsp; Douments submitted as Proof of Identity (POI), Proof of Address (POA) and Proof of Date of Birth (POB)</label>
                     {this.state.isIndicatorEnabled === false ?
                     <span className="tooltip" style={{marginLeft:"16.7%"}}>
-                          <img src={indicator} style={{width:"2.3%",height:"2.3%", marginLeft : "4.5%"}} />
+                          <img src={indicator} style={{width:"2.3%",height:"2.3%", marginLeft : "3%"}} />
                             <img src={prooffield} className="tooltiptext" style={{width:"600px",height:"100px"}}  />
                     </span>
                     :""}
                     </div>
-                    
+                    <br/>
                     <label className= "FirstLabel"> I/We have enclosed</label> &nbsp; 
                     <input 
                        type= "text" 
@@ -26526,7 +27262,7 @@ handleInput = (event) => {
                     <label className= "FirstLabel"> [Please refer to the instructions (as specified in Rule 114 of I.I.Rules, 1962) for list of mandatory certified documents to be submitted as applicable]</label> <br/>
                     <label className= "FirstLabel"> [Annexure A, Annexure B & Annexure C are to be used wherever applicable]</label> <br/>
                       
-                      
+                    <br/>
                     {/* Sixteenth Component */}
 
                     <label  className = "ColouredLabel"> &nbsp;&nbsp; 16 </label> 

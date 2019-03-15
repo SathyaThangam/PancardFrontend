@@ -450,7 +450,7 @@ class Panmain extends React.Component {
                     mydata = response.data.result.alldata;
                     responseotp = response.data.token;
                     console.log("mydata", mydata);
-                    alert("Document is ready to download")
+                    // alert("Document is ready to download")
                     this.setState({data:mydata})
                     console.log("dataset", this.state.data);
                 }
@@ -509,11 +509,16 @@ class Panmain extends React.Component {
               console.log("image",imgData)
 
               const pdf = new jsPDF();
+              // pdf.addImage(imgData, 'JPEG', 0, 5, 215, 290);
               pdf.addImage(imgData, 'JPEG', 0, 5, 215, 290);
               // pdf.output('dataurlnewwindow');
               pdf.save("download.pdf");
           });
 
+        }
+
+        logout = () =>{
+          this.setState({cardview : 0})
         }
 
     render() {
@@ -526,7 +531,16 @@ class Panmain extends React.Component {
                     <label className="navlogo" > Panform </label>
                     {/* <label className="navlogout" > Login </label> */}
 
-                    <label className="navlogout" onClick={this.onOpenModal} >Login</label>
+          {this.state.cardview == 0 ? 
+            <label className="navlogout" onClick={this.onOpenModal} >Login</label>
+             : 
+             <label className="navlogout" onClick={this.logout} >Logout</label>
+            
+            }
+                    
+
+                   
+
                     <div>
 
                         {/* <button onClick={this.onOpenModal} style={{width:"auto"}}>Login</button> */}
@@ -579,9 +593,9 @@ class Panmain extends React.Component {
                                               <div className="downloadcard">
             {/* <button type="text" onClick={this.savepdf} className="fillformbutton"><label>Preview</label> <img src={previmg} style={{width:"20%",height:"20%"}} /> </button> */}
             <button type="text" onClick={this.onOpenModal1} className="fillformbutton"><label>Preview & Download</label> </button>
-                <br />
+                <br /> <br/>
             <div className="newform">
-                     <label >Do u want to fill a new Form<img src={forwardarrow} /></label>
+            <NavLink to="/panform"> <label >Do u want to fill a new Form<img src={forwardarrow} /></label></NavLink>
                  </div>
            
                                               </div>
@@ -606,8 +620,8 @@ class Panmain extends React.Component {
 
                                 <Modal style={{ backgroundColor: "#404040" }} open={open1} onClose={this.closeModal} center >
                                 <button type="text" onClick={this.savepdf} style={{marginLeft:"43%"}}  className="fillformbutton"><label>Download</label> </button>
-    <div id = "Form1" >    
-        <div className="Form1" style={{marginLeft:"0%",width:"102%"}}>  
+         <div id = "Form1"  >    
+        <div className="Form1"style = {{marginLeft : "0%", width: "102%"}} ><br />
            <div className = "box"> 
 
                 <div>
@@ -643,7 +657,7 @@ class Panmain extends React.Component {
                   </div>  
                    </td>
                    <td>   
-                       <div className="tablebox2" style={{marginLeft:"2%"}}>
+                       <div className="tablebox2" style = {{marginLeft : "2%"}}>
                        <br/> <br/>
                              <div className = "tablebox1Label"> <label className = "tablebox1Label"> Only</label>  </div>  
                              <div className = "tablebox1Label"> <label className = "tablebox1Label"> ‘Individuals’ </label></div>   
@@ -674,7 +688,7 @@ class Panmain extends React.Component {
                    <label className="Label_with_no_space"> as applicable</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
                     
-                   <input 
+                   <input disabled 
                        type="checkbox" 
                        className="Check Check_align" 
                        id="1" 
@@ -684,7 +698,7 @@ class Panmain extends React.Component {
 
                    <label className="Label_with_no_space Check_align"> Shri</label>
 
-                   <input 
+                   <input disabled 
                       type="checkbox" 
                       className="Check Check_align"
                       id = "2"
@@ -694,7 +708,7 @@ class Panmain extends React.Component {
 
                    <label className="Label_with_no_space Check_align"> Smt.</label>
 
-                   <input 
+                   <input disabled 
                       type="checkbox" 
                       className="Check Check_align"
                       id = "3"
@@ -704,7 +718,7 @@ class Panmain extends React.Component {
 
                    <label className="Label_with_no_space Check_align"> Kumari</label>
 
-                   <input 
+                   <input disabled 
                       type="checkbox" 
                       className="Check Check_align"
                       id = "4"
@@ -725,11 +739,11 @@ class Panmain extends React.Component {
                             )}
                          </td>
 
-                         <td className = "secondtd"> 
+                         <td className = "secondtd" style = {{marginBottom : "2%"}}> 
  
  
                          <div> 
-                         <input 
+                         <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -739,7 +753,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName1", "#LastName1")}
                                onChange = {this.handleLastName1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -749,7 +763,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName1", "#LastName2")}
                                onChange = {this.handleLastName2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -759,7 +773,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName2", "#LastName3")}
                                onChange = {this.handleLastName3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -769,7 +783,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName3", "#LastName4")}
                                onChange = {this.handleLastName4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -779,7 +793,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName4", "#LastName5")}
                                onChange = {this.handleLastName5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -789,7 +803,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName5", "#LastName6")}
                                onChange = {this.handleLastName6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -799,7 +813,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName6", "#LastName7")}
                                onChange = {this.handleLastName7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -809,7 +823,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName7", "#LastName8")}
                                onChange = {this.handleLastName8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -819,7 +833,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName8", "#LastName9")}
                                onChange = {this.handleLastName9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -829,7 +843,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName9", "#LastName10")}
                                onChange = {this.handleLastName10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -839,7 +853,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName10", "#LastName11")}
                                onChange = {this.handleLastName11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -849,7 +863,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName11", "#LastName12")}
                                onChange = {this.handleLastName12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -859,7 +873,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName12", "#LastName13")}
                                onChange = {this.handleLastName13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -869,7 +883,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName13", "#LastName14")}
                                onChange = {this.handleLastName14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -879,7 +893,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName14", "#LastName15")}
                                onChange = {this.handleLastName15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -889,7 +903,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName15", "#LastName16")}
                                onChange = {this.handleLastName16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -899,7 +913,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName16", "#LastName17")}
                                onChange = {this.handleLastName17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -909,7 +923,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName17", "#LastName18")}
                                onChange = {this.handleLastName18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -919,7 +933,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName18", "#LastName19")}
                                onChange = {this.handleLastName19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -929,7 +943,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName19", "#LastName20")}
                                onChange = {this.handleLastName20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -939,7 +953,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName20", "#LastName21")}
                                onChange = {this.handleLastName21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -949,7 +963,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName21", "#LastName22")}
                                onChange = {this.handleLastName22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -959,7 +973,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName22", "#LastName23")}
                                onChange = {this.handleLastName23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -969,7 +983,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName23", "#LastName24")}
                                onChange = {this.handleLastName24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -978,18 +992,13 @@ class Panmain extends React.Component {
                                id = "LastName25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#LastName24", "#LastName25")}
                                onChange = {this.handleLastName25}/>
-                           {this.state.isIndicatorEnabled === false ? 
-                            <span  className="tooltip" style={{marginLeft: "20px"}}>
-                            <img disabled = {!this.state.isIndicatorEnabled} src={indicator} style={{width:"3%",height:"3%"}} />
-                              <img src={namefield} className="tooltiptext" style={{width:"600px",height:"150px"}}  />
-                           </span>
-                           : ""}
+                         
                             
                          <br/>
 
                           </div>
                           <div>
-                          <input 
+                          <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -999,7 +1008,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FirstName1", "#FirstName1")}
                                onChange = {this.handleFirstName1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1009,7 +1018,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FirstName1", "#FirstName2")}
                                onChange = {this.handleFirstName2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1019,7 +1028,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FirstName2", "#FirstName3")}
                                onChange = {this.handleFirstName3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1029,7 +1038,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FirstName3", "#FirstName4")}
                                onChange = {this.handleFirstName4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1039,7 +1048,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FirstName4", "#FirstName5")}
                                onChange = {this.handleFirstName5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1049,7 +1058,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FirstName5", "#FirstName6")}
                                onChange = {this.handleFirstName6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1059,7 +1068,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FirstName6", "#FirstName7")}
                                onChange = {this.handleFirstName7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1069,7 +1078,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FirstName7", "#FirstName8")}
                                onChange = {this.handleFirstName8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1079,7 +1088,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FirstName8", "#FirstName9")}
                                onChange = {this.handleFirstName9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1089,7 +1098,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FirstName9", "#FirstName10")}
                                onChange = {this.handleFirstName10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1099,7 +1108,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FirstName10", "#FirstName11")}
                                onChange = {this.handleFirstName11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1109,7 +1118,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FirstName11", "#FirstName12")}
                                onChange = {this.handleFirstName12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1119,7 +1128,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FirstName12", "#FirstName13")}
                                onChange = {this.handleFirstName13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1129,7 +1138,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FirstName13", "#FirstName14")}
                                onChange = {this.handleFirstName14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1139,7 +1148,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FirstName14", "#FirstName15")}
                                onChange = {this.handleFirstName15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1149,7 +1158,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FirstName15", "#FirstName16")}
                                onChange = {this.handleFirstName16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1159,7 +1168,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FirstName16", "#FirstName17")}
                                onChange = {this.handleFirstName17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1169,7 +1178,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FirstName17", "#FirstName18")}
                                onChange = {this.handleFirstName18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1179,7 +1188,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FirstName18", "#FirstName19")}
                                onChange = {this.handleFirstName19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1189,7 +1198,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FirstName19", "#FirstName20")}
                                onChange = {this.handleFirstName20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1199,7 +1208,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FirstName20", "#FirstName21")}
                                onChange = {this.handleFirstName21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1209,7 +1218,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FirstName21", "#FirstName22")}
                                onChange = {this.handleFirstName22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1219,7 +1228,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FirstName22", "#FirstName23")}
                                onChange = {this.handleFirstName23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1229,7 +1238,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FirstName23", "#FirstName24")}
                                onChange = {this.handleFirstName24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1238,18 +1247,12 @@ class Panmain extends React.Component {
                                id = "FirstName25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FirstName24", "#FirstName25")}
                                onChange = {this.handleFirstName25}/>
-
-                        {this.state.isIndicatorEnabled === false ? 
-                        <span className="tooltip" style={{marginLeft:"20px"}}>
-                          <img src={indicator} style={{width:"3%",height:"3%"}} />
-                            <img src={namefield} className="tooltiptext" style={{width:"600px",height:"150px"}}  />
-                         </span>
-                         : ""}
+ 
                          <br/>
                           </div>
                           
                            <div>   
-                               <input 
+                               <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1259,7 +1262,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MiddleName1", "#MiddleName1")}
                                onChange = {this.handleMiddleName1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1269,7 +1272,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MiddleName1", "#MiddleName2")}
                                onChange = {this.handleMiddleName2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1279,7 +1282,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MiddleName2", "#MiddleName3")}
                                onChange = {this.handleMiddleName3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1289,7 +1292,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MiddleName3", "#MiddleName4")}
                                onChange = {this.handleMiddleName4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1299,7 +1302,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MiddleName4", "#MiddleName5")}
                                onChange = {this.handleMiddleName5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1309,7 +1312,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MiddleName5", "#MiddleName6")}
                                onChange = {this.handleMiddleName6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1319,7 +1322,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MiddleName6", "#MiddleName7")}
                                onChange = {this.handleMiddleName7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1329,7 +1332,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MiddleName7", "#MiddleName8")}
                                onChange = {this.handleMiddleName8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1339,7 +1342,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MiddleName8", "#MiddleName9")}
                                onChange = {this.handleMiddleName9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1349,7 +1352,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MiddleName9", "#MiddleName10")}
                                onChange = {this.handleMiddleName10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1359,7 +1362,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MiddleName10", "#MiddleName11")}
                                onChange = {this.handleMiddleName11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1369,7 +1372,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MiddleName11", "#MiddleName12")}
                                onChange = {this.handleMiddleName12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1379,7 +1382,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MiddleName12", "#MiddleName13")}
                                onChange = {this.handleMiddleName13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1389,7 +1392,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MiddleName13", "#MiddleName14")}
                                onChange = {this.handleMiddleName14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1399,7 +1402,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MiddleName14", "#MiddleName15")}
                                onChange = {this.handleMiddleName15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1409,7 +1412,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MiddleName15", "#MiddleName16")}
                                onChange = {this.handleMiddleName16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1419,7 +1422,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MiddleName16", "#MiddleName17")}
                                onChange = {this.handleMiddleName17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1429,7 +1432,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MiddleName17", "#MiddleName18")}
                                onChange = {this.handleMiddleName18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1439,7 +1442,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MiddleName18", "#MiddleName19")}
                                onChange = {this.handleMiddleName19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1449,7 +1452,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MiddleName19", "#MiddleName20")}
                                onChange = {this.handleMiddleName20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1459,7 +1462,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MiddleName20", "#MiddleName21")}
                                onChange = {this.handleMiddleName21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1469,7 +1472,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MiddleName21", "#MiddleName22")}
                                onChange = {this.handleMiddleName22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1479,7 +1482,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MiddleName22", "#MiddleName23")}
                                onChange = {this.handleMiddleName23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1489,7 +1492,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MiddleName23", "#MiddleName24")}
                                onChange = {this.handleMiddleName24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -1498,13 +1501,7 @@ class Panmain extends React.Component {
                                id = "MiddleName25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MiddleName24", "#MiddleName25")}
                                onChange = {this.handleMiddleName25}/>
-
-                         {this.state.isIndicatorEnabled === false ? 
-                          <span className="tooltip" style={{marginLeft:"20px"}}>
-                          <img src={indicator} style={{width:"3%",height:"3%"}} />
-                            <img src={namefield} className="tooltiptext" style={{width:"600px",height:"150px"}}  />
-                         </span>
-                         : ""}
+ 
                          <br/>  
                             <span className="ErrorMsg">{this.state.errors.NameTitleOne}</span>
                             </div>
@@ -1518,17 +1515,12 @@ class Panmain extends React.Component {
 
                    <div className = "ColouredLabel">
                       <label  className = "ColouredLabelAlign"> &nbsp; &nbsp;2 &nbsp; Abbreviations of the above name, as you would like it, to be printed on the PAN card</label>
-                      {this.state.isIndicatorEnabled === false ? 
-                      <span className="tooltip" style = {{marginLeft : "32.4%"}}>
-                          <img src={indicator} style={{width:"2%",height:"2%"}} />
-                          <img src={namefield} className="tooltiptext" style={{width:"600px",height:"150px", textAlign: "right"}}  />
-                         </span>
-                      : ""}
+                      
                    </div>
                    
                    <div className = "box_left"> 
                        <div> 
-                       <input 
+                       <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1538,7 +1530,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne1", "#AbbreviationOne1")}
                                onChange = {this.handleAbbreviationOne1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1548,7 +1540,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne1", "#AbbreviationOne2")}
                                onChange = {this.handleAbbreviationOne2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1558,7 +1550,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne2", "#AbbreviationOne3")}
                                onChange = {this.handleAbbreviationOne3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1568,7 +1560,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne3", "#AbbreviationOne4")}
                                onChange = {this.handleAbbreviationOne4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1578,7 +1570,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne4", "#AbbreviationOne5")}
                                onChange = {this.handleAbbreviationOne5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1588,7 +1580,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne5", "#AbbreviationOne6")}
                                onChange = {this.handleAbbreviationOne6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1598,7 +1590,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne6", "#AbbreviationOne7")}
                                onChange = {this.handleAbbreviationOne7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1608,7 +1600,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne7", "#AbbreviationOne8")}
                                onChange = {this.handleAbbreviationOne8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1618,7 +1610,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne8", "#AbbreviationOne9")}
                                onChange = {this.handleAbbreviationOne9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1628,7 +1620,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne9", "#AbbreviationOne10")}
                                onChange = {this.handleAbbreviationOne10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1638,7 +1630,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne10", "#AbbreviationOne11")}
                                onChange = {this.handleAbbreviationOne11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1648,7 +1640,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne11", "#AbbreviationOne12")}
                                onChange = {this.handleAbbreviationOne12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1658,7 +1650,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne12", "#AbbreviationOne13")}
                                onChange = {this.handleAbbreviationOne13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1668,7 +1660,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne13", "#AbbreviationOne14")}
                                onChange = {this.handleAbbreviationOne14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1678,7 +1670,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne14", "#AbbreviationOne15")}
                                onChange = {this.handleAbbreviationOne15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1688,7 +1680,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne15", "#AbbreviationOne16")}
                                onChange = {this.handleAbbreviationOne16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1698,7 +1690,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne16", "#AbbreviationOne17")}
                                onChange = {this.handleAbbreviationOne17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1708,7 +1700,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne17", "#AbbreviationOne18")}
                                onChange = {this.handleAbbreviationOne18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1718,7 +1710,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne18", "#AbbreviationOne19")}
                                onChange = {this.handleAbbreviationOne19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1728,7 +1720,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne19", "#AbbreviationOne20")}
                                onChange = {this.handleAbbreviationOne20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1738,7 +1730,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne20", "#AbbreviationOne21")}
                                onChange = {this.handleAbbreviationOne21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1748,7 +1740,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne21", "#AbbreviationOne22")}
                                onChange = {this.handleAbbreviationOne22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1758,7 +1750,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne22", "#AbbreviationOne23")}
                                onChange = {this.handleAbbreviationOne23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1768,7 +1760,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne23", "#AbbreviationOne24")}
                                onChange = {this.handleAbbreviationOne24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1778,7 +1770,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne24", "#AbbreviationOne25")}
                                onChange = {this.handleAbbreviationOne25}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1788,7 +1780,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne25", "#AbbreviationOne26")}
                                onChange = {this.handleAbbreviationOne26}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1798,7 +1790,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne26", "#AbbreviationOne27")}
                                onChange = {this.handleAbbreviationOne27}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1808,7 +1800,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne27", "#AbbreviationOne28")}
                                onChange = {this.handleAbbreviationOne28}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1818,7 +1810,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne28", "#AbbreviationOne29")}
                                onChange = {this.handleAbbreviationOne29}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1828,7 +1820,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne29", "#AbbreviationOne30")}
                                onChange = {this.handleAbbreviationOne30}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1838,7 +1830,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne30", "#AbbreviationOne31")}
                                onChange = {this.handleAbbreviationOne31}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1848,7 +1840,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne31", "#AbbreviationOne32")}
                                onChange = {this.handleAbbreviationOne32}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1858,7 +1850,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne32", "#AbbreviationOne33")}
                                onChange = {this.handleAbbreviationOne33}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1868,7 +1860,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne33", "#AbbreviationOne34")}
                                onChange = {this.handleAbbreviationOne34}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1878,7 +1870,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne34", "#AbbreviationOne35")}
                                onChange = {this.handleAbbreviationOne35}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1888,7 +1880,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationOne35", "#AbbreviationOne36")}
                                onChange = {this.handleAbbreviationOne36}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1903,7 +1895,7 @@ class Panmain extends React.Component {
                         </div>
                             
                         <div>
-                       <input 
+                       <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1913,7 +1905,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo1", "#AbbreviationTwo1")}
                                onChange = {this.handleAbbreviationTwo1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1923,7 +1915,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo1", "#AbbreviationTwo2")}
                                onChange = {this.handleAbbreviationTwo2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1933,7 +1925,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo2", "#AbbreviationTwo3")}
                                onChange = {this.handleAbbreviationTwo3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1943,7 +1935,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo3", "#AbbreviationTwo4")}
                                onChange = {this.handleAbbreviationTwo4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1953,7 +1945,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo4", "#AbbreviationTwo5")}
                                onChange = {this.handleAbbreviationTwo5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1963,7 +1955,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo5", "#AbbreviationTwo6")}
                                onChange = {this.handleAbbreviationTwo6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1973,7 +1965,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo6", "#AbbreviationTwo7")}
                                onChange = {this.handleAbbreviationTwo7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1983,7 +1975,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo7", "#AbbreviationTwo8")}
                                onChange = {this.handleAbbreviationTwo8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -1993,7 +1985,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo8", "#AbbreviationTwo9")}
                                onChange = {this.handleAbbreviationTwo9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2003,7 +1995,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo9", "#AbbreviationTwo10")}
                                onChange = {this.handleAbbreviationTwo10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2013,7 +2005,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo10", "#AbbreviationTwo11")}
                                onChange = {this.handleAbbreviationTwo11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2023,7 +2015,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo11", "#AbbreviationTwo12")}
                                onChange = {this.handleAbbreviationTwo12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2033,7 +2025,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo12", "#AbbreviationTwo13")}
                                onChange = {this.handleAbbreviationTwo13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2043,7 +2035,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo13", "#AbbreviationTwo14")}
                                onChange = {this.handleAbbreviationTwo14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2053,7 +2045,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo14", "#AbbreviationTwo15")}
                                onChange = {this.handleAbbreviationTwo15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2063,7 +2055,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo15", "#AbbreviationTwo16")}
                                onChange = {this.handleAbbreviationTwo16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2073,7 +2065,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo16", "#AbbreviationTwo17")}
                                onChange = {this.handleAbbreviationTwo17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2083,7 +2075,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo17", "#AbbreviationTwo18")}
                                onChange = {this.handleAbbreviationTwo18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2093,7 +2085,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo18", "#AbbreviationTwo19")}
                                onChange = {this.handleAbbreviationTwo19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2103,7 +2095,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo19", "#AbbreviationTwo20")}
                                onChange = {this.handleAbbreviationTwo20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2113,7 +2105,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo20", "#AbbreviationTwo21")}
                                onChange = {this.handleAbbreviationTwo21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2123,7 +2115,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo21", "#AbbreviationTwo22")}
                                onChange = {this.handleAbbreviationTwo22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2133,7 +2125,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo22", "#AbbreviationTwo23")}
                                onChange = {this.handleAbbreviationTwo23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2143,7 +2135,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo23", "#AbbreviationTwo24")}
                                onChange = {this.handleAbbreviationTwo24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2153,7 +2145,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo24", "#AbbreviationTwo25")}
                                onChange = {this.handleAbbreviationTwo25}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2163,7 +2155,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo25", "#AbbreviationTwo26")}
                                onChange = {this.handleAbbreviationTwo26}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2173,7 +2165,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo26", "#AbbreviationTwo27")}
                                onChange = {this.handleAbbreviationTwo27}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2183,7 +2175,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo27", "#AbbreviationTwo28")}
                                onChange = {this.handleAbbreviationTwo28}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2193,7 +2185,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo28", "#AbbreviationTwo29")}
                                onChange = {this.handleAbbreviationTwo29}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2203,7 +2195,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo29", "#AbbreviationTwo30")}
                                onChange = {this.handleAbbreviationTwo30}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2213,7 +2205,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo30", "#AbbreviationTwo31")}
                                onChange = {this.handleAbbreviationTwo31}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2223,7 +2215,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo31", "#AbbreviationTwo32")}
                                onChange = {this.handleAbbreviationTwo32}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2233,7 +2225,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo32", "#AbbreviationTwo33")}
                                onChange = {this.handleAbbreviationTwo33}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2243,7 +2235,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo33", "#AbbreviationTwo34")}
                                onChange = {this.handleAbbreviationTwo34}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2253,7 +2245,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo34", "#AbbreviationTwo35")}
                                onChange = {this.handleAbbreviationTwo35}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2263,7 +2255,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AbbreviationTwo35", "#AbbreviationTwo36")}
                                onChange = {this.handleAbbreviationTwo36}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Abbreviation-control"
                                maxLength = "1"
@@ -2284,7 +2276,7 @@ class Panmain extends React.Component {
                         
                         <label> &nbsp; &nbsp;3 &nbsp; Have you ever been known by any other name?  </label> 
                          &nbsp; &nbsp;
-                        <input 
+                        <input disabled 
                            type="checkbox" 
                            className = "Check" 
                            id = "5"
@@ -2294,7 +2286,7 @@ class Panmain extends React.Component {
                         <label className="Label_with_no_space"> Yes</label> 
 
                          &nbsp; &nbsp;
-                        <input 
+                        <input disabled 
                            type="checkbox" 
                            className = "Check"
                            id = "6" 
@@ -2304,22 +2296,16 @@ class Panmain extends React.Component {
                         <label className="Label_with_no_space"> No</label> 
                                               
                         <label className="Label_with_no_space Move_End"> (please tick as applicable)</label> 
-
-                        {this.state.isIndicatorEnabled === false ? 
-                        <span className="tooltip" style={{marginLeft:"5%"}}>
-                          <img src={indicator} style={{width:"2%",height:"2%" , marginLeft: "4.2%"}} />
-                            <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px" , fontSize: "17px", fontWeight: "inherit"}} >Please tick as applicable</label>
-                         </span>
-                         : ""}
+ 
                    </div>
 
-                   <div id = "OtherNameDiv" >
+                   <div >
                    <label className="FirstLabel small_font"> If yes, please give that other name</label> <br/>
                    <label className="FirstLabel"> Please select title,</label>
                    <label className="Label_with_no_space"> as applicable</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           
                    
-                   <input 
+                   <input disabled 
                        type="checkbox" 
                        className="Check" 
                        id="7" 
@@ -2328,7 +2314,7 @@ class Panmain extends React.Component {
                        onClick={(e)=>this.handleNameTitleTwoCheck(e,"NameTitleTwo")}/>
                    <label className="Label_with_no_space"> Shri</label>
 
-                   <input 
+                   <input disabled 
                        type="checkbox" 
                        className="Check" 
                        id= "8"
@@ -2337,7 +2323,7 @@ class Panmain extends React.Component {
                        onClick = {(e) => this.handleNameTitleTwoCheck(e, "NameTitleTwo")}/>
                    <label className="Label_with_no_space"> Smt.</label>
 
-                   <input 
+                   <input disabled 
                        type="checkbox" 
                        className="Check" 
                        id= "9"
@@ -2346,7 +2332,7 @@ class Panmain extends React.Component {
                        onClick = {(e) => this.handleNameTitleTwoCheck(e, "NameTitleTwo")}/>
                    <label className="Label_with_no_space"> Kumari</label>
 
-                   <input 
+                   <input disabled 
                        type="checkbox" 
                        className="Check" 
                        id= "10"
@@ -2366,7 +2352,7 @@ class Panmain extends React.Component {
 
                          <td className = "secondtd">
                           <div> 
-                          <input 
+                          <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2376,7 +2362,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherLastName1", "#OtherLastName1")}
                                onChange = {this.handleOtherLastName1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2386,7 +2372,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherLastName1", "#OtherLastName2")}
                                onChange = {this.handleOtherLastName2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2396,7 +2382,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherLastName2", "#OtherLastName3")}
                                onChange = {this.handleOtherLastName3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2406,7 +2392,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherLastName3", "#OtherLastName4")}
                                onChange = {this.handleOtherLastName4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2416,7 +2402,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherLastName4", "#OtherLastName5")}
                                onChange = {this.handleOtherLastName5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2426,7 +2412,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherLastName5", "#OtherLastName6")}
                                onChange = {this.handleOtherLastName6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2436,7 +2422,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherLastName6", "#OtherLastName7")}
                                onChange = {this.handleOtherLastName7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2446,7 +2432,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherLastName7", "#OtherLastName8")}
                                onChange = {this.handleOtherLastName8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2456,7 +2442,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherLastName8", "#OtherLastName9")}
                                onChange = {this.handleOtherLastName9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2466,7 +2452,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherLastName9", "#OtherLastName10")}
                                onChange = {this.handleOtherLastName10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2476,7 +2462,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherLastName10", "#OtherLastName11")}
                                onChange = {this.handleOtherLastName11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2486,7 +2472,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherLastName11", "#OtherLastName12")}
                                onChange = {this.handleOtherLastName12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2496,7 +2482,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherLastName12", "#OtherLastName13")}
                                onChange = {this.handleOtherLastName13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2506,7 +2492,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherLastName13", "#OtherLastName14")}
                                onChange = {this.handleOtherLastName14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2516,7 +2502,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherLastName14", "#OtherLastName15")}
                                onChange = {this.handleOtherLastName15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2526,7 +2512,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherLastName15", "#OtherLastName16")}
                                onChange = {this.handleOtherLastName16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2536,7 +2522,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherLastName16", "#OtherLastName17")}
                                onChange = {this.handleOtherLastName17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2546,7 +2532,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherLastName17", "#OtherLastName18")}
                                onChange = {this.handleOtherLastName18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2556,7 +2542,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherLastName18", "#OtherLastName19")}
                                onChange = {this.handleOtherLastName19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2566,7 +2552,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherLastName19", "#OtherLastName20")}
                                onChange = {this.handleOtherLastName20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2576,7 +2562,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherLastName20", "#OtherLastName21")}
                                onChange = {this.handleOtherLastName21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2586,7 +2572,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherLastName21", "#OtherLastName22")}
                                onChange = {this.handleOtherLastName22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2596,7 +2582,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherLastName22", "#OtherLastName23")}
                                onChange = {this.handleOtherLastName23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2606,7 +2592,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherLastName23", "#OtherLastName24")}
                                onChange = {this.handleOtherLastName24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2615,18 +2601,12 @@ class Panmain extends React.Component {
                                id = "OtherLastName25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherLastName24", "#OtherLastName25")}
                                onChange = {this.handleOtherLastName25}/>
-
-                          {this.state.isIndicatorEnabled === false ? 
-                          <span className="tooltip" style={{marginLeft:"3%"}}>
-                          <img src={indicator} style={{width:"3%",height:"3%"}} />
-                            <img src={namefield} className="tooltiptext" style={{width:"600px",height:"150px"}}  />
-                         </span>
-                         : ""}
+ 
                          <br/>
                           </div>
                            
                            <div> 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2636,7 +2616,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherFirstName1", "#OtherFirstName1")}
                                onChange = {this.handleOtherFirstName1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2646,7 +2626,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherFirstName1", "#OtherFirstName2")}
                                onChange = {this.handleOtherFirstName2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2656,7 +2636,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherFirstName2", "#OtherFirstName3")}
                                onChange = {this.handleOtherFirstName3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2666,7 +2646,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherFirstName3", "#OtherFirstName4")}
                                onChange = {this.handleOtherFirstName4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2676,7 +2656,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherFirstName4", "#OtherFirstName5")}
                                onChange = {this.handleOtherFirstName5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2686,7 +2666,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherFirstName5", "#OtherFirstName6")}
                                onChange = {this.handleOtherFirstName6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2696,7 +2676,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherFirstName6", "#OtherFirstName7")}
                                onChange = {this.handleOtherFirstName7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2706,7 +2686,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherFirstName7", "#OtherFirstName8")}
                                onChange = {this.handleOtherFirstName8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2716,7 +2696,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherFirstName8", "#OtherFirstName9")}
                                onChange = {this.handleOtherFirstName9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2726,7 +2706,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherFirstName9", "#OtherFirstName10")}
                                onChange = {this.handleOtherFirstName10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2736,7 +2716,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherFirstName10", "#OtherFirstName11")}
                                onChange = {this.handleOtherFirstName11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2746,7 +2726,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherFirstName11", "#OtherFirstName12")}
                                onChange = {this.handleOtherFirstName12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2756,7 +2736,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherFirstName12", "#OtherFirstName13")}
                                onChange = {this.handleOtherFirstName13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2766,7 +2746,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherFirstName13", "#OtherFirstName14")}
                                onChange = {this.handleOtherFirstName14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2776,7 +2756,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherFirstName14", "#OtherFirstName15")}
                                onChange = {this.handleOtherFirstName15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2786,7 +2766,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherFirstName15", "#OtherFirstName16")}
                                onChange = {this.handleOtherFirstName16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2796,7 +2776,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherFirstName16", "#OtherFirstName17")}
                                onChange = {this.handleOtherFirstName17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2806,7 +2786,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherFirstName17", "#OtherFirstName18")}
                                onChange = {this.handleOtherFirstName18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2816,7 +2796,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherFirstName18", "#OtherFirstName19")}
                                onChange = {this.handleOtherFirstName19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2826,7 +2806,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherFirstName19", "#OtherFirstName20")}
                                onChange = {this.handleOtherFirstName20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2836,7 +2816,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherFirstName20", "#OtherFirstName21")}
                                onChange = {this.handleOtherFirstName21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2846,7 +2826,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherFirstName21", "#OtherFirstName22")}
                                onChange = {this.handleOtherFirstName22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2856,7 +2836,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherFirstName22", "#OtherFirstName23")}
                                onChange = {this.handleOtherFirstName23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2866,7 +2846,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherFirstName23", "#OtherFirstName24")}
                                onChange = {this.handleOtherFirstName24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2875,17 +2855,12 @@ class Panmain extends React.Component {
                                id = "OtherFirstName25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherFirstName24", "#OtherFirstName25")}
                                onChange = {this.handleOtherFirstName25}/>
-                         {this.state.isIndicatorEnabled === false ? 
-                       <span className="tooltip" style={{marginLeft:"3%"}}>
-                          <img src={indicator} style={{width:"3%",height:"3%"}} />
-                            <img src={namefield} className="tooltiptext" style={{width:"600px",height:"150px"}}  />
-                         </span>
-                         : ""}
+                       
                            <br/>
                            </div>
  
                           <div>
-                          <input 
+                          <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2895,7 +2870,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherMiddleName1", "#OtherMiddleName1")}
                                onChange = {this.handleOtherMiddleName1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2905,7 +2880,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherMiddleName1", "#OtherMiddleName2")}
                                onChange = {this.handleOtherMiddleName2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2915,7 +2890,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherMiddleName2", "#OtherMiddleName3")}
                                onChange = {this.handleOtherMiddleName3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2925,7 +2900,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherMiddleName3", "#OtherMiddleName4")}
                                onChange = {this.handleOtherMiddleName4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2935,7 +2910,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherMiddleName4", "#OtherMiddleName5")}
                                onChange = {this.handleOtherMiddleName5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2945,7 +2920,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherMiddleName5", "#OtherMiddleName6")}
                                onChange = {this.handleOtherMiddleName6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2955,7 +2930,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherMiddleName6", "#OtherMiddleName7")}
                                onChange = {this.handleOtherMiddleName7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2965,7 +2940,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherMiddleName7", "#OtherMiddleName8")}
                                onChange = {this.handleOtherMiddleName8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2975,7 +2950,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherMiddleName8", "#OtherMiddleName9")}
                                onChange = {this.handleOtherMiddleName9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2985,7 +2960,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherMiddleName9", "#OtherMiddleName10")}
                                onChange = {this.handleOtherMiddleName10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -2995,7 +2970,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherMiddleName10", "#OtherMiddleName11")}
                                onChange = {this.handleOtherMiddleName11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3005,7 +2980,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherMiddleName11", "#OtherMiddleName12")}
                                onChange = {this.handleOtherMiddleName12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3015,7 +2990,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherMiddleName12", "#OtherMiddleName13")}
                                onChange = {this.handleOtherMiddleName13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3025,7 +3000,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherMiddleName13", "#OtherMiddleName14")}
                                onChange = {this.handleOtherMiddleName14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3035,7 +3010,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherMiddleName14", "#OtherMiddleName15")}
                                onChange = {this.handleOtherMiddleName15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3045,7 +3020,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherMiddleName15", "#OtherMiddleName16")}
                                onChange = {this.handleOtherMiddleName16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3055,7 +3030,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherMiddleName16", "#OtherMiddleName17")}
                                onChange = {this.handleOtherMiddleName17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3065,7 +3040,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherMiddleName17", "#OtherMiddleName18")}
                                onChange = {this.handleOtherMiddleName18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3075,7 +3050,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherMiddleName18", "#OtherMiddleName19")}
                                onChange = {this.handleOtherMiddleName19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3085,7 +3060,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherMiddleName19", "#OtherMiddleName20")}
                                onChange = {this.handleOtherMiddleName20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3095,7 +3070,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherMiddleName20", "#OtherMiddleName21")}
                                onChange = {this.handleOtherMiddleName21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3105,7 +3080,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherMiddleName21", "#OtherMiddleName22")}
                                onChange = {this.handleOtherMiddleName22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3115,7 +3090,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherMiddleName22", "#OtherMiddleName23")}
                                onChange = {this.handleOtherMiddleName23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3125,7 +3100,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherMiddleName23", "#OtherMiddleName24")}
                                onChange = {this.handleOtherMiddleName24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3134,13 +3109,7 @@ class Panmain extends React.Component {
                                id = "OtherMiddleName25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OtherMiddleName24", "#OtherMiddleName25")}
                                onChange = {this.handleOtherMiddleName25}/>
-                        
-                        {this.state.isIndicatorEnabled === false ? 
-                         <span className="tooltip" style={{marginLeft:"3%"}}>
-                          <img src={indicator} style={{width:"3%",height:"3%"}} />
-                            <img src={namefield} className="tooltiptext" style={{width:"600px",height:"150px"}}  />
-                         </span>
-                         : ""}
+                    
                           <br/>
                           
                            </div>
@@ -3159,7 +3128,7 @@ class Panmain extends React.Component {
                   
                    <div className = "ColouredLabel">
                          <label>&nbsp;&nbsp; 4 &nbsp; Gender (for Individual applicants only)</label>
-                         <input 
+                         <input disabled 
                            type="checkbox" 
                            className="Check" 
                            id= "11"
@@ -3168,7 +3137,7 @@ class Panmain extends React.Component {
                            onClick = {(e) => this.handleGenderCheck(e, "Gender")}/>
                          <label className="Label_with_no_space"> Male</label>
 
-                         <input 
+                         <input disabled 
                            type="checkbox" 
                            className="Check" 
                            id= "12"
@@ -3177,7 +3146,7 @@ class Panmain extends React.Component {
                            onClick = {(e) => this.handleGenderCheck(e, "Gender")}/>
                          <label className="Label_with_no_space"> Female</label>
 
-                         <input 
+                         <input disabled 
                            type="checkbox" 
                            className="Check" 
                            id= "13"
@@ -3187,12 +3156,7 @@ class Panmain extends React.Component {
                          <label className="Label_with_no_space"> Transgender</label>
                         
                          <label className="Label_with_no_space Move_End1"> (please tick as applicable)</label> 
-                         {this.state.isIndicatorEnabled === false ? 
-                         <span className="tooltip" style={{marginLeft:"5.2%"}}>
-                          <img src={indicator} style={{width:"2%",height:"2%", marginLeft: "4.5%"}} />
-                            <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px", fontSize : "17px", fontWeight: "inherit"}}>This field is mandatory for Individuals.</label>
-                         </span>
-                         : ""}
+                   
                    </div>
                    
                    <span className="ErrorMsg">{this.state.errors.Gender}</span>
@@ -3205,23 +3169,11 @@ class Panmain extends React.Component {
                    </div>
 
                    <div className= "divfive">
-                       <table>
-                       <tbody>
-                          <tr>
-                            <td  className ="Day_td">
-                              <label  className ="Day" >Day </label>
-                            </td>
-                            <td className="Month_td" >
-                               <label className = "Month">Month</label>
-                            </td>
-                            <td className = "Year_td">
-                               <label className = "Year">Year</label>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td >
-                            <input 
+                      
+                            <label  className ="Day" >Day </label>
+                            <label className = "Month">Month</label>
+                            <label className = "Year">Year</label> <br/>
+                            <input disabled 
                                type="text" 
                                className="Day-control"
                                maxLength = "1"
@@ -3231,7 +3183,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#Day1", "#Day1")}
                                onChange = {this.handleDay1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Day-control"
                                maxLength = "1"
@@ -3240,21 +3192,19 @@ class Panmain extends React.Component {
                                id = "Day2"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#Day1", "#Day2")}
                                onChange = {this.handleDay2}/>
-
-                            
-                           </td>  
-                           <td >
-                           <input 
+ 
+                           <input disabled 
                                type="text" 
                                className="Month-control"
                                maxLength = "1"
                                value = {this.state.data.Month1}
                                name = "Month1"
                                id = "Month1"
+                               style = {{marginLeft : "2%"}}
                                onKeyDown = {event => this.handleBackspaceKey(event, "#Month1", "#Month1")}
                                onChange = {this.handleMonth1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Month-control"
                                maxLength = "1"
@@ -3263,20 +3213,19 @@ class Panmain extends React.Component {
                                id = "Month2"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#Month1", "#Month2")}
                                onChange = {this.handleMonth2}/>
-
-                           </td>
-                           <td className = "Year_td">
-                           <input 
+ 
+                           <input disabled 
                                type="text" 
                                className="Year-control"
                                maxLength = "1"
                                value = {this.state.data.Year1}
+                               style = {{marginLeft : "2%"}}
                                name = "Year1"
                                id = "Year1"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#Year1", "#Year1")}
                                onChange = {this.handleYear1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Year-control"
                                maxLength = "1"
@@ -3286,7 +3235,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#Year1", "#Year2")}
                                onChange = {this.handleYear2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Year-control"
                                maxLength = "1"
@@ -3296,7 +3245,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#Year2", "#Year3")}
                                onChange = {this.handleYear3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Year-control"
                                maxLength = "1"
@@ -3306,18 +3255,9 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#Year3", "#Year4")}
                                onChange = {this.handleYear4}/>
 
-                           </td>
-
-                           {this.state.isIndicatorEnabled === false ? 
-                           <span className="tooltip" style={{marginLeft:"89%"}}>
-                          <img src={indicator} style={{width:"2.3%",height:"2.3%"}} />
-                            <img src={datefield} className="tooltiptext" style={{width:"600px",height:"200px"}}  />
-                         </span>
-                         : ""}
-                          </tr>
-                       </tbody>
-                       </table>
-
+                           
+ 
+                        
             
                     </div>
 
@@ -3341,7 +3281,7 @@ class Panmain extends React.Component {
 
                          <td className = "secondtd">
                            <div> 
-                           <input 
+                           <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3351,7 +3291,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherLastName1", "#FatherLastName1")}
                                onChange = {this.handleFatherLastName1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3361,7 +3301,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherLastName1", "#FatherLastName2")}
                                onChange = {this.handleFatherLastName2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3371,7 +3311,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherLastName2", "#FatherLastName3")}
                                onChange = {this.handleFatherLastName3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3381,7 +3321,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherLastName3", "#FatherLastName4")}
                                onChange = {this.handleFatherLastName4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3391,7 +3331,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherLastName4", "#FatherLastName5")}
                                onChange = {this.handleFatherLastName5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3401,7 +3341,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherLastName5", "#FatherLastName6")}
                                onChange = {this.handleFatherLastName6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3411,7 +3351,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherLastName6", "#FatherLastName7")}
                                onChange = {this.handleFatherLastName7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3421,7 +3361,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherLastName7", "#FatherLastName8")}
                                onChange = {this.handleFatherLastName8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3431,7 +3371,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherLastName8", "#FatherLastName9")}
                                onChange = {this.handleFatherLastName9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3441,7 +3381,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherLastName9", "#FatherLastName10")}
                                onChange = {this.handleFatherLastName10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3451,7 +3391,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherLastName10", "#FatherLastName11")}
                                onChange = {this.handleFatherLastName11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3461,7 +3401,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherLastName11", "#FatherLastName12")}
                                onChange = {this.handleFatherLastName12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3471,7 +3411,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherLastName12", "#FatherLastName13")}
                                onChange = {this.handleFatherLastName13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3481,7 +3421,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherLastName13", "#FatherLastName14")}
                                onChange = {this.handleFatherLastName14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3491,7 +3431,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherLastName14", "#FatherLastName15")}
                                onChange = {this.handleFatherLastName15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3501,7 +3441,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherLastName15", "#FatherLastName16")}
                                onChange = {this.handleFatherLastName16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3511,7 +3451,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherLastName16", "#FatherLastName17")}
                                onChange = {this.handleFatherLastName17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3521,7 +3461,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherLastName17", "#FatherLastName18")}
                                onChange = {this.handleFatherLastName18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3531,7 +3471,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherLastName18", "#FatherLastName19")}
                                onChange = {this.handleFatherLastName19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3541,7 +3481,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherLastName19", "#FatherLastName20")}
                                onChange = {this.handleFatherLastName20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3551,7 +3491,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherLastName20", "#FatherLastName21")}
                                onChange = {this.handleFatherLastName21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3561,7 +3501,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherLastName21", "#FatherLastName22")}
                                onChange = {this.handleFatherLastName22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3571,7 +3511,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherLastName22", "#FatherLastName23")}
                                onChange = {this.handleFatherLastName23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3581,7 +3521,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherLastName23", "#FatherLastName24")}
                                onChange = {this.handleFatherLastName24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3590,18 +3530,12 @@ class Panmain extends React.Component {
                                id = "FatherLastName25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherLastName24", "#FatherLastName25")}
                                onChange = {this.handleFatherLastName25}/>
-
-                          {this.state.isIndicatorEnabled === false ? 
-                           <span className="tooltip" style={{marginLeft:"3%"}}>
-                          <img src={indicator} style={{width:"3%",height:"3%"}} />
-                            <img src={namefield} className="tooltiptext" style={{width:"600px",height:"150px"}}  />
-                         </span>
-                         : ""}
+ 
                           <br/>
                            </div>
                            
                            <div>
-                           <input 
+                           <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3611,7 +3545,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherFirstName1", "#FatherFirstName1")}
                                onChange = {this.handleFatherFirstName1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3621,7 +3555,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherFirstName1", "#FatherFirstName2")}
                                onChange = {this.handleFatherFirstName2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3631,7 +3565,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherFirstName2", "#FatherFirstName3")}
                                onChange = {this.handleFatherFirstName3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3641,7 +3575,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherFirstName3", "#FatherFirstName4")}
                                onChange = {this.handleFatherFirstName4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3651,7 +3585,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherFirstName4", "#FatherFirstName5")}
                                onChange = {this.handleFatherFirstName5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3661,7 +3595,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherFirstName5", "#FatherFirstName6")}
                                onChange = {this.handleFatherFirstName6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3671,7 +3605,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherFirstName6", "#FatherFirstName7")}
                                onChange = {this.handleFatherFirstName7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3681,7 +3615,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherFirstName7", "#FatherFirstName8")}
                                onChange = {this.handleFatherFirstName8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3691,7 +3625,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherFirstName8", "#FatherFirstName9")}
                                onChange = {this.handleFatherFirstName9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3701,7 +3635,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherFirstName9", "#FatherFirstName10")}
                                onChange = {this.handleFatherFirstName10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3711,7 +3645,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherFirstName10", "#FatherFirstName11")}
                                onChange = {this.handleFatherFirstName11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3721,7 +3655,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherFirstName11", "#FatherFirstName12")}
                                onChange = {this.handleFatherFirstName12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3731,7 +3665,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherFirstName12", "#FatherFirstName13")}
                                onChange = {this.handleFatherFirstName13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3741,7 +3675,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherFirstName13", "#FatherFirstName14")}
                                onChange = {this.handleFatherFirstName14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3751,7 +3685,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherFirstName14", "#FatherFirstName15")}
                                onChange = {this.handleFatherFirstName15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3761,7 +3695,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherFirstName15", "#FatherFirstName16")}
                                onChange = {this.handleFatherFirstName16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3771,7 +3705,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherFirstName16", "#FatherFirstName17")}
                                onChange = {this.handleFatherFirstName17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3781,7 +3715,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherFirstName17", "#FatherFirstName18")}
                                onChange = {this.handleFatherFirstName18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3791,7 +3725,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherFirstName18", "#FatherFirstName19")}
                                onChange = {this.handleFatherFirstName19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3801,7 +3735,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherFirstName19", "#FatherFirstName20")}
                                onChange = {this.handleFatherFirstName20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3811,7 +3745,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherFirstName20", "#FatherFirstName21")}
                                onChange = {this.handleFatherFirstName21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3821,7 +3755,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherFirstName21", "#FatherFirstName22")}
                                onChange = {this.handleFatherFirstName22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3831,7 +3765,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherFirstName22", "#FatherFirstName23")}
                                onChange = {this.handleFatherFirstName23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3841,7 +3775,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherFirstName23", "#FatherFirstName24")}
                                onChange = {this.handleFatherFirstName24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3850,17 +3784,12 @@ class Panmain extends React.Component {
                                id = "FatherFirstName25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherFirstName24", "#FatherFirstName25")}
                                onChange = {this.handleFatherFirstName25}/>
-                          {this.state.isIndicatorEnabled === false ? 
-                           <span className="tooltip" style={{marginLeft:"3%"}}>
-                          <img src={indicator} style={{width:"3%",height:"3%"}} />
-                            <img src={namefield} className="tooltiptext" style={{width:"600px",height:"150px"}}  />
-                         </span>
-                         : ""}
+ 
                           <br/>
                            </div>
 
                            <div>
-                           <input 
+                           <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3870,7 +3799,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherMiddleName1", "#FatherMiddleName1")}
                                onChange = {this.handleFatherMiddleName1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3880,7 +3809,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherMiddleName1", "#FatherMiddleName2")}
                                onChange = {this.handleFatherMiddleName2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3890,7 +3819,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherMiddleName2", "#FatherMiddleName3")}
                                onChange = {this.handleFatherMiddleName3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3900,7 +3829,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherMiddleName3", "#FatherMiddleName4")}
                                onChange = {this.handleFatherMiddleName4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3910,7 +3839,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherMiddleName4", "#FatherMiddleName5")}
                                onChange = {this.handleFatherMiddleName5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3920,7 +3849,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherMiddleName5", "#FatherMiddleName6")}
                                onChange = {this.handleFatherMiddleName6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3930,7 +3859,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherMiddleName6", "#FatherMiddleName7")}
                                onChange = {this.handleFatherMiddleName7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3940,7 +3869,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherMiddleName7", "#FatherMiddleName8")}
                                onChange = {this.handleFatherMiddleName8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3950,7 +3879,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherMiddleName8", "#FatherMiddleName9")}
                                onChange = {this.handleFatherMiddleName9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3960,7 +3889,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherMiddleName9", "#FatherMiddleName10")}
                                onChange = {this.handleFatherMiddleName10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3970,7 +3899,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherMiddleName10", "#FatherMiddleName11")}
                                onChange = {this.handleFatherMiddleName11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3980,7 +3909,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherMiddleName11", "#FatherMiddleName12")}
                                onChange = {this.handleFatherMiddleName12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -3990,7 +3919,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherMiddleName12", "#FatherMiddleName13")}
                                onChange = {this.handleFatherMiddleName13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4000,7 +3929,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherMiddleName13", "#FatherMiddleName14")}
                                onChange = {this.handleFatherMiddleName14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4010,7 +3939,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherMiddleName14", "#FatherMiddleName15")}
                                onChange = {this.handleFatherMiddleName15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4020,7 +3949,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherMiddleName15", "#FatherMiddleName16")}
                                onChange = {this.handleFatherMiddleName16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4030,7 +3959,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherMiddleName16", "#FatherMiddleName17")}
                                onChange = {this.handleFatherMiddleName17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4040,7 +3969,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherMiddleName17", "#FatherMiddleName18")}
                                onChange = {this.handleFatherMiddleName18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4050,7 +3979,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherMiddleName18", "#FatherMiddleName19")}
                                onChange = {this.handleFatherMiddleName19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4060,7 +3989,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherMiddleName19", "#FatherMiddleName20")}
                                onChange = {this.handleFatherMiddleName20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4070,7 +3999,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherMiddleName20", "#FatherMiddleName21")}
                                onChange = {this.handleFatherMiddleName21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4080,7 +4009,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherMiddleName21", "#FatherMiddleName22")}
                                onChange = {this.handleFatherMiddleName22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4090,7 +4019,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherMiddleName22", "#FatherMiddleName23")}
                                onChange = {this.handleFatherMiddleName23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4100,7 +4029,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherMiddleName23", "#FatherMiddleName24")}
                                onChange = {this.handleFatherMiddleName24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4109,12 +4038,7 @@ class Panmain extends React.Component {
                                id = "FatherMiddleName25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#FatherMiddleName24", "#FatherMiddleName25")}
                                onChange = {this.handleFatherMiddleName25}/>
-                       {this.state.isIndicatorEnabled === false ? 
-                       <span className="tooltip" style={{marginLeft:"3%"}}>
-                          <img src={indicator} style={{width:"3%",height:"3%"}} />
-                            <img src={namefield} className="tooltiptext" style={{width:"600px",height:"150px"}}  />
-                         </span>
-                         : ""}
+                      
                           <br/>
                             </div>
                          </td>
@@ -4135,7 +4059,7 @@ class Panmain extends React.Component {
 
                          <td className = "secondtd">
                          <div>
-                         <input 
+                         <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4145,7 +4069,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherLastName1", "#MotherLastName1")}
                                onChange = {this.handleMotherLastName1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4155,7 +4079,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherLastName1", "#MotherLastName2")}
                                onChange = {this.handleMotherLastName2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4165,7 +4089,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherLastName2", "#MotherLastName3")}
                                onChange = {this.handleMotherLastName3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4175,7 +4099,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherLastName3", "#MotherLastName4")}
                                onChange = {this.handleMotherLastName4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4185,7 +4109,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherLastName4", "#MotherLastName5")}
                                onChange = {this.handleMotherLastName5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4195,7 +4119,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherLastName5", "#MotherLastName6")}
                                onChange = {this.handleMotherLastName6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4205,7 +4129,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherLastName6", "#MotherLastName7")}
                                onChange = {this.handleMotherLastName7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4215,7 +4139,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherLastName7", "#MotherLastName8")}
                                onChange = {this.handleMotherLastName8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4225,7 +4149,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherLastName8", "#MotherLastName9")}
                                onChange = {this.handleMotherLastName9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4235,7 +4159,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherLastName9", "#MotherLastName10")}
                                onChange = {this.handleMotherLastName10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4245,7 +4169,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherLastName10", "#MotherLastName11")}
                                onChange = {this.handleMotherLastName11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4255,7 +4179,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherLastName11", "#MotherLastName12")}
                                onChange = {this.handleMotherLastName12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4265,7 +4189,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherLastName12", "#MotherLastName13")}
                                onChange = {this.handleMotherLastName13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4275,7 +4199,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherLastName13", "#MotherLastName14")}
                                onChange = {this.handleMotherLastName14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4285,7 +4209,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherLastName14", "#MotherLastName15")}
                                onChange = {this.handleMotherLastName15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4295,7 +4219,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherLastName15", "#MotherLastName16")}
                                onChange = {this.handleMotherLastName16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4305,7 +4229,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherLastName16", "#MotherLastName17")}
                                onChange = {this.handleMotherLastName17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4315,7 +4239,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherLastName17", "#MotherLastName18")}
                                onChange = {this.handleMotherLastName18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4325,7 +4249,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherLastName18", "#MotherLastName19")}
                                onChange = {this.handleMotherLastName19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4335,7 +4259,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherLastName19", "#MotherLastName20")}
                                onChange = {this.handleMotherLastName20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4345,7 +4269,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherLastName20", "#MotherLastName21")}
                                onChange = {this.handleMotherLastName21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4355,7 +4279,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherLastName21", "#MotherLastName22")}
                                onChange = {this.handleMotherLastName22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4365,7 +4289,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherLastName22", "#MotherLastName23")}
                                onChange = {this.handleMotherLastName23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4375,7 +4299,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherLastName23", "#MotherLastName24")}
                                onChange = {this.handleMotherLastName24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4385,18 +4309,13 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherLastName24", "#MotherLastName25")}
                                onChange = {this.handleMotherLastName25}/>
 
-                        {this.state.isIndicatorEnabled === false ? 
-                        <span className="tooltip" style={{marginLeft:"3%"}}>
-                          <img src={indicator} style={{width:"3%",height:"3%"}} />
-                            <img src={namefield} className="tooltiptext" style={{width:"600px",height:"150px"}}  />
-                         </span>
-                         : ""}
+                    
                            <br/>
                            </div>
 
 
                            <div>  
-                          <input 
+                          <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4406,7 +4325,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherFirstName1", "#MotherFirstName1")}
                                onChange = {this.handleMotherFirstName1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4416,7 +4335,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherFirstName1", "#MotherFirstName2")}
                                onChange = {this.handleMotherFirstName2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4426,7 +4345,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherFirstName2", "#MotherFirstName3")}
                                onChange = {this.handleMotherFirstName3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4436,7 +4355,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherFirstName3", "#MotherFirstName4")}
                                onChange = {this.handleMotherFirstName4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4446,7 +4365,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherFirstName4", "#MotherFirstName5")}
                                onChange = {this.handleMotherFirstName5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4456,7 +4375,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherFirstName5", "#MotherFirstName6")}
                                onChange = {this.handleMotherFirstName6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4466,7 +4385,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherFirstName6", "#MotherFirstName7")}
                                onChange = {this.handleMotherFirstName7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4476,7 +4395,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherFirstName7", "#MotherFirstName8")}
                                onChange = {this.handleMotherFirstName8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4486,7 +4405,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherFirstName8", "#MotherFirstName9")}
                                onChange = {this.handleMotherFirstName9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4496,7 +4415,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherFirstName9", "#MotherFirstName10")}
                                onChange = {this.handleMotherFirstName10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4506,7 +4425,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherFirstName10", "#MotherFirstName11")}
                                onChange = {this.handleMotherFirstName11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4516,7 +4435,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherFirstName11", "#MotherFirstName12")}
                                onChange = {this.handleMotherFirstName12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4526,7 +4445,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherFirstName12", "#MotherFirstName13")}
                                onChange = {this.handleMotherFirstName13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4536,7 +4455,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherFirstName13", "#MotherFirstName14")}
                                onChange = {this.handleMotherFirstName14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4546,7 +4465,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherFirstName14", "#MotherFirstName15")}
                                onChange = {this.handleMotherFirstName15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4556,7 +4475,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherFirstName15", "#MotherFirstName16")}
                                onChange = {this.handleMotherFirstName16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4566,7 +4485,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherFirstName16", "#MotherFirstName17")}
                                onChange = {this.handleMotherFirstName17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4576,7 +4495,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherFirstName17", "#MotherFirstName18")}
                                onChange = {this.handleMotherFirstName18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4586,7 +4505,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherFirstName18", "#MotherFirstName19")}
                                onChange = {this.handleMotherFirstName19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4596,7 +4515,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherFirstName19", "#MotherFirstName20")}
                                onChange = {this.handleMotherFirstName20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4606,7 +4525,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherFirstName20", "#MotherFirstName21")}
                                onChange = {this.handleMotherFirstName21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4616,7 +4535,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherFirstName21", "#MotherFirstName22")}
                                onChange = {this.handleMotherFirstName22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4626,7 +4545,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherFirstName22", "#MotherFirstName23")}
                                onChange = {this.handleMotherFirstName23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4636,7 +4555,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherFirstName23", "#MotherFirstName24")}
                                onChange = {this.handleMotherFirstName24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4645,17 +4564,12 @@ class Panmain extends React.Component {
                                id = "MotherFirstName25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherFirstName24", "#MotherFirstName25")}
                                onChange = {this.handleMotherFirstName25}/>
-                          {this.state.isIndicatorEnabled === false ? 
-                         <span className="tooltip" style={{marginLeft:"3%"}}>
-                          <img src={indicator} style={{width:"3%",height:"3%"}} />
-                            <img src={namefield} className="tooltiptext" style={{width:"600px",height:"150px"}}  />
-                         </span>
-                         : ""}
+                      
                           <br/>
                            </div>
 
                            <div>    
-                           <input 
+                           <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4665,7 +4579,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherMiddleName1", "#MotherMiddleName1")}
                                onChange = {this.handleMotherMiddleName1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4675,7 +4589,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherMiddleName1", "#MotherMiddleName2")}
                                onChange = {this.handleMotherMiddleName2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4685,7 +4599,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherMiddleName2", "#MotherMiddleName3")}
                                onChange = {this.handleMotherMiddleName3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4695,7 +4609,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherMiddleName3", "#MotherMiddleName4")}
                                onChange = {this.handleMotherMiddleName4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4705,7 +4619,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherMiddleName4", "#MotherMiddleName5")}
                                onChange = {this.handleMotherMiddleName5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4715,7 +4629,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherMiddleName5", "#MotherMiddleName6")}
                                onChange = {this.handleMotherMiddleName6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4725,7 +4639,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherMiddleName6", "#MotherMiddleName7")}
                                onChange = {this.handleMotherMiddleName7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4735,7 +4649,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherMiddleName7", "#MotherMiddleName8")}
                                onChange = {this.handleMotherMiddleName8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4745,7 +4659,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherMiddleName8", "#MotherMiddleName9")}
                                onChange = {this.handleMotherMiddleName9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4755,7 +4669,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherMiddleName9", "#MotherMiddleName10")}
                                onChange = {this.handleMotherMiddleName10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4765,7 +4679,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherMiddleName10", "#MotherMiddleName11")}
                                onChange = {this.handleMotherMiddleName11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4775,7 +4689,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherMiddleName11", "#MotherMiddleName12")}
                                onChange = {this.handleMotherMiddleName12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4785,7 +4699,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherMiddleName12", "#MotherMiddleName13")}
                                onChange = {this.handleMotherMiddleName13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4795,7 +4709,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherMiddleName13", "#MotherMiddleName14")}
                                onChange = {this.handleMotherMiddleName14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4805,7 +4719,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherMiddleName14", "#MotherMiddleName15")}
                                onChange = {this.handleMotherMiddleName15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4815,7 +4729,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherMiddleName15", "#MotherMiddleName16")}
                                onChange = {this.handleMotherMiddleName16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4825,7 +4739,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherMiddleName16", "#MotherMiddleName17")}
                                onChange = {this.handleMotherMiddleName17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4835,7 +4749,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherMiddleName17", "#MotherMiddleName18")}
                                onChange = {this.handleMotherMiddleName18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4845,7 +4759,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherMiddleName18", "#MotherMiddleName19")}
                                onChange = {this.handleMotherMiddleName19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4855,7 +4769,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherMiddleName19", "#MotherMiddleName20")}
                                onChange = {this.handleMotherMiddleName20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4865,7 +4779,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherMiddleName20", "#MotherMiddleName21")}
                                onChange = {this.handleMotherMiddleName21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4875,7 +4789,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherMiddleName21", "#MotherMiddleName22")}
                                onChange = {this.handleMotherMiddleName22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4885,7 +4799,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherMiddleName22", "#MotherMiddleName23")}
                                onChange = {this.handleMotherMiddleName23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4895,7 +4809,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherMiddleName23", "#MotherMiddleName24")}
                                onChange = {this.handleMotherMiddleName24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4904,12 +4818,7 @@ class Panmain extends React.Component {
                                id = "MotherMiddleName25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#MotherMiddleName24", "#MotherMiddleName25")}
                                onChange = {this.handleMotherMiddleName25}/>
-                        {this.state.isIndicatorEnabled === false ? 
-                        <span className="tooltip" style={{marginLeft:"3%"}}>
-                          <img src={indicator} style={{width:"3%",height:"3%"}} />
-                            <img src={namefield} className="tooltiptext" style={{width:"600px",height:"150px"}}  />
-                         </span>
-                         :""}
+                      
                          <br/>
                             </div>
                          </td>
@@ -4921,7 +4830,7 @@ class Panmain extends React.Component {
                     <label className="FirstLabel">(In case no option is provided then PAN card will be issued with father’s name)</label><br/>
                
                      
-                    <input 
+                    <input disabled 
                       type="checkbox" 
                       className="Check Center_space"
                       id = "14"
@@ -4930,7 +4839,7 @@ class Panmain extends React.Component {
                       onClick={(e)=>this.handleParentNameCheck(e,"ParentName")}/>
                     <label className="Label_with_no_space">Father’s name</label> 
 
-                    <input 
+                    <input disabled 
                       type="checkbox" 
                       className="Check Left_space"
                       id = "15"
@@ -4940,12 +4849,7 @@ class Panmain extends React.Component {
                     <label className="Label_with_no_space">Mother’s name</label> 
                     <label className="Italic_text">(Please tick as applicable)</label> 
                     
-                    {this.state.isIndicatorEnabled === false ? 
-                    <span className="tooltip" style={{marginLeft:"2.4%"}}>
-                          <img src={indicator} style={{width:"2%",height:"2%", marginLeft: "1.4%"}} />
-                          <img src={parentname} className="tooltiptext" style={{width:"600px",height:"150px"}}  />
-                         </span>
-                     : ""}
+                 
                          <br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <span className="ErrorMsg">{this.state.errors.ParentName}</span>
@@ -4958,10 +4862,7 @@ class Panmain extends React.Component {
                     </div>
 
                     <label className="FirstLabel Bold"> Residence Address</label>
-                    {/* <span className="tooltip" style={{marginLeft:"75.3%"}}>
-                        <img src={indicator} style={{width:"2%",height:"2%"}} />
-                        <img src={residencefield} className="tooltiptext" style={{width:"250px",height:"150px"}}  />
-                    </span> */}
+                
                          <br />
 
                     <table>
@@ -4975,7 +4876,7 @@ class Panmain extends React.Component {
 
                          <td className = "secondtd">
                           <div> 
-                          <input 
+                          <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4985,7 +4886,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceFlat1", "#ResidenceFlat1")}
                                onChange = {this.handleResidenceFlat1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -4995,7 +4896,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceFlat1", "#ResidenceFlat2")}
                                onChange = {this.handleResidenceFlat2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5005,7 +4906,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceFlat2", "#ResidenceFlat3")}
                                onChange = {this.handleResidenceFlat3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5015,7 +4916,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceFlat3", "#ResidenceFlat4")}
                                onChange = {this.handleResidenceFlat4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5025,7 +4926,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceFlat4", "#ResidenceFlat5")}
                                onChange = {this.handleResidenceFlat5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5035,7 +4936,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceFlat5", "#ResidenceFlat6")}
                                onChange = {this.handleResidenceFlat6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5045,7 +4946,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceFlat6", "#ResidenceFlat7")}
                                onChange = {this.handleResidenceFlat7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5055,7 +4956,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceFlat7", "#ResidenceFlat8")}
                                onChange = {this.handleResidenceFlat8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5065,7 +4966,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceFlat8", "#ResidenceFlat9")}
                                onChange = {this.handleResidenceFlat9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5075,7 +4976,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceFlat9", "#ResidenceFlat10")}
                                onChange = {this.handleResidenceFlat10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5085,7 +4986,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceFlat10", "#ResidenceFlat11")}
                                onChange = {this.handleResidenceFlat11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5095,7 +4996,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceFlat11", "#ResidenceFlat12")}
                                onChange = {this.handleResidenceFlat12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5105,7 +5006,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceFlat12", "#ResidenceFlat13")}
                                onChange = {this.handleResidenceFlat13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5115,7 +5016,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceFlat13", "#ResidenceFlat14")}
                                onChange = {this.handleResidenceFlat14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5125,7 +5026,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceFlat14", "#ResidenceFlat15")}
                                onChange = {this.handleResidenceFlat15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5135,7 +5036,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceFlat15", "#ResidenceFlat16")}
                                onChange = {this.handleResidenceFlat16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5145,7 +5046,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceFlat16", "#ResidenceFlat17")}
                                onChange = {this.handleResidenceFlat17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5155,7 +5056,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceFlat17", "#ResidenceFlat18")}
                                onChange = {this.handleResidenceFlat18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5165,7 +5066,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceFlat18", "#ResidenceFlat19")}
                                onChange = {this.handleResidenceFlat19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5175,7 +5076,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceFlat19", "#ResidenceFlat20")}
                                onChange = {this.handleResidenceFlat20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5185,7 +5086,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceFlat20", "#ResidenceFlat21")}
                                onChange = {this.handleResidenceFlat21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5195,7 +5096,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceFlat21", "#ResidenceFlat22")}
                                onChange = {this.handleResidenceFlat22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5205,7 +5106,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceFlat22", "#ResidenceFlat23")}
                                onChange = {this.handleResidenceFlat23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5215,7 +5116,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceFlat23", "#ResidenceFlat24")}
                                onChange = {this.handleResidenceFlat24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5224,17 +5125,12 @@ class Panmain extends React.Component {
                                id = "ResidenceFlat25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceFlat24", "#ResidenceFlat25")}
                                onChange = {this.handleResidenceFlat25}/>
-                             {this.state.isIndicatorEnabled === false ? 
-                            <span className="tooltip" style={{marginLeft:"3%"}}>
-                          <img src={indicator} style={{width:"3%",height:"3%"}} />
-                            <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}}>Please enter combinations of alphabet, numbers , -, /, ' </label>
-                         </span> 
-                         : ""}
+                             
                          <br/>
                            </div>
                              
                            <div>
-                           <input 
+                           <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5244,7 +5140,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePremises1", "#ResidencePremises1")}
                                onChange = {this.handleResidencePremises1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5254,7 +5150,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePremises1", "#ResidencePremises2")}
                                onChange = {this.handleResidencePremises2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5264,7 +5160,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePremises2", "#ResidencePremises3")}
                                onChange = {this.handleResidencePremises3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5274,7 +5170,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePremises3", "#ResidencePremises4")}
                                onChange = {this.handleResidencePremises4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5284,7 +5180,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePremises4", "#ResidencePremises5")}
                                onChange = {this.handleResidencePremises5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5294,7 +5190,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePremises5", "#ResidencePremises6")}
                                onChange = {this.handleResidencePremises6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5304,7 +5200,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePremises6", "#ResidencePremises7")}
                                onChange = {this.handleResidencePremises7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5314,7 +5210,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePremises7", "#ResidencePremises8")}
                                onChange = {this.handleResidencePremises8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5324,7 +5220,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePremises8", "#ResidencePremises9")}
                                onChange = {this.handleResidencePremises9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5334,7 +5230,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePremises9", "#ResidencePremises10")}
                                onChange = {this.handleResidencePremises10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5344,7 +5240,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePremises10", "#ResidencePremises11")}
                                onChange = {this.handleResidencePremises11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5354,7 +5250,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePremises11", "#ResidencePremises12")}
                                onChange = {this.handleResidencePremises12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5364,7 +5260,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePremises12", "#ResidencePremises13")}
                                onChange = {this.handleResidencePremises13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5374,7 +5270,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePremises13", "#ResidencePremises14")}
                                onChange = {this.handleResidencePremises14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5384,7 +5280,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePremises14", "#ResidencePremises15")}
                                onChange = {this.handleResidencePremises15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5394,7 +5290,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePremises15", "#ResidencePremises16")}
                                onChange = {this.handleResidencePremises16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5404,7 +5300,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePremises16", "#ResidencePremises17")}
                                onChange = {this.handleResidencePremises17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5414,7 +5310,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePremises17", "#ResidencePremises18")}
                                onChange = {this.handleResidencePremises18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5424,7 +5320,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePremises18", "#ResidencePremises19")}
                                onChange = {this.handleResidencePremises19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5434,7 +5330,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePremises19", "#ResidencePremises20")}
                                onChange = {this.handleResidencePremises20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5444,7 +5340,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePremises20", "#ResidencePremises21")}
                                onChange = {this.handleResidencePremises21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5454,7 +5350,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePremises21", "#ResidencePremises22")}
                                onChange = {this.handleResidencePremises22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5464,7 +5360,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePremises22", "#ResidencePremises23")}
                                onChange = {this.handleResidencePremises23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5474,7 +5370,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePremises23", "#ResidencePremises24")}
                                onChange = {this.handleResidencePremises24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5483,17 +5379,12 @@ class Panmain extends React.Component {
                                id = "ResidencePremises25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePremises24", "#ResidencePremises25")}
                                onChange = {this.handleResidencePremises25}/>
-                           {this.state.isIndicatorEnabled === false ? 
-                            <span className="tooltip" style={{marginLeft:"3%"}}>
-                          <img src={indicator} style={{width:"3%",height:"3%"}} />
-                            <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}}>Please enter combinations of alphabet, numbers </label>
-                         </span> 
-                         : ""}
+                          
                           <br/>
                            </div>
 
                            <div> 
-                           <input 
+                           <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5503,7 +5394,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceRoad1", "#ResidenceRoad1")}
                                onChange = {this.handleResidenceRoad1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5513,7 +5404,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceRoad1", "#ResidenceRoad2")}
                                onChange = {this.handleResidenceRoad2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5523,7 +5414,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceRoad2", "#ResidenceRoad3")}
                                onChange = {this.handleResidenceRoad3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5533,7 +5424,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceRoad3", "#ResidenceRoad4")}
                                onChange = {this.handleResidenceRoad4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5543,7 +5434,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceRoad4", "#ResidenceRoad5")}
                                onChange = {this.handleResidenceRoad5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5553,7 +5444,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceRoad5", "#ResidenceRoad6")}
                                onChange = {this.handleResidenceRoad6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5563,7 +5454,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceRoad6", "#ResidenceRoad7")}
                                onChange = {this.handleResidenceRoad7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5573,7 +5464,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceRoad7", "#ResidenceRoad8")}
                                onChange = {this.handleResidenceRoad8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5583,7 +5474,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceRoad8", "#ResidenceRoad9")}
                                onChange = {this.handleResidenceRoad9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5593,7 +5484,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceRoad9", "#ResidenceRoad10")}
                                onChange = {this.handleResidenceRoad10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5603,7 +5494,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceRoad10", "#ResidenceRoad11")}
                                onChange = {this.handleResidenceRoad11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5613,7 +5504,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceRoad11", "#ResidenceRoad12")}
                                onChange = {this.handleResidenceRoad12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5623,7 +5514,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceRoad12", "#ResidenceRoad13")}
                                onChange = {this.handleResidenceRoad13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5633,7 +5524,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceRoad13", "#ResidenceRoad14")}
                                onChange = {this.handleResidenceRoad14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5643,7 +5534,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceRoad14", "#ResidenceRoad15")}
                                onChange = {this.handleResidenceRoad15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5653,7 +5544,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceRoad15", "#ResidenceRoad16")}
                                onChange = {this.handleResidenceRoad16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5663,7 +5554,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceRoad16", "#ResidenceRoad17")}
                                onChange = {this.handleResidenceRoad17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5673,7 +5564,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceRoad17", "#ResidenceRoad18")}
                                onChange = {this.handleResidenceRoad18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5683,7 +5574,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceRoad18", "#ResidenceRoad19")}
                                onChange = {this.handleResidenceRoad19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5693,7 +5584,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceRoad19", "#ResidenceRoad20")}
                                onChange = {this.handleResidenceRoad20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5703,7 +5594,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceRoad20", "#ResidenceRoad21")}
                                onChange = {this.handleResidenceRoad21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5713,7 +5604,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceRoad21", "#ResidenceRoad22")}
                                onChange = {this.handleResidenceRoad22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5723,7 +5614,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceRoad22", "#ResidenceRoad23")}
                                onChange = {this.handleResidenceRoad23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5733,7 +5624,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceRoad23", "#ResidenceRoad24")}
                                onChange = {this.handleResidenceRoad24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5742,18 +5633,12 @@ class Panmain extends React.Component {
                                id = "ResidenceRoad25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceRoad24", "#ResidenceRoad25")}
                                onChange = {this.handleResidenceRoad25}/>
-
-                          {this.state.isIndicatorEnabled === false ? 
-                            <span className="tooltip" style={{marginLeft:"3%"}}>
-                          <img src={indicator} style={{width:"3%",height:"3%"}} />
-                            <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}}>Please enter combinations of alphabet, numbers </label>
-                         </span>
-                         : ""}
+ 
                            <br/>
                            </div>
                             
                            <div>
-                           <input 
+                           <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5763,7 +5648,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceArea1", "#ResidenceArea1")}
                                onChange = {this.handleResidenceArea1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5773,7 +5658,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceArea1", "#ResidenceArea2")}
                                onChange = {this.handleResidenceArea2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5783,7 +5668,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceArea2", "#ResidenceArea3")}
                                onChange = {this.handleResidenceArea3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5793,7 +5678,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceArea3", "#ResidenceArea4")}
                                onChange = {this.handleResidenceArea4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5803,7 +5688,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceArea4", "#ResidenceArea5")}
                                onChange = {this.handleResidenceArea5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5813,7 +5698,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceArea5", "#ResidenceArea6")}
                                onChange = {this.handleResidenceArea6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5823,7 +5708,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceArea6", "#ResidenceArea7")}
                                onChange = {this.handleResidenceArea7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5833,7 +5718,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceArea7", "#ResidenceArea8")}
                                onChange = {this.handleResidenceArea8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5843,7 +5728,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceArea8", "#ResidenceArea9")}
                                onChange = {this.handleResidenceArea9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5853,7 +5738,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceArea9", "#ResidenceArea10")}
                                onChange = {this.handleResidenceArea10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5863,7 +5748,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceArea10", "#ResidenceArea11")}
                                onChange = {this.handleResidenceArea11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5873,7 +5758,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceArea11", "#ResidenceArea12")}
                                onChange = {this.handleResidenceArea12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5883,7 +5768,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceArea12", "#ResidenceArea13")}
                                onChange = {this.handleResidenceArea13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5893,7 +5778,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceArea13", "#ResidenceArea14")}
                                onChange = {this.handleResidenceArea14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5903,7 +5788,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceArea14", "#ResidenceArea15")}
                                onChange = {this.handleResidenceArea15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5913,7 +5798,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceArea15", "#ResidenceArea16")}
                                onChange = {this.handleResidenceArea16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5923,7 +5808,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceArea16", "#ResidenceArea17")}
                                onChange = {this.handleResidenceArea17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5933,7 +5818,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceArea17", "#ResidenceArea18")}
                                onChange = {this.handleResidenceArea18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5943,7 +5828,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceArea18", "#ResidenceArea19")}
                                onChange = {this.handleResidenceArea19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5953,7 +5838,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceArea19", "#ResidenceArea20")}
                                onChange = {this.handleResidenceArea20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5963,7 +5848,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceArea20", "#ResidenceArea21")}
                                onChange = {this.handleResidenceArea21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5973,7 +5858,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceArea21", "#ResidenceArea22")}
                                onChange = {this.handleResidenceArea22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5983,7 +5868,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceArea22", "#ResidenceArea23")}
                                onChange = {this.handleResidenceArea23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -5993,7 +5878,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceArea23", "#ResidenceArea24")}
                                onChange = {this.handleResidenceArea24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6002,17 +5887,12 @@ class Panmain extends React.Component {
                                id = "ResidenceArea25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceArea24", "#ResidenceArea25")}
                                onChange = {this.handleResidenceArea25}/>
-                             {this.state.isIndicatorEnabled === false ? 
-                            <span className="tooltip" style={{marginLeft:"3%"}}>
-                          <img src={indicator} style={{width:"3%",height:"3%"}} />
-                            <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}}>Please enter only alphabet</label>
-                         </span>
-                         : ""}
+                            
                           <br/>
                            </div>
 
                            <div>
-                           <input 
+                           <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6022,7 +5902,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceTown1", "#ResidenceTown1")}
                                onChange = {this.handleResidenceTown1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6032,7 +5912,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceTown1", "#ResidenceTown2")}
                                onChange = {this.handleResidenceTown2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6042,7 +5922,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceTown2", "#ResidenceTown3")}
                                onChange = {this.handleResidenceTown3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6052,7 +5932,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceTown3", "#ResidenceTown4")}
                                onChange = {this.handleResidenceTown4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6062,7 +5942,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceTown4", "#ResidenceTown5")}
                                onChange = {this.handleResidenceTown5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6072,7 +5952,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceTown5", "#ResidenceTown6")}
                                onChange = {this.handleResidenceTown6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6082,7 +5962,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceTown6", "#ResidenceTown7")}
                                onChange = {this.handleResidenceTown7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6092,7 +5972,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceTown7", "#ResidenceTown8")}
                                onChange = {this.handleResidenceTown8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6102,7 +5982,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceTown8", "#ResidenceTown9")}
                                onChange = {this.handleResidenceTown9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6112,7 +5992,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceTown9", "#ResidenceTown10")}
                                onChange = {this.handleResidenceTown10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6122,7 +6002,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceTown10", "#ResidenceTown11")}
                                onChange = {this.handleResidenceTown11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6132,7 +6012,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceTown11", "#ResidenceTown12")}
                                onChange = {this.handleResidenceTown12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6142,7 +6022,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceTown12", "#ResidenceTown13")}
                                onChange = {this.handleResidenceTown13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6152,7 +6032,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceTown13", "#ResidenceTown14")}
                                onChange = {this.handleResidenceTown14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6162,7 +6042,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceTown14", "#ResidenceTown15")}
                                onChange = {this.handleResidenceTown15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6172,7 +6052,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceTown15", "#ResidenceTown16")}
                                onChange = {this.handleResidenceTown16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6182,7 +6062,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceTown16", "#ResidenceTown17")}
                                onChange = {this.handleResidenceTown17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6192,7 +6072,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceTown17", "#ResidenceTown18")}
                                onChange = {this.handleResidenceTown18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6202,7 +6082,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceTown18", "#ResidenceTown19")}
                                onChange = {this.handleResidenceTown19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6212,7 +6092,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceTown19", "#ResidenceTown20")}
                                onChange = {this.handleResidenceTown20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6222,7 +6102,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceTown20", "#ResidenceTown21")}
                                onChange = {this.handleResidenceTown21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6232,7 +6112,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceTown21", "#ResidenceTown22")}
                                onChange = {this.handleResidenceTown22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6242,7 +6122,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceTown22", "#ResidenceTown23")}
                                onChange = {this.handleResidenceTown23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6252,7 +6132,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceTown23", "#ResidenceTown24")}
                                onChange = {this.handleResidenceTown24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6261,12 +6141,7 @@ class Panmain extends React.Component {
                                id = "ResidenceTown25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidenceTown24", "#ResidenceTown25")}
                                onChange = {this.handleResidenceTown25}/>
-                             {this.state.isIndicatorEnabled === false ? 
-                            <span className="tooltip" style={{marginLeft:"3%"}}>
-                          <img src={indicator} style={{width:"3%",height:"3%"}} />
-                            <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}}>Please enter only alphabet</label>
-                         </span>
-                         : ""}
+                            
                           <br/>
                            </div>
                             
@@ -6275,34 +6150,23 @@ class Panmain extends React.Component {
                       </tr>
                     </tbody>
                     </table>
-
-                    <table cellPadding = "0" cellSpacing = "0"  className = "divState">
-                    <tbody>
-                        <tr>
-                           <td >
-                     
+ 
                              <label className = "StateId"> State / Union Territory </label>
-                          </td>
-                          <td >
+                         
                              <label className = "PincodeId"> Pincode / Zip code </label>
-                          </td>
-                          <td >
+                          
                              <label className = "CountryId"> Country Name </label>
-                          </td>
-                       </tr>
-                       <tr>
-                          <td >
-                             
-                             <input 
+                             <br/>
+                       
+                             <input disabled 
                                 className = "StateValue"
                                 name="ResidenceState"
                                 id = "ResidenceState"
                                 value={this.state.data.ResidenceState}
                                 onChange={event => this.handleResidenceState(event)}/>
                              
-                          </td>
-                          <td> 
-                          <input 
+                          
+                          <input disabled 
                                type="text" 
                                className="Pincode-control"
                                maxLength = "1"
@@ -6312,7 +6176,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePincode1", "#ResidencePincode1")}
                                onChange = {this.handleResidencePincode1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Pincode-control"
                                maxLength = "1"
@@ -6322,7 +6186,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePincode1", "#ResidencePincode2")}
                                onChange = {this.handleResidencePincode2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Pincode-control"
                                maxLength = "1"
@@ -6332,7 +6196,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePincode2", "#ResidencePincode3")}
                                onChange = {this.handleResidencePincode3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Pincode-control"
                                maxLength = "1"
@@ -6342,7 +6206,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePincode3", "#ResidencePincode4")}
                                onChange = {this.handleResidencePincode4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Pincode-control"
                                maxLength = "1"
@@ -6352,7 +6216,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePincode4", "#ResidencePincode5")}
                                onChange = {this.handleResidencePincode5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Pincode-control"
                                maxLength = "1"
@@ -6362,7 +6226,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#ResidencePincode5", "#ResidencePincode6")}
                                onChange = {this.handleResidencePincode6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Pincode-control"
                                maxLength = "1"
@@ -6373,32 +6237,14 @@ class Panmain extends React.Component {
                                onChange = {this.handleResidencePincode7}/>
 
 
-
-                           </td>
-                           <td cellPadding = "0" cellSpacing = "0">
-                             <input 
+                             <input disabled 
                                 className = "CountryValue"
                                 name="ResidenceCountry"
                                 id = "ResidenceCountry"
                                 value={this.state.data.ResidenceCountry}
                                 onChange={event => this.handleResidenceCountry(event)}/>
 
-
-                              {this.state.isIndicatorEnabled === false ? 
-                              <span className="tooltip" style={{marginLeft:"20.3%"}}>
-                           <img src={indicator} style={{width:"7.7%",height:"3%" ,marginLeft: "30%"}} />
-                            <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}}>Please enter as applicable</label>
-                         </span>
-                         : ""}
-                           </td>
-                          
-                       </tr>
-                       
-                       
-                    </tbody>
-                    </table>
-                    
-
+ 
 
                     </div>
                     <br /><br />
@@ -6407,18 +6253,13 @@ class Panmain extends React.Component {
                     <br />
                     </div>
                     <br /><br />
-                    <div className="Form2" style={{marginLeft:"0%",width:"102%"}}>
+                    <div className="Form2" style = {{marginLeft : "0%", width: "102%"}} >
                     <br />
                     <div className="box2">
                      <div className="content2">
 
                     <label className = "FirstLabel Bold">Office Address </label> 
-                    {this.state.isIndicatorEnabled === false ? 
-                    <span className="tooltip" style={{marginLeft:"78.1%"}}>
-                          <img src={indicator} style={{width:"2.2%",height:"1.9%"}} />
-                            <img src={officefield} className="tooltiptext" style={{width:"600px",height:"150px"}}  />
-                         </span>
-                         : ""}
+                    
                          <br/>
                     <table>
                     <tbody>
@@ -6431,7 +6272,7 @@ class Panmain extends React.Component {
 
                          <td className = "secondtd">
                           <div> 
-                          <input 
+                          <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6441,7 +6282,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeName1", "#OfficeName1")}
                                onChange = {this.handleOfficeName1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6451,7 +6292,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeName1", "#OfficeName2")}
                                onChange = {this.handleOfficeName2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6461,7 +6302,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeName2", "#OfficeName3")}
                                onChange = {this.handleOfficeName3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6471,7 +6312,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeName3", "#OfficeName4")}
                                onChange = {this.handleOfficeName4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6481,7 +6322,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeName4", "#OfficeName5")}
                                onChange = {this.handleOfficeName5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6491,7 +6332,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeName5", "#OfficeName6")}
                                onChange = {this.handleOfficeName6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6501,7 +6342,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeName6", "#OfficeName7")}
                                onChange = {this.handleOfficeName7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6511,7 +6352,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeName7", "#OfficeName8")}
                                onChange = {this.handleOfficeName8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6521,7 +6362,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeName8", "#OfficeName9")}
                                onChange = {this.handleOfficeName9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6531,7 +6372,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeName9", "#OfficeName10")}
                                onChange = {this.handleOfficeName10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6541,7 +6382,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeName10", "#OfficeName11")}
                                onChange = {this.handleOfficeName11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6551,7 +6392,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeName11", "#OfficeName12")}
                                onChange = {this.handleOfficeName12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6561,7 +6402,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeName12", "#OfficeName13")}
                                onChange = {this.handleOfficeName13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6571,7 +6412,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeName13", "#OfficeName14")}
                                onChange = {this.handleOfficeName14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6581,7 +6422,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeName14", "#OfficeName15")}
                                onChange = {this.handleOfficeName15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6591,7 +6432,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeName15", "#OfficeName16")}
                                onChange = {this.handleOfficeName16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6601,7 +6442,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeName16", "#OfficeName17")}
                                onChange = {this.handleOfficeName17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6611,7 +6452,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeName17", "#OfficeName18")}
                                onChange = {this.handleOfficeName18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6621,7 +6462,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeName18", "#OfficeName19")}
                                onChange = {this.handleOfficeName19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6631,7 +6472,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeName19", "#OfficeName20")}
                                onChange = {this.handleOfficeName20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6641,7 +6482,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeName20", "#OfficeName21")}
                                onChange = {this.handleOfficeName21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6651,7 +6492,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeName21", "#OfficeName22")}
                                onChange = {this.handleOfficeName22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6661,7 +6502,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeName22", "#OfficeName23")}
                                onChange = {this.handleOfficeName23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6671,7 +6512,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeName23", "#OfficeName24")}
                                onChange = {this.handleOfficeName24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6680,17 +6521,12 @@ class Panmain extends React.Component {
                                id = "OfficeName25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeName24", "#OfficeName25")}
                                onChange = {this.handleOfficeName25}/>
-                             {this.state.isIndicatorEnabled === false ? 
-                            <span className="tooltip" style={{marginLeft:"3%"}}>
-                          <img src={indicator} style={{width:"3%",height:"3%"}} />
-                            <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}}>Please enter combinations of alphabet, numbers</label>
-                         </span>
-                         : ""}
+                          
                          <br/>
                            </div>
                            
                            <div>
-                           <input 
+                           <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6700,7 +6536,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeFlat1", "#OfficeFlat1")}
                                onChange = {this.handleOfficeFlat1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6710,7 +6546,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeFlat1", "#OfficeFlat2")}
                                onChange = {this.handleOfficeFlat2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6720,7 +6556,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeFlat2", "#OfficeFlat3")}
                                onChange = {this.handleOfficeFlat3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6730,7 +6566,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeFlat3", "#OfficeFlat4")}
                                onChange = {this.handleOfficeFlat4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6740,7 +6576,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeFlat4", "#OfficeFlat5")}
                                onChange = {this.handleOfficeFlat5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6750,7 +6586,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeFlat5", "#OfficeFlat6")}
                                onChange = {this.handleOfficeFlat6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6760,7 +6596,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeFlat6", "#OfficeFlat7")}
                                onChange = {this.handleOfficeFlat7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6770,7 +6606,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeFlat7", "#OfficeFlat8")}
                                onChange = {this.handleOfficeFlat8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6780,7 +6616,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeFlat8", "#OfficeFlat9")}
                                onChange = {this.handleOfficeFlat9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6790,7 +6626,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeFlat9", "#OfficeFlat10")}
                                onChange = {this.handleOfficeFlat10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6800,7 +6636,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeFlat10", "#OfficeFlat11")}
                                onChange = {this.handleOfficeFlat11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6810,7 +6646,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeFlat11", "#OfficeFlat12")}
                                onChange = {this.handleOfficeFlat12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6820,7 +6656,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeFlat12", "#OfficeFlat13")}
                                onChange = {this.handleOfficeFlat13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6830,7 +6666,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeFlat13", "#OfficeFlat14")}
                                onChange = {this.handleOfficeFlat14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6840,7 +6676,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeFlat14", "#OfficeFlat15")}
                                onChange = {this.handleOfficeFlat15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6850,7 +6686,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeFlat15", "#OfficeFlat16")}
                                onChange = {this.handleOfficeFlat16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6860,7 +6696,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeFlat16", "#OfficeFlat17")}
                                onChange = {this.handleOfficeFlat17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6870,7 +6706,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeFlat17", "#OfficeFlat18")}
                                onChange = {this.handleOfficeFlat18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6880,7 +6716,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeFlat18", "#OfficeFlat19")}
                                onChange = {this.handleOfficeFlat19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6890,7 +6726,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeFlat19", "#OfficeFlat20")}
                                onChange = {this.handleOfficeFlat20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6900,7 +6736,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeFlat20", "#OfficeFlat21")}
                                onChange = {this.handleOfficeFlat21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6910,7 +6746,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeFlat21", "#OfficeFlat22")}
                                onChange = {this.handleOfficeFlat22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6920,7 +6756,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeFlat22", "#OfficeFlat23")}
                                onChange = {this.handleOfficeFlat23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6930,7 +6766,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeFlat23", "#OfficeFlat24")}
                                onChange = {this.handleOfficeFlat24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6939,18 +6775,12 @@ class Panmain extends React.Component {
                                id = "OfficeFlat25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeFlat24", "#OfficeFlat25")}
                                onChange = {this.handleOfficeFlat25}/>
-
-                             {this.state.isIndicatorEnabled === false ? 
-                            <span className="tooltip" style={{marginLeft:"3%"}}>
-                          <img src={indicator} style={{width:"3%",height:"3%"}} />
-                            <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}}>Please enter combinations of alphabet, numbers, -, /, '</label>
-                         </span>
-                         : ""}
+ 
                          <br/>
                            </div>
 
                            <div>
-                           <input 
+                           <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6960,7 +6790,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePremises1", "#OfficePremises1")}
                                onChange = {this.handleOfficePremises1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6970,7 +6800,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePremises1", "#OfficePremises2")}
                                onChange = {this.handleOfficePremises2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6980,7 +6810,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePremises2", "#OfficePremises3")}
                                onChange = {this.handleOfficePremises3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -6990,7 +6820,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePremises3", "#OfficePremises4")}
                                onChange = {this.handleOfficePremises4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7000,7 +6830,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePremises4", "#OfficePremises5")}
                                onChange = {this.handleOfficePremises5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7010,7 +6840,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePremises5", "#OfficePremises6")}
                                onChange = {this.handleOfficePremises6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7020,7 +6850,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePremises6", "#OfficePremises7")}
                                onChange = {this.handleOfficePremises7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7030,7 +6860,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePremises7", "#OfficePremises8")}
                                onChange = {this.handleOfficePremises8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7040,7 +6870,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePremises8", "#OfficePremises9")}
                                onChange = {this.handleOfficePremises9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7050,7 +6880,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePremises9", "#OfficePremises10")}
                                onChange = {this.handleOfficePremises10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7060,7 +6890,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePremises10", "#OfficePremises11")}
                                onChange = {this.handleOfficePremises11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7070,7 +6900,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePremises11", "#OfficePremises12")}
                                onChange = {this.handleOfficePremises12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7080,7 +6910,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePremises12", "#OfficePremises13")}
                                onChange = {this.handleOfficePremises13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7090,7 +6920,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePremises13", "#OfficePremises14")}
                                onChange = {this.handleOfficePremises14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7100,7 +6930,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePremises14", "#OfficePremises15")}
                                onChange = {this.handleOfficePremises15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7110,7 +6940,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePremises15", "#OfficePremises16")}
                                onChange = {this.handleOfficePremises16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7120,7 +6950,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePremises16", "#OfficePremises17")}
                                onChange = {this.handleOfficePremises17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7130,7 +6960,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePremises17", "#OfficePremises18")}
                                onChange = {this.handleOfficePremises18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7140,7 +6970,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePremises18", "#OfficePremises19")}
                                onChange = {this.handleOfficePremises19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7150,7 +6980,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePremises19", "#OfficePremises20")}
                                onChange = {this.handleOfficePremises20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7160,7 +6990,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePremises20", "#OfficePremises21")}
                                onChange = {this.handleOfficePremises21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7170,7 +7000,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePremises21", "#OfficePremises22")}
                                onChange = {this.handleOfficePremises22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7180,7 +7010,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePremises22", "#OfficePremises23")}
                                onChange = {this.handleOfficePremises23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7190,7 +7020,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePremises23", "#OfficePremises24")}
                                onChange = {this.handleOfficePremises24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7199,17 +7029,12 @@ class Panmain extends React.Component {
                                id = "OfficePremises25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePremises24", "#OfficePremises25")}
                                onChange = {this.handleOfficePremises25}/>
-                             {this.state.isIndicatorEnabled === false ? 
-                            <span className="tooltip" style={{marginLeft:"3%"}}>
-                          <img src={indicator} style={{width:"3%",height:"3%"}} />
-                            <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}}>Please enter combinations of alphabet , numbers</label>
-                         </span>
-                         : ""}
+                             
                             <br/>
                            </div>
                             
                            <div>
-                           <input 
+                           <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7219,7 +7044,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeRoad1", "#OfficeRoad1")}
                                onChange = {this.handleOfficeRoad1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7229,7 +7054,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeRoad1", "#OfficeRoad2")}
                                onChange = {this.handleOfficeRoad2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7239,7 +7064,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeRoad2", "#OfficeRoad3")}
                                onChange = {this.handleOfficeRoad3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7249,7 +7074,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeRoad3", "#OfficeRoad4")}
                                onChange = {this.handleOfficeRoad4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7259,7 +7084,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeRoad4", "#OfficeRoad5")}
                                onChange = {this.handleOfficeRoad5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7269,7 +7094,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeRoad5", "#OfficeRoad6")}
                                onChange = {this.handleOfficeRoad6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7279,7 +7104,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeRoad6", "#OfficeRoad7")}
                                onChange = {this.handleOfficeRoad7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7289,7 +7114,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeRoad7", "#OfficeRoad8")}
                                onChange = {this.handleOfficeRoad8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7299,7 +7124,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeRoad8", "#OfficeRoad9")}
                                onChange = {this.handleOfficeRoad9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7309,7 +7134,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeRoad9", "#OfficeRoad10")}
                                onChange = {this.handleOfficeRoad10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7319,7 +7144,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeRoad10", "#OfficeRoad11")}
                                onChange = {this.handleOfficeRoad11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7329,7 +7154,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeRoad11", "#OfficeRoad12")}
                                onChange = {this.handleOfficeRoad12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7339,7 +7164,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeRoad12", "#OfficeRoad13")}
                                onChange = {this.handleOfficeRoad13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7349,7 +7174,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeRoad13", "#OfficeRoad14")}
                                onChange = {this.handleOfficeRoad14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7359,7 +7184,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeRoad14", "#OfficeRoad15")}
                                onChange = {this.handleOfficeRoad15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7369,7 +7194,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeRoad15", "#OfficeRoad16")}
                                onChange = {this.handleOfficeRoad16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7379,7 +7204,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeRoad16", "#OfficeRoad17")}
                                onChange = {this.handleOfficeRoad17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7389,7 +7214,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeRoad17", "#OfficeRoad18")}
                                onChange = {this.handleOfficeRoad18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7399,7 +7224,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeRoad18", "#OfficeRoad19")}
                                onChange = {this.handleOfficeRoad19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7409,7 +7234,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeRoad19", "#OfficeRoad20")}
                                onChange = {this.handleOfficeRoad20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7419,7 +7244,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeRoad20", "#OfficeRoad21")}
                                onChange = {this.handleOfficeRoad21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7429,7 +7254,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeRoad21", "#OfficeRoad22")}
                                onChange = {this.handleOfficeRoad22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7439,7 +7264,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeRoad22", "#OfficeRoad23")}
                                onChange = {this.handleOfficeRoad23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7449,7 +7274,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeRoad23", "#OfficeRoad24")}
                                onChange = {this.handleOfficeRoad24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7458,18 +7283,12 @@ class Panmain extends React.Component {
                                id = "OfficeRoad25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeRoad24", "#OfficeRoad25")}
                                onChange = {this.handleOfficeRoad25}/>
-
-                             {this.state.isIndicatorEnabled === false ? 
-                            <span className="tooltip" style={{marginLeft:"3%"}}>
-                          <img src={indicator} style={{width:"3%",height:"3%"}} />
-                            <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}}>Please enter only alphabet</label>
-                         </span>
-                         : ""}
+ 
                          <br/>
                            </div>
                             
                            <div>
-                           <input 
+                           <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7479,7 +7298,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeArea1", "#OfficeArea1")}
                                onChange = {this.handleOfficeArea1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7489,7 +7308,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeArea1", "#OfficeArea2")}
                                onChange = {this.handleOfficeArea2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7499,7 +7318,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeArea2", "#OfficeArea3")}
                                onChange = {this.handleOfficeArea3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7509,7 +7328,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeArea3", "#OfficeArea4")}
                                onChange = {this.handleOfficeArea4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7519,7 +7338,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeArea4", "#OfficeArea5")}
                                onChange = {this.handleOfficeArea5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7529,7 +7348,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeArea5", "#OfficeArea6")}
                                onChange = {this.handleOfficeArea6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7539,7 +7358,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeArea6", "#OfficeArea7")}
                                onChange = {this.handleOfficeArea7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7549,7 +7368,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeArea7", "#OfficeArea8")}
                                onChange = {this.handleOfficeArea8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7559,7 +7378,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeArea8", "#OfficeArea9")}
                                onChange = {this.handleOfficeArea9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7569,7 +7388,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeArea9", "#OfficeArea10")}
                                onChange = {this.handleOfficeArea10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7579,7 +7398,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeArea10", "#OfficeArea11")}
                                onChange = {this.handleOfficeArea11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7589,7 +7408,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeArea11", "#OfficeArea12")}
                                onChange = {this.handleOfficeArea12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7599,7 +7418,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeArea12", "#OfficeArea13")}
                                onChange = {this.handleOfficeArea13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7609,7 +7428,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeArea13", "#OfficeArea14")}
                                onChange = {this.handleOfficeArea14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7619,7 +7438,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeArea14", "#OfficeArea15")}
                                onChange = {this.handleOfficeArea15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7629,7 +7448,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeArea15", "#OfficeArea16")}
                                onChange = {this.handleOfficeArea16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7639,7 +7458,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeArea16", "#OfficeArea17")}
                                onChange = {this.handleOfficeArea17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7649,7 +7468,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeArea17", "#OfficeArea18")}
                                onChange = {this.handleOfficeArea18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7659,7 +7478,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeArea18", "#OfficeArea19")}
                                onChange = {this.handleOfficeArea19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7669,7 +7488,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeArea19", "#OfficeArea20")}
                                onChange = {this.handleOfficeArea20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7679,7 +7498,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeArea20", "#OfficeArea21")}
                                onChange = {this.handleOfficeArea21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7689,7 +7508,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeArea21", "#OfficeArea22")}
                                onChange = {this.handleOfficeArea22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7699,7 +7518,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeArea22", "#OfficeArea23")}
                                onChange = {this.handleOfficeArea23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7709,7 +7528,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeArea23", "#OfficeArea24")}
                                onChange = {this.handleOfficeArea24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7718,18 +7537,13 @@ class Panmain extends React.Component {
                                id = "OfficeArea25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeArea24", "#OfficeArea25")}
                                onChange = {this.handleOfficeArea25}/>
-                             {this.state.isIndicatorEnabled === false ? 
-                            <span className="tooltip" style={{marginLeft:"3%"}}>
-                          <img src={indicator} style={{width:"3%",height:"3%"}} />
-                            <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}} >Please enter only alphabet</label>
-                         </span>
-                         : ""}
+                           
                          <br/>
                            </div>
 
 
                            <div>    
-                           <input 
+                           <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7739,7 +7553,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeTown1", "#OfficeTown1")}
                                onChange = {this.handleOfficeTown1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7749,7 +7563,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeTown1", "#OfficeTown2")}
                                onChange = {this.handleOfficeTown2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7759,7 +7573,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeTown2", "#OfficeTown3")}
                                onChange = {this.handleOfficeTown3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7769,7 +7583,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeTown3", "#OfficeTown4")}
                                onChange = {this.handleOfficeTown4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7779,7 +7593,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeTown4", "#OfficeTown5")}
                                onChange = {this.handleOfficeTown5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7789,7 +7603,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeTown5", "#OfficeTown6")}
                                onChange = {this.handleOfficeTown6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7799,7 +7613,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeTown6", "#OfficeTown7")}
                                onChange = {this.handleOfficeTown7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7809,7 +7623,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeTown7", "#OfficeTown8")}
                                onChange = {this.handleOfficeTown8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7819,7 +7633,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeTown8", "#OfficeTown9")}
                                onChange = {this.handleOfficeTown9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7829,7 +7643,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeTown9", "#OfficeTown10")}
                                onChange = {this.handleOfficeTown10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7839,7 +7653,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeTown10", "#OfficeTown11")}
                                onChange = {this.handleOfficeTown11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7849,7 +7663,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeTown11", "#OfficeTown12")}
                                onChange = {this.handleOfficeTown12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7859,7 +7673,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeTown12", "#OfficeTown13")}
                                onChange = {this.handleOfficeTown13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7869,7 +7683,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeTown13", "#OfficeTown14")}
                                onChange = {this.handleOfficeTown14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7879,7 +7693,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeTown14", "#OfficeTown15")}
                                onChange = {this.handleOfficeTown15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7889,7 +7703,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeTown15", "#OfficeTown16")}
                                onChange = {this.handleOfficeTown16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7899,7 +7713,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeTown16", "#OfficeTown17")}
                                onChange = {this.handleOfficeTown17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7909,7 +7723,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeTown17", "#OfficeTown18")}
                                onChange = {this.handleOfficeTown18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7919,7 +7733,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeTown18", "#OfficeTown19")}
                                onChange = {this.handleOfficeTown19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7929,7 +7743,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeTown19", "#OfficeTown20")}
                                onChange = {this.handleOfficeTown20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7939,7 +7753,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeTown20", "#OfficeTown21")}
                                onChange = {this.handleOfficeTown21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7949,7 +7763,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeTown21", "#OfficeTown22")}
                                onChange = {this.handleOfficeTown22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7959,7 +7773,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeTown22", "#OfficeTown23")}
                                onChange = {this.handleOfficeTown23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7969,7 +7783,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeTown23", "#OfficeTown24")}
                                onChange = {this.handleOfficeTown24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -7979,12 +7793,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficeTown24", "#OfficeTown25")}
                                onChange = {this.handleOfficeTown25}/>
 
-                             {this.state.isIndicatorEnabled === false ? 
-                            <span className="tooltip" style={{marginLeft:"3%"}}>
-                          <img src={indicator} style={{width:"3%",height:"3%"}} />
-                            <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}} >Please enter only alphabet</label>
-                         </span>
-                         : ""}
+                             
                           <br/>  
                             </div>
                              
@@ -7994,31 +7803,22 @@ class Panmain extends React.Component {
                     </tbody>
                     </table>
                      
-                    <table cellPadding = "0" cellSpacing = "0"  className = "divState">
-                    <tbody>
-                        <tr>
-                           <td >
+                   
                              <label className = "StateId"> State / Union Territory </label>
-                          </td>
-                          <td >
+                           
                              <label className = "PincodeId"> Pincode / Zip code </label>
-                          </td>
-                          <td >
-                             <label className = "CountryId"> Country Name </label>
-                          </td>
-                       </tr>
-                       <tr>
-                          <td >
-                             <input 
+                         
+                             <label className = "CountryId"> Country Name </label> <br/>
+                          
+                             <input disabled 
                                  className = "StateValue"
                                  name="OfficeState"
                                  id = "OfficeState"
                                  value={this.state.data.OfficeState}
                                  onChange={event => this.handleOfficeState(event)}/>
                                 
-                          </td>
-                          <td> 
-                          <input 
+                          
+                          <input disabled 
                                type="text" 
                                className="Pincode-control"
                                maxLength = "1"
@@ -8028,7 +7828,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePincode1", "#OfficePincode1")}
                                onChange = {this.handleOfficePincode1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Pincode-control"
                                maxLength = "1"
@@ -8038,7 +7838,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePincode1", "#OfficePincode2")}
                                onChange = {this.handleOfficePincode2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Pincode-control"
                                maxLength = "1"
@@ -8048,7 +7848,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePincode2", "#OfficePincode3")}
                                onChange = {this.handleOfficePincode3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Pincode-control"
                                maxLength = "1"
@@ -8058,7 +7858,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePincode3", "#OfficePincode4")}
                                onChange = {this.handleOfficePincode4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Pincode-control"
                                maxLength = "1"
@@ -8068,7 +7868,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePincode4", "#OfficePincode5")}
                                onChange = {this.handleOfficePincode5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Pincode-control"
                                maxLength = "1"
@@ -8078,7 +7878,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePincode5", "#OfficePincode6")}
                                onChange = {this.handleOfficePincode6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Pincode-control"
                                maxLength = "1"
@@ -8088,29 +7888,15 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#OfficePincode6", "#OfficePincode7")}
                                onChange = {this.handleOfficePincode7}/>
 
-
-                           </td>
-                           <td cellPadding = "0" cellSpacing = "0">
-                             <input 
+ 
+                             <input disabled 
                                 className = "CountryValue"
                                 name="OfficeCountry"
                                 id = "OfficeCountry"
                                 value={this.state.data.OfficeCountry}
                                 onChange={event => this.handleOfficeCountry(event)}/>
-                        {this.state.isIndicatorEnabled === false ? 
-                        <span className="tooltip" style={{marginLeft:"21%"}}>
-                          <img src={indicator} style={{    width: "7.5%",height: "3.2% ", marginLeft: "30%"}} />
-                            <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}} >Please enter as applicable</label>
-                         </span>
-                         : ""}
-                           </td>
-                           
-                       </tr>
-                        
-                    </tbody>
-                    </table>
-                    
-
+                   
+                     
                     
 
                     {/* Eight Component */}
@@ -8119,7 +7905,7 @@ class Panmain extends React.Component {
                         <label >&nbsp;&nbsp; 8 &nbsp; Address for Communication</label>
 
                         
-                        <input 
+                        <input disabled 
                            type="checkbox" 
                            className="Check Left_space"
                            value = "Residence"
@@ -8128,7 +7914,7 @@ class Panmain extends React.Component {
                            onClick={(e)=>this.handleCommunicationCheck(e,"Communication")}/>
                         <label className = "Label_with_no_space"> Residence</label> &nbsp; &nbsp;
 
-                        <input 
+                        <input disabled 
                            type="checkbox" 
                            className="Check"
                            value = "Office"
@@ -8138,12 +7924,7 @@ class Panmain extends React.Component {
                         <label className = "Label_with_no_space"> Office</label>
 
                         <label className="Label_with_no_space Move_End1"> (please tick as applicable)</label>
-                        {this.state.isIndicatorEnabled === false ? 
-                        <span className="tooltip" style={{marginLeft:"9.7%"}}>
-                          <img src={indicator} style={{width:"2.2%",height:"2.2%", marginLeft: "3.2%"}} />
-                            <img src={communicationcheckfield} className="tooltiptext" style={{width:"600px",height:"50px"}}  />
-                         </span> 
-                         : ""}
+                       
                     </div>
                     <span className="ErrorMsg">{this.state.errors.Communication}</span>
                      
@@ -8154,33 +7935,24 @@ class Panmain extends React.Component {
                      </div>
 
                      <div className= "divnine">
-                         <table>
-                         <tbody>
-                            <tr>
-                                <td  className ="Country_td">
-                                   <label  className ="Country" >Country code </label>
-                                </td>
-                                <td className="Std_td" >
-                                   <label className = "Std">Area/ STD Code</label>
-                                </td>
-                                <td className = "Telephone_td">
-                                   <label className = "Telephone">Telephone / Mobile number</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td >
+                        
+                                <label  className ="Country" >Country code </label>
+                                <label className = "Std">Area/ STD Code</label>
+                                <label className = "Telephone">Telephone / Mobile number</label> <br/>
+                                
                 
-                                <input 
+                                <input disabled 
                                type="text" 
                                className="CountryCode-control"
                                maxLength = "1"
                                value = {this.state.data.CountryCode1}
+                               style = {{marginLeft: "0.5%"}}
                                name = "CountryCode1"
                                id = "CountryCode1"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#CountryCode1", "#CountryCode1")}
                                onChange = {this.handleCountryCode1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="CountryCode-control"
                                maxLength = "1"
@@ -8190,7 +7962,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#CountryCode1", "#CountryCode2")}
                                onChange = {this.handleCountryCode2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="CountryCode-control"
                                maxLength = "1"
@@ -8201,12 +7973,11 @@ class Panmain extends React.Component {
                                onChange = {this.handleCountryCode3}/>
  
 
-                                  
-                                </td>  
-                                <td >
-                                <input 
+                                
+                                <input disabled 
                                type="text" 
                                className="StdCode-control"
+                               style = {{marginLeft : "2%"}}
                                maxLength = "1"
                                value = {this.state.data.StdCode1}
                                name = "StdCode1"
@@ -8214,7 +7985,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#StdCode1", "#StdCode1")}
                                onChange = {this.handleStdCode1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="StdCode-control"
                                maxLength = "1"
@@ -8224,7 +7995,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#StdCode1", "#StdCode2")}
                                onChange = {this.handleStdCode2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="StdCode-control"
                                maxLength = "1"
@@ -8234,7 +8005,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#StdCode2", "#StdCode3")}
                                onChange = {this.handleStdCode3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="StdCode-control"
                                maxLength = "1"
@@ -8244,7 +8015,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#StdCode3", "#StdCode4")}
                                onChange = {this.handleStdCode4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="StdCode-control"
                                maxLength = "1"
@@ -8254,7 +8025,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#StdCode4", "#StdCode5")}
                                onChange = {this.handleStdCode5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="StdCode-control"
                                maxLength = "1"
@@ -8264,7 +8035,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#StdCode5", "#StdCode6")}
                                onChange = {this.handleStdCode6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="StdCode-control"
                                maxLength = "1"
@@ -8274,19 +8045,19 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#StdCode6", "#StdCode7")}
                                onChange = {this.handleStdCode7}/>
 
-                                </td>
-                                <td className = "Telephone_td">
-                                <input 
+                                 
+                                <input disabled 
                                type="text" 
                                className="PhoneNumber-control"
                                maxLength = "1"
+                               style = {{marginLeft : "2%"}}
                                value = {this.state.data.PhoneNumber1}
                                name = "PhoneNumber1"
                                id = "PhoneNumber1"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#PhoneNumber1", "#PhoneNumber1")}
                                onChange = {this.handlePhoneNumber1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="PhoneNumber-control"
                                maxLength = "1"
@@ -8296,7 +8067,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#PhoneNumber1", "#PhoneNumber2")}
                                onChange = {this.handlePhoneNumber2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="PhoneNumber-control"
                                maxLength = "1"
@@ -8306,7 +8077,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#PhoneNumber2", "#PhoneNumber3")}
                                onChange = {this.handlePhoneNumber3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="PhoneNumber-control"
                                maxLength = "1"
@@ -8316,7 +8087,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#PhoneNumber3", "#PhoneNumber4")}
                                onChange = {this.handlePhoneNumber4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="PhoneNumber-control"
                                maxLength = "1"
@@ -8326,7 +8097,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#PhoneNumber4", "#PhoneNumber5")}
                                onChange = {this.handlePhoneNumber5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="PhoneNumber-control"
                                maxLength = "1"
@@ -8336,7 +8107,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#PhoneNumber5", "#PhoneNumber6")}
                                onChange = {this.handlePhoneNumber6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="PhoneNumber-control"
                                maxLength = "1"
@@ -8346,7 +8117,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#PhoneNumber6", "#PhoneNumber7")}
                                onChange = {this.handlePhoneNumber7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="PhoneNumber-control"
                                maxLength = "1"
@@ -8356,7 +8127,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#PhoneNumber7", "#PhoneNumber8")}
                                onChange = {this.handlePhoneNumber8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="PhoneNumber-control"
                                maxLength = "1"
@@ -8366,7 +8137,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#PhoneNumber8", "#PhoneNumber9")}
                                onChange = {this.handlePhoneNumber9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="PhoneNumber-control"
                                maxLength = "1"
@@ -8376,7 +8147,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#PhoneNumber9", "#PhoneNumber10")}
                                onChange = {this.handlePhoneNumber10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="PhoneNumber-control"
                                maxLength = "1"
@@ -8386,7 +8157,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#PhoneNumber10", "#PhoneNumber11")}
                                onChange = {this.handlePhoneNumber11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="PhoneNumber-control"
                                maxLength = "1"
@@ -8396,7 +8167,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#PhoneNumber11", "#PhoneNumber12")}
                                onChange = {this.handlePhoneNumber12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="PhoneNumber-control"
                                maxLength = "1"
@@ -8405,49 +8176,29 @@ class Panmain extends React.Component {
                                id = "PhoneNumber13"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#PhoneNumber12", "#PhoneNumber13")}
                                onChange = {this.handlePhoneNumber13}/>
-                            {this.state.isIndicatorEnabled === false ? 
-                            <span className="tooltip" style={{marginLeft:"22.2%"}}>
-                            <img src={indicator} style={{width:"3.75%",height:"3.45%" , marginLeft: "-2%"}} />
-                                <img src={phonenumberfield} className="tooltiptext" style={{width:"600px",height:"250px"}}  />
-                            </span>       
-                            : ""}  
+                            
 
-                                </td>
-                              
-                            </tr>
-                             
-                         </tbody>
-                         </table>
+                          
             
                      </div>
 
 
                      <label className= "FirstLabel"> Email ID</label>
-                     <input 
+                     <input disabled 
                         type= "text" 
-                        className = "EmailInput"
+                        className = "EmailInput disabled"
                         id="Email"
                         name="Email"
                         value={this.state.data.Email}
                         onChange={event => this.handleEmail(event)}/> 
-                          {this.state.isIndicatorEnabled === false ? 
-                        <span className="tooltip" style={{marginLeft:"20.1%"}}>
-                            <img src={indicator} style={{width:"2.3%",height:"2.3%", marginLeft: "4%"}} />
-                                <label className="tooltiptext tooltiptextLabel" style={{width:"600px",height:"40px"}}> Please enter combinations of alphabet, numbers, and special characters. <br/>Must include @, .</label>
-                            </span>   
-                        : ""} 
+                         
                             <br/>
  
                     {/* Tenth Component */}
 
                     <div className = "ColouredLabel">
                        <label >&nbsp;&nbsp; 10 &nbsp; Status of applicant</label>
-                       {this.state.isIndicatorEnabled === false ? 
-                       <span className="tooltip" style={{marginLeft:"75.2%"}}>
-                            <img src={indicator} style={{width:"2.3%",height:"2.3%", marginLeft: "-0.5%"}} />
-                                <img src={statusfield} className="tooltiptext" style={{width:"600px",height:"70px"}}  />
-                            </span>    
-                        :""}
+                    
                              <br/>
                     </div>
                     
@@ -8455,17 +8206,17 @@ class Panmain extends React.Component {
                     <label className="FirstLabel"> &nbsp;&nbsp;Please select status,</label>  
                     <label className="Label_with_no_space"> as applicable</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
                     
-                    <input 
+                    <input disabled 
                        type="checkbox" 
                        className="Check GovernmentCheck"
-                       style = {{marginLeft : "42%"}}
+                       style = {{marginLeft : "43.3%"}}
                        value = "Government"
                        id = "22"
                        name = "Status[7][]"
                        onClick={(e)=>this.handleStatusCheck(e,"Status")}/>
                     <label className = "Label_with_no_space">Government</label> <br/>
 
-                    <input 
+                    <input disabled 
                        type="checkbox" 
                        className="Check IndividualCheck"
                        value = "Individual"
@@ -8474,25 +8225,27 @@ class Panmain extends React.Component {
                        onClick={(e)=>this.handleStatusCheck(e,"Status")}/>
                     <label className = "Label_with_no_space"> Individual</label> &nbsp; 
 
-                    <input 
+                    <input disabled 
                        type="checkbox" 
                        className="Check IndividualCheck"
                        value = "Hindu undivided family"
+                       style = {{marginLeft : "4.5%"}}
                        id = "24"
                        name = "Status[7][]"
                        onClick={(e)=>this.handleStatusCheck(e,"Status")}/>
                     <label className = "Label_with_no_space"> Hindu undivided family</label> 
 
-                    <input 
+                    <input disabled 
                        type="checkbox" 
                        className="Check "
                        value = "Company"
+                       style = {{marginLeft : "2.1%"}}
                        id = "25"
                        name = "Status[7][]"
                        onClick={(e)=>this.handleStatusCheck(e,"Status")}/>
                     <label className = "Label_with_no_space"> Company</label> &nbsp;&nbsp;  
 
-                    <input 
+                    <input disabled 
                        type="checkbox" 
                        className="Check IndividualCheck"
                        value = "Patnership Firm"
@@ -8502,16 +8255,17 @@ class Panmain extends React.Component {
                     <label className = "Label_with_no_space"> Patnership Firm</label> 
                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
-                     <input 
+                     <input disabled 
                        type="checkbox" 
                        className="Check IndividualCheck"
                        value = " Associations of Persons"
+                       style = {{marginLeft : "3.7%"}}
                        id = "27"
                        name = "Status[7][]"
                        onClick={(e)=>this.handleStatusCheck(e,"Status")}/>  
                     <label className = "Label_with_no_space">  Associations of Persons</label>  <br/>
 
-                    <input 
+                    <input disabled 
                        type="checkbox" 
                        className="Check IndividualCheck"
                        value = "Trusts"
@@ -8520,7 +8274,7 @@ class Panmain extends React.Component {
                        onClick={(e)=>this.handleStatusCheck(e,"Status")}/> 
                     <label className = "Label_with_no_space"> Trusts</label>  &nbsp;&nbsp;  &nbsp;&nbsp; 
 
-                     <input 
+                     <input disabled 
                        type="checkbox" 
                        className="Check IndividualCheck"
                        value = "Body of Individuals"
@@ -8529,7 +8283,7 @@ class Panmain extends React.Component {
                        onClick={(e)=>this.handleStatusCheck(e,"Status")}/>    
                     <label className = "Label_with_no_space"> Body of Individuals</label>&nbsp;&nbsp;&nbsp;&nbsp; 
 
-                    <input 
+                    <input disabled 
                        type="checkbox" 
                        className="Check "
                        value = "Local Authority"
@@ -8538,19 +8292,21 @@ class Panmain extends React.Component {
                        onClick={(e)=>this.handleStatusCheck(e,"Status")}/> 
                     <label className = "Label_with_no_space"> Local Authority</label> 
 
-                    <input 
+                    <input disabled 
                        type="checkbox" 
                        className="Check "
                        value = "Artificial Juridical Persons"
                        id = "31"
+                       style = {{marginLeft : "2.5%"}}
                        name = "Status[7][]"
                        onClick={(e)=>this.handleStatusCheck(e,"Status")}/> 
                     <label className = "Label_with_no_space">Artificial Juridical Persons</label> 
 
-                    <input 
+                    <input disabled 
                        type="checkbox" 
                        className="Check "
                        value = "Limited Liability Partnership"
+                       style = {{marginLeft : "3.3%"}}
                        id = "32"
                        name = "Status[7][]"
                        onClick={(e)=>this.handleStatusCheck(e,"Status")}/> 
@@ -8562,16 +8318,11 @@ class Panmain extends React.Component {
 
                     <div className = "ColouredLabel">
                         <label>&nbsp;&nbsp; 11 &nbsp; Registration Number (for company, firms, LLPs etc.)</label>
-                        {this.state.isIndicatorEnabled === false ? 
-                        <span className="tooltip" style={{marginLeft:"52%"}}>
-                            <img src={indicator} style={{width:"2.3%",height:"2.3%", marginLeft : "2%"}} />
-                                <img src={registrationNumber} className="tooltiptext" style={{width:"600px",height:"80px"}}  />
-                            </span>  
-                        : ""}
+                      
                     </div>
                     
                     <div className= "IndividualCheck">   
-                    <input 
+                    <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8581,7 +8332,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber1", "#RegistrationNumber1")}
                                onChange = {this.handleRegistrationNumber1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8591,7 +8342,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber1", "#RegistrationNumber2")}
                                onChange = {this.handleRegistrationNumber2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8601,7 +8352,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber2", "#RegistrationNumber3")}
                                onChange = {this.handleRegistrationNumber3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8611,7 +8362,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber3", "#RegistrationNumber4")}
                                onChange = {this.handleRegistrationNumber4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8621,7 +8372,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber4", "#RegistrationNumber5")}
                                onChange = {this.handleRegistrationNumber5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8631,7 +8382,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber5", "#RegistrationNumber6")}
                                onChange = {this.handleRegistrationNumber6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8641,7 +8392,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber6", "#RegistrationNumber7")}
                                onChange = {this.handleRegistrationNumber7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8651,7 +8402,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber7", "#RegistrationNumber8")}
                                onChange = {this.handleRegistrationNumber8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8661,7 +8412,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber8", "#RegistrationNumber9")}
                                onChange = {this.handleRegistrationNumber9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8671,7 +8422,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber9", "#RegistrationNumber10")}
                                onChange = {this.handleRegistrationNumber10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8681,7 +8432,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber10", "#RegistrationNumber11")}
                                onChange = {this.handleRegistrationNumber11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8691,7 +8442,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber11", "#RegistrationNumber12")}
                                onChange = {this.handleRegistrationNumber12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8701,7 +8452,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber12", "#RegistrationNumber13")}
                                onChange = {this.handleRegistrationNumber13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8711,7 +8462,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber13", "#RegistrationNumber14")}
                                onChange = {this.handleRegistrationNumber14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8721,7 +8472,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber14", "#RegistrationNumber15")}
                                onChange = {this.handleRegistrationNumber15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8731,7 +8482,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber15", "#RegistrationNumber16")}
                                onChange = {this.handleRegistrationNumber16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8741,7 +8492,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber16", "#RegistrationNumber17")}
                                onChange = {this.handleRegistrationNumber17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8751,7 +8502,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber17", "#RegistrationNumber18")}
                                onChange = {this.handleRegistrationNumber18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8761,7 +8512,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber18", "#RegistrationNumber19")}
                                onChange = {this.handleRegistrationNumber19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8771,7 +8522,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber19", "#RegistrationNumber20")}
                                onChange = {this.handleRegistrationNumber20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8781,7 +8532,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber20", "#RegistrationNumber21")}
                                onChange = {this.handleRegistrationNumber21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8791,7 +8542,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber21", "#RegistrationNumber22")}
                                onChange = {this.handleRegistrationNumber22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8801,7 +8552,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber22", "#RegistrationNumber23")}
                                onChange = {this.handleRegistrationNumber23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8811,7 +8562,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber23", "#RegistrationNumber24")}
                                onChange = {this.handleRegistrationNumber24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8821,7 +8572,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber24", "#RegistrationNumber25")}
                                onChange = {this.handleRegistrationNumber25}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8831,7 +8582,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber25", "#RegistrationNumber26")}
                                onChange = {this.handleRegistrationNumber26}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8841,7 +8592,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber26", "#RegistrationNumber27")}
                                onChange = {this.handleRegistrationNumber27}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8851,7 +8602,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber27", "#RegistrationNumber28")}
                                onChange = {this.handleRegistrationNumber28}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8861,7 +8612,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RegistrationNumber28", "#RegistrationNumber29")}
                                onChange = {this.handleRegistrationNumber29}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="RegistrationNumber-control"
                                maxLength = "1"
@@ -8886,7 +8637,7 @@ class Panmain extends React.Component {
                              <label  className ="twelve twelve_td" > &nbsp;&nbsp;Please mention your AADHAAR number (if allotted) </label>
                               
                              
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="AadhaarNumber-control"
                                maxLength = "1"
@@ -8896,7 +8647,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarNumber1", "#AadhaarNumber1")}
                                onChange = {this.handleAadhaarNumber1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="AadhaarNumber-control"
                                maxLength = "1"
@@ -8906,7 +8657,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarNumber1", "#AadhaarNumber2")}
                                onChange = {this.handleAadhaarNumber2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="AadhaarNumber-control"
                                maxLength = "1"
@@ -8916,7 +8667,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarNumber2", "#AadhaarNumber3")}
                                onChange = {this.handleAadhaarNumber3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="AadhaarNumber-control"
                                maxLength = "1"
@@ -8926,7 +8677,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarNumber3", "#AadhaarNumber4")}
                                onChange = {this.handleAadhaarNumber4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="AadhaarNumber-control"
                                maxLength = "1"
@@ -8936,7 +8687,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarNumber4", "#AadhaarNumber5")}
                                onChange = {this.handleAadhaarNumber5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="AadhaarNumber-control"
                                maxLength = "1"
@@ -8946,7 +8697,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarNumber5", "#AadhaarNumber6")}
                                onChange = {this.handleAadhaarNumber6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="AadhaarNumber-control"
                                maxLength = "1"
@@ -8956,7 +8707,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarNumber6", "#AadhaarNumber7")}
                                onChange = {this.handleAadhaarNumber7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="AadhaarNumber-control"
                                maxLength = "1"
@@ -8966,7 +8717,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarNumber7", "#AadhaarNumber8")}
                                onChange = {this.handleAadhaarNumber8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="AadhaarNumber-control"
                                maxLength = "1"
@@ -8976,7 +8727,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarNumber8", "#AadhaarNumber9")}
                                onChange = {this.handleAadhaarNumber9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="AadhaarNumber-control"
                                maxLength = "1"
@@ -8986,7 +8737,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarNumber9", "#AadhaarNumber10")}
                                onChange = {this.handleAadhaarNumber10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="AadhaarNumber-control"
                                maxLength = "1"
@@ -8996,7 +8747,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarNumber10", "#AadhaarNumber11")}
                                onChange = {this.handleAadhaarNumber11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="AadhaarNumber-control"
                                maxLength = "1"
@@ -9006,12 +8757,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarNumber11", "#AadhaarNumber12")}
                                onChange = {this.handleAadhaarNumber12}/> 
 
-                                 {this.state.isIndicatorEnabled === false ? 
-                                 <span className="tooltip" style={{marginLeft:"26%"}}>
-                            <img src={indicator} style={{width:"2.4%",height:"2.4%", marginLeft: "5.2%"}} />
-                                <img src={aadhaarnumber} className="tooltiptext" style={{width:"600px",height:"70px"}}  />
-                            </span>  
-                            : ""}
+                               
                              <br/>
 
                               
@@ -9020,19 +8766,20 @@ class Panmain extends React.Component {
 
                     <label className="FirstLabel"> If AADHAAR number is not allotted, please mention the enrolment ID of Aadhaar application form </label> <br/>
 
-                    <div className= "Left_space_input">   
+                    <div className= "Left_space_input disabled">   
                             
-                    <input 
+                             <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
                                value = {this.state.data.EnrolmentId1}
+                               style = {{marginLeft : "-2.5% "}}
                                name = "EnrolmentId1"
                                id = "EnrolmentId1"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId1", "#EnrolmentId1")}
                                onChange = {this.handleEnrolmentId1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9042,7 +8789,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId1", "#EnrolmentId2")}
                                onChange = {this.handleEnrolmentId2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9052,7 +8799,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId2", "#EnrolmentId3")}
                                onChange = {this.handleEnrolmentId3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9062,7 +8809,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId3", "#EnrolmentId4")}
                                onChange = {this.handleEnrolmentId4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9072,7 +8819,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId4", "#EnrolmentId5")}
                                onChange = {this.handleEnrolmentId5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9082,7 +8829,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId5", "#EnrolmentId6")}
                                onChange = {this.handleEnrolmentId6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9092,7 +8839,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId6", "#EnrolmentId7")}
                                onChange = {this.handleEnrolmentId7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9102,7 +8849,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId7", "#EnrolmentId8")}
                                onChange = {this.handleEnrolmentId8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9112,7 +8859,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId8", "#EnrolmentId9")}
                                onChange = {this.handleEnrolmentId9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9122,7 +8869,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId9", "#EnrolmentId10")}
                                onChange = {this.handleEnrolmentId10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9132,7 +8879,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId10", "#EnrolmentId11")}
                                onChange = {this.handleEnrolmentId11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9142,7 +8889,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId11", "#EnrolmentId12")}
                                onChange = {this.handleEnrolmentId12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9152,7 +8899,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId12", "#EnrolmentId13")}
                                onChange = {this.handleEnrolmentId13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9162,7 +8909,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId13", "#EnrolmentId14")}
                                onChange = {this.handleEnrolmentId14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9172,7 +8919,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId14", "#EnrolmentId15")}
                                onChange = {this.handleEnrolmentId15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9182,7 +8929,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId15", "#EnrolmentId16")}
                                onChange = {this.handleEnrolmentId16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9192,7 +8939,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId16", "#EnrolmentId17")}
                                onChange = {this.handleEnrolmentId17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9202,7 +8949,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId17", "#EnrolmentId18")}
                                onChange = {this.handleEnrolmentId18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9212,7 +8959,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId18", "#EnrolmentId19")}
                                onChange = {this.handleEnrolmentId19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9222,7 +8969,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId19", "#EnrolmentId20")}
                                onChange = {this.handleEnrolmentId20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9232,7 +8979,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId20", "#EnrolmentId21")}
                                onChange = {this.handleEnrolmentId21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9242,7 +8989,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId21", "#EnrolmentId22")}
                                onChange = {this.handleEnrolmentId22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9252,7 +8999,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId22", "#EnrolmentId23")}
                                onChange = {this.handleEnrolmentId23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9262,7 +9009,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId23", "#EnrolmentId24")}
                                onChange = {this.handleEnrolmentId24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9272,7 +9019,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId24", "#EnrolmentId25")}
                                onChange = {this.handleEnrolmentId25}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9282,7 +9029,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId25", "#EnrolmentId26")}
                                onChange = {this.handleEnrolmentId26}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9292,7 +9039,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#EnrolmentId26", "#EnrolmentId27")}
                                onChange = {this.handleEnrolmentId27}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="EnrolmentId-control"
                                maxLength = "1"
@@ -9303,12 +9050,7 @@ class Panmain extends React.Component {
                                onChange = {this.handleEnrolmentId28}/>
 
                             
-                                   {this.state.isIndicatorEnabled === false ? 
-                                 <span className="tooltip" style={{marginLeft:"3.65%"}}>
-                            <img src={indicator} style={{width:"3%",height:"2.2%" , marginLeft: "-1.6%"}} />
-                                <img src={enrolmentid} className="tooltiptext" style={{width:"600px",height:"180px"}}  />
-                            </span>  
-                            : ""}
+                               
                               <br/>
 
                         
@@ -9316,16 +9058,11 @@ class Panmain extends React.Component {
                     </div>
 
                     <label className="FirstLabel"> Name as per AADHAAR letter or card or as per the Enrolment ID of Aadhaar application form</label>
-                    {this.state.isIndicatorEnabled === false ? 
-                    <span className="tooltip" style={{marginLeft:"28.55%"}}>
-                            <img src={indicator} style={{width:"2.4%",height:"2.4%", marginLeft: "4.8%"}} />
-                                <img src={aadhaarnamefield} className="tooltiptext" style={{width:"600px",height:"120px"}}  />
-                            </span> 
-                    : ""}  <br/>
+                     <br/>
                     
                     <div className = "Left_space2">
                           <div> 
-                          <input 
+                          <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9335,7 +9072,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarLastName1", "#AadhaarLastName1")}
                                onChange = {this.handleAadhaarLastName1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9345,7 +9082,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarLastName1", "#AadhaarLastName2")}
                                onChange = {this.handleAadhaarLastName2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9355,7 +9092,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarLastName2", "#AadhaarLastName3")}
                                onChange = {this.handleAadhaarLastName3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9365,7 +9102,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarLastName3", "#AadhaarLastName4")}
                                onChange = {this.handleAadhaarLastName4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9375,7 +9112,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarLastName4", "#AadhaarLastName5")}
                                onChange = {this.handleAadhaarLastName5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9385,7 +9122,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarLastName5", "#AadhaarLastName6")}
                                onChange = {this.handleAadhaarLastName6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9395,7 +9132,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarLastName6", "#AadhaarLastName7")}
                                onChange = {this.handleAadhaarLastName7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9405,7 +9142,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarLastName7", "#AadhaarLastName8")}
                                onChange = {this.handleAadhaarLastName8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9415,7 +9152,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarLastName8", "#AadhaarLastName9")}
                                onChange = {this.handleAadhaarLastName9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9425,7 +9162,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarLastName9", "#AadhaarLastName10")}
                                onChange = {this.handleAadhaarLastName10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9435,7 +9172,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarLastName10", "#AadhaarLastName11")}
                                onChange = {this.handleAadhaarLastName11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9445,7 +9182,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarLastName11", "#AadhaarLastName12")}
                                onChange = {this.handleAadhaarLastName12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9455,7 +9192,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarLastName12", "#AadhaarLastName13")}
                                onChange = {this.handleAadhaarLastName13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9465,7 +9202,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarLastName13", "#AadhaarLastName14")}
                                onChange = {this.handleAadhaarLastName14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9475,7 +9212,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarLastName14", "#AadhaarLastName15")}
                                onChange = {this.handleAadhaarLastName15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9485,7 +9222,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarLastName15", "#AadhaarLastName16")}
                                onChange = {this.handleAadhaarLastName16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9495,7 +9232,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarLastName16", "#AadhaarLastName17")}
                                onChange = {this.handleAadhaarLastName17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9505,7 +9242,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarLastName17", "#AadhaarLastName18")}
                                onChange = {this.handleAadhaarLastName18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9515,7 +9252,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarLastName18", "#AadhaarLastName19")}
                                onChange = {this.handleAadhaarLastName19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9525,7 +9262,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarLastName19", "#AadhaarLastName20")}
                                onChange = {this.handleAadhaarLastName20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9535,7 +9272,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarLastName20", "#AadhaarLastName21")}
                                onChange = {this.handleAadhaarLastName21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9545,7 +9282,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarLastName21", "#AadhaarLastName22")}
                                onChange = {this.handleAadhaarLastName22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9555,7 +9292,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarLastName22", "#AadhaarLastName23")}
                                onChange = {this.handleAadhaarLastName23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9565,7 +9302,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarLastName23", "#AadhaarLastName24")}
                                onChange = {this.handleAadhaarLastName24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9574,18 +9311,12 @@ class Panmain extends React.Component {
                                id = "AadhaarLastName25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarLastName24", "#AadhaarLastName25")}
                                onChange = {this.handleAadhaarLastName25}/>
-
-                    {this.state.isIndicatorEnabled === false ? 
-                             <span className="tooltip" style={{marginLeft:"4.4%"}}>
-                          <img src={indicator} style={{width:"3.3%",height:"3.3%"}} />
-                            <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}}>Please enter name as in aadhaar card</label>
-                         </span>
-                         : ""}
+ 
                           <br/>
                            </div>
                          
                            <div>
-                           <input 
+                           <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9595,7 +9326,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarFirstName1", "#AadhaarFirstName1")}
                                onChange = {this.handleAadhaarFirstName1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9605,7 +9336,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarFirstName1", "#AadhaarFirstName2")}
                                onChange = {this.handleAadhaarFirstName2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9615,7 +9346,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarFirstName2", "#AadhaarFirstName3")}
                                onChange = {this.handleAadhaarFirstName3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9625,7 +9356,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarFirstName3", "#AadhaarFirstName4")}
                                onChange = {this.handleAadhaarFirstName4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9635,7 +9366,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarFirstName4", "#AadhaarFirstName5")}
                                onChange = {this.handleAadhaarFirstName5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9645,7 +9376,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarFirstName5", "#AadhaarFirstName6")}
                                onChange = {this.handleAadhaarFirstName6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9655,7 +9386,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarFirstName6", "#AadhaarFirstName7")}
                                onChange = {this.handleAadhaarFirstName7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9665,7 +9396,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarFirstName7", "#AadhaarFirstName8")}
                                onChange = {this.handleAadhaarFirstName8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9675,7 +9406,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarFirstName8", "#AadhaarFirstName9")}
                                onChange = {this.handleAadhaarFirstName9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9685,7 +9416,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarFirstName9", "#AadhaarFirstName10")}
                                onChange = {this.handleAadhaarFirstName10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9695,7 +9426,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarFirstName10", "#AadhaarFirstName11")}
                                onChange = {this.handleAadhaarFirstName11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9705,7 +9436,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarFirstName11", "#AadhaarFirstName12")}
                                onChange = {this.handleAadhaarFirstName12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9715,7 +9446,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarFirstName12", "#AadhaarFirstName13")}
                                onChange = {this.handleAadhaarFirstName13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9725,7 +9456,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarFirstName13", "#AadhaarFirstName14")}
                                onChange = {this.handleAadhaarFirstName14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9735,7 +9466,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarFirstName14", "#AadhaarFirstName15")}
                                onChange = {this.handleAadhaarFirstName15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9745,7 +9476,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarFirstName15", "#AadhaarFirstName16")}
                                onChange = {this.handleAadhaarFirstName16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9755,7 +9486,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarFirstName16", "#AadhaarFirstName17")}
                                onChange = {this.handleAadhaarFirstName17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9765,7 +9496,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarFirstName17", "#AadhaarFirstName18")}
                                onChange = {this.handleAadhaarFirstName18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9775,7 +9506,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarFirstName18", "#AadhaarFirstName19")}
                                onChange = {this.handleAadhaarFirstName19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9785,7 +9516,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarFirstName19", "#AadhaarFirstName20")}
                                onChange = {this.handleAadhaarFirstName20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9795,7 +9526,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarFirstName20", "#AadhaarFirstName21")}
                                onChange = {this.handleAadhaarFirstName21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9805,7 +9536,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarFirstName21", "#AadhaarFirstName22")}
                                onChange = {this.handleAadhaarFirstName22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9815,7 +9546,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarFirstName22", "#AadhaarFirstName23")}
                                onChange = {this.handleAadhaarFirstName23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9825,7 +9556,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarFirstName23", "#AadhaarFirstName24")}
                                onChange = {this.handleAadhaarFirstName24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9835,17 +9566,12 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarFirstName24", "#AadhaarFirstName25")}
                                onChange = {this.handleAadhaarFirstName25}/>
 
-                             {this.state.isIndicatorEnabled === false ?
-                             <span className="tooltip" style={{marginLeft:"4.4%"}}>
-                          <img src={indicator} style={{width:"3.3%",height:"3.3%"}} />
-                            <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}}>Please enter name as in aadhaar card</label>
-                         </span>
-                         : ""}
+                          
                            <br/>
                            </div>
  
                            <div>
-                           <input 
+                           <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9855,7 +9581,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarMiddleName1", "#AadhaarMiddleName1")}
                                onChange = {this.handleAadhaarMiddleName1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9865,7 +9591,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarMiddleName1", "#AadhaarMiddleName2")}
                                onChange = {this.handleAadhaarMiddleName2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9875,7 +9601,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarMiddleName2", "#AadhaarMiddleName3")}
                                onChange = {this.handleAadhaarMiddleName3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9885,7 +9611,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarMiddleName3", "#AadhaarMiddleName4")}
                                onChange = {this.handleAadhaarMiddleName4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9895,7 +9621,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarMiddleName4", "#AadhaarMiddleName5")}
                                onChange = {this.handleAadhaarMiddleName5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9905,7 +9631,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarMiddleName5", "#AadhaarMiddleName6")}
                                onChange = {this.handleAadhaarMiddleName6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9915,7 +9641,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarMiddleName6", "#AadhaarMiddleName7")}
                                onChange = {this.handleAadhaarMiddleName7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9925,7 +9651,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarMiddleName7", "#AadhaarMiddleName8")}
                                onChange = {this.handleAadhaarMiddleName8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9935,7 +9661,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarMiddleName8", "#AadhaarMiddleName9")}
                                onChange = {this.handleAadhaarMiddleName9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9945,7 +9671,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarMiddleName9", "#AadhaarMiddleName10")}
                                onChange = {this.handleAadhaarMiddleName10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9955,7 +9681,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarMiddleName10", "#AadhaarMiddleName11")}
                                onChange = {this.handleAadhaarMiddleName11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9965,7 +9691,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarMiddleName11", "#AadhaarMiddleName12")}
                                onChange = {this.handleAadhaarMiddleName12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9975,7 +9701,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarMiddleName12", "#AadhaarMiddleName13")}
                                onChange = {this.handleAadhaarMiddleName13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9985,7 +9711,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarMiddleName13", "#AadhaarMiddleName14")}
                                onChange = {this.handleAadhaarMiddleName14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -9995,7 +9721,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarMiddleName14", "#AadhaarMiddleName15")}
                                onChange = {this.handleAadhaarMiddleName15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10005,7 +9731,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarMiddleName15", "#AadhaarMiddleName16")}
                                onChange = {this.handleAadhaarMiddleName16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10015,7 +9741,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarMiddleName16", "#AadhaarMiddleName17")}
                                onChange = {this.handleAadhaarMiddleName17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10025,7 +9751,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarMiddleName17", "#AadhaarMiddleName18")}
                                onChange = {this.handleAadhaarMiddleName18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10035,7 +9761,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarMiddleName18", "#AadhaarMiddleName19")}
                                onChange = {this.handleAadhaarMiddleName19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10045,7 +9771,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarMiddleName19", "#AadhaarMiddleName20")}
                                onChange = {this.handleAadhaarMiddleName20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10055,7 +9781,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarMiddleName20", "#AadhaarMiddleName21")}
                                onChange = {this.handleAadhaarMiddleName21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10065,7 +9791,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarMiddleName21", "#AadhaarMiddleName22")}
                                onChange = {this.handleAadhaarMiddleName22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10075,7 +9801,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarMiddleName22", "#AadhaarMiddleName23")}
                                onChange = {this.handleAadhaarMiddleName23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10085,7 +9811,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarMiddleName23", "#AadhaarMiddleName24")}
                                onChange = {this.handleAadhaarMiddleName24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10095,12 +9821,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#AadhaarMiddleName24", "#AadhaarMiddleName25")}
                                onChange = {this.handleAadhaarMiddleName25}/>
 
-                             {this.state.isIndicatorEnabled === false ?
-                             <span className="tooltip" style={{marginLeft:"4.4%"}}>
-                          <img src={indicator} style={{width:"3.3%",height:"3.3%"}} />
-                            <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}}>Please enter name as in aadhaar card</label>
-                         </span>
-                         : ""}
+                        
                           <br/>
                         </div>
 
@@ -10112,49 +9833,44 @@ class Panmain extends React.Component {
                        <label>&nbsp;&nbsp;13 &nbsp; Source of Income</label> 
                        <label className = "ColouredLabel Move_End2 Italic_text"> Please select,</label> 
                        <label className = "ColouredLabel"> as applicable</label> 
-                       {this.state.isIndicatorEnabled === false ?
-                       <span className="tooltip" style={{marginLeft:"5.3%"}}>
-                            <img src={indicator} style={{width:"2.3%",height:"2.3%", marginLeft: "2%"}} />
-                                <img src={sourceOfIncome} className="tooltiptext" style={{width:"600px",height:"300px"}}  />
-                            </span> 
-                        : ""}
+                      
                     </div>
 
-                    <input 
+                    <input disabled 
                        type="checkbox" 
                        className="Check IndividualCheck "
                        value = " Salary"
                        id = "33"
                        name = "Salary"
-                       disabled={!this.state.isEnabledCheck}
+                     //  disabled={!this.state.isEnabledCheck}
                        onClick={(e)=>this.handleSalaryCheck(e,"Salary")}/>                    
                     <label className = "Label_with_no_space"> Salary</label> 
                     
                      &nbsp;
-                     <input 
+                     <input disabled 
                        type="checkbox" 
                        className="Check CapitalCheck "
                        value = "Capital Gains"
                        id = "34"
                        name = "CapitalGains"
-                       disabled={!this.state.isEnabledCheck}
+                      // disabled={!this.state.isEnabledCheck}
                        onClick={(e)=>this.handleCapitalGainsCheck(e,"CapitalGains")}/>                      
                     <label className = "Label_with_no_space"> Capital Gains</label>  <br/>
 
-                    <input 
+                    <input disabled 
                        type="checkbox" 
                        className="Check IndividualCheck"
                        value = "IncomefromBusiness"
                        id = "35"
                        name = "IncomeBusiness"
-                       disabled={!this.state.isEnabledCheck}
+                      // disabled={!this.state.isEnabledCheck}
                        onClick={(e)=>this.handleIncomeBusinessCheck(e,"IncomeBusiness")}/>                    
                     <label className = "Label_with_no_space"> Income from Business / Profession</label> 
 
                      
                          
                       <label className = "FirstLabel"> Business/Profession code</label> 
-                      <input 
+                      <input disabled 
                          type= "text" 
                          className = "inputBox" 
                          id = "BusinessCodeDiv" 
@@ -10165,7 +9881,7 @@ class Panmain extends React.Component {
                          onChange={event => this.handleBusinessCode1(event)}/> 
                          
 
-                      <input 
+                      <input disabled 
                          type= "text" 
                          className = "inputBox" 
                          id = "BusinessCodeDiv1" 
@@ -10180,34 +9896,34 @@ class Panmain extends React.Component {
                      &nbsp;&nbsp;   
                      
 
-                    <input 
+                    <input disabled 
                        type="checkbox" 
                        className="Check Telephone_space"
                        value = "Income from Other sources"
                        id = "36"
                        name = "IncomeOtherSource"
-                       disabled={!this.state.isEnabledCheck}
-                       style = {{marginLeft : "7%"}}
+                       //disabled={!this.state.isEnabledCheck}
+                       style = {{marginLeft : "4.7%"}}
                        onClick={(e)=>this.handleIncomeOtherSourceCheck(e,"IncomeOtherSource")}/>                         
                     <label className = "Label_with_no_space"> Income from Other sources</label> <br/>
                     
-                    <input 
+                    <input disabled 
                        type="checkbox" 
                        className="Check IndividualCheck"
                        value = " Income from House property"
                        id = "37"
                        name = "IncomeFromHouse"
-                       disabled={!this.state.isEnabledCheck}
+                     //  disabled={!this.state.isEnabledCheck}
                        onClick={(e)=>this.handleIncomeFromHouseCheck(e,"IncomeFromHouse")}/>    
                     <label className = "Label_with_no_space"> Income from House property</label>
 
-                    <input 
+                    <input disabled 
                        type="checkbox" 
                        className="Check End_space"
                        value = " No income"
                        id = "38"
                        name = "NoIncome"
-                       style = {{marginLeft : "52%"}}
+                       style = {{marginLeft : "51.7%"}}
                        onClick={(e)=>this.handleNoIncomeCheck(e,"NoIncome")}/> 
                     <label className = "Label_with_no_space"> No income</label> <br/>
 
@@ -10219,12 +9935,7 @@ class Panmain extends React.Component {
 
                     <div className = "ColouredLabel"> 
                         <label >&nbsp;&nbsp; 14 &nbsp; Representative Assessee (RA)</label>
-                        {this.state.isIndicatorEnabled === false ?
-                        <span className="tooltip" style={{marginLeft:"67.2%"}}>
-                            <img src={indicator} style={{width:"2.3%",height:"2.3%"}} />
-                                <img src={respresentativeAssessee} className="tooltiptext" style={{width:"600px",height:"180px"}}  />
-                            </span> 
-                        : ""}
+                       
                     </div>
                      
                     <label className="FirstLabel"> &nbsp;&nbsp; Full name, address of the Representative Assessee, who is assessible under the Income Tax Act in respect of the person, whose particulars have
@@ -10237,7 +9948,7 @@ class Panmain extends React.Component {
                     <label className="FirstLabel"> Please select title,</label>
                    <label className="Label_with_no_space"> as applicable</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                   <input 
+                   <input disabled 
                       type="checkbox" 
                       className="Check"
                       id = "18"
@@ -10246,7 +9957,7 @@ class Panmain extends React.Component {
                       onClick={(e)=>this.handleNameTitleThreeCheck(e,"NameTitleThree")}/>
                    <label className="Label_with_no_space"> Shri</label>
 
-                   <input 
+                   <input disabled 
                       type="checkbox" 
                       className="Check"
                       id = "19"
@@ -10255,7 +9966,7 @@ class Panmain extends React.Component {
                       onClick={(e)=>this.handleNameTitleThreeCheck(e,"NameTitleThree")}/>
                    <label className="Label_with_no_space"> Smt.</label>
 
-                   <input 
+                   <input disabled 
                       type="checkbox" 
                       className="Check"
                       id = "20"
@@ -10264,7 +9975,7 @@ class Panmain extends React.Component {
                       onClick={(e)=>this.handleNameTitleThreeCheck(e,"NameTitleThree")}/>                
                    <label className="Label_with_no_space"> Kumari</label>
 
-                   <input 
+                   <input disabled 
                       type="checkbox" 
                       className="Check"
                       id = "21"
@@ -10285,7 +9996,7 @@ class Panmain extends React.Component {
                          <td className = "secondtd">
                            
                           <div> 
-                          <input 
+                          <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10295,7 +10006,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RALastName1", "#RALastName1")}
                                onChange = {this.handleRALastName1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10305,7 +10016,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RALastName1", "#RALastName2")}
                                onChange = {this.handleRALastName2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10315,7 +10026,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RALastName2", "#RALastName3")}
                                onChange = {this.handleRALastName3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10325,7 +10036,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RALastName3", "#RALastName4")}
                                onChange = {this.handleRALastName4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10335,7 +10046,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RALastName4", "#RALastName5")}
                                onChange = {this.handleRALastName5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10345,7 +10056,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RALastName5", "#RALastName6")}
                                onChange = {this.handleRALastName6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10355,7 +10066,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RALastName6", "#RALastName7")}
                                onChange = {this.handleRALastName7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10365,7 +10076,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RALastName7", "#RALastName8")}
                                onChange = {this.handleRALastName8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10375,7 +10086,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RALastName8", "#RALastName9")}
                                onChange = {this.handleRALastName9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10385,7 +10096,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RALastName9", "#RALastName10")}
                                onChange = {this.handleRALastName10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10395,7 +10106,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RALastName10", "#RALastName11")}
                                onChange = {this.handleRALastName11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10405,7 +10116,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RALastName11", "#RALastName12")}
                                onChange = {this.handleRALastName12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10415,7 +10126,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RALastName12", "#RALastName13")}
                                onChange = {this.handleRALastName13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10425,7 +10136,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RALastName13", "#RALastName14")}
                                onChange = {this.handleRALastName14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10435,7 +10146,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RALastName14", "#RALastName15")}
                                onChange = {this.handleRALastName15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10445,7 +10156,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RALastName15", "#RALastName16")}
                                onChange = {this.handleRALastName16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10455,7 +10166,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RALastName16", "#RALastName17")}
                                onChange = {this.handleRALastName17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10465,7 +10176,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RALastName17", "#RALastName18")}
                                onChange = {this.handleRALastName18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10475,7 +10186,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RALastName18", "#RALastName19")}
                                onChange = {this.handleRALastName19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10485,7 +10196,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RALastName19", "#RALastName20")}
                                onChange = {this.handleRALastName20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10495,7 +10206,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RALastName20", "#RALastName21")}
                                onChange = {this.handleRALastName21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10505,7 +10216,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RALastName21", "#RALastName22")}
                                onChange = {this.handleRALastName22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10515,7 +10226,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RALastName22", "#RALastName23")}
                                onChange = {this.handleRALastName23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10525,7 +10236,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RALastName23", "#RALastName24")}
                                onChange = {this.handleRALastName24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10534,17 +10245,12 @@ class Panmain extends React.Component {
                                id = "RALastName25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RALastName24", "#RALastName25")}
                                onChange = {this.handleRALastName25}/>
-                         {this.state.isIndicatorEnabled === false ?
-                           <span className="tooltip" style={{marginLeft:"3.8%"}}>
-                          <img src={indicator} style={{width:"3.2%",height:"3.2%"}} />
-                            <img src={namefield} className="tooltiptext" style={{width:"600px",height:"150px"}}  />
-                         </span>
-                         : ""}
+                        
                           <br/>
                            </div>
 
                            <div>  
-                           <input 
+                           <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10554,7 +10260,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFirstName1", "#RAFirstName1")}
                                onChange = {this.handleRAFirstName1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10564,7 +10270,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFirstName1", "#RAFirstName2")}
                                onChange = {this.handleRAFirstName2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10574,7 +10280,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFirstName2", "#RAFirstName3")}
                                onChange = {this.handleRAFirstName3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10584,7 +10290,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFirstName3", "#RAFirstName4")}
                                onChange = {this.handleRAFirstName4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10594,7 +10300,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFirstName4", "#RAFirstName5")}
                                onChange = {this.handleRAFirstName5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10604,7 +10310,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFirstName5", "#RAFirstName6")}
                                onChange = {this.handleRAFirstName6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10614,7 +10320,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFirstName6", "#RAFirstName7")}
                                onChange = {this.handleRAFirstName7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10624,7 +10330,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFirstName7", "#RAFirstName8")}
                                onChange = {this.handleRAFirstName8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10634,7 +10340,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFirstName8", "#RAFirstName9")}
                                onChange = {this.handleRAFirstName9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10644,7 +10350,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFirstName9", "#RAFirstName10")}
                                onChange = {this.handleRAFirstName10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10654,7 +10360,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFirstName10", "#RAFirstName11")}
                                onChange = {this.handleRAFirstName11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10664,7 +10370,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFirstName11", "#RAFirstName12")}
                                onChange = {this.handleRAFirstName12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10674,7 +10380,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFirstName12", "#RAFirstName13")}
                                onChange = {this.handleRAFirstName13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10684,7 +10390,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFirstName13", "#RAFirstName14")}
                                onChange = {this.handleRAFirstName14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10694,7 +10400,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFirstName14", "#RAFirstName15")}
                                onChange = {this.handleRAFirstName15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10704,7 +10410,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFirstName15", "#RAFirstName16")}
                                onChange = {this.handleRAFirstName16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10714,7 +10420,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFirstName16", "#RAFirstName17")}
                                onChange = {this.handleRAFirstName17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10724,7 +10430,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFirstName17", "#RAFirstName18")}
                                onChange = {this.handleRAFirstName18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10734,7 +10440,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFirstName18", "#RAFirstName19")}
                                onChange = {this.handleRAFirstName19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10744,7 +10450,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFirstName19", "#RAFirstName20")}
                                onChange = {this.handleRAFirstName20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10754,7 +10460,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFirstName20", "#RAFirstName21")}
                                onChange = {this.handleRAFirstName21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10764,7 +10470,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFirstName21", "#RAFirstName22")}
                                onChange = {this.handleRAFirstName22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10774,7 +10480,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFirstName22", "#RAFirstName23")}
                                onChange = {this.handleRAFirstName23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10784,7 +10490,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFirstName23", "#RAFirstName24")}
                                onChange = {this.handleRAFirstName24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10793,18 +10499,12 @@ class Panmain extends React.Component {
                                id = "RAFirstName25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFirstName24", "#RAFirstName25")}
                                onChange = {this.handleRAFirstName25}/>
-
-                         {this.state.isIndicatorEnabled === false ?
-                           <span className="tooltip" style={{marginLeft:"3.8%"}}>
-                          <img src={indicator} style={{width:"3.2%",height:"3.2%"}} />
-                            <img src={namefield} className="tooltiptext" style={{width:"600px",height:"150px"}}  />
-                         </span>
-                         : ""}
+ 
                          <br/>
                            </div>
 
                            <div>
-                           <input 
+                           <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10814,7 +10514,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAMiddleName1", "#RAMiddleName1")}
                                onChange = {this.handleRAMiddleName1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10824,7 +10524,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAMiddleName1", "#RAMiddleName2")}
                                onChange = {this.handleRAMiddleName2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10834,7 +10534,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAMiddleName2", "#RAMiddleName3")}
                                onChange = {this.handleRAMiddleName3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10844,7 +10544,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAMiddleName3", "#RAMiddleName4")}
                                onChange = {this.handleRAMiddleName4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10854,7 +10554,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAMiddleName4", "#RAMiddleName5")}
                                onChange = {this.handleRAMiddleName5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10864,7 +10564,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAMiddleName5", "#RAMiddleName6")}
                                onChange = {this.handleRAMiddleName6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10874,7 +10574,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAMiddleName6", "#RAMiddleName7")}
                                onChange = {this.handleRAMiddleName7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10884,7 +10584,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAMiddleName7", "#RAMiddleName8")}
                                onChange = {this.handleRAMiddleName8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10894,7 +10594,7 @@ class Panmain extends React.Component {
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAMiddleName8", "#RAMiddleName9")}
                                onChange = {this.handleRAMiddleName9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10903,8 +10603,8 @@ class Panmain extends React.Component {
                                id = "RAMiddleName10"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAMiddleName9", "#RAMiddleName10")}
                                onChange = {this.handleRAMiddleName10}/>
-response
-                            <input 
+
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10914,7 +10614,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAMiddleName10", "#RAMiddleName11")}
                                onChange = {this.handleRAMiddleName11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10924,7 +10624,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAMiddleName11", "#RAMiddleName12")}
                                onChange = {this.handleRAMiddleName12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10934,7 +10634,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAMiddleName12", "#RAMiddleName13")}
                                onChange = {this.handleRAMiddleName13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10944,7 +10644,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAMiddleName13", "#RAMiddleName14")}
                                onChange = {this.handleRAMiddleName14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10954,7 +10654,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAMiddleName14", "#RAMiddleName15")}
                                onChange = {this.handleRAMiddleName15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10964,7 +10664,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAMiddleName15", "#RAMiddleName16")}
                                onChange = {this.handleRAMiddleName16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10974,7 +10674,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAMiddleName16", "#RAMiddleName17")}
                                onChange = {this.handleRAMiddleName17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10984,7 +10684,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAMiddleName17", "#RAMiddleName18")}
                                onChange = {this.handleRAMiddleName18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -10994,7 +10694,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAMiddleName18", "#RAMiddleName19")}
                                onChange = {this.handleRAMiddleName19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11004,7 +10704,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAMiddleName19", "#RAMiddleName20")}
                                onChange = {this.handleRAMiddleName20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11014,7 +10714,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAMiddleName20", "#RAMiddleName21")}
                                onChange = {this.handleRAMiddleName21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11024,7 +10724,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAMiddleName21", "#RAMiddleName22")}
                                onChange = {this.handleRAMiddleName22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11034,7 +10734,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAMiddleName22", "#RAMiddleName23")}
                                onChange = {this.handleRAMiddleName23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11044,7 +10744,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAMiddleName23", "#RAMiddleName24")}
                                onChange = {this.handleRAMiddleName24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11053,13 +10753,7 @@ response
                                id = "RAMiddleName25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAMiddleName24", "#RAMiddleName25")}
                                onChange = {this.handleRAMiddleName25}/>
-                             {this.state.isIndicatorEnabled === false ?
-                           <span className="tooltip" style={{marginLeft:"3.8%"}}>
-                          <img src={indicator} style={{width:"3.2%",height:"3.2%"}} />
-                            <img src={namefield} className="tooltiptext" style={{width:"600px",height:"150px"}}  />
-                         </span>
-                         : ""}
-
+                             
                             <br/>
                             <span className="ErrorMsg">{this.state.errors.NameTitleThree}</span>
                             </div>
@@ -11085,7 +10779,7 @@ response
                          <td className = "secondtd">
                           
                           <div> 
-                          <input 
+                          <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11095,7 +10789,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFlat1", "#RAFlat1")}
                                onChange = {this.handleRAFlat1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11105,7 +10799,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFlat1", "#RAFlat2")}
                                onChange = {this.handleRAFlat2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11115,7 +10809,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFlat2", "#RAFlat3")}
                                onChange = {this.handleRAFlat3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11125,7 +10819,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFlat3", "#RAFlat4")}
                                onChange = {this.handleRAFlat4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11135,7 +10829,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFlat4", "#RAFlat5")}
                                onChange = {this.handleRAFlat5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11145,7 +10839,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFlat5", "#RAFlat6")}
                                onChange = {this.handleRAFlat6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11155,7 +10849,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFlat6", "#RAFlat7")}
                                onChange = {this.handleRAFlat7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11165,7 +10859,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFlat7", "#RAFlat8")}
                                onChange = {this.handleRAFlat8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11175,7 +10869,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFlat8", "#RAFlat9")}
                                onChange = {this.handleRAFlat9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11185,7 +10879,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFlat9", "#RAFlat10")}
                                onChange = {this.handleRAFlat10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11195,7 +10889,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFlat10", "#RAFlat11")}
                                onChange = {this.handleRAFlat11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11205,7 +10899,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFlat11", "#RAFlat12")}
                                onChange = {this.handleRAFlat12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11215,7 +10909,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFlat12", "#RAFlat13")}
                                onChange = {this.handleRAFlat13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11225,7 +10919,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFlat13", "#RAFlat14")}
                                onChange = {this.handleRAFlat14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11235,7 +10929,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFlat14", "#RAFlat15")}
                                onChange = {this.handleRAFlat15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11245,7 +10939,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFlat15", "#RAFlat16")}
                                onChange = {this.handleRAFlat16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11255,7 +10949,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFlat16", "#RAFlat17")}
                                onChange = {this.handleRAFlat17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11265,7 +10959,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFlat17", "#RAFlat18")}
                                onChange = {this.handleRAFlat18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11275,7 +10969,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFlat18", "#RAFlat19")}
                                onChange = {this.handleRAFlat19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11285,7 +10979,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFlat19", "#RAFlat20")}
                                onChange = {this.handleRAFlat20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11295,7 +10989,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFlat20", "#RAFlat21")}
                                onChange = {this.handleRAFlat21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11305,7 +10999,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFlat21", "#RAFlat22")}
                                onChange = {this.handleRAFlat22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11315,7 +11009,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFlat22", "#RAFlat23")}
                                onChange = {this.handleRAFlat23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11325,7 +11019,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFlat23", "#RAFlat24")}
                                onChange = {this.handleRAFlat24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11334,17 +11028,12 @@ response
                                id = "RAFlat25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAFlat24", "#RAFlat25")}
                                onChange = {this.handleRAFlat25}/>
-                             {this.state.isIndicatorEnabled === false ?
-                           <span className="tooltip" style={{marginLeft:"3.8%"}}>
-                          <img src={indicator} style={{width:"3.2%",height:"3.2%"}} />
-                            <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}}>Please enter combinations of alphabet, numbers, -, /, '</label>
-                         </span>
-                         : ""}
+                            
                           <br/>
                            </div>
 
                            <div>
-                           <input 
+                           <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11354,7 +11043,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPremises1", "#RAPremises1")}
                                onChange = {this.handleRAPremises1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11364,7 +11053,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPremises1", "#RAPremises2")}
                                onChange = {this.handleRAPremises2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11374,7 +11063,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPremises2", "#RAPremises3")}
                                onChange = {this.handleRAPremises3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11384,7 +11073,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPremises3", "#RAPremises4")}
                                onChange = {this.handleRAPremises4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11394,7 +11083,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPremises4", "#RAPremises5")}
                                onChange = {this.handleRAPremises5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11404,7 +11093,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPremises5", "#RAPremises6")}
                                onChange = {this.handleRAPremises6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11414,7 +11103,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPremises6", "#RAPremises7")}
                                onChange = {this.handleRAPremises7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11424,7 +11113,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPremises7", "#RAPremises8")}
                                onChange = {this.handleRAPremises8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11434,7 +11123,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPremises8", "#RAPremises9")}
                                onChange = {this.handleRAPremises9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11444,7 +11133,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPremises9", "#RAPremises10")}
                                onChange = {this.handleRAPremises10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11454,7 +11143,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPremises10", "#RAPremises11")}
                                onChange = {this.handleRAPremises11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11464,7 +11153,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPremises11", "#RAPremises12")}
                                onChange = {this.handleRAPremises12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11474,7 +11163,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPremises12", "#RAPremises13")}
                                onChange = {this.handleRAPremises13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11484,7 +11173,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPremises13", "#RAPremises14")}
                                onChange = {this.handleRAPremises14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11494,7 +11183,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPremises14", "#RAPremises15")}
                                onChange = {this.handleRAPremises15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11504,7 +11193,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPremises15", "#RAPremises16")}
                                onChange = {this.handleRAPremises16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11514,7 +11203,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPremises16", "#RAPremises17")}
                                onChange = {this.handleRAPremises17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11524,7 +11213,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPremises17", "#RAPremises18")}
                                onChange = {this.handleRAPremises18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11534,7 +11223,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPremises18", "#RAPremises19")}
                                onChange = {this.handleRAPremises19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11544,7 +11233,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPremises19", "#RAPremises20")}
                                onChange = {this.handleRAPremises20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11554,7 +11243,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPremises20", "#RAPremises21")}
                                onChange = {this.handleRAPremises21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11564,7 +11253,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPremises21", "#RAPremises22")}
                                onChange = {this.handleRAPremises22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11574,7 +11263,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPremises22", "#RAPremises23")}
                                onChange = {this.handleRAPremises23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11584,7 +11273,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPremises23", "#RAPremises24")}
                                onChange = {this.handleRAPremises24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11594,17 +11283,12 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPremises24", "#RAPremises25")}
                                onChange = {this.handleRAPremises25}/>
 
-                             {this.state.isIndicatorEnabled === false ?
-                            <span className="tooltip" style={{marginLeft:"3.8%"}}>
-                            <img src={indicator} style={{width:"3.2%",height:"3.2%"}} />
-                                <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}}>Please enter combinations of alphabet, numbers</label>
-                            </span>
-                            : ""}
+                            
                           <br/>
                            </div>
                             
                            <div>
-                           <input 
+                           <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11614,7 +11298,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RARoad1", "#RARoad1")}
                                onChange = {this.handleRARoad1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11624,7 +11308,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RARoad1", "#RARoad2")}
                                onChange = {this.handleRARoad2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11634,7 +11318,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RARoad2", "#RARoad3")}
                                onChange = {this.handleRARoad3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11644,7 +11328,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RARoad3", "#RARoad4")}
                                onChange = {this.handleRARoad4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11654,7 +11338,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RARoad4", "#RARoad5")}
                                onChange = {this.handleRARoad5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11664,7 +11348,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RARoad5", "#RARoad6")}
                                onChange = {this.handleRARoad6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11674,7 +11358,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RARoad6", "#RARoad7")}
                                onChange = {this.handleRARoad7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11684,7 +11368,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RARoad7", "#RARoad8")}
                                onChange = {this.handleRARoad8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11694,7 +11378,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RARoad8", "#RARoad9")}
                                onChange = {this.handleRARoad9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11704,7 +11388,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RARoad9", "#RARoad10")}
                                onChange = {this.handleRARoad10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11714,7 +11398,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RARoad10", "#RARoad11")}
                                onChange = {this.handleRARoad11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11724,7 +11408,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RARoad11", "#RARoad12")}
                                onChange = {this.handleRARoad12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11734,7 +11418,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RARoad12", "#RARoad13")}
                                onChange = {this.handleRARoad13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11744,7 +11428,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RARoad13", "#RARoad14")}
                                onChange = {this.handleRARoad14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11754,7 +11438,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RARoad14", "#RARoad15")}
                                onChange = {this.handleRARoad15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11764,7 +11448,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RARoad15", "#RARoad16")}
                                onChange = {this.handleRARoad16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11774,7 +11458,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RARoad16", "#RARoad17")}
                                onChange = {this.handleRARoad17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11784,7 +11468,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RARoad17", "#RARoad18")}
                                onChange = {this.handleRARoad18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11794,7 +11478,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RARoad18", "#RARoad19")}
                                onChange = {this.handleRARoad19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11804,7 +11488,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RARoad19", "#RARoad20")}
                                onChange = {this.handleRARoad20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11814,7 +11498,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RARoad20", "#RARoad21")}
                                onChange = {this.handleRARoad21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11824,7 +11508,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RARoad21", "#RARoad22")}
                                onChange = {this.handleRARoad22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11834,7 +11518,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RARoad22", "#RARoad23")}
                                onChange = {this.handleRARoad23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11844,7 +11528,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RARoad23", "#RARoad24")}
                                onChange = {this.handleRARoad24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11855,17 +11539,12 @@ response
                                onChange = {this.handleRARoad25}/>
 
 
-                             {this.state.isIndicatorEnabled === false ?
-                           <span className="tooltip" style={{marginLeft:"3.8%"}}>
-                          <img src={indicator} style={{width:"3.2%",height:"3.2%"}} />
-                            <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}}>Please enter only alphabet</label>
-                         </span>
-                         : ""}
+                            
                          <br/>
                            </div>
 
                            <div>   
-                           <input 
+                           <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11875,7 +11554,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAArea1", "#RAArea1")}
                                onChange = {this.handleRAArea1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11885,7 +11564,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAArea1", "#RAArea2")}
                                onChange = {this.handleRAArea2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11895,7 +11574,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAArea2", "#RAArea3")}
                                onChange = {this.handleRAArea3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11905,7 +11584,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAArea3", "#RAArea4")}
                                onChange = {this.handleRAArea4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11915,7 +11594,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAArea4", "#RAArea5")}
                                onChange = {this.handleRAArea5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11925,7 +11604,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAArea5", "#RAArea6")}
                                onChange = {this.handleRAArea6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11935,7 +11614,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAArea6", "#RAArea7")}
                                onChange = {this.handleRAArea7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11945,7 +11624,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAArea7", "#RAArea8")}
                                onChange = {this.handleRAArea8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11955,7 +11634,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAArea8", "#RAArea9")}
                                onChange = {this.handleRAArea9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11965,7 +11644,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAArea9", "#RAArea10")}
                                onChange = {this.handleRAArea10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11975,7 +11654,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAArea10", "#RAArea11")}
                                onChange = {this.handleRAArea11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11985,7 +11664,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAArea11", "#RAArea12")}
                                onChange = {this.handleRAArea12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -11995,7 +11674,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAArea12", "#RAArea13")}
                                onChange = {this.handleRAArea13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12005,7 +11684,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAArea13", "#RAArea14")}
                                onChange = {this.handleRAArea14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12015,7 +11694,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAArea14", "#RAArea15")}
                                onChange = {this.handleRAArea15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12025,7 +11704,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAArea15", "#RAArea16")}
                                onChange = {this.handleRAArea16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12035,7 +11714,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAArea16", "#RAArea17")}
                                onChange = {this.handleRAArea17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12045,7 +11724,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAArea17", "#RAArea18")}
                                onChange = {this.handleRAArea18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12055,7 +11734,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAArea18", "#RAArea19")}
                                onChange = {this.handleRAArea19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12065,7 +11744,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAArea19", "#RAArea20")}
                                onChange = {this.handleRAArea20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12075,7 +11754,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAArea20", "#RAArea21")}
                                onChange = {this.handleRAArea21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12085,7 +11764,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAArea21", "#RAArea22")}
                                onChange = {this.handleRAArea22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12095,7 +11774,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAArea22", "#RAArea23")}
                                onChange = {this.handleRAArea23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12105,7 +11784,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAArea23", "#RAArea24")}
                                onChange = {this.handleRAArea24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12116,17 +11795,12 @@ response
                                onChange = {this.handleRAArea25}/>
 
 
-                             {this.state.isIndicatorEnabled === false ?
-                           <span className="tooltip" style={{marginLeft:"3.8%"}}>
-                          <img src={indicator} style={{width:"3.2%",height:"3.2%"}} />
-                            <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}}>Please enter only alphabet</label>
-                         </span>
-                         : ""}
+                             
                          <br/>
                            </div>
 
                            <div>
-                           <input 
+                           <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12136,7 +11810,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RATown1", "#RATown1")}
                                onChange = {this.handleRATown1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12146,7 +11820,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RATown1", "#RATown2")}
                                onChange = {this.handleRATown2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12156,7 +11830,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RATown2", "#RATown3")}
                                onChange = {this.handleRATown3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12166,7 +11840,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RATown3", "#RATown4")}
                                onChange = {this.handleRATown4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12176,7 +11850,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RATown4", "#RATown5")}
                                onChange = {this.handleRATown5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12186,7 +11860,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RATown5", "#RATown6")}
                                onChange = {this.handleRATown6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12196,7 +11870,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RATown6", "#RATown7")}
                                onChange = {this.handleRATown7}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12206,7 +11880,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RATown7", "#RATown8")}
                                onChange = {this.handleRATown8}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12216,7 +11890,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RATown8", "#RATown9")}
                                onChange = {this.handleRATown9}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12226,7 +11900,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RATown9", "#RATown10")}
                                onChange = {this.handleRATown10}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12236,7 +11910,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RATown10", "#RATown11")}
                                onChange = {this.handleRATown11}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12246,7 +11920,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RATown11", "#RATown12")}
                                onChange = {this.handleRATown12}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12256,7 +11930,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RATown12", "#RATown13")}
                                onChange = {this.handleRATown13}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12266,7 +11940,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RATown13", "#RATown14")}
                                onChange = {this.handleRATown14}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12276,7 +11950,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RATown14", "#RATown15")}
                                onChange = {this.handleRATown15}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12286,7 +11960,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RATown15", "#RATown16")}
                                onChange = {this.handleRATown16}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12296,7 +11970,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RATown16", "#RATown17")}
                                onChange = {this.handleRATown17}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12306,7 +11980,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RATown17", "#RATown18")}
                                onChange = {this.handleRATown18}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12316,7 +11990,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RATown18", "#RATown19")}
                                onChange = {this.handleRATown19}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12326,7 +12000,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RATown19", "#RATown20")}
                                onChange = {this.handleRATown20}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12336,7 +12010,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RATown20", "#RATown21")}
                                onChange = {this.handleRATown21}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12346,7 +12020,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RATown21", "#RATown22")}
                                onChange = {this.handleRATown22}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12356,7 +12030,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RATown22", "#RATown23")}
                                onChange = {this.handleRATown23}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12366,7 +12040,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RATown23", "#RATown24")}
                                onChange = {this.handleRATown24}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12375,12 +12049,7 @@ response
                                id = "RATown25"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RATown24", "#RATown25")}
                                onChange = {this.handleRATown25}/>
-                             {this.state.isIndicatorEnabled === false ?
-                           <span className="tooltip" style={{marginLeft:"3.8%"}}>
-                          <img src={indicator} style={{width:"3.2%",height:"3.2%"}} />
-                            <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}}>Please enter only alphabet</label>
-                         </span>
-                         : ""}
+                             
                           <br/>
                            </div>
   
@@ -12389,29 +12058,20 @@ response
                       </tr>
                     </tbody>
                     </table>
-
-                    <table cellPadding = "0" cellSpacing = "0"  className = "divState">
-                    <tbody>
-                        <tr>
-                           <td >
+ 
                              <label className = "StateId"> State / Union Territory </label>
-                          </td>
-                          <td >
-                             <label className = "PincodeId"> Pincode / Zip code </label>
-                          </td>
-                       </tr>
-                       <tr>
-                          <td >
-                             <input 
+                         
+                             <label className = "PincodeId"> Pincode / Zip code </label> <br/>
+                          
+                             <input disabled 
                                  className = "StateValue"
                                  name="RAState"
                                  id = "RAState"
                                  value={this.state.data.RAState}
                                  onChange={event => this.handleRAState(event)}/>
                               
-                          </td>
-                          <td> 
-                          <input 
+                         
+                          <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12421,7 +12081,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPincode1", "#RAPincode1")}
                                onChange = {this.handleRAPincode1}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12431,7 +12091,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPincode1", "#RAPincode2")}
                                onChange = {this.handleRAPincode2}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12441,7 +12101,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPincode2", "#RAPincode3")}
                                onChange = {this.handleRAPincode3}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12451,7 +12111,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPincode3", "#RAPincode4")}
                                onChange = {this.handleRAPincode4}/>
 
-                            <input 
+                            <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12461,7 +12121,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPincode4", "#RAPincode5")}
                                onChange = {this.handleRAPincode5}/> 
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12471,7 +12131,7 @@ response
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPincode5", "#RAPincode6")}
                                onChange = {this.handleRAPincode6}/>
 
-                             <input 
+                             <input disabled 
                                type="text" 
                                className="Name-control"
                                maxLength = "1"
@@ -12480,36 +12140,20 @@ response
                                id = "RAPincode7"
                                onKeyDown = {event => this.handleBackspaceKey(event, "#RAPincode6", "#RAPincode7")}
                                onChange = {this.handleRAPincode7}/>
-
-                             {this.state.isIndicatorEnabled === false ?
-                               <span className="tooltip" style={{marginLeft:"61.5%"}}>
-                            <img src={indicator} style={{width:"3.4%",height:"3.4%"}} />
-                                <label className="tooltiptext tooltiptextLabel" style={{width:"450px",height:"20px"}}>Please enter as applicable</label>
-                            </span>
-                            : ""}
-                           </td>
-                       </tr>
-                        
-                       
-                    </tbody>
-                    </table>
+ 
+                           
                  
                  {/* Fifteenth Component */}
                    
                     <div className = "ColouredLabel">
                     <label  className = "ColouredLabel">&nbsp;&nbsp;15 &nbsp; Douments submitted as Proof of Identity (POI), Proof of Address (POA) and Proof of Date of Birth (POB)</label>
-                    {this.state.isIndicatorEnabled === false ?
-                    <span className="tooltip" style={{marginLeft:"16.7%"}}>
-                          <img src={indicator} style={{width:"2.3%",height:"2.3%", marginLeft : "4.5%"}} />
-                            <img src={prooffield} className="tooltiptext" style={{width:"600px",height:"100px"}}  />
-                    </span>
-                    :""}
+                   
                     </div>
                     
                     <label className= "FirstLabel"> I/We have enclosed</label> &nbsp; 
-                    <input 
+                    <input disabled 
                        type= "text" 
-                       className = "CountryInput"
+                       className = "Countryinput disabled"
                        name="POI"
                        id = "POI"
                        value={this.state.data.POI}
@@ -12517,9 +12161,9 @@ response
                     <label className="Label_with_no_space"> as proof of identity,</label> &nbsp; 
                      
 
-                    <input 
+                    <input disabled 
                        type= "text" 
-                       className = "CountryInput"
+                       className = "Countryinput disabled"
                        name="POA"
                        id = "POA"
                        value={this.state.data.POA}
@@ -12529,9 +12173,9 @@ response
                     <label className= "FirstLabel"> as proof of address and</label>&nbsp; 
                      
 
-                    <input 
+                    <input disabled 
                         type= "text" 
-                        className = "CountryInput"
+                        className = "Countryinput disabled"
                         name="POB"
                         id = "POB"
                         value={this.state.data.POB}
@@ -12551,18 +12195,18 @@ response
                     <label  className = "ColouredLabel"> &nbsp;&nbsp; 16 </label> 
                     <label className= "Label_with_no_space"> &nbsp; I/We</label> &nbsp;
                
-                    <input 
+                    <input disabled 
                         type= "text" 
-                        className = "CountryInput"
+                        className = "Countryinput disabled"
                         name="Applicant"
                         id = "Applicant"
                         value={this.state.data.Applicant}
                         onChange={event => this.handleApplicant(event)}/>
                     <label className= "Declaration2Label">, the applicant, in the capacity of</label> &nbsp;
                     
-                    <input 
+                    <input disabled 
                         type= "text" 
-                        className = "CountryInput"
+                        className = "Countryinput disabled"
                         name="Capacity"
                         id = "Capacity"
                         value={this.state.data.Capacity}
@@ -12572,17 +12216,9 @@ response
                    
                      
                 </div>
-                <br /><br />
-
-           </div>
-           <br />
-
-
-            
-      </div>
-
-     </div>
-
+                </div>
+                </div>
+                </div>
 
     </Modal>
 
